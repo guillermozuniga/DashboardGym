@@ -46,7 +46,7 @@
                 <asp:Button ID="ButtonIngresar" runat="server" Text="Iniciar Sesión" CssClass="btn bg-olive btn-block" />
             </div>
 
-            <a href="Account/Registro.aspx" class="text-center">Registrar un nuevo miembro</a>
+            <a href="Account/Register.aspx" class="text-center">Registrar un nuevo miembro</a>
         </form>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
