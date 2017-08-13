@@ -8,26 +8,40 @@
         <div class="row">
             <!-- fix for small devices only -->
             <div class="clearfix visible-sm-block"></div>
-            <div class="col-lg-2 col-xs-6">
+            <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-aqua">
                     <div class="inner">
-                        <h2>150</h2>
+                        <h2>
+                            <asp:Label ID="LabelUnidadNegocio" runat="server" Text=""></asp:Label></h2>
                         <p>Unidades de Negocio</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-home"></i>
                     </div>
-                    <a href="wfunegocio.aspx" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="DetalleUN.aspx" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-            <div class="col-lg-2 col-xs-6">
+            <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
-                <div class="small-box bg-fuchsia">
+                <div class="small-box bg-orange">
                     <div class="inner">
                         <h2>10000</h2>
+                        <p>Socios Registrados Activos</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-person"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-blue">
+                    <div class="inner">
+                        <h2>44</h2>
 
-                        <p>Numero de Socios</p>
+                        <p>Nuevos Socios</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-person-add"></i>
@@ -35,8 +49,8 @@
                     <a href="#" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-
-            <div class="col-lg-2 col-xs-6">
+            <!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-green">
                     <div class="inner">
@@ -51,50 +65,8 @@
                 </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-2 col-xs-6">
-                <!-- small box -->
-                <div class="small-box bg-blue">
-                    <div class="inner">
-                        <h2>44</h2>
 
-                        <p>Socios Nuevos</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-person-add"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-2 col-xs-6">
-                <!-- small box -->
-                <div class="small-box bg-red">
-                    <div class="inner">
-                        <h2>65</h2>
 
-                        <p>Venta Productos</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-cash"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-xs-6">
-                <!-- small box -->
-                <div class="small-box bg-orange">
-                    <div class="inner">
-                        <h2>65</h2>
-
-                        <p>Venta Cuotas</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-cash"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-            <!-- ./col -->
         </div>
         <!-- /.row -->
     </section>

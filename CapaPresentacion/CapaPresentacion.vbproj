@@ -246,6 +246,7 @@
     <Content Include="css\timepicker\bootstrap-timepicker.css" />
     <Content Include="css\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="Dashboard.aspx" />
+    <Content Include="DetalleUN.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="img\ajax-loader.gif" />
     <Content Include="img\ajax-loader1.gif" />
@@ -1277,6 +1278,13 @@
     </Compile>
     <Compile Include="Dashboard.aspx.vb">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DetalleUN.aspx.designer.vb">
+      <DependentUpon>DetalleUN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleUN.aspx.vb">
+      <DependentUpon>DetalleUN.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="MasterDefault.Master.designer.vb">

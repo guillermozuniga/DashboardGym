@@ -33,7 +33,7 @@ Public NotInheritable Class Conexion
 
         Dim coneccion As New SqlConnection
 
-        coneccion.ConnectionString = ConfigurationManager.ConnectionStrings("eimagenn_gym_0001").ConnectionString
+        coneccion.ConnectionString = ConfigurationManager.ConnectionStrings("SQLServer").ConnectionString
 
         Return coneccion
 

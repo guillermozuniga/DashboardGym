@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class Dashboard
 
     '''<summary>
+    '''LabelUnidadNegocio control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LabelUnidadNegocio As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Label1 control.
     '''</summary>
     '''<remarks>
