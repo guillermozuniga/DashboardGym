@@ -10,7 +10,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
         name="viewport" />
     <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href="Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" />
     <!-- Ionicons -->
@@ -72,12 +72,15 @@
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-th"></i><i class="fa fa-angle-left pull-right"></i>
-                            <span>Historial Donativos</span>
+                            <span>Estadistica Negocio</span>
                         </a>
 
                         <ul class="treeview-menu">
                             <li>
-                                <a href="Donativos.aspx"><i class="fa fa-angle-double-right"></i>Estadisticas Donativos</a>
+                                <a href="Unegocio.aspx"><i class="fa fa-angle-double-right"></i>Unidades de Negocio</a>
+                            </li>
+                            <li>
+                                <a href="VtasNegocio.aspx"><i class="fa fa-angle-double-right"></i>Ventas Unidad Negocio</a>
                             </li>
                         </ul>
                     </li>
@@ -85,18 +88,18 @@
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-th"></i><i class="fa fa-angle-left pull-right"></i>
-                            <span>Mantenimiento</span>
+                            <span>Estadistica Ventas</span>
                         </a>
 
                         <ul class="treeview-menu">
                             <li>
-                                <a href="wfTDonativos.aspx"><i class="fa fa-angle-double-right"></i>Tipo Donativos</a>
+                                <a href="wfTDonativos.aspx"><i class="fa fa-angle-double-right"></i>Ventas por Unidad</a>
                             </li>
                         </ul>
                     </li>
 
                     <li>
-                        <a href="Logout.aspx">
+                        <a href="CerrarSession.aspx">
                             <i class="fa fa-share-square-o"></i>
                             <span>Logout</span>
                         </a>
@@ -127,11 +130,11 @@
                     </div>
                 </form>
             </section>
-           
+
         </aside>
 
     </div>
-    
+
 </body>
 <!-- jQuery 2.2.3 -->
 <script src="plugins/jQuery/jquery-2.2.3.min.js" type="text/jscript"></script>

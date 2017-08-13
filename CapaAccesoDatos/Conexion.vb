@@ -18,6 +18,7 @@ Public NotInheritable Class Conexion
     End Sub
 
     Public Shared Function getInstance() As Conexion
+
         If _conexion Is Nothing Then
             _conexion = New Conexion
 
@@ -30,11 +31,11 @@ Public NotInheritable Class Conexion
 
     Public Function Conexiondb() As SqlConnection
 
-        Dim conexion As New SqlConnection
+        Dim coneccion As New SqlConnection
 
-        conexion.ConnectionString = ConfigurationManager.ConnectionStrings("eimagenn_gym_0001").ConnectionString
+        coneccion.ConnectionString = ConfigurationManager.ConnectionStrings("eimagenn_gym_0001").ConnectionString
 
-        Return conexion
+        Return coneccion
 
     End Function
 End Class
