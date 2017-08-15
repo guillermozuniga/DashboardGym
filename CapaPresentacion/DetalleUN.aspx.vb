@@ -12,10 +12,10 @@ Public Class DetalleUN
         Dim dt As DataTable
 
         dt = UnidadNegocioLN.getInstance().CantidadNegocios
-
         If dt.Rows.Count > 0 Then
-            Me.dlUnidadesNegocio.DataSource = dt
-            Me.dlUnidadesNegocio.DataBind()
+            Me.dlUNegocio.DataSource = dt
+            Me.dlUNegocio.DataBind()
+
         End If
 
     End Sub
@@ -59,4 +59,8 @@ Public Class DetalleUN
 
     End Sub
 
+
+    Protected Sub dlUnidadesNegocio_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dlUnidadesNegocio.SelectedIndexChanged
+
+    End Sub
 End Class

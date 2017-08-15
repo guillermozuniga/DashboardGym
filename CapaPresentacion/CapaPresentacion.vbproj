@@ -108,6 +108,7 @@
     <Content Include="css\datatables\images\sort_desc_disabled.png" />
     <Content Include="css\datepicker\datepicker3.css" />
     <Content Include="css\daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="css\estilospropios.css" />
     <Content Include="css\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="css\iCheck\all.css" />
     <Content Include="css\iCheck\flat\aero%402x.png" />
@@ -246,6 +247,7 @@
     <Content Include="css\timepicker\bootstrap-timepicker.css" />
     <Content Include="css\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="Dashboard.aspx" />
+    <Content Include="DetalleporUN.aspx" />
     <Content Include="DetalleUN.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="img\ajax-loader.gif" />
@@ -1279,6 +1281,13 @@
     </Compile>
     <Compile Include="Dashboard.aspx.vb">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DetalleporUN.aspx.designer.vb">
+      <DependentUpon>DetalleporUN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleporUN.aspx.vb">
+      <DependentUpon>DetalleporUN.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="DetalleUN.aspx.designer.vb">

@@ -21,4 +21,13 @@ Partial Public Class DetalleUN
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents dlUnidadesNegocio As Global.System.Web.UI.WebControls.DataList
+
+    '''<summary>
+    '''dlUNegocio control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents dlUNegocio As Global.System.Web.UI.WebControls.DataList
 End Class
