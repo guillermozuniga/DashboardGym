@@ -23,38 +23,38 @@ Partial Public Class Dashboard
     Protected WithEvents LabelUnidadNegocio As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label1 control.
+    '''LabelSociosActivos control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LabelSociosActivos As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''GridView1 control.
+    '''LabelSociosNuevos control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents LabelSociosNuevos As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label2 control.
+    '''LabelPorVencer control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LabelPorVencer As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''GridView2 control.
+    '''LabelVentas control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents GridView2 As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents LabelVentas As Global.System.Web.UI.WebControls.Label
 End Class

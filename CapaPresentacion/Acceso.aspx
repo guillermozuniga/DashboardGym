@@ -13,7 +13,7 @@
 <body class="hold-transition login-page bg-black">
 
     <div class="form-box" id="login-box">
-        <div class="header">Login</div>
+        <div class="header"><strong>Login</strong></div>
         <form id="form1" runat="server">
             <div class="body bg-gray">
                 <div class="form-group has-feedback">

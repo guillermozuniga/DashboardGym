@@ -30,7 +30,8 @@ Public Class UnidadNegocioLN
             Throw ex
         End Try
     End Function
-   
+
+    
 #End Region
 
 

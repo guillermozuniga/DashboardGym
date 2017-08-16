@@ -78,7 +78,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SociosLN.vb" />
     <Compile Include="UnidadNegocioLN.vb" />
+    <Compile Include="VentasLN.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

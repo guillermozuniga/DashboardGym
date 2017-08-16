@@ -74,7 +74,7 @@
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-th"></i><i class="fa fa-angle-left pull-right"></i>
-                            <span>Estadistica Negocio</span>
+                            <span>Estadistica por Unidad</span>
                         </a>
 
                         <ul class="treeview-menu">
@@ -82,7 +82,7 @@
                                 <a href="DetalleUN.aspx"><i class="fa fa-angle-double-right"></i>Unidades de Negocio</a>
                             </li>
                             <li>
-                                <a href="VtasNegocio.aspx"><i class="fa fa-angle-double-right"></i>Ventas Unidad Negocio</a>
+                                <a href="#"><i class="fa fa-angle-double-right"></i>Ventas Unidad Negocio</a>
                             </li>
                         </ul>
                     </li>
@@ -90,12 +90,31 @@
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-th"></i><i class="fa fa-angle-left pull-right"></i>
-                            <span>Estadistica Ventas</span>
+                            <span>Estadistica de Ventas</span>
                         </a>
 
                         <ul class="treeview-menu">
                             <li>
-                                <a href="wfTDonativos.aspx"><i class="fa fa-angle-double-right"></i>Ventas por Unidad</a>
+                                <a href="#"><i class="fa fa-angle-double-right"></i>Ventas por Unidad</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-th"></i><i class="fa fa-angle-left pull-right"></i>
+                            <span>Estadistica de Socios</span>
+                        </a>
+
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="#"><i class="fa fa-angle-double-right"></i>Socios Activos</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-angle-double-right"></i>Socios Nuevos</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-angle-double-right"></i>Socios por Vencer</a>
                             </li>
                         </ul>
                     </li>
@@ -114,9 +133,7 @@
         <aside class="right-side">
 
             <section class="content-header">
-                <h1>PANEL GENERAL
-                       <%--<small>it all starts here</small>--%>
-                </h1>
+                <h1>DASHBOARD&nbsp;</h1>
                 <ol class="breadcrumb">
                     <li><a href="Dashboard.aspx"><i class="fa fa-home"></i>Home</a></li>
                 </ol>
@@ -143,10 +160,15 @@
 <script src="Scripts/bootstrap.min.js" type="text/jscript"></script>
 <!-- SlimScroll -->
 <script src="plugins/slimScroll/jquery.slimscroll.min.js" type="text/jscript"></script>
+<!-- ChartJS 1.0.1 -->
+<script src="plugins/chartjs/Chart.min.js"></script>
 <!-- FastClick -->
 <script src="plugins/fastclick/fastclick.js" type="text/jscript"></script>
 <!-- AdminLTE App -->
 <script src="js/AdminLTE/app.js" type="text/jscript"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="js/AdminLTE/demo.js" type="text/jscript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
+
 </html>

@@ -7,39 +7,41 @@ Imports System.Text
 Imports System.Threading.Tasks
 Imports CapaEntidades
 
-Public Class UNegocioDAO
+Public Class VentasDAO
 #Region "PATRON SINGLETON"
-    Private Shared _UNegocioDAO As UNegocioDAO = Nothing
+    Private Shared _VentasDAO As VentasDAO = Nothing
 
     Private Sub New()
 
     End Sub
 
 
-    Public Shared Function getInstance() As UNegocioDAO
-        If _UNegocioDAO Is Nothing Then
-            _UNegocioDAO = New UNegocioDAO
+    Public Shared Function getInstance() As VentasDAO
+        If _VentasDAO Is Nothing Then
+            _VentasDAO = New VentasDAO
 
         End If
-        Return _UNegocioDAO
+        Return _VentasDAO
 
     End Function
 
 #End Region
 
 #Region "Rutinas"
-    Public Function GetSumaUNegocios() As DataTable
+    Public Function TotalVentas() As DataTable
 
         Dim conxion As SqlConnection = Nothing
         Dim cmd As SqlCommand = Nothing
         Dim da As New SqlDataAdapter
         Dim dt As New DataTable
-
+        Dim _Fecha As String
+        _Fecha = Format(Date.Now, "yyyyMMdd")
         Try
 
             conxion = Conexion.getInstance.Conexiondb
-            cmd = New SqlCommand("usp_GetAllGimnasios", conxion)
+            cmd = New SqlCommand("usp_SumaVentas", conxion)
             cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@Fecha", _Fecha)
             ' cmd.Connection.Open()
             da.SelectCommand = cmd
             da.Fill(dt)
@@ -58,8 +60,5 @@ Public Class UNegocioDAO
         Return dt
 
     End Function
-
-   
-
 #End Region
 End Class
