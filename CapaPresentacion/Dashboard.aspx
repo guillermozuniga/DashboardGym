@@ -37,6 +37,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <section class="content">
         <!-- Info boxes -->
         <div class="row">
@@ -122,50 +123,53 @@
         </div>
         <!-- /.row -->
     </section>
+
     <section class="content">
-        <div class="col-md-6">
-            <!-- LINE CHART -->
-            <div class="box box-info">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Chart Sales</h3>
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                            <i class="fa fa-minus"></i>
-                        </button>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- LINE CHART -->
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Chart Sales</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div class="box-body">
-                    <div class="chart">
-                        <canvas id="SalesChart" style="height: 220px"></canvas>
+                    <div class="box-body">
+                        <div class="chart">
+                            <canvas id="SalesChart" style="height: 242px; width: 476px;" height="242" width="476"></canvas>
+                        </div>
                     </div>
+                    <!-- /.box-body -->
                 </div>
-                <!-- /.box-body -->
+                <!-- /.box -->
             </div>
-            <!-- /.box -->
-        </div>
 
+            <div class="col-md-6">
+                <!-- LINE CHART -->
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Chart Users</h3>
 
-        <div class="col-md-6">
-            <!-- LINE CHART -->
-            <div class="box box-info">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Chart Users</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
 
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                            <i class="fa fa-minus"></i>
-                        </button>
-
+                        </div>
                     </div>
-                </div>
-                <div class="box-body">
-                    <div class="chart">
-                        <canvas id="lineChart1" style="height: 220px"></canvas>
+                    <div class="box-body">
+                        <div class="chart">
+                            <canvas id="UsersChart" style="height: 250px"></canvas>
+                        </div>
                     </div>
+                    <!-- /.box-body -->
                 </div>
-                <!-- /.box-body -->
+                <!-- /.box -->
             </div>
-            <!-- /.box -->
         </div>
     </section>
+    
 </asp:Content>

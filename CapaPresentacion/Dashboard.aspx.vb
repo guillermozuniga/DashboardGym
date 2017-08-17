@@ -1,22 +1,19 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data
+Imports System.Data.SqlClient
 Imports System.Web.Security
 Imports CapaEntidades
 Imports CapaLogicaNegocio
 Imports System.Net
 Imports System.Net.Mail
-Imports System.Data
-Imports System.Web.Services
-Imports System.Configuration
 
 Public Class Dashboard
     Inherits System.Web.UI.Page
 
-#Region "WebMethod"
-    <WebMethod()> _
+    <System.Web.Services.WebMethod()> _
     Public Shared Function getChartData() As List(Of String)
         Dim returnData = New List(Of String)()
-        Dim Con = New SqlConnection("Server=databaseserver;Database=chart;Trusted_Connection=True;")
-        Dim sql = New SqlCommand("select convert(varchar,date,106) 'Date',sum(quantity_sold) 'Qty' from tblProduct group by date;", Con)
+        Dim Con = New SqlConnection("Data Source=SQL.NEGOX.COM;Initial Catalog=eimagenn_gym_0001;Persist Security Info=True;User ID=eimagenn_usergym0001;Password=12@Kn1fe.")
+        Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas group by Fecha;", Con)
         Dim dataAdapter = New SqlDataAdapter(sql)
         Dim dataset = New DataSet()
         dataAdapter.Fill(dataset)
@@ -27,11 +24,14 @@ Public Class Dashboard
         chartLabel.Append("[")
         chartData.Append("[")
 
+
         For Each row As DataRow In dataset.Tables(0).Rows
 
-            chartLabel.Append(String.Format("'{0}',", row("Date").ToString()))
 
-            chartData.Append(String.Format("{0},", row("Qty").ToString()))
+            chartLabel.Append(String.Format("'{0}',", row("Fecha").ToString()))
+
+
+            chartData.Append(String.Format("{0},", row("Total").ToString()))
         Next
 
         chartData.Length -= 1
@@ -46,18 +46,13 @@ Public Class Dashboard
         Return returnData
     End Function
 
-
-
-#End Region
 #Region "Rutinas"
 
     Private Sub CargarUnidadesNegocio()
         Dim dt As DataTable
-
         dt = UnidadNegocioLN.getInstance().CantidadNegocios
 
         If dt.Rows.Count > 0 Then
-
             Me.LabelUnidadNegocio.Text = dt.Rows.Count
 
         Else
@@ -99,7 +94,7 @@ Public Class Dashboard
             Me.LabelSociosActivos.Text = CStr(value)
         End If
 
-       
+
     End Sub
 
     Private Sub CargarSociosNuevos()
@@ -185,8 +180,8 @@ Public Class Dashboard
                 ' Me.Label1.Text = " Movimiento de Ventas: 1 -  " & MonthName(Month(Date.Now)) & "    al    " & Day(Date.Now) & "  -  " & MonthName(Month(Date.Now))
 
                 'Me.Label2.Text = " Movimiento en Clientes: 1 -  " & MonthName(Month(Date.Now)) & "    al    " & Day(Date.Now) & "  -  " & MonthName(Month(Date.Now))
-                
-                
+
+
             End If
         End If
 
