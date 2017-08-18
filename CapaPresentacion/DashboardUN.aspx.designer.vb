@@ -11,16 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Dashboard
-
-    '''<summary>
-    '''LabelUnidadNegocio control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LabelUnidadNegocio As Global.System.Web.UI.WebControls.Label
+Partial Public Class DashboardUN
 
     '''<summary>
     '''LabelSociosActivos control.
@@ -57,22 +48,4 @@ Partial Public Class Dashboard
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LabelVentas As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''LabelSalesVentas control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LabelSalesVentas As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''LabelTituloUsers control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LabelTituloUsers As Global.System.Web.UI.WebControls.Label
 End Class

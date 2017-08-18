@@ -176,6 +176,7 @@ Public Class Dashboard
                 CargarSociosActivos()
                 CargarSociosNuevos()
                 CargarVentas()
+                Me.LabelSalesVentas.Text = "Grafica de Ventas"
                 CargarSociosPorVencer()
                 ' Me.Label1.Text = " Movimiento de Ventas: 1 -  " & MonthName(Month(Date.Now)) & "    al    " & Day(Date.Now) & "  -  " & MonthName(Month(Date.Now))
 

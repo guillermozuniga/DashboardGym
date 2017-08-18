@@ -60,7 +60,4 @@ Public Class DetalleUN
     End Sub
 
 
-    Protected Sub dlUnidadesNegocio_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dlUnidadesNegocio.SelectedIndexChanged
-
-    End Sub
 End Class

@@ -40,7 +40,9 @@
 
     <section class="content">
         <!-- Info boxes -->
+
         <div class="row">
+
             <!-- fix for small devices only -->
             <div class="clearfix visible-sm-block"></div>
             <div class="col-lg-3 col-xs-6">
@@ -122,54 +124,68 @@
 
         </div>
         <!-- /.row -->
-    </section>
 
-    <section class="content">
+
         <div class="row">
-            <div class="col-md-6">
-                <!-- LINE CHART -->
-                <div class="box box-info">
+            <div class="col-md-12">
+                <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Chart Sales</h3>
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                                <i class="fa fa-minus"></i>
-                            </button>
-                        </div>
+                        <h3 class="box-title">Monthly</h3>
                     </div>
                     <div class="box-body">
-                        <div class="chart">
-                            <canvas id="SalesChart" style="height: 242px; width: 476px;" height="242" width="476"></canvas>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!-- LINE CHART -->
+                                <div class="box box-solid bg-teal-gradient">
+                                    <div class="box-header ui-sortable-handle" style="cursor: move;">
+                                        <i class="fa fa-th"></i>
+                                        <h3 class="box-title">
+                                            <asp:Label ID="LabelSalesVentas" runat="server" Text=""></asp:Label></h3>
+                                        <div class="box-tools pull-right">
+                                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="box-body">
+                                        <div class="chart">
+                                            <canvas id="SalesChart" style="height: 242px; width: 476px;" height="242" width="476"></canvas>
+                                        </div>
+                                    </div>
+                                    <!-- /.box-body -->
+                                </div>
+                                <!-- /.box -->
+                            </div>
+
+                            <div class="col-md-6">
+                                <!-- LINE CHART -->
+                                <div class="box box-info">
+                                    <div class="box-header with-border">
+                                        <h3 class="box-title">
+                                            <asp:Label ID="LabelTituloUsers" runat="server" Text="Label"></asp:Label></h3>
+
+                                        <div class="box-tools pull-right">
+                                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                    <div class="box-body">
+                                        <div class="chart">
+                                            <canvas id="UsersChart" style="height: 250px"></canvas>
+                                        </div>
+                                    </div>
+                                    <!-- /.box-body -->
+                                </div>
+                                <!-- /.box -->
+                            </div>
                         </div>
                     </div>
-                    <!-- /.box-body -->
                 </div>
-                <!-- /.box -->
-            </div>
-
-            <div class="col-md-6">
-                <!-- LINE CHART -->
-                <div class="box box-info">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">Chart Users</h3>
-
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                                <i class="fa fa-minus"></i>
-                            </button>
-
-                        </div>
-                    </div>
-                    <div class="box-body">
-                        <div class="chart">
-                            <canvas id="UsersChart" style="height: 250px"></canvas>
-                        </div>
-                    </div>
-                    <!-- /.box-body -->
-                </div>
-                <!-- /.box -->
             </div>
         </div>
+
     </section>
-    
+
 </asp:Content>

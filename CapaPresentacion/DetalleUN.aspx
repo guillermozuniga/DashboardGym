@@ -23,7 +23,7 @@
                                     <div class="panel-body">
                                         <span class="label label-info"><%# Eval("IDGimnasio")%></span>
                                         <div class="thumbnail label-success">
-                                           <asp:Image ID="Image1" runat="server" ImageUrl='<%# "~/img/logo.png"%>' Width="120px" Height="120px" />
+                                           <asp:Image ID="Image1" runat="server" ImageUrl='<%# "~/img/logo.png"%>' Width="100px" Height="100px" />
 <%--                                           <asp:Image ID="Image2" runat="server" ImageUrl='<%# "~/" +Eval("image1").ToString().Trim() %>' Width="150px" Height="150px" />--%>
                                            <div class="caption">
                                                 <h4>U. Negocio <small> <%# Eval("IDGimnasio")%></small></h4>
@@ -36,7 +36,7 @@
                                                     <br />
                                                     <small>Kamar Mandi : <strong><%# Eval("IDGimnasio")%></strong> </small>--%>
                                                 </p>
-                                                <a href="#" class="btn btn-success">Detalles</a>
+                                                <a href="DashboardUN.aspx" class="btn btn-success">Detalles</a>
                                             </div>
                                         </div>
                                     </div>
