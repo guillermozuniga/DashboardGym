@@ -7,42 +7,49 @@ Imports System.Net
 Imports System.Net.Mail
 
 Public Class Dashboard
+
     Inherits System.Web.UI.Page
+
 
     <System.Web.Services.WebMethod()> _
     Public Shared Function getChartData() As List(Of String)
+        Dim grantotal As Double = 0.0
+
         Dim returnData = New List(Of String)()
         Dim Con = New SqlConnection("Data Source=SQL.NEGOX.COM;Initial Catalog=eimagenn_gym_0001;Persist Security Info=True;User ID=eimagenn_usergym0001;Password=12@Kn1fe.")
-        Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas group by Fecha;", Con)
+        Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas where Fecha >= '20170901' and Fecha < '20170911' group by Fecha;", Con)
+        'Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas group by Fecha order By Fecha;", Con)
         Dim dataAdapter = New SqlDataAdapter(sql)
         Dim dataset = New DataSet()
         dataAdapter.Fill(dataset)
+        If dataset.Tables(0).Rows.Count > 0 Then
 
+            Dim chartLabel = New StringBuilder()
+            Dim chartData = New StringBuilder()
+            chartLabel.Append("[")
+            chartData.Append("[")
 
-        Dim chartLabel = New StringBuilder()
-        Dim chartData = New StringBuilder()
-        chartLabel.Append("[")
-        chartData.Append("[")
+            For Each row As DataRow In dataset.Tables(0).Rows
 
+                chartLabel.Append(String.Format("'{0}',", row("Fecha").ToString()))
 
-        For Each row As DataRow In dataset.Tables(0).Rows
+                chartData.Append(String.Format("{0},", row("Total").ToString()))
+                grantotal = grantotal + CType(row("Total"), Double)
 
+            Next
 
-            chartLabel.Append(String.Format("'{0}',", row("Fecha").ToString()))
+            chartData.Length -= 1
+            'For removing ','  
+            chartData.Append("]")
+            chartLabel.Length -= 1
+            'For removing ',' 
+            chartLabel.Append("]")
 
+            returnData.Add(chartLabel.ToString())
+            returnData.Add(chartData.ToString())
 
-            chartData.Append(String.Format("{0},", row("Total").ToString()))
-        Next
+        End If
 
-        chartData.Length -= 1
-        'For removing ','  
-        chartData.Append("]")
-        chartLabel.Length -= 1
-        'For removing ',' 
-        chartLabel.Append("]")
-
-        returnData.Add(chartLabel.ToString())
-        returnData.Add(chartData.ToString())
         Return returnData
     End Function
 
@@ -114,6 +121,8 @@ Public Class Dashboard
             Me.LabelSociosNuevos.Text = CStr(value)
         End If
     End Sub
+
+
     Private Sub CargarSociosPorVencer()
         Dim dt As DataTable
 

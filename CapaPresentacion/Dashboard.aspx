@@ -16,7 +16,7 @@
                         labels: chartLabel,
                         datasets: [
                             {
-                                label: 'July Sales',
+                                label: '',
                                 fillColor: "rgba(225,225,225,0.2)",
                                 strokeColor: "Blue",
                                 pointColor: "rgba(220,220,220,1)",
@@ -110,7 +110,6 @@
                     <div class="inner">
                         <h2>
                             <asp:Label ID="LabelVentas" runat="server" Text="0.00"></asp:Label><sup style="font-size: 20px">$</sup></h2>
-
                         <p>Ventas</p>
                     </div>
                     <div class="icon">
@@ -129,14 +128,14 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="box">
-                    <div class="box-header with-border">
+<%--                    <div class="box-header with-border">
                         <h3 class="box-title">Monthly</h3>
-                    </div>
+                    </div>--%>
                     <div class="box-body">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <!-- LINE CHART -->
-                                <div class="box box-solid bg-teal-gradient">
+                                <div class="box box-solid">
                                     <div class="box-header ui-sortable-handle" style="cursor: move;">
                                         <i class="fa fa-th"></i>
                                         <h3 class="box-title">
@@ -149,7 +148,7 @@
                                     </div>
                                     <div class="box-body">
                                         <div class="chart">
-                                            <canvas id="SalesChart" style="height: 242px; width: 476px;" height="242" width="476"></canvas>
+                                            <canvas id="SalesChart" style="height: 242px; " height="242" width="920"></canvas>
                                         </div>
                                     </div>
                                     <!-- /.box-body -->
@@ -157,12 +156,17 @@
                                 <!-- /.box -->
                             </div>
 
-                            <div class="col-md-6">
+                            
+                        </div>
+                         <div class="row">
+                            
+
+                            <div class="col-md-12">
                                 <!-- LINE CHART -->
                                 <div class="box box-info">
                                     <div class="box-header with-border">
                                         <h3 class="box-title">
-                                            <asp:Label ID="LabelTituloUsers" runat="server" Text="Label"></asp:Label></h3>
+                                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></h3>
 
                                         <div class="box-tools pull-right">
                                             <button type="button" class="btn btn-box-tool" data-widget="collapse">
@@ -186,6 +190,7 @@
             </div>
         </div>
 
+     
     </section>
 
 </asp:Content>
