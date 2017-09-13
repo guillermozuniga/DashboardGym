@@ -67,10 +67,14 @@ Public Class SociosDAO
         Dim cmd As SqlCommand = Nothing
         Dim da As New SqlDataAdapter
         Dim dt As New DataTable
-        Dim _Fecha As String
+        Dim _Fecha, _FechaFinal As String
+        Dim fechainicio As New DateTime(DateTime.Now.Year, DateTime.Now.Month, 1)
 
-        _Fecha = Format(Date.Now, "yyyyMMdd")
+        Dim fechafin As DateTime = fechainicio.AddMonths(1).AddDays(-1)
 
+
+        _Fecha = Format(fechainicio, "yyyyMMdd")
+        _FechaFinal = Format(fechafin, "yyyyMMdd")
 
         Try
 
@@ -78,6 +82,7 @@ Public Class SociosDAO
             cmd = New SqlCommand("usp_SumaSociosNuevos", conxion)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@Fecha", _Fecha)
+            cmd.Parameters.AddWithValue("@FechaFin", _FechaFinal)
             ' cmd.Connection.Open()
             da.SelectCommand = cmd
             da.Fill(dt)

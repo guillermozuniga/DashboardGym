@@ -4,6 +4,7 @@
     <script>
         $(function () {
             var ctx = document.getElementById("SalesChart").getContext('2d');
+            
             $.ajax({
                 url: "Dashboard.aspx/getChartData",
                 type: "POST",
@@ -28,6 +29,13 @@
                         ]
                     };
                     var skillsChart = new Chart(ctx).Line(barData);
+                    var total = 0;
+                    for (var i = 0; i < chartData.length; i += 1) {
+                       total = total + chartData[i];
+                    }
+                    
+
+                    document.getElementById("<%=LabelVentas.ClientID%>").innerHTML = total
                 }
 
             });
@@ -45,7 +53,7 @@
 
             <!-- fix for small devices only -->
             <div class="clearfix visible-sm-block"></div>
-            <div class="col-lg-3 col-xs-6">
+            <div class="col-lg-2 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-aqua">
                     <div class="inner">
@@ -104,7 +112,7 @@
                     <a href="#" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-            <div class="col-lg-3 col-xs-6">
+            <div class="col-lg-4 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-green">
                     <div class="inner">

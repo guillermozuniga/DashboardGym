@@ -34,9 +34,13 @@ Public Class Dashboard
                 chartLabel.Append(String.Format("'{0}',", row("Fecha").ToString()))
 
                 chartData.Append(String.Format("{0},", row("Total").ToString()))
+
                 grantotal = grantotal + CType(row("Total"), Double)
 
             Next
+            'Dim page As Page = DirectCast(HttpContext.Current.Handler, Page)
+            'Dim LabelVenta As Label = DirectCast(page.FindControl("LabelVentas"), Label)
+            'LabelVenta.Text = grantotal
 
             chartData.Length -= 1
             'For removing ','  
