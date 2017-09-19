@@ -453,6 +453,7 @@
     <Content Include="wfproductos.aspx" />
     <Content Include="wfsocios.aspx" />
     <Content Include="wfventas.aspx" />
+    <None Include="My Project\PublishProfiles\DashboardGym.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="plugins\bootstrap-slider\bootstrap-slider.js" />
     <Content Include="plugins\bootstrap-slider\slider.css" />

@@ -5,6 +5,8 @@ Imports CapaEntidades
 Imports CapaLogicaNegocio
 Imports System.Net
 Imports System.Net.Mail
+Imports System.Configuration
+
 
 Public Class Dashboard
 
@@ -16,7 +18,10 @@ Public Class Dashboard
         Dim grantotal As Double = 0.0
 
         Dim returnData = New List(Of String)()
-        Dim Con = New SqlConnection("Data Source=SQL.NEGOX.COM;Initial Catalog=eimagenn_gym_0001;Persist Security Info=True;User ID=eimagenn_usergym0001;Password=12@Kn1fe.")
+
+        'Dim Con = New SqlConnection("Data Source=SQL.NEGOX.COM;Initial Catalog=eimagenn_gym_0001;Persist Security Info=True;User ID=eimagenn_usergym0001;Password=12@Kn1fe.")
+        Dim Con = New SqlConnection(ConfigurationManager.ConnectionStrings("SQLServer").ConnectionString)
+
         ' Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas where Fecha >= '" & Now.Year & Now.Month.ToString.PadLeft(2, "0") & "01" & "' and Fecha < ' " & Format(Date.Today, "yyyyMMdd") & "' group by Fecha order By Fecha;", Con)
         Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas where Fecha >= '" + Format(Date.Today, "yyyyMM") + "01" & "' and Fecha < '" & Format(Date.Today, "yyyyMMdd") & "' group by Fecha order By Fecha;", Con)
         'Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas group by Fecha order By Fecha;", Con)
