@@ -205,10 +205,12 @@ Public Class Dashboard
                 CargarUnidadesNegocio()
                 CargarSociosActivos()
                 CargarSociosNuevos()
+                CargarSociosPorVencer()
+
                 CargarVentas()
                 Me.LabelSalesVentas.Text = "Grafica de Ventas"
-                Me.LabelTituloGrafica.Text = "Del " & Format(Date.Today, "yyyy/MM/") + "01" & " al " & Format(Date.Today, "yyyy/MM/dd")
-                CargarSociosPorVencer()
+                Me.LabelTituloGrafica.Text = "Del     " & Format(Date.Today, "yyyy/MM/") + "01" & "     al     " & Format(Date.Today, "yyyy/MM/dd")
+
                 ' Me.Label1.Text = " Movimiento de Ventas: 1 -  " & MonthName(Month(Date.Now)) & "    al    " & Day(Date.Now) & "  -  " & MonthName(Month(Date.Now))
 
                 'Me.Label2.Text = " Movimiento en Clientes: 1 -  " & MonthName(Month(Date.Now)) & "    al    " & Day(Date.Now) & "  -  " & MonthName(Month(Date.Now))
