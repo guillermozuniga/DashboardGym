@@ -17,7 +17,8 @@ Public Class Dashboard
 
         Dim returnData = New List(Of String)()
         Dim Con = New SqlConnection("Data Source=SQL.NEGOX.COM;Initial Catalog=eimagenn_gym_0001;Persist Security Info=True;User ID=eimagenn_usergym0001;Password=12@Kn1fe.")
-        Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas where Fecha >= '20170901' and Fecha < '20170911' group by Fecha;", Con)
+        ' Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas where Fecha >= '" & Now.Year & Now.Month.ToString.PadLeft(2, "0") & "01" & "' and Fecha < ' " & Format(Date.Today, "yyyyMMdd") & "' group by Fecha order By Fecha;", Con)
+        Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas where Fecha >= '" + Format(Date.Today, "yyyyMM") + "01" & "' and Fecha < '" & Format(Date.Today, "yyyyMMdd") & "' group by Fecha order By Fecha;", Con)
         'Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas group by Fecha order By Fecha;", Con)
         Dim dataAdapter = New SqlDataAdapter(sql)
         Dim dataset = New DataSet()
@@ -58,6 +59,16 @@ Public Class Dashboard
     End Function
 
 #Region "Rutinas"
+
+    Function PrimerDiaDelMes(ByVal dtmFecha As Date) As Date
+        PrimerDiaDelMes = DateSerial(Year(dtmFecha), Month(dtmFecha), 1)
+    End Function
+
+
+    Function UltimoDiaDelMes(ByVal dtmFecha As Date) As Date
+        UltimoDiaDelMes = DateSerial(Year(dtmFecha), Month(dtmFecha) + 1, 0)
+    End Function
+
 
     Private Sub CargarUnidadesNegocio()
         Dim dt As DataTable
@@ -119,10 +130,15 @@ Public Class Dashboard
         Dim value As Object
 
         value = row.Item("Nuevos")
+
         If value Is DBNull.Value Then
+
             Me.LabelSociosNuevos.Text = "0.00"
+
         Else
+
             Me.LabelSociosNuevos.Text = CStr(value)
+
         End If
     End Sub
 
@@ -138,6 +154,7 @@ Public Class Dashboard
         Dim value As Object
 
         value = row.Item("PorVencer")
+
         If value Is DBNull.Value Then
             Me.LabelPorVencer.Text = "0.00"
         Else
@@ -190,6 +207,7 @@ Public Class Dashboard
                 CargarSociosNuevos()
                 CargarVentas()
                 Me.LabelSalesVentas.Text = "Grafica de Ventas"
+                Me.LabelTituloGrafica.Text = "Del " & Format(Date.Today, "yyyy/MM/") + "01" & " al " & Format(Date.Today, "yyyy/MM/dd")
                 CargarSociosPorVencer()
                 ' Me.Label1.Text = " Movimiento de Ventas: 1 -  " & MonthName(Month(Date.Now)) & "    al    " & Day(Date.Now) & "  -  " & MonthName(Month(Date.Now))
 

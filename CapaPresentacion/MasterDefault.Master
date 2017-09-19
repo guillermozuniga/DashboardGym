@@ -27,20 +27,20 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
     <!-- jQuery 2.2.3 -->
-<script src="plugins/jQuery/jquery-2.2.3.min.js" type="text/jscript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="Scripts/bootstrap.min.js" type="text/jscript"></script>
-<!-- SlimScroll -->
-<script src="plugins/slimScroll/jquery.slimscroll.min.js" type="text/jscript"></script>
-<!-- ChartJS 1.0.1 -->
-<script src="plugins/chartjs/Chart.min.js"></script>
-<!-- FastClick -->
-<script src="plugins/fastclick/fastclick.js" type="text/jscript"></script>
-<!-- AdminLTE App -->
-<script src="js/AdminLTE/app.js" type="text/jscript"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="js/AdminLTE/demo.js" type="text/jscript"></script>
+    <script src="plugins/jQuery/jquery-2.2.3.min.js" type="text/jscript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="Scripts/bootstrap.min.js" type="text/jscript"></script>
+    <!-- SlimScroll -->
+    <script src="plugins/slimScroll/jquery.slimscroll.min.js" type="text/jscript"></script>
+    <!-- ChartJS 1.0.1 -->
+    <script src="plugins/chartjs/Chart.min.js"></script>
+    <!-- FastClick -->
+    <script src="plugins/fastclick/fastclick.js" type="text/jscript"></script>
+    <!-- AdminLTE App -->
+    <script src="js/AdminLTE/app.js" type="text/jscript"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="js/AdminLTE/demo.js" type="text/jscript"></script>
 
 
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -84,43 +84,67 @@
                     <li class="active">
                         <a href="Dashboard.aspx">
                             <i class="fa fa-dashboard"></i>
-                            <span>Administración</span>
+                            <span>Inicio</span>
                         </a>
                     </li>
-
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-th"></i><i class="fa fa-angle-left pull-right"></i>
+                    <li class="active">
+                        <a href="DetalleUN.aspx">
+                            <i class="fa fa-list"></i>
                             <span>Estadistica por Unidad</span>
                         </a>
-
-                        <ul class="treeview-menu">
-                            <li>
-                                <a href="DetalleUN.aspx"><i class="fa fa-angle-double-right"></i>Unidades de Negocio</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-angle-double-right"></i>Ventas Unidad Negocio</a>
-                            </li>
-                        </ul>
+                    </li>
+                   <li class="active">
+                        <a href="wfventas.aspx">
+                            <i class="fa fa-list"></i>
+                            <span>Ventas</span>
+                        </a>
+                    </li>
+                     <li class="active">
+                        <a href="wfsocios.aspx">
+                            <i class="fa fa-list"></i>
+                            <span>Socios</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="wfproductos.aspx">
+                            <i class="fa fa-list"></i>
+                            <span>Productos</span>
+                        </a>
                     </li>
 
-                    <li class="treeview">
+                    <li class="active">
+                        <a href="wfcortecaja.aspx">
+                            <i class="fa fa-list"></i>
+                            <span>Corte de Caja</span>
+                        </a>
+                    </li>
+<%--                    <li class="treeview">
                         <a href="#">
                             <i class="fa fa-th"></i><i class="fa fa-angle-left pull-right"></i>
-                            <span>Estadistica de Ventas</span>
+                            <span>Folios</span>
                         </a>
 
                         <ul class="treeview-menu">
                             <li>
-                                <a href="#"><i class="fa fa-angle-double-right"></i>Ventas por Unidad</a>
+                                <a href="DetalleUN.aspx"><i class="fa fa-angle-double-right"></i>Ventas</a>
                             </li>
-                        </ul>
-                    </li>
+                            <li>
+                                <a href="DetalleUN.aspx"><i class="fa fa-angle-double-right"></i>Socios</a>
+                            </li>
+                            <li>
+                                <a href="DetalleUN.aspx"><i class="fa fa-angle-double-right"></i>Productos</a>
+                            </li>
+                            <li>
+                                <a href="DetalleUN.aspx"><i class="fa fa-angle-double-right"></i>Asistencias</a>
+                            </li>
 
-                    <li class="treeview">
+                        </ul>
+                    </li>--%>
+
+                    <%-- <li class="treeview">
                         <a href="#">
                             <i class="fa fa-th"></i><i class="fa fa-angle-left pull-right"></i>
-                            <span>Estadistica de Socios</span>
+                            <span>Socios</span>
                         </a>
 
                         <ul class="treeview-menu">
@@ -134,8 +158,25 @@
                                 <a href="#"><i class="fa fa-angle-double-right"></i>Socios por Vencer</a>
                             </li>
                         </ul>
-                    </li>
+                    </li>--%>
+                    <%--<li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-th"></i><i class="fa fa-angle-left pull-right"></i>
+                            <span>Productos</span>
+                        </a>
 
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="#"><i class="fa fa-angle-double-right"></i>Socios Activos</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-angle-double-right"></i>Socios Nuevos</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-angle-double-right"></i>Socios por Vencer</a>
+                            </li>
+                        </ul>
+                    </li>--%>
                     <li>
                         <a href="CerrarSession.aspx">
                             <i class="fa fa-share-square-o"></i>
@@ -149,12 +190,12 @@
 
         <aside class="right-side">
 
-            <section class="content-header">
-                <h1>DASHBOARD&nbsp;</h1>
+            <%--            <section class="content-header">
+                <h1>&nbsp;</h1>
                 <ol class="breadcrumb">
                     <li><a href="Dashboard.aspx"><i class="fa fa-home"></i>Home</a></li>
                 </ol>
-            </section>
+            </section>--%>
 
             <section class="content">
 

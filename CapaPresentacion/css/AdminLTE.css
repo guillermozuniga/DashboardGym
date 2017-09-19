@@ -1314,7 +1314,7 @@ body > .header .logo .icon {
   z-index: 5px;
 }
 .small-box .icon {
-  position: absolute;
+  position:absolute;
   top: auto;
   bottom: 5px;
   right: 5px;
@@ -1434,9 +1434,9 @@ body > .header .logo .icon {
 .box .box-header > .ion,
 .box .box-header .box-title {
   display: inline-block;
-  padding: 10px 10px 10px 10px;
+  padding: 5px 5px 5px 5px;
   margin: 0;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 400;
   float: left;
   cursor: default;

@@ -9,12 +9,17 @@ Public Class DetalleUN
 
 #Region "Rutinas"
     Private Sub GetAllUnidadesNegocio()
+
         Dim dt As DataTable
 
         dt = UnidadNegocioLN.getInstance().CantidadNegocios
+
         If dt.Rows.Count > 0 Then
+
             Me.dlUNegocio.DataSource = dt
+
             Me.dlUNegocio.DataBind()
+
 
         End If
 
@@ -28,6 +33,7 @@ Public Class DetalleUN
 
             valor = myValue.ToString
         End If
+
         Return valor.Substring(0, 15)
 
     End Function

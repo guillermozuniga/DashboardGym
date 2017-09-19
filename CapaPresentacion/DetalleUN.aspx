@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section class="content">
-        <!-- Info boxes -->        
+        <!-- Info boxes -->
         <div class="row">
             <!-- fix for small devices only -->
             <div class="clearfix visible-sm-block"></div>
@@ -23,22 +23,21 @@
                                     <div class="panel-body">
                                         <span class="label label-info"><%# Eval("IDGimnasio")%></span>
                                         <div class="thumbnail label-success">
-                                           <asp:Image ID="Image1" runat="server" ImageUrl='<%# "~/img/logo.png"%>' Width="100px" Height="100px" />
-<%--                                           <asp:Image ID="Image2" runat="server" ImageUrl='<%# "~/" +Eval("image1").ToString().Trim() %>' Width="150px" Height="150px" />--%>
-                                           <div class="caption">
-                                                <h4>U. Negocio <small> <%# Eval("IDGimnasio")%></small></h4>
-                                                <strong><%# Eval("Nombre")%></strong>
-                                                <p>
-                                                    <small>Nombre:<strong>  <%# Eval("NombreCorto")%> </strong> </small><%--<small>LB : <strong><%# Eval("IDGimnasio")%> m2</strong> </small>
+                                            <asp:Image ID="Image1" runat="server" ImageUrl='<%# "~/img/logo.png"%>' Width="85px" Height="85px" />      
+                                            <p style="text-align:center"><%# Eval("Nombre")%> </p>                                           
+                                           <p> <strong> Negocio: </strong><small><%# Eval("NombreCorto")%></small></p>
+                                            <p><strong>Nombre: </strong><small><%# Eval("NombreSucursal")%> </small></p>
+                                                <%--<asp:Image ID="Image2" runat="server" ImageUrl='<%# "~/" +Eval("image1").ToString().Trim() %>' Width="150px" Height="150px" />--%>
+                                                <%--<small>LB : <strong><%# Eval("IDGimnasio")%> m2</strong> </small>
                                                     <small>Setifikat : <strong><%# Eval("IDGimnasio")%></strong> </small>--%>
-                                                    <br />
-                                                   <%-- <small>Kamar : <strong><%# Eval("IDGimnasio")%></strong> </small>
+                                                <br />
+                                                <%-- <small>Kamar : <strong><%# Eval("IDGimnasio")%></strong> </small>
                                                     <br />
                                                     <small>Kamar Mandi : <strong><%# Eval("IDGimnasio")%></strong> </small>--%>
-                                                </p>
-                                                <a href="DashboardUN.aspx" class="btn btn-success">Detalles</a>
-                                            </div>
+                                            
+                                            <a href="DashboardUN.aspx" class="btn btn-success">Detalles </a>
                                         </div>
+
                                     </div>
                                 </div>
                                 <%--</div>--%>

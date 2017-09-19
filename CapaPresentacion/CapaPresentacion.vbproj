@@ -449,6 +449,10 @@
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="wfcortecaja.aspx" />
+    <Content Include="wfproductos.aspx" />
+    <Content Include="wfsocios.aspx" />
+    <Content Include="wfventas.aspx" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="plugins\bootstrap-slider\bootstrap-slider.js" />
     <Content Include="plugins\bootstrap-slider\slider.css" />
@@ -1253,6 +1257,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="SociosUN.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1330,6 +1335,41 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SociosUN.aspx.designer.vb">
+      <DependentUpon>SociosUN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SociosUN.aspx.vb">
+      <DependentUpon>SociosUN.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="wfcortecaja.aspx.designer.vb">
+      <DependentUpon>wfcortecaja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfcortecaja.aspx.vb">
+      <DependentUpon>wfcortecaja.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="wfproductos.aspx.designer.vb">
+      <DependentUpon>wfproductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfproductos.aspx.vb">
+      <DependentUpon>wfproductos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="wfsocios.aspx.designer.vb">
+      <DependentUpon>wfsocios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfsocios.aspx.vb">
+      <DependentUpon>wfsocios.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="wfventas.aspx.designer.vb">
+      <DependentUpon>wfventas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfventas.aspx.vb">
+      <DependentUpon>wfventas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
