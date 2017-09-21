@@ -23,13 +23,13 @@ Partial Public Class wfventas
     Protected WithEvents DropDownListunegocio As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''txtFechaIni control.
+    '''txtFecha control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtFechaIni As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtFecha As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''TxtFechaFin control.
@@ -39,4 +39,34 @@ Partial Public Class wfventas
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TxtFechaFin As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ButtonBuscar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ButtonBuscar As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''GridView1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Master property.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated property.
+    '''</remarks>
+    Public Shadows ReadOnly Property Master() As CapaPresentacion.MasterDefault
+        Get
+            Return CType(MyBase.Master, CapaPresentacion.MasterDefault)
+        End Get
+    End Property
 End Class

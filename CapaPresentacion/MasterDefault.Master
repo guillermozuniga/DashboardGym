@@ -16,10 +16,10 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
     <!-- Theme style -->
+
     <link rel="stylesheet" href="css/AdminLTE.css" type="text/css" />
-
     <link rel="stylesheet" href="css/estilospropios.css" type="text/css" />
-
+    <link href="plugins/datepicker/datepicker3.css" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -27,14 +27,19 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
     <!-- jQuery 2.2.3 -->
+
     <script src="plugins/jQuery/jquery-2.2.3.min.js" type="text/jscript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js" type="text/jscript"></script>
+    
     <!-- Bootstrap 3.3.6 -->
+
     <script src="Scripts/bootstrap.min.js" type="text/jscript"></script>
+    <script src="plugins/datepicker/bootstrap-datepicker.js" type="text/jscript"></script>
     <!-- SlimScroll -->
     <script src="plugins/slimScroll/jquery.slimscroll.min.js" type="text/jscript"></script>
     <!-- ChartJS 1.0.1 -->
-    <script src="plugins/chartjs/Chart.min.js"></script>
+    <script src="plugins/chartjs/Chart.min.js" type="text/jscript"></script>
+
     <!-- FastClick -->
     <script src="plugins/fastclick/fastclick.js" type="text/jscript"></script>
     <!-- AdminLTE App -->
@@ -42,10 +47,18 @@
     <!-- AdminLTE for demo purposes -->
     <script src="js/AdminLTE/demo.js" type="text/jscript"></script>
 
-
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+        $(function () {
+
+            $('.datepicker').datepicker();
+           
+        });
+
+    </script>
 </head>
+
 <body class="skin-blue">
     <header class="header">
         <a href="#" class="logo">Concentrador Web</a>
@@ -93,13 +106,13 @@
                             <span>Estadistica por Unidad</span>
                         </a>
                     </li>
-                   <li class="active">
+                    <li class="active">
                         <a href="wfventas.aspx">
                             <i class="fa fa-list"></i>
                             <span>Ventas</span>
                         </a>
                     </li>
-                     <li class="active">
+                    <li class="active">
                         <a href="wfsocios.aspx">
                             <i class="fa fa-list"></i>
                             <span>Socios</span>
@@ -118,7 +131,7 @@
                             <span>Corte de Caja</span>
                         </a>
                     </li>
-<%--                    <li class="treeview">
+                    <%--                    <li class="treeview">
                         <a href="#">
                             <i class="fa fa-th"></i><i class="fa fa-angle-left pull-right"></i>
                             <span>Folios</span>

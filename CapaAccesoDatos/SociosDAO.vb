@@ -73,7 +73,8 @@ Public Class SociosDAO
         Dim fechafin As DateTime = fechainicio.AddMonths(1).AddDays(-1)
 
 
-        _Fecha = Format(fechainicio, "yyyyMMdd")
+        '_Fecha = Format(fechainicio, "yyyyMMdd")
+        _Fecha = Format(Date.Now.ToShortDateString, "yyyyMMdd")
         _FechaFinal = Format(fechafin, "yyyyMMdd")
 
         Try

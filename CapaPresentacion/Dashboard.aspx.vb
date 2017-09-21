@@ -23,7 +23,7 @@ Public Class Dashboard
         Dim Con = New SqlConnection(ConfigurationManager.ConnectionStrings("SQLServer").ConnectionString)
 
         ' Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas where Fecha >= '" & Now.Year & Now.Month.ToString.PadLeft(2, "0") & "01" & "' and Fecha < ' " & Format(Date.Today, "yyyyMMdd") & "' group by Fecha order By Fecha;", Con)
-        Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas where Fecha >= '" + Format(Date.Today, "yyyyMM") + "01" & "' and Fecha < '" & Format(Date.Today, "yyyyMMdd") & "' group by Fecha order By Fecha;", Con)
+        Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas where Fecha >= '" + Format(Date.Today, "yyyyMM") + "01" & "' and Fecha <= '" & Format(Date.Today, "yyyyMMdd") & "' group by Fecha order By Fecha;", Con)
         'Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas group by Fecha order By Fecha;", Con)
         Dim dataAdapter = New SqlDataAdapter(sql)
         Dim dataset = New DataSet()
@@ -212,7 +212,7 @@ Public Class Dashboard
                 CargarSociosNuevos()
                 CargarSociosPorVencer()
 
-                CargarVentas()
+                'CargarVentas()
                 Me.LabelSalesVentas.Text = "Grafica de Ventas"
                 Me.LabelTituloGrafica.Text = "Del     " & Format(Date.Today, "yyyy/MM/") + "01" & "     al     " & Format(Date.Today, "yyyy/MM/dd")
 

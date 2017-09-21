@@ -155,6 +155,7 @@
             <div class="col-md-12">
                 <div class="box">
                     <div class="box-header with-border">
+                        <i class="fa fa-line-chart"></i>
                         <h3 class="box-title">
                             <asp:Label ID="LabelSalesVentas" runat="server" Text=""></asp:Label></h3>
                     </div>
