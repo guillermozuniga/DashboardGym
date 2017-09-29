@@ -84,21 +84,8 @@
             <!-- ./col -->
 
         </div>
-        <div class="row">
-            <div class="col-lg-3 col-xs-6">
-                <!-- small box -->
-                <div class="small-box bg-orange">
-                    <div class="inner">
-                        <h2>
-                            <asp:Label ID="Label2" runat="server" Text="0"></asp:Label></h2>
-                        <p>Socios Inscritos</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-person-stalker"></i>
-                    </div>
-                    <a href="wfsocios.aspx" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
+        <div class="row">            
+
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-primary">
@@ -116,12 +103,11 @@
 
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
-                <div class="small-box bg-orange">
+                <div class="small-box bg-yellow">
                     <div class="inner">
                         <h2>
                             <asp:Label ID="LabelSociosNuevos" runat="server" Text="0"></asp:Label></h2>
-
-                        <p>Nuevos Socios</p>
+                        <p>Socios Nuevos</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-person-add"></i>
@@ -129,6 +115,9 @@
                     <a href="wfsocios.aspx" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
+
+           
+
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-primary">
@@ -139,12 +128,29 @@
                         <h2>
                             <asp:Label ID="LabelPorVencer" runat="server" Text=""></asp:Label></h2>
 
-                        <p>Socios que Vencen</p>
+                        <p>Socios por Vencer</p>
                     </div>
 
                     <a href="wfsocios.aspx" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
+
+            
+             <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-yellow">
+                    <div class="inner">
+                        <h2>
+                            <asp:Label ID="LabelRenovados" runat="server" Text="0"></asp:Label></h2>
+                        <p>Socios Renovados</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-person-stalker"></i>
+                    </div>
+                    <a href="wfsocios.aspx" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            
 
 
         </div>
@@ -156,12 +162,10 @@
                 <div class="box">
                     <div class="box-header with-border">
                         <i class="fa fa-line-chart"></i>
-                        <h3 class="box-title">
-                            <asp:Label ID="LabelSalesVentas" runat="server" Text=""></asp:Label></h3>
+                        <h4 class="box-title">
+                            <asp:Label ID="LabelSalesVentas" runat="server" Text=""></asp:Label></h4>
                     </div>
-
                     <!-- LINE CHART -->
-
                     <div class="box-body">
                         <p class="text-center">
                             <strong>
@@ -182,8 +186,11 @@
                     <!-- LINE CHART -->
                     <div class="box box-info">
                         <div class="box-header with-border">
-                            <h3 class="box-title">
-                                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></h3>
+                            <i class="fa fa-line-chart"></i>
+                            
+                        <h4 class="box-title">
+                            
+                            <asp:Label ID="LabelUsersGrafic" runat="server" Text=""></asp:Label></h4>
                             <%--<div class="box-tools pull-right">
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse">
                                     <i class="fa fa-minus"></i>

@@ -48,4 +48,16 @@ Partial Public Class DashboardUN
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LabelVentas As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Master property.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated property.
+    '''</remarks>
+    Public Shadows ReadOnly Property Master() As CapaPresentacion.MasterDefault
+        Get
+            Return CType(MyBase.Master, CapaPresentacion.MasterDefault)
+        End Get
+    End Property
 End Class

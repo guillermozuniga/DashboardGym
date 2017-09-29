@@ -167,6 +167,25 @@ Public Class Dashboard
         End If
     End Sub
 
+    Private Sub CargarSociosQueRenovaron()
+        Dim dt As DataTable
+
+        dt = SociosLN.getInstance().CantidadSociosQueRenovaron
+
+
+        Dim row As DataRow = dt.Rows(dt.Rows.Count - 1)
+
+        Dim value As Object
+
+        value = row.Item("Renovados")
+
+        If value Is DBNull.Value Then
+            Me.LabelRenovados.Text = "0.00"
+        Else
+            Me.LabelRenovados.Text = CStr(value)
+        End If
+    End Sub
+
 
     Private Sub CargarVentas()
         Dim dt As DataTable
@@ -211,11 +230,12 @@ Public Class Dashboard
                 CargarSociosActivos()
                 CargarSociosNuevos()
                 CargarSociosPorVencer()
-
+                CargarSociosQueRenovaron()
                 'CargarVentas()
                 Me.LabelSalesVentas.Text = "Grafica de Ventas"
                 Me.LabelTituloGrafica.Text = "Del     " & Format(Date.Today, "yyyy/MM/") + "01" & "     al     " & Format(Date.Today, "yyyy/MM/dd")
 
+                Me.LabelUsersGrafic.Text = "Grafica de Usuarios"
                 ' Me.Label1.Text = " Movimiento de Ventas: 1 -  " & MonthName(Month(Date.Now)) & "    al    " & Day(Date.Now) & "  -  " & MonthName(Month(Date.Now))
 
                 'Me.Label2.Text = " Movimiento en Clientes: 1 -  " & MonthName(Month(Date.Now)) & "    al    " & Day(Date.Now) & "  -  " & MonthName(Month(Date.Now))

@@ -12,4 +12,16 @@ Option Explicit On
 
 
 Partial Public Class DetalleporUN
+
+    '''<summary>
+    '''Master property.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated property.
+    '''</remarks>
+    Public Shadows ReadOnly Property Master() As CapaPresentacion.MasterDefault
+        Get
+            Return CType(MyBase.Master, CapaPresentacion.MasterDefault)
+        End Get
+    End Property
 End Class

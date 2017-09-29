@@ -74,7 +74,7 @@ Public Class SociosDAO
 
 
         '_Fecha = Format(fechainicio, "yyyyMMdd")
-        _Fecha = Format(Date.Now.ToShortDateString, "yyyyMMdd")
+        _Fecha = Format(Date.Now, "yyyyMMdd")
         _FechaFinal = Format(fechafin, "yyyyMMdd")
 
         Try
@@ -83,7 +83,6 @@ Public Class SociosDAO
             cmd = New SqlCommand("usp_SumaSociosNuevos", conxion)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@Fecha", _Fecha)
-            cmd.Parameters.AddWithValue("@FechaFin", _FechaFinal)
             ' cmd.Connection.Open()
             da.SelectCommand = cmd
             da.Fill(dt)
@@ -119,6 +118,41 @@ Public Class SociosDAO
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@Fecha", _Fecha)
             cmd.Parameters.AddWithValue("@FechaFinal", _FechaFin)
+            ' cmd.Connection.Open()
+            da.SelectCommand = cmd
+            da.Fill(dt)
+
+        Catch ex As Exception
+            Console.WriteLine("SQL Error: " + ex.Message)
+            Throw ex
+
+        Finally
+
+            cmd.Connection.Close()
+            cmd.Connection.Dispose()
+
+        End Try
+
+        Return dt
+
+    End Function
+
+    Public Function SumaSociosQueRenovaron() As DataTable
+
+        Dim conxion As SqlConnection = Nothing
+        Dim cmd As SqlCommand = Nothing
+        Dim da As New SqlDataAdapter
+        Dim dt As New DataTable
+        Dim _Fecha, _FechaFin As String
+        _Fecha = Format(Date.Now, "yyyyMMdd")
+        _FechaFin = Format(Date.Now.AddDays(2), "yyyyMMdd")
+        Try
+
+            conxion = Conexion.getInstance.Conexiondb
+            cmd = New SqlCommand("usp_SumaSociosquerenovaron", conxion)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@Fecha", _Fecha)
+            'cmd.Parameters.AddWithValue("@FechaFinal", _FechaFin)
             ' cmd.Connection.Open()
             da.SelectCommand = cmd
             da.Fill(dt)

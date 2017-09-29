@@ -6,7 +6,7 @@
     <section class="content wrapper">
         <section class="content-header">         
             <p style="text-align: center">
-                <asp:DropDownList ID="DropDownListunegocio" CssClass="btn btn-def" runat="server" Style="width: 55%" AutoPostBack="false"></asp:DropDownList>
+                <asp:DropDownList ID="DropDownListunegocio" CssClass="btn btn-def" runat="server" Style="width: 40%" AutoPostBack="false"></asp:DropDownList>
             </p>
         </section>
         <section class="content">
@@ -21,7 +21,7 @@
                         <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                         </div>
-                        <asp:TextBox ID="txtFecha" Style="width: 90%" data-inputmask="'alias': 'dd/mm/yyyy'"
+                        <asp:TextBox ID="txtFecha" Style="width: 80%" data-inputmask="'alias': 'dd/mm/yyyy'"
                             data-mask="" runat="server" CssClass="form-control" data-provide="datepicker"></asp:TextBox>                              
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                         <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                         </div>
-                        <asp:TextBox ID="TxtFechaFin" Style="width: 90%" data-inputmask="'alias': 'dd/mm/yyyy'"
+                        <asp:TextBox ID="TxtFechaFin" Style="width: 80%" data-inputmask="'alias': 'dd/mm/yyyy'"
                             data-mask="" runat="server" CssClass="form-control" data-provide="datepicker"></asp:TextBox>
                     </div>
                 </div>

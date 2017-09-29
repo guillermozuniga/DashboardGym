@@ -1437,8 +1437,8 @@ body > .header .logo .icon {
   padding: 5px 5px 5px 5px;
   margin: 0;
   font-size: 18px;
-  font-weight: 400;
-  float: left;
+  font-weight: 600;
+  float:left;
   cursor: default;
 }
 .box .box-header a {
