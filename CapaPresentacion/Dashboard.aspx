@@ -84,7 +84,7 @@
             <!-- ./col -->
 
         </div>
-        <div class="row">            
+        <div class="row">
 
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
@@ -116,8 +116,6 @@
                 </div>
             </div>
 
-           
-
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-primary">
@@ -135,8 +133,7 @@
                 </div>
             </div>
 
-            
-             <div class="col-lg-3 col-xs-6">
+            <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-yellow">
                     <div class="inner">
@@ -150,12 +147,10 @@
                     <a href="wfsocios.aspx" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-            
 
 
         </div>
         <!-- /.row -->
-
 
         <div class="row">
             <div class="col-md-12">
@@ -172,7 +167,7 @@
                                 <asp:Label ID="LabelTituloGrafica" runat="server" Text=""></asp:Label></strong>
                         </p>
                         <div class="chart">
-                            <canvas id ="salesChart" style="height:250px; width:1100px" height="250" width="1100"></canvas>
+                            <canvas id="salesChart" style="height: 250px; width: 1100px" height="250" width="1100"></canvas>
                         </div>
 
                     </div>
@@ -187,10 +182,10 @@
                     <div class="box box-info">
                         <div class="box-header with-border">
                             <i class="fa fa-line-chart"></i>
-                            
-                        <h4 class="box-title">
-                            
-                            <asp:Label ID="LabelUsersGrafic" runat="server" Text=""></asp:Label></h4>
+
+                            <h4 class="box-title">
+
+                                <asp:Label ID="LabelUsersGrafic" runat="server" Text=""></asp:Label></h4>
                             <%--<div class="box-tools pull-right">
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse">
                                     <i class="fa fa-minus"></i>

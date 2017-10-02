@@ -49,6 +49,7 @@ Public Class wfventas
     End Sub
 
     Private Sub CargarUnidadesNegocio()
+
         Dim dt As DataTable
         dt = UnidadNegocioLN.getInstance().CantidadNegocios
         DropDownListunegocio.DataSource = dt
@@ -60,15 +61,18 @@ Public Class wfventas
     End Sub
 
     Private Sub wfventas_Init(sender As Object, e As EventArgs) Handles Me.Init
-
+        CargarUnidadesNegocio()
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'BindDropDownList(DropDownListunegocio, "Select * from SGE_VistaTutorEstudiante where Tutor = '" & miDataTable.Rows(0).Item(0).ToString & "' ", "Nombre", "Matricula_Estudiante", "-- Seleccione Estudiante --")
-        CargarUnidadesNegocio()
+
     End Sub
 
     Private Sub ButtonBuscar_Click(sender As Object, e As EventArgs) Handles ButtonBuscar.Click
+        If txtFecha.Text.Length > 0 And TxtFechaFin.Text.Length > 0 Then
+
+        End If
 
     End Sub
 End Class
