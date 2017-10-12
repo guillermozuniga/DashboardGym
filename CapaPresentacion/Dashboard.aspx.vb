@@ -1,7 +1,6 @@
 ﻿Imports System.Data
 Imports System.Data.SqlClient
 Imports System.Web.Security
-Imports CapaEntidades
 Imports CapaLogicaNegocio
 Imports System.Net
 Imports System.Net.Mail
@@ -187,6 +186,47 @@ Public Class Dashboard
     End Sub
 
 
+    Private Sub CargarSociosQueNoRenovaron()
+        Dim dt As DataTable
+
+        dt = SociosLN.getInstance().CantidadSociosQueNORenovaron
+
+
+        Dim row As DataRow = dt.Rows(dt.Rows.Count - 1)
+
+        Dim value As Object
+
+        value = row.Item("NoRenovados")
+
+        If value Is DBNull.Value Then
+            Me.LabelNoRenovados.Text = "0.00"
+        Else
+            Me.LabelNoRenovados.Text = CStr(value)
+        End If
+    End Sub
+
+
+    Private Sub CargarSociosVencidosconasistencia()
+
+        Dim dt As DataTable
+
+        dt = SociosLN.getInstance().SociosVencidosconasistencia
+
+
+        Dim row As DataRow = dt.Rows(dt.Rows.Count - 1)
+
+        Dim value As Object
+
+        value = row.Item("NoRenovados")
+
+        If value Is DBNull.Value Then
+            Me.LabelNoRenovados.Text = "0.00"
+        Else
+            Me.LabelNoRenovados.Text = CStr(value)
+        End If
+    End Sub
+
+
     Private Sub CargarVentas()
         Dim dt As DataTable
 
@@ -231,6 +271,9 @@ Public Class Dashboard
                 CargarSociosNuevos()
                 CargarSociosPorVencer()
                 CargarSociosQueRenovaron()
+                CargarSociosQueNoRenovaron()
+                CargarSociosVencidosconasistencia()
+
                 'CargarVentas()
                 Me.LabelSalesVentas.Text = "Grafica de Ventas"
                 Me.LabelTituloGrafica.Text = "Del     " & Format(Date.Today, "yyyy/MM/") + "01" & "     al     " & Format(Date.Today, "yyyy/MM/dd")

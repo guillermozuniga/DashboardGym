@@ -68,6 +68,24 @@ Partial Public Class Dashboard
     Protected WithEvents LabelRenovados As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''LabelNoRenovados control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LabelNoRenovados As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Label2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''LabelSalesVentas control.
     '''</summary>
     '''<remarks>

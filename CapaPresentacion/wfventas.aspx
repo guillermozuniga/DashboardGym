@@ -51,7 +51,7 @@
                             <h5>Reporte de Ventas </h5>
                         </div>
                         <div class="box-body table-responsive">
-                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Width="100%" CssClass="table table-bordered table-hover">
+                            <asp:GridView ID="gvVentas" runat="server" AutoGenerateColumns="False" Width="100%" CssClass="table table-bordered table-hover">
                                 <Columns>
                                     <asp:BoundField DataField="IDGimnasio" HeaderText="U.Negocio" SortExpression="IDGImnasio" />
                                     <asp:BoundField DataField="IDFolio" HeaderText="Folio" SortExpression="IDFolio" />

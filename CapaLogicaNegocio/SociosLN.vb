@@ -58,6 +58,24 @@ Public Class SociosLN
             Throw ex
         End Try
     End Function
+
+    Public Function CantidadSociosQueNORenovaron()
+        Try
+            Return SociosDAO.getInstance.SumaSociosQueNoRenovaron
+        Catch ex As Exception
+            Console.WriteLine("SQL Error: " + ex.Message)
+            Throw ex
+        End Try
+    End Function
+
+    Public Function SociosVencidosconasistencia()
+        Try
+            Return SociosDAO.getInstance.Vencidosconasistencia
+        Catch ex As Exception
+            Console.WriteLine("SQL Error: " + ex.Message)
+            Throw ex
+        End Try
+    End Function
 #End Region
 End Class
 

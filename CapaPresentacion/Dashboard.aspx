@@ -86,7 +86,7 @@
         </div>
         <div class="row">
 
-            <div class="col-lg-3 col-xs-6">
+            <div class="col-lg-2 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-primary">
                     <div class="inner">
@@ -101,9 +101,9 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-xs-6">
+            <div class="col-lg-2 col-xs-6">
                 <!-- small box -->
-                <div class="small-box bg-yellow">
+                <div class="small-box bg-orange">
                     <div class="inner">
                         <h2>
                             <asp:Label ID="LabelSociosNuevos" runat="server" Text="0"></asp:Label></h2>
@@ -116,7 +116,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-xs-6">
+            <div class="col-lg-2 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-primary">
                     <div class="icon">
@@ -133,9 +133,9 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-xs-6">
+            <div class="col-lg-2 col-xs-6">
                 <!-- small box -->
-                <div class="small-box bg-yellow">
+                <div class="small-box bg-orange">
                     <div class="inner">
                         <h2>
                             <asp:Label ID="LabelRenovados" runat="server" Text="0"></asp:Label></h2>
@@ -147,7 +147,34 @@
                     <a href="wfsocios.aspx" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-
+            <div class="col-lg-2 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-primary">
+                    <div class="inner">
+                        <h2>
+                            <asp:Label ID="LabelNoRenovados" runat="server" Text="0"></asp:Label></h2>
+                        <p>Socios NO Renovaron</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-person-stalker"></i>
+                    </div>
+                    <a href="wfsocios.aspx" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-orange">
+                    <div class="inner">
+                        <h2>
+                            <asp:Label ID="Label2" runat="server" Text="0"></asp:Label></h2>
+                        <p>Pendiente</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-person-stalker"></i>
+                    </div>
+                    <a href="wfsocios.aspx" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
 
         </div>
         <!-- /.row -->

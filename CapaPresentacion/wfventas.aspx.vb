@@ -8,7 +8,6 @@ Imports System.Threading
 Imports System.Configuration
 Imports System.Web.UI
 Imports System.Collections.Generic
-Imports CapaEntidades
 Imports CapaLogicaNegocio
 Public Class wfventas
     Inherits System.Web.UI.Page

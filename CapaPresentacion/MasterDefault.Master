@@ -33,7 +33,7 @@
     
     <!-- Bootstrap 3.3.6 -->
 
-    <script src="Scripts/bootstrap.min.js" type="text/jscript"></script>
+    <script src="Scripts/bootstrap.min.js" type="text/jscript"></script>    
     <script src="plugins/datepicker/bootstrap-datepicker.js" type="text/jscript"></script>
     <!-- SlimScroll -->
     <script src="plugins/slimScroll/jquery.slimscroll.min.js" type="text/jscript"></script>
@@ -49,14 +49,7 @@
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <script type="text/javascript">
-        $(function () {
 
-            $('.datepicker').datepicker();
-           
-        });
-
-    </script>
 </head>
 
 <body class="skin-blue">
