@@ -117,7 +117,7 @@ Public Class SociosDAO
             cmd = New SqlCommand("usp_SumaSociosPorVencer", conxion)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@Fecha", _Fecha)
-            cmd.Parameters.AddWithValue("@FechaFinal", _FechaFin)
+            cmd.Parameters.AddWithValue("@FechaFinal", _Fecha)
             ' cmd.Connection.Open()
             da.SelectCommand = cmd
             da.Fill(dt)

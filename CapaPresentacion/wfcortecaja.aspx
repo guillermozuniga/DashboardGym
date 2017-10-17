@@ -2,20 +2,29 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+     <section class="content-header">
+        <h1 style="text-align: center">Tipos de Donativos</h1>
+    </section>
     <section class="content">
-        <!-- Info boxes -->
         <div class="row">
-            <!-- fix for small devices only -->
-            <div class="clearfix visible-sm-block"></div>
-            <div class="col-lg-12">
+            <div class="col-md-6">
+                <div class="box box-primary">
+                    <div class="box-body">
+                        <label>Información de Folios</label>
+                        
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
                 <div class="box box-primary">
                     <div class="box-header">
-                        <h3 class="box-title" style="text-align: center">Detalle Corte de Caja por Unidad de Negocio</h3>
+                        <h3 class="box-title">Listado de Produtos</h3>
                     </div>
                     <div class="box-body">
-
-                       
+                        
                     </div>
+
                 </div>
             </div>
         </div>

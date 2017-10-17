@@ -22,6 +22,7 @@ Public Class UnidadNegocioLN
 
 #End Region
 #Region "Rutinas"
+
     Public Function CantidadNegocios()
         Try
             Return UNegocioDAO.getInstance.GetSumaUNegocios
@@ -31,7 +32,6 @@ Public Class UnidadNegocioLN
         End Try
     End Function
 
-    
 #End Region
 
 

@@ -31,5 +31,15 @@ Public Class VentasLN
             Throw ex
         End Try
     End Function
+
+    Public Function GeneraldeVentas(ByVal Fechaini As String, ByVal FechaFin As String, ByVal IDGim As Integer)
+        Try
+            Return VentasDAO.getInstance.GeneralVentas(Fechaini, FechaFin, IDGim)
+        Catch ex As Exception
+            Console.WriteLine("SQL Error: " + ex.Message)
+            Throw ex
+        End Try
+
+    End Function
 #End Region
 End Class

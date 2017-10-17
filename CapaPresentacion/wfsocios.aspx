@@ -12,10 +12,21 @@
                     <div class="box-header">
                         <h3 class="box-title" style="text-align: center">Detalle Socios por Unidad de Negocio</h3>
                     </div>
-                    <div class="box-body">
+                    <div class="box-body">                        
+                        <div class="box-body table-responsive">
+                            <asp:GridView ID="gvVentas" runat="server" AutoGenerateColumns="False" Width="100%" CssClass="table table-bordered table-hover">
+                                <Columns>
+                                    <asp:BoundField DataField="IDGimnasio" HeaderText="U.Negocio" SortExpression="IDGImnasio" />
+                                    <asp:BoundField DataField="IDCliente" HeaderText="Numero de Socio" SortExpression="IDCliente" />
+                                    <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
+                                    <asp:BoundField DataField="FechaUltimoPago" HeaderText="Fecha de Pago" />
+                                    <asp:BoundField DataField="FechaVencimiento" HeaderText="Fecha de Vencimiento" />
+                                </Columns>
+                            </asp:GridView>
+                        </div>
 
-                       
                     </div>
+               
                 </div>
             </div>
         </div>
