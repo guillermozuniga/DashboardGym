@@ -28,7 +28,7 @@ Public Class SociosDAO
 #End Region
 
 #Region "Rutinas"
-    Public Function SumaSociosActivos() As DataTable
+    Public Function SumaSociosActivos(ByVal Id As Integer) As DataTable
 
         Dim conxion As SqlConnection = Nothing
         Dim cmd As SqlCommand = Nothing
@@ -42,6 +42,7 @@ Public Class SociosDAO
             cmd = New SqlCommand("usp_SumaSociosActivos2", conxion)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@Fecha", _Fecha)
+            cmd.Parameters.AddWithValue("@IDGym", Id)
             ' cmd.Connection.Open()
             da.SelectCommand = cmd
             da.Fill(dt)
@@ -61,7 +62,7 @@ Public Class SociosDAO
 
     End Function
 
-    Public Function SumaSociosNuevos() As DataTable
+    Public Function SumaSociosNuevos(ByVal Id As Integer) As DataTable
 
         Dim conxion As SqlConnection = Nothing
         Dim cmd As SqlCommand = Nothing
@@ -83,6 +84,7 @@ Public Class SociosDAO
             cmd = New SqlCommand("usp_SumaSociosNuevos", conxion)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@Fecha", _Fecha)
+            cmd.Parameters.AddWithValue("@IDGym", Id)
             ' cmd.Connection.Open()
             da.SelectCommand = cmd
             da.Fill(dt)
@@ -102,7 +104,7 @@ Public Class SociosDAO
 
     End Function
 
-    Public Function SumaSociosPorVencer() As DataTable
+    Public Function SumaSociosPorVencer(ByVal Id As Integer) As DataTable
 
         Dim conxion As SqlConnection = Nothing
         Dim cmd As SqlCommand = Nothing
@@ -118,6 +120,8 @@ Public Class SociosDAO
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@Fecha", _Fecha)
             cmd.Parameters.AddWithValue("@FechaFinal", _Fecha)
+            cmd.Parameters.AddWithValue("@IDGym", Id)
+
             ' cmd.Connection.Open()
             da.SelectCommand = cmd
             da.Fill(dt)

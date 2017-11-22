@@ -22,8 +22,11 @@ Public Class Dashboard
         Dim Con = New SqlConnection(ConfigurationManager.ConnectionStrings("SQLServer").ConnectionString)
 
         ' Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas where Fecha >= '" & Now.Year & Now.Month.ToString.PadLeft(2, "0") & "01" & "' and Fecha < ' " & Format(Date.Today, "yyyyMMdd") & "' group by Fecha order By Fecha;", Con)
+
         Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas where Fecha >= '" + Format(Date.Today, "yyyyMM") + "01" & "' and Fecha <= '" & Format(Date.Today, "yyyyMMdd") & "' group by Fecha order By Fecha;", Con)
+
         'Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas group by Fecha order By Fecha;", Con)
+
         Dim dataAdapter = New SqlDataAdapter(sql)
         Dim dataset = New DataSet()
         dataAdapter.Fill(dataset)
@@ -103,10 +106,10 @@ Public Class Dashboard
 
     End Sub
 
-    Private Sub CargarSociosActivos()
+    Private Sub CargarSociosActivos(ByVal Id As Integer)
         Dim dt As DataTable
 
-        dt = SociosLN.getInstance().CantidadSociosActivos
+        dt = SociosLN.getInstance().CantidadSociosActivos(Id)
 
 
         Dim row As DataRow = dt.Rows(dt.Rows.Count - 1)
@@ -123,10 +126,10 @@ Public Class Dashboard
 
     End Sub
 
-    Private Sub CargarSociosNuevos()
+    Private Sub CargarSociosNuevos(ByVal Id As Integer)
         Dim dt As DataTable
 
-        dt = SociosLN.getInstance().CantidadSociosNuevos
+        dt = SociosLN.getInstance().CantidadSociosNuevos(Id)
 
 
         Dim row As DataRow = dt.Rows(dt.Rows.Count - 1)
@@ -147,10 +150,10 @@ Public Class Dashboard
     End Sub
 
 
-    Private Sub CargarSociosPorVencer()
+    Private Sub CargarSociosPorVencer(ByVal Id As Integer)
         Dim dt As DataTable
 
-        dt = SociosLN.getInstance().CantidadSociosPorVencer
+        dt = SociosLN.getInstance().CantidadSociosPorVencer(Id)
 
 
         Dim row As DataRow = dt.Rows(dt.Rows.Count - 1)
@@ -267,9 +270,9 @@ Public Class Dashboard
             If (HttpContext.Current.User.Identity.IsAuthenticated) Then
 
                 CargarUnidadesNegocio()
-                CargarSociosActivos()
-                CargarSociosNuevos()
-                CargarSociosPorVencer()
+                CargarSociosActivos(0)
+                CargarSociosNuevos(0)
+                CargarSociosPorVencer(0)
                 CargarSociosQueRenovaron()
                 CargarSociosQueNoRenovaron()
                 'CargarSociosVencidosconasistencia()

@@ -14,7 +14,6 @@
                         <h3 class="box-title" style="text-align: center">Listado de Unidades de Negocio</h3>
                     </div>
                     <div class="box-body">
-
                         <asp:DataList ID="dlUNegocio" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow" CssClass="row">
                             <ItemTemplate>
                                 <%-- <div class="row">--%>
@@ -23,21 +22,16 @@
                                     <div class="panel-body">
                                         <span class="label label-info"><%# Eval("IDGimnasio")%></span>
                                         <div class="thumbnail label-success">
-                                            <asp:Image ID="Image1" runat="server" ImageUrl='<%# "~/img/logo.png"%>' Width="85px" Height="85px" />      
-                                            <p style="text-align:center"><%# Eval("Nombre")%> </p>                                           
-                                           <p> <strong> Negocio: </strong><small><%# Eval("NombreCorto")%></small></p>
+                                            <asp:Image ID="Image1" runat="server" ImageUrl='<%# "~/img/logo.png"%>' Width="85px" Height="85px" />
+                                            <p style="text-align: center"><%# Eval("Nombre")%> </p>
+                                            <p><strong>Negocio: </strong><small><%# Eval("NombreCorto")%></small></p>
                                             <p><strong>Nombre: </strong><small><%# Eval("NombreSucursal")%> </small></p>
-                                                <%--<asp:Image ID="Image2" runat="server" ImageUrl='<%# "~/" +Eval("image1").ToString().Trim() %>' Width="150px" Height="150px" />--%>
-                                                <%--<small>LB : <strong><%# Eval("IDGimnasio")%> m2</strong> </small>
-                                                    <small>Setifikat : <strong><%# Eval("IDGimnasio")%></strong> </small>--%>
-                                                <br />
-                                                <%-- <small>Kamar : <strong><%# Eval("IDGimnasio")%></strong> </small>
-                                                    <br />
-                                                    <small>Kamar Mandi : <strong><%# Eval("IDGimnasio")%></strong> </small>--%>
-                                            
-                                            <a href="DashboardUN.aspx" class="btn btn-success">Detalles </a>
-                                        </div>
+                                            <%--'<a href="  <%# Eval("IdGimnasio", "DashboardUN.aspx?Id={0}")%>"  class="btn btn-success">Detalles</a>--%>
+                                          <a href=" <%# String.Format("DashboardUN.aspx?Id={0}&Name={1}",
+HttpUtility.UrlEncode(Eval("IdGImnasio").ToString()), HttpUtility.UrlEncode(Eval("NombreSucursal").ToString()))%>" class="btn btn-success">Detalles</a>
 
+
+                                        </div>
                                     </div>
                                 </div>
                                 <%--</div>--%>

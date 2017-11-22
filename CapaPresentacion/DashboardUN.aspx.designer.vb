@@ -50,6 +50,24 @@ Partial Public Class DashboardUN
     Protected WithEvents LabelVentas As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''LabelTitulo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LabelTitulo As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''LabelTituloGrafica control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LabelTituloGrafica As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Master property.
     '''</summary>
     '''<remarks>

@@ -9,9 +9,7 @@ Public Class DetalleUN
 
 #Region "Rutinas"
     Private Sub GetAllUnidadesNegocio()
-
         Dim dt As DataTable
-
         dt = UnidadNegocioLN.getInstance().CantidadNegocios
 
         If dt.Rows.Count > 0 Then
@@ -19,10 +17,7 @@ Public Class DetalleUN
             Me.dlUNegocio.DataSource = dt
 
             Me.dlUNegocio.DataBind()
-
-
         End If
-
     End Sub
 
     Public Function ProcessMyDataItem(myValue As Object) As String
@@ -30,7 +25,6 @@ Public Class DetalleUN
         If myValue Is Nothing Then
             Return " "
         Else
-
             valor = myValue.ToString
         End If
 
@@ -64,6 +58,5 @@ Public Class DetalleUN
         End If
 
     End Sub
-
 
 End Class

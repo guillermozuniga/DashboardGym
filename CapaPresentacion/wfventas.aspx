@@ -3,12 +3,21 @@
 <%@ MasterType VirtualPath="~/MasterDefault.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
+        $.extend(true, $.fn.dataTable.defaults, {
+            "searching": true,
+            "ordering": true
+        });
         $(function () {
             $('[id*=gvVentas]').prepend($("<thead></thead>").append($(this).find("tr:first"))).DataTable({
-                "responsive": true,
+                "responsive": true,                
+                //"info": false,
+                "pageLength": 25,             
+                fixedColumns:   {
+                    heightMatch: 'none'
+                },
                 "pagingType": "full_numbers",
             "zeroRecords": "Nothing found - sorry",
-            "infoEmpty": "No records available"
+            "infoEmpty": "No records available"          
             });
         });
     </script>
@@ -64,8 +73,8 @@
                             <h5>Reporte de Ventas </h5>
                         </div>
                         <div class="container-fluid" style="width:100%">
-                            <asp:GridView ID="gvVentas" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered" cellspacing="0" style="width:98%">                  
-                                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                            <asp:GridView ID="gvVentas" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered" cellspacing="0" style="width:90%" >                  
+                                <%--<AlternatingRowStyle BackColor="White" ForeColor="#284775" />--%>
                                 <Columns>
                                     <asp:BoundField DataField="IDGimnasio" HeaderText="U.Negocio" />
                                     <asp:BoundField DataField="NombreCorto" HeaderText="Nombre"/>

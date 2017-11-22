@@ -23,27 +23,27 @@ Public Class SociosLN
 #End Region
 
 #Region "Rutinas"
-    Public Function CantidadSociosActivos()
+    Public Function CantidadSociosActivos(ByVal Id As Integer)
         Try
-            Return SociosDAO.getInstance.SumaSociosActivos
+            Return SociosDAO.getInstance.SumaSociosActivos(Id)
         Catch ex As Exception
             Console.WriteLine("SQL Error: " + ex.Message)
             Throw ex
         End Try
     End Function
 
-    Public Function CantidadSociosNuevos()
+    Public Function CantidadSociosNuevos(ByVal Id As Integer)
         Try
-            Return SociosDAO.getInstance.SumaSociosNuevos
+            Return SociosDAO.getInstance.SumaSociosNuevos(Id)
         Catch ex As Exception
             Console.WriteLine("SQL Error: " + ex.Message)
             Throw ex
         End Try
     End Function
 
-    Public Function CantidadSociosPorVencer()
+    Public Function CantidadSociosPorVencer(ByVal Id As Integer)
         Try
-            Return SociosDAO.getInstance.SumaSociosPorVencer
+            Return SociosDAO.getInstance.SumaSociosPorVencer(Id)
         Catch ex As Exception
             Console.WriteLine("SQL Error: " + ex.Message)
             Throw ex
