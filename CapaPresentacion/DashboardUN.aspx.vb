@@ -9,17 +9,15 @@ Imports System.Configuration
 Public Class DashboardUN
     Inherits System.Web.UI.Page
     <System.Web.Services.WebMethod()> _
-    Public Shared Function getChartDataUN(ByVal id As Integer) As List(Of String)
+    Public Shared Function getChartDataUN() As List(Of String)
         Dim grantotal As Double = 0.0
 
         Dim returnData = New List(Of String)()
 
-        'Dim Con = New SqlConnection("Data Source=SQL.NEGOX.COM;Initial Catalog=eimagenn_gym_0001;Persist Security Info=True;User ID=eimagenn_usergym0001;Password=12@Kn1fe.")
         Dim Con = New SqlConnection(ConfigurationManager.ConnectionStrings("SQLServer").ConnectionString)
 
-        ' Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas where Fecha >= '" & Now.Year & Now.Month.ToString.PadLeft(2, "0") & "01" & "' and Fecha < ' " & Format(Date.Today, "yyyyMMdd") & "' group by Fecha order By Fecha;", Con)
         Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas where Fecha >= '" + Format(Date.Today, "yyyyMM") + "01" & "' and Fecha <= '" & Format(Date.Today, "yyyyMMdd") & "' and IDGimnasio = 1 group by Fecha order By Fecha;", Con)
-        'Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas group by Fecha order By Fecha;", Con)
+
         Dim dataAdapter = New SqlDataAdapter(sql)
         Dim dataset = New DataSet()
         dataAdapter.Fill(dataset)
@@ -39,9 +37,7 @@ Public Class DashboardUN
                 grantotal = grantotal + CType(row("Total"), Double)
 
             Next
-            'Dim page As Page = DirectCast(HttpContext.Current.Handler, Page)
-            'Dim LabelVenta As Label = DirectCast(page.FindControl("LabelVentas"), Label)
-            'LabelVenta.Text = grantotal
+         
 
             chartData.Length -= 1
             'For removing ','  
@@ -82,7 +78,6 @@ Public Class DashboardUN
         Else
             Me.LabelSociosActivos.Text = CStr(value)
         End If
-
 
     End Sub
 
@@ -129,24 +124,24 @@ Public Class DashboardUN
         End If
     End Sub
 
-    'Private Sub CargarSociosQueRenovaron()
-    '    Dim dt As DataTable
+    Private Sub CargarSociosQueRenovaron(ByVal Id As Integer)
+        Dim dt As DataTable
 
-    '    dt = SociosLN.getInstance().CantidadSociosQueRenovaron
+        dt = SociosLN.getInstance().CantidadSociosQueRenovaron(Id)
 
 
-    '    Dim row As DataRow = dt.Rows(dt.Rows.Count - 1)
+        Dim row As DataRow = dt.Rows(dt.Rows.Count - 1)
 
-    '    Dim value As Object
+        Dim value As Object
 
-    '    value = row.Item("Renovados")
+        value = row.Item("Renovados")
 
-    '    If value Is DBNull.Value Then
-    '        Me.LabelRenovados.Text = "0.00"
-    '    Else
-    '        Me.LabelRenovados.Text = CStr(value)
-    '    End If
-    'End Sub
+        If value Is DBNull.Value Then
+            Me.LabelRenovados.Text = "0.00"
+        Else
+            Me.LabelRenovados.Text = CStr(value)
+        End If
+    End Sub
 
 
     'Private Sub CargarSociosQueNoRenovaron()
@@ -208,16 +203,18 @@ Public Class DashboardUN
         End If
     End Sub
 
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Me.IsPostBack Then
 
             Me.LabelTituloGrafica.Text = "Del     " & Format(Date.Today, "yyyy/MM/") + "01 " & "     al     " & Format(Date.Today, "yyyy/MM/dd")
 
             LabelTitulo.Text = "Detalles de " & " ' " & HttpUtility.UrlDecode(Request.QueryString("Name")) & " '"
-
             CargarSociosActivos(HttpUtility.UrlDecode(Request.QueryString("Id")))
             CargarSociosNuevos(HttpUtility.UrlDecode(Request.QueryString("Id")))
             CargarSociosPorVencer(HttpUtility.UrlDecode(Request.QueryString("Id")))
+            CargarSociosQueRenovaron(HttpUtility.UrlDecode(Request.QueryString("Id")))
+            Label1.Text = HttpUtility.UrlDecode(Request.QueryString("Id"))
         End If
     End Sub
 

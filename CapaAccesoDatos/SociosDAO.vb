@@ -141,7 +141,7 @@ Public Class SociosDAO
 
     End Function
 
-    Public Function SumaSociosQueRenovaron() As DataTable
+    Public Function SumaSociosQueRenovaron(ByVal Id As Integer) As DataTable
 
         Dim conxion As SqlConnection = Nothing
         Dim cmd As SqlCommand = Nothing
@@ -156,6 +156,8 @@ Public Class SociosDAO
             cmd = New SqlCommand("usp_SumaSociosquerenovaron", conxion)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@Fecha", _Fecha)
+            cmd.Parameters.AddWithValue("@IdGym", Id)
+
             'cmd.Parameters.AddWithValue("@FechaFinal", _FechaFin)
             ' cmd.Connection.Open()
             da.SelectCommand = cmd

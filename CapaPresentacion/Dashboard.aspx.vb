@@ -18,18 +18,18 @@ Public Class Dashboard
 
         Dim returnData = New List(Of String)()
 
-        'Dim Con = New SqlConnection("Data Source=SQL.NEGOX.COM;Initial Catalog=eimagenn_gym_0001;Persist Security Info=True;User ID=eimagenn_usergym0001;Password=12@Kn1fe.")
         Dim Con = New SqlConnection(ConfigurationManager.ConnectionStrings("SQLServer").ConnectionString)
-
-        ' Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas where Fecha >= '" & Now.Year & Now.Month.ToString.PadLeft(2, "0") & "01" & "' and Fecha < ' " & Format(Date.Today, "yyyyMMdd") & "' group by Fecha order By Fecha;", Con)
-
+       
         Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas where Fecha >= '" + Format(Date.Today, "yyyyMM") + "01" & "' and Fecha <= '" & Format(Date.Today, "yyyyMMdd") & "' group by Fecha order By Fecha;", Con)
 
-        'Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas group by Fecha order By Fecha;", Con)
+        ' Dim sql = New SqlCommand("SELECT Count(IDCliente) as cnt, IDGImnasio from catClientes where IDCliente>2 and FechaVencimiento >= CONVERT(char(10), DATEADD(day,-5,GetDate()),112) group by IDGImnasio order by IDGimnasio", Con)
 
         Dim dataAdapter = New SqlDataAdapter(sql)
+
         Dim dataset = New DataSet()
+
         dataAdapter.Fill(dataset)
+
         If dataset.Tables(0).Rows.Count > 0 Then
 
             Dim chartLabel = New StringBuilder()
@@ -46,9 +46,55 @@ Public Class Dashboard
                 grantotal = grantotal + CType(row("Total"), Double)
 
             Next
-            'Dim page As Page = DirectCast(HttpContext.Current.Handler, Page)
-            'Dim LabelVenta As Label = DirectCast(page.FindControl("LabelVentas"), Label)
-            'LabelVenta.Text = grantotal
+           
+            chartData.Length -= 1
+            'For removing ','  
+            chartData.Append("]")
+            chartLabel.Length -= 1
+            'For removing ',' 
+            chartLabel.Append("]")
+
+            returnData.Add(chartLabel.ToString())
+            returnData.Add(chartData.ToString())
+
+        End If
+
+        Return returnData
+    End Function
+    <System.Web.Services.WebMethod()> _
+    Public Shared Function getChartDataSocios() As List(Of String)
+        Dim grantotal As Double = 0.0
+
+        Dim returnData = New List(Of String)()
+
+        Dim Con = New SqlConnection(ConfigurationManager.ConnectionStrings("SQLServer").ConnectionString)
+
+        'Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas where Fecha >= '" + Format(Date.Today, "yyyyMM") + "01" & "' and Fecha <= '" & Format(Date.Today, "yyyyMMdd") & "' group by Fecha order By Fecha;", Con)
+
+        Dim sql = New SqlCommand("SELECT Count(IDCliente) as cnt, IDGImnasio from catClientes where IDCliente>2 and FechaVencimiento >= CONVERT(char(10), DATEADD(day,-5,GetDate()),112) group by IDGImnasio order by IDGimnasio", Con)
+
+        Dim dataAdapter = New SqlDataAdapter(sql)
+
+        Dim dataset = New DataSet()
+
+        dataAdapter.Fill(dataset)
+
+        If dataset.Tables(0).Rows.Count > 0 Then
+
+            Dim chartLabel = New StringBuilder()
+            Dim chartData = New StringBuilder()
+            chartLabel.Append("[")
+            chartData.Append("[")
+
+            For Each row As DataRow In dataset.Tables(0).Rows
+
+                chartLabel.Append(String.Format("'{0}',", row("IDGimnasio").ToString()))
+
+                chartData.Append(String.Format("{0},", row("cnt").ToString()))
+
+                grantotal = grantotal + CType(row("cnt"), Double)
+
+            Next
 
             chartData.Length -= 1
             'For removing ','  
@@ -89,20 +135,6 @@ Public Class Dashboard
             Me.LabelUnidadNegocio.Text = "0.00"
 
         End If
-
-
-        'Dim row As DataRow = dt.Rows(dt.Rows.Count - 1)
-
-        'Dim value As Object
-
-        'value = row.Item("TotalDonativo")
-        'If value Is DBNull.Value Then
-        '    Me.LabelUnidadNegocio.Text = "0.00"
-        'Else
-        '    Me.LabelUnidadNegocio.Text = CStr(value)
-        'End If
-
-
 
     End Sub
 
@@ -169,10 +201,10 @@ Public Class Dashboard
         End If
     End Sub
 
-    Private Sub CargarSociosQueRenovaron()
+    Private Sub CargarSociosQueRenovaron(ByVal Id As Integer)
         Dim dt As DataTable
 
-        dt = SociosLN.getInstance().CantidadSociosQueRenovaron
+        dt = SociosLN.getInstance().CantidadSociosQueRenovaron(Id)
 
 
         Dim row As DataRow = dt.Rows(dt.Rows.Count - 1)
@@ -273,19 +305,13 @@ Public Class Dashboard
                 CargarSociosActivos(0)
                 CargarSociosNuevos(0)
                 CargarSociosPorVencer(0)
-                CargarSociosQueRenovaron()
+                CargarSociosQueRenovaron(0)
                 CargarSociosQueNoRenovaron()
-                'CargarSociosVencidosconasistencia()
+                Me.LabelSalesVentas.Text = "Grafica de Ventas Totales"
+                Me.LabelTituloGrafica.Text = "Periodo   Del     " & Format(Date.Today, "yyyy/MM/") + "01 " & "     al     " & Format(Date.Today, "yyyy/MM/dd")
 
-                'CargarVentas()
-                Me.LabelSalesVentas.Text = "Grafica de Ventas"
-                Me.LabelTituloGrafica.Text = "Del     " & Format(Date.Today, "yyyy/MM/") + "01 " & "     al     " & Format(Date.Today, "yyyy/MM/dd")
-
-                Me.LabelUsersGrafic.Text = "Grafica de Usuarios"
-                ' Me.Label1.Text = " Movimiento de Ventas: 1 -  " & MonthName(Month(Date.Now)) & "    al    " & Day(Date.Now) & "  -  " & MonthName(Month(Date.Now))
-
-                'Me.Label2.Text = " Movimiento en Clientes: 1 -  " & MonthName(Month(Date.Now)) & "    al    " & Day(Date.Now) & "  -  " & MonthName(Month(Date.Now))
-
+                Me.LabelUsersGrafic.Text = "Grafica de Usaurios por Unidad de Negocio"
+              
 
             End If
         End If

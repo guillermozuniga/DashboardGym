@@ -2,8 +2,32 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script>
+        function number_format(amount, decimals) {
+
+            amount += ''; // por si pasan un numero en vez de un string
+            amount = parseFloat(amount.replace(/[^0-9\.]/g, '')); // elimino cualquier cosa que no sea numero o punto
+
+            decimals = decimals || 0; // por si la variable no fue fue pasada
+
+            // si no es un numero o es igual a cero retorno el mismo cero
+            if (isNaN(amount) || amount === 0)
+                return parseFloat(0).toFixed(decimals);
+
+            // si es mayor o menor que cero retorno el valor formateado como numero
+            amount = '' + amount.toFixed(decimals);
+
+            var amount_parts = amount.split('.'),
+                regexp = /(\d+)(\d{3})/;
+
+            while (regexp.test(amount_parts[0]))
+                amount_parts[0] = amount_parts[0].replace(regexp, '$1' + ',' + '$2');
+
+            return amount_parts.join('.');
+        }
+
         $(function () {
             var ctx = document.getElementById("salesChart").getContext('2d');
+            var ctxSocios = document.getElementById("UsersChart").getContext('2d');
 
             $.ajax({
                 url: "Dashboard.aspx/getChartData",
@@ -24,6 +48,9 @@
                                 pointStrokeColor: "Green",
                                 pointHighlightFill: "#fff",
                                 pointHighlightStroke: "rgba(220,220,220,1)",
+                                options: {
+                                    responsive: true,
+                                },
                                 data: chartData
                             }
                         ]
@@ -35,7 +62,58 @@
                     }
 
 
-                    document.getElementById("<%=LabelVentas.ClientID%>").innerHTML = total
+                    document.getElementById("<%=LabelVentas.ClientID%>").innerHTML = number_format(total, 2)
+                }
+
+            });
+
+            $.ajax({
+                url: "Dashboard.aspx/getChartDataSocios",
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var chartLabel = eval(response.d[0]); //Labels
+                    var chartData = eval(response.d[1]); //Data
+                    var barData = {
+                        labels: chartLabel,
+                        datasets: [
+                            {
+                                //label: chartLabel,
+                                fillColor: "rgba(225,225,225,0.2)",
+                                strokeColor: "Blue",
+                                pointColor: "rgba(220,220,220,1)",
+                                pointStrokeColor: "Green",
+                                pointHighlightFill: "#fff",
+                                pointHighlightStroke: "rgba(220,220,220,1)",
+                                barThickness: 60,
+                                categoryPercentage: 0.8,
+                                maintainAspectRatio: true,
+                                options: {
+                                    responsive: true,
+                                    scales: {
+                                        xAxes: [{
+                                            barPercentage: 0.95,
+                                            stacked: true
+                                        }],
+                                        yAxes: [{
+                                            barPercentage: 0.95,
+                                            stacked: true
+                                        }]
+                                    }
+                                },
+                                data: chartData
+                            }
+                        ]
+                    };
+                    var skillsChart = new Chart(ctxSocios).Bar(barData);
+                    var total = 0;
+                    for (var i = 0; i < chartData.length; i += 1) {
+                        total = total + chartData[i];
+                    }
+
+
+                    <%--document.getElementById("<%=LabelUsersGrafic.ClientID%>").innerHTML = number_format(total, 2)--%>
                 }
 
             });
@@ -179,61 +257,55 @@
         </div>
         <!-- /.row -->
 
+
+
         <div class="row">
             <div class="col-md-12">
                 <div class="box">
+                    
                     <div class="box-header with-border">
-                        <i class="fa fa-line-chart"></i>
-                        <h4 class="box-title">
-                            <asp:Label ID="LabelSalesVentas" runat="server" Text=""></asp:Label></h4>
-                    </div>
-                    <!-- LINE CHART -->
-                    <div class="box-body">
-                        <p class="text-center">
-                            <strong>
-                                <asp:Label ID="LabelTituloGrafica" runat="server" Text=""></asp:Label></strong>
-                        </p>
-                        <div class="chart">
-                            <canvas id="salesChart" style="height: 250px; width: 1100px" height="250" width="1100"></canvas>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="box">
-                    <!-- LINE CHART -->
-                    <div class="box box-info">
                         <div class="box-header with-border">
-                            <i class="fa fa-line-chart"></i>
+                        <i class="fa fa-line-chart"></i>
+                            <h3 class="box-title">Monthly Recap Report</h3>
+                    </div>
+                        
+                    </div>
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-6">
 
-                            <h4 class="box-title">
+                                <p class="text-center">
+                                    <strong>
+                                        <asp:Label ID="LabelTituloGrafica" runat="server" Text=""></asp:Label></strong>
+                                    <strong>
+                                        <asp:Label ID="LabelSalesVentas" runat="server" Text=""></asp:Label></strong>
+                                </p>
 
-                                <asp:Label ID="LabelUsersGrafic" runat="server" Text=""></asp:Label></h4>
-                            <%--<div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                                    <i class="fa fa-minus"></i>
-                                </button>
-                            </div>--%>
-                        </div>
-                        <div class="box-body">
-                            <div class="chart">
-                                <canvas id="UsersChart" style="height: 250px" height="250" width="980"></canvas>
+                                <div class="chart">
+                                    <!-- Sales Chart Canvas -->
+                                    <canvas id="salesChart" ></canvas>
+                                </div>
+                                <!-- /.chart-responsive -->
+                            </div>
+                            <div class="col-md-6">
+
+                                <p class="text-center">
+                                    <strong>
+                                        <asp:Label ID="LabelUsersGrafic" runat="server" Text=""></asp:Label></strong>
+                                </p>
+
+
+                                <div class="chart">
+                                    <canvas id="UsersChart"></canvas>
+
+                                </div>
                             </div>
                         </div>
-                        <!-- /.box-body -->
                     </div>
-                    <!-- /.box -->
                 </div>
-
             </div>
 
         </div>
-
-
     </section>
 
 </asp:Content>

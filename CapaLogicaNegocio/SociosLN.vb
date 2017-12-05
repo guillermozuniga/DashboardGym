@@ -50,9 +50,9 @@ Public Class SociosLN
         End Try
     End Function
 
-    Public Function CantidadSociosQueRenovaron()
+    Public Function CantidadSociosQueRenovaron(ByVal Id As Integer)
         Try
-            Return SociosDAO.getInstance.SumaSociosQueRenovaron
+            Return SociosDAO.getInstance.SumaSociosQueRenovaron(Id)
         Catch ex As Exception
             Console.WriteLine("SQL Error: " + ex.Message)
             Throw ex

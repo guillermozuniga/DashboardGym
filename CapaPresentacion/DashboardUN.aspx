@@ -49,7 +49,7 @@
             <!-- fix for small devices only -->
             <div class="clearfix visible-sm-block"></div>
 
-            <div class="col-lg-3 col-xs-6">
+            <div class="col-lg-2 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-orange">
                     <div class="inner">
@@ -63,7 +63,8 @@
                     <a href="#" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-            <div class="col-lg-3 col-xs-6">
+
+            <div class="col-lg-2 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-blue">
                     <div class="inner">
@@ -77,9 +78,9 @@
                     </div>
                     <a href="#" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
+            </div>   
+
+            <div class="col-lg-2 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-yellow">
                     <div class="inner">
@@ -94,7 +95,24 @@
                     <a href="#" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-            <div class="col-lg-3 col-xs-6">
+
+            <div class="col-lg-2 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-orange">
+                    <div class="inner">
+                        <h2>
+                            <asp:Label ID="LabelRenovados" runat="server" Text="0"></asp:Label></h2>
+
+                        <p>Socios Renovados</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-person"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-green">
                     <div class="inner">
@@ -109,6 +127,7 @@
                     <a href="#" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
+
             <!-- ./col -->
 
 
@@ -117,28 +136,29 @@
 
 
     <!-- Info boxes -->
-    <div class="row">
-        <!-- fix for small devices only -->
-        <div class="clearfix visible-sm-block"></div>
-        <div class="col-lg-12">
-            <div class="box box-primary">
-                <div class="box-header">
-                    <h3 class="box-title" style="text-align: center">
-                        <asp:Label ID="LabelTitulo" runat="server" Text="Label"></asp:Label></h3>
-                </div>
-                <div class="box-body">
-                    <p class="text-center">
-                        <strong>
-                            <asp:Label ID="LabelTituloGrafica" runat="server" Text=""></asp:Label>
+        <div class="row">
+            <!-- fix for small devices only -->
+            <div class="clearfix visible-sm-block"></div>
+            <div class="col-lg-12">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title" style="text-align: center">
+                            <asp:Label ID="LabelTitulo" runat="server" Text="Label"></asp:Label></h3>
+                    </div>
+                    <div class="box-body">
+                        <p class="text-center">
+                            <strong>
+                                <asp:Label ID="LabelTituloGrafica" runat="server" Text=""></asp:Label>
+                                <asp:Label ID="Label1" runat="server" Visible="False"></asp:Label>
 
-                        </strong>
-                    </p>
-                    <div class="chart">
-                        <canvas id="salesChart" style="height: 250px; width: 1100px" height="250" width="1100"></canvas>
+                            </strong>
+                        </p>
+                        <div class="chart">
+                            <canvas id="salesChart" style="height: 250px; width: 1100px" height="250" width="1100"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     </div>
         </section>
 </asp:Content>

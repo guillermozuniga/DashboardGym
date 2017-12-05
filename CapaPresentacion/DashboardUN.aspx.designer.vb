@@ -41,6 +41,15 @@ Partial Public Class DashboardUN
     Protected WithEvents LabelPorVencer As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''LabelRenovados control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LabelRenovados As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''LabelVentas control.
     '''</summary>
     '''<remarks>
@@ -66,6 +75,15 @@ Partial Public Class DashboardUN
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LabelTituloGrafica As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Label1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Master property.

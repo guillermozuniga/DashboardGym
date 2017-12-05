@@ -86,15 +86,6 @@ Partial Public Class Dashboard
     Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''LabelSalesVentas control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LabelSalesVentas As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''LabelTituloGrafica control.
     '''</summary>
     '''<remarks>
@@ -102,6 +93,15 @@ Partial Public Class Dashboard
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LabelTituloGrafica As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''LabelSalesVentas control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LabelSalesVentas As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''LabelUsersGrafic control.
