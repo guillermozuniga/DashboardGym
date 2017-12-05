@@ -69,9 +69,7 @@ Public Class Dashboard
 
         Dim Con = New SqlConnection(ConfigurationManager.ConnectionStrings("SQLServer").ConnectionString)
 
-        'Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas where Fecha >= '" + Format(Date.Today, "yyyyMM") + "01" & "' and Fecha <= '" & Format(Date.Today, "yyyyMMdd") & "' group by Fecha order By Fecha;", Con)
-
-        Dim sql = New SqlCommand("SELECT Count(IDCliente) as cnt, IDGImnasio from catClientes where IDCliente>2 and FechaVencimiento >= CONVERT(char(10), DATEADD(day,-5,GetDate()),112) group by IDGImnasio order by IDGimnasio", Con)
+        Dim sql = New SqlCommand("SELECT Count(IDCliente) as cnt, IDGImnasio from catClientes where IDCliente>=2 and FechaVencimiento >= CONVERT(char(10), DATEADD(day,0,GetDate()),112) group by IDGImnasio order by IDGimnasio", Con)
 
         Dim dataAdapter = New SqlDataAdapter(sql)
 

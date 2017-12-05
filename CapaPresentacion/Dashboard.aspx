@@ -113,7 +113,7 @@
                     }
 
 
-                    <%--document.getElementById("<%=LabelUsersGrafic.ClientID%>").innerHTML = number_format(total, 2)--%>
+                   <%-- document.getElementById("<%=LabelUsersGrafic.ClientID%>").innerHTML = number_format(total, 2)--%>
                 }
 
             });

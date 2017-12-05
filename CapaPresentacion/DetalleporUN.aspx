@@ -13,9 +13,7 @@
                     <div class="box-header">
                         <h3 class="box-title" style="text-align: center">Detalle Unidad de Negocio</h3>
                     </div>
-                    <div class="box-body">
-
-                       
+                    <div class="box-body">                       
                     </div>
                 </div>
             </div>

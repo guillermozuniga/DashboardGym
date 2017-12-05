@@ -14,11 +14,20 @@ Option Explicit On
 Partial Public Class wfsocios
 
     '''<summary>
-    '''gvVentas control.
+    '''LabelTitulo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents gvVentas As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents LabelTitulo As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''gvSocios control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gvSocios As Global.System.Web.UI.WebControls.GridView
 End Class
