@@ -42,7 +42,7 @@
                         datasets: [
                             {
                                 //label: chartLabel,
-                                fillColor: "rgba(225,225,225,0.2)",
+                                fillColor: "Orange",
                                 strokeColor: "Blue",
                                 pointColor: "rgba(220,220,220,1)",
                                 pointStrokeColor: "Green",
@@ -80,7 +80,7 @@
                         datasets: [
                             {
                                 //label: chartLabel,
-                                fillColor: "rgba(225,225,225,0.2)",
+                                fillColor: "orange",
                                 strokeColor: "Blue",
                                 pointColor: "rgba(220,220,220,1)",
                                 pointStrokeColor: "Green",
@@ -266,7 +266,7 @@
                     <div class="box-header with-border">
                         <div class="box-header with-border">
                         <i class="fa fa-line-chart"></i>
-                            <h3 class="box-title">Monthly Recap Report</h3>
+                            <h3 class="box-title">Monthly Report</h3>
                     </div>
                         
                     </div>

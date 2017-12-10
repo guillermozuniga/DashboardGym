@@ -17,6 +17,9 @@ Public Class DetalleUN
             Me.dlUNegocio.DataSource = dt
 
             Me.dlUNegocio.DataBind()
+            Me.gvGimnasios.DataSource = dt
+            Me.gvGimnasios.DataBind()
+
         End If
     End Sub
 
