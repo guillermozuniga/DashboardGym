@@ -26,9 +26,10 @@
         <!-- Custom tabs (Charts with tabs)-->
         <div class="nav-tabs-custom">
             <!-- Tabs within a box -->
-            <ul class="nav nav-tabs pull-right">
-                <li class="active"><a href="#revenue-chart" data-toggle="tab">Cuadro</a></li>
-                <li><a href="#sales-chart" data-toggle="tab">Lista</a></li>
+            <ul class="nav nav-tabs pull-right">        
+                
+                <li class="active"><a href="#revenue-chart" data-toggle="tab"><i class="fa fa-square"></i></a></li>               
+                <li><a href="#sales-chart" data-toggle="tab"><i class="fa fa-reorder"></i></a></li>
                 <li class="pull-left header"><i class="fa fa-inbox"></i>Unidades de Negocio</li>
             </ul>
             <div class="tab-content no-padding">

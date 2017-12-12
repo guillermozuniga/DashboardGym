@@ -113,7 +113,7 @@
                     }
 
 
-                   <%-- document.getElementById("<%=LabelUsersGrafic.ClientID%>").innerHTML = number_format(total, 2)--%>
+                    <%-- document.getElementById("<%=LabelUsersGrafic.ClientID%>").innerHTML = number_format(total, 2)--%>
                 }
 
             });
@@ -257,53 +257,45 @@
         </div>
         <!-- /.row -->
 
-
-
         <div class="row">
-            <div class="col-md-12">
-                <div class="box">
-                    
+            <div class="box">
+                <div class="box-header with-border">
                     <div class="box-header with-border">
-                        <div class="box-header with-border">
                         <i class="fa fa-line-chart"></i>
-                            <h3 class="box-title">Monthly Report</h3>
-                    </div>
-                        
-                    </div>
-                    <div class="box-body">
-                        <div class="row">
-                            <div class="col-md-6">
-
-                                <p class="text-center">
-                                    <strong>
-                                        <asp:Label ID="LabelTituloGrafica" runat="server" Text=""></asp:Label></strong>
-                                    <strong>
-                                        <asp:Label ID="LabelSalesVentas" runat="server" Text=""></asp:Label></strong>
-                                </p>
-
-                                <div class="chart">
-                                    <!-- Sales Chart Canvas -->
-                                    <canvas id="salesChart" ></canvas>
-                                </div>
-                                <!-- /.chart-responsive -->
-                            </div>
-                            <div class="col-md-6">
-
-                                <p class="text-center">
-                                    <strong>
-                                        <asp:Label ID="LabelUsersGrafic" runat="server" Text=""></asp:Label></strong>
-                                </p>
-
-
-                                <div class="chart">
-                                    <canvas id="UsersChart"></canvas>
-
-                                </div>
-                            </div>
-                        </div>
+                        <h3 class="box-title">Monthly Report</h3>
                     </div>
                 </div>
+                <div class="box-body">
+                    <div class="col-md-6">
+                        <p class="text-center">
+                            <strong>
+                                <asp:Label ID="LabelTituloGrafica" runat="server" Text=""></asp:Label></strong>
+                            <strong>
+                                <asp:Label ID="LabelSalesVentas" runat="server" Text=""></asp:Label></strong>
+                        </p>
+
+                        <div class="chart">
+                            <!-- Sales Chart Canvas -->
+                            <canvas id="salesChart"></canvas>
+                        </div>
+                        <!-- /.chart-responsive -->
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <p class="text-center">
+                            <strong>
+                                <asp:Label ID="LabelUsersGrafic" runat="server" Text=""></asp:Label></strong>
+                        </p>
+
+                        <div class="chart">
+                            <canvas id="UsersChart"></canvas>
+                        </div>
+                    </div>
+
+                </div>
             </div>
+
 
         </div>
     </section>
