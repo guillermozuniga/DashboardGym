@@ -1,16 +1,20 @@
 ﻿
 Imports System
 Imports System.IO
-Imports System.Web.Services
 Imports System.Data
 Imports System.Data.SqlClient
+Imports System.Web.UI
+Imports System.Web.Services
 Imports System.Threading
 Imports System.Configuration
-Imports System.Web.UI
 Imports System.Collections.Generic
 Imports CapaLogicaNegocio
+
+
 Public Class wfventas
     Inherits System.Web.UI.Page
+
+
 
     Private Sub BindDropDownList(ddl As DropDownList, query As String, text As String, value As String, defaultText As String)
 
@@ -82,8 +86,19 @@ Public Class wfventas
                 Dim dtVentas As New DataTable
                 dtVentas = VentasLN.getInstance.GeneraldeVentas(convertirfechaatexto(Me.txtFecha.Text), convertirfechaatexto(Me.TxtFechaFin.Text), Me.DropDownListunegocio.SelectedValue)
 
+                '            Dim workCol As DataColumn = dtVentas.Columns.Add( _
+                '"Total", Type.GetType("System.Double"))
+                '            workCol.AllowDBNull = True
+                '            workCol.Unique = False
+
                 Me.gvVentas.DataSource = dtVentas
                 Me.gvVentas.DataBind()
+                ' ClientScript.RegisterStartupScript(Me.GetType(), "Nombre", "SumarColumna(gvVentas, Importe)", True)
+                Dim total As Decimal = dtVentas.AsEnumerable().Sum(Function(row) row.Field(Of Decimal)("Total"))
+                gvVentas.FooterRow.Cells(6).Text = "Total"
+                gvVentas.FooterRow.Cells(6).HorizontalAlign = HorizontalAlign.Right
+                gvVentas.FooterRow.Cells(7).HorizontalAlign = HorizontalAlign.Right
+                gvVentas.FooterRow.Cells(7).Text = total.ToString("N2")
 
             End If
         End If

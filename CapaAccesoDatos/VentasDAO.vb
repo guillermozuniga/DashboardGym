@@ -72,7 +72,7 @@ Public Class VentasDAO
         Try
 
             conxion = Conexion.getInstance.Conexiondb
-            cmd = New SqlCommand("Select * from v_VtasGral where Fecha >=N'" & Fechaini & "' and Fecha <='N" & FechaFin & "' and IDGimnasio = " & IDGim, conxion)
+            cmd = New SqlCommand("Select * from v_VtasGral where (Fecha >=N'" & Fechaini & "' and Fecha <=N'" & FechaFin & "') and IDGimnasio = " & IDGim, conxion)
             cmd.CommandType = CommandType.Text
             da.SelectCommand = cmd
             da.Fill(dt)

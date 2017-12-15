@@ -126,7 +126,7 @@ Public Class DashboardUN
 
         Dim Con = New SqlConnection(ConfigurationManager.ConnectionStrings("SQLServer").ConnectionString)
 
-        Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas where Fecha >= '" + Format(Date.Today, "yyyyMM") + "01" & "' and Fecha <= '" & Format(Date.Today, "yyyyMMdd") & "' and IDGimnasio = " & id & " group by Fecha order By Fecha;", Con)
+        Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',(sum(CAST(Importe as DECIMAL(10,2))) + sum(CAST(iva as DECIMAL(10,2)))) 'Total' from tblFoliosVentas where (Fecha >= N'" & Format(Date.Today, "yyyyMM") & "01" & "' and Fecha <= N'" & Format(Date.Today, "yyyyMMdd") & "') and IDGimnasio = " & id & " group by Fecha order By Fecha;", Con)
 
         Dim dataAdapter = New SqlDataAdapter(sql)
         Dim dataset = New DataSet()
