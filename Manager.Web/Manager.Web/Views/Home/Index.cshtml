@@ -1,0 +1,42 @@
+﻿
+<div class="row">
+    <div class="col-xs-12 col-md-12">
+        <div class="box box-default">
+            <div class="box-header">
+                <h3 class="box-title">Inpunts</h3>                
+            </div>
+            <div class="box-body">
+                <table id="jqGrid"></table>
+                <div id="jqGridPager"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    $(document).ready(function () {
+        $("#jqGrid").jqGrid({
+            url: 'http://trirand.com/blog/phpjqgrid/examples/jsonp/getjsonp.php?callback=?&qwery=orders',
+            mtype: "GET",
+            datatype: "jsonp",
+            styleUI: 'Bootstrap',
+            colModel: [
+                { label: 'OrderID', name: 'OrderID', key: true, width: 75 },
+                { label: 'Customer ID', name: 'CustomerID', width: 150 },
+                { label: 'Order Date', name: 'OrderDate', width: 150 },
+                { label: 'Freight', name: 'Freight', width: 150 },
+                { label: 'Ship Name', name: 'ShipName', width: 150 }
+            ],
+            page: 1,
+            width: 850,
+            height: 250,
+            rowNum: 25,
+            scrollPopUp: true,
+            scrollLeftOffset: "83%",
+            viewrecords: true,
+            rowNum: 20,
+            rowList: [10, 20, 30],
+            pager: "#jqGridPager"
+        });
+    });
+</script>
