@@ -1,0 +1,2999 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="eimagenn_gym_0001Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="catAspirantes">
+          <Key>
+            <PropertyRef Name="IdAspirante" />
+          </Key>
+          <Property Name="IdAspirante" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre_Aspirante" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Direccion_Aspirante" Type="varchar" MaxLength="150" />
+          <Property Name="Telefono_Aspirante" Type="varchar" MaxLength="15" />
+          <Property Name="Movil_Aspirante" Type="varchar" MaxLength="15" />
+          <Property Name="RFC_Aspirante" Type="varchar" MaxLength="15" />
+          <Property Name="FechaNacimiento_Aspirante" Type="varchar" MaxLength="10" />
+          <Property Name="eMail_Aspirante" Type="varchar" MaxLength="150" />
+          <Property Name="Sexo_Aspirante" Type="int" />
+          <Property Name="IDOcupacion" Type="int" />
+          <Property Name="Imagen" Type="image" />
+          <Property Name="ContentType" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.catCategorias' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="catCategorias">
+          <Key>
+            <PropertyRef Name="IDCategoria" />
+          </Key>
+          <Property Name="IDCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.catCausantes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="catCausantes">
+          <Key>
+            <PropertyRef Name="IDCausante" />
+            <PropertyRef Name="IDGimnasio" />
+            <PropertyRef Name="RazonSocial" />
+            <PropertyRef Name="Direccion" />
+            <PropertyRef Name="Localidad" />
+            <PropertyRef Name="CPostal" />
+            <PropertyRef Name="RFC" />
+          </Key>
+          <Property Name="IDCausante" Type="int" Nullable="false" />
+          <Property Name="IDGimnasio" Type="int" Nullable="false" />
+          <Property Name="RazonSocial" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Colonia" Type="nvarchar" MaxLength="50" />
+          <Property Name="Localidad" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Municipio" Type="varchar" MaxLength="20" />
+          <Property Name="CPostal" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="RFC" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="18" />
+          <Property Name="Tarjeta" Type="int" />
+          <Property Name="Estatus" Type="int" />
+          <Property Name="Iva" Type="int" />
+          <Property Name="CuentaIva" Type="varchar" MaxLength="20" />
+          <Property Name="IDMunicipio" Type="int" />
+          <Property Name="IDColonia" Type="int" />
+          <Property Name="CorreoElectronico" Type="varchar" MaxLength="50" />
+          <Property Name="Regimen" Type="varchar" MaxLength="50" />
+          <Property Name="SerieFactura" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="catClientes">
+          <Key>
+            <PropertyRef Name="IDCliente" />
+            <PropertyRef Name="IDGimnasio" />
+          </Key>
+          <Property Name="IDCliente" Type="int" Nullable="false" />
+          <Property Name="IDGimnasio" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Direccion" Type="varchar" MaxLength="100" />
+          <Property Name="IDColonia" Type="varchar" MaxLength="5" />
+          <Property Name="Localidad" Type="varchar" MaxLength="50" />
+          <Property Name="IDMunicipio" Type="varchar" MaxLength="5" />
+          <Property Name="Estado" Type="nvarchar" MaxLength="4" />
+          <Property Name="CPostal" Type="nvarchar" MaxLength="5" />
+          <Property Name="Telefono" Type="varchar" MaxLength="16" />
+          <Property Name="MovilCelular" Type="varchar" MaxLength="16" />
+          <Property Name="MovilRadio" Type="varchar" MaxLength="16" />
+          <Property Name="RFC" Type="varchar" MaxLength="13" />
+          <Property Name="FechaAlta" Type="nvarchar" MaxLength="8" />
+          <Property Name="FechaNacimiento" Type="nvarchar" MaxLength="8" />
+          <Property Name="FechaUltimoPago" Type="nvarchar" MaxLength="8" />
+          <Property Name="FechaVencimiento" Type="nvarchar" MaxLength="8" />
+          <Property Name="Ocupacion" Type="nvarchar" MaxLength="10" />
+          <Property Name="eMail" Type="varchar" MaxLength="50" />
+          <Property Name="Sexo" Type="int" />
+          <Property Name="FechaUltimaAsistencia" Type="nvarchar" MaxLength="8" />
+          <Property Name="IDEmpresa" Type="int" />
+          <Property Name="NombreEmpresa" Type="varchar" MaxLength="50" />
+          <Property Name="Estatus" Type="int" />
+          <Property Name="FechaPenultimoPago" Type="nvarchar" MaxLength="8" />
+          <Property Name="Enviado" Type="int" />
+          <Property Name="IDOcupacion" Type="nchar" MaxLength="4" />
+          <Property Name="NumEmpleado" Type="nchar" MaxLength="10" />
+          <Property Name="Puesto" Type="varchar" MaxLength="50" />
+          <Property Name="Contrasena" Type="nchar" MaxLength="10" />
+          <Property Name="FechaPenultimoVencimiento" Type="nvarchar" MaxLength="8" />
+          <Property Name="IDProducto" Type="int" />
+          <Property Name="TipoCuota" Type="int" />
+          <Property Name="IDHuella" Type="int" />
+          <Property Name="Saldo" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="Imagen" Type="image" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.catColonias' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="catColonias">
+          <Key>
+            <PropertyRef Name="IDColonia" />
+          </Key>
+          <Property Name="IDColonia" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" />
+          <Property Name="CodigoPostal" Type="varchar(max)" />
+          <Property Name="IDMunicipio" Type="varchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.catEmpleados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="catEmpleados">
+          <Key>
+            <PropertyRef Name="IDEmpleado" />
+            <PropertyRef Name="NombreCompleto" />
+            <PropertyRef Name="Estatus" />
+            <PropertyRef Name="Direccion" />
+            <PropertyRef Name="FechaNacimiento" />
+            <PropertyRef Name="FechaAlta" />
+            <PropertyRef Name="IDGimnasio" />
+          </Key>
+          <Property Name="IDEmpleado" Type="int" Nullable="false" />
+          <Property Name="NombreCompleto" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Estatus" Type="int" Nullable="false" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="IDColonia" Type="int" />
+          <Property Name="Municipio" Type="nvarchar" MaxLength="20" />
+          <Property Name="Localidad" Type="nvarchar" MaxLength="20" />
+          <Property Name="CPostal" Type="nvarchar" MaxLength="10" />
+          <Property Name="FechaNacimiento" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="FechaAlta" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="25" />
+          <Property Name="Movil" Type="nvarchar" MaxLength="25" />
+          <Property Name="NombreUsuario" Type="nvarchar" MaxLength="20" />
+          <Property Name="Contrasena" Type="nvarchar(max)" />
+          <Property Name="IDGimnasio" Type="int" Nullable="false" />
+          <Property Name="IDCausante" Type="int" />
+          <Property Name="NivelUsaurio" Type="int" />
+          <Property Name="IDMunicipio" Type="int" />
+          <Property Name="DentroSistema" Type="int" />
+          <Property Name="eMail" Type="varchar" MaxLength="50" />
+          <Property Name="NumeroEmpleado" Type="nvarchar" MaxLength="15" />
+          <Property Name="Puesto" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.catEmpresas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="catEmpresas">
+          <Key>
+            <PropertyRef Name="IDEmpresa" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Direccion" />
+            <PropertyRef Name="Localidad" />
+            <PropertyRef Name="CPostal" />
+            <PropertyRef Name="RFC" />
+            <PropertyRef Name="NombreContacto" />
+            <PropertyRef Name="eMailContacto" />
+          </Key>
+          <Property Name="IDEmpresa" Type="int" Nullable="false" />
+          <Property Name="RazonSocial" Type="nvarchar" MaxLength="100" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Colonia" Type="nvarchar" MaxLength="10" />
+          <Property Name="Localidad" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Municipio" Type="nvarchar" MaxLength="20" />
+          <Property Name="CPostal" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="RFC" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="25" />
+          <Property Name="NombreContacto" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="eMailContacto" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="WebSite" Type="nvarchar" MaxLength="100" />
+          <Property Name="CelularContacto" Type="nvarchar" MaxLength="25" />
+          <Property Name="RadioContacto" Type="nvarchar" MaxLength="25" />
+          <Property Name="TelefonoContacto" Type="nvarchar" MaxLength="25" />
+          <Property Name="Extension" Type="nvarchar" MaxLength="10" />
+          <Property Name="Puesto" Type="nvarchar" MaxLength="25" />
+          <Property Name="Estatus" Type="int" />
+          <Property Name="IDMunicipio" Type="nchar" MaxLength="10" />
+          <Property Name="IDColonia" Type="nchar" MaxLength="10" />
+          <Property Name="Estado" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.catEstados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="catEstados">
+          <Key>
+            <PropertyRef Name="IDEstado" />
+          </Key>
+          <Property Name="IDEstado" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.catGimnasios' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="catGimnasios">
+          <Key>
+            <PropertyRef Name="IDGimnasio" />
+            <PropertyRef Name="Nombre" />
+          </Key>
+          <Property Name="IDGimnasio" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Estatus" Type="int" />
+          <Property Name="IDZonaGeografica" Type="int" />
+          <Property Name="NombreCorto" Type="varchar" MaxLength="10" />
+          <Property Name="PrefijoFolio" Type="nchar" MaxLength="10" />
+          <Property Name="NombreSucursal" Type="varchar" MaxLength="50" />
+          <Property Name="Compania" Type="varchar" MaxLength="50" />
+          <Property Name="Direccion" Type="varchar" MaxLength="50" />
+          <Property Name="RFC" Type="varchar" MaxLength="50" />
+          <Property Name="Regimen" Type="varchar" MaxLength="50" />
+          <Property Name="RazonSocial" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.catMunicipios' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="catMunicipios">
+          <Key>
+            <PropertyRef Name="IDMunicipio" />
+          </Key>
+          <Property Name="IDMunicipio" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="IDEstado" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.catOcupaciones' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="catOcupaciones">
+          <Key>
+            <PropertyRef Name="IdOcupacion" />
+          </Key>
+          <Property Name="IdOcupacion" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="catPlantillas">
+          <Key>
+            <PropertyRef Name="IDCliente" />
+            <PropertyRef Name="IDGimnasio" />
+            <PropertyRef Name="IDDedo" />
+          </Key>
+          <Property Name="IDCliente" Type="int" Nullable="false" />
+          <Property Name="IDGimnasio" Type="int" Nullable="false" />
+          <Property Name="IDDedo" Type="int" Nullable="false" />
+          <Property Name="Tipo" Type="nvarchar" MaxLength="2" />
+          <Property Name="Valida" Type="int" />
+          <Property Name="Plantilla" Type="nvarchar" MaxLength="4000" />
+          <Property Name="FechaCaptura" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.catProductos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="catProductos">
+          <Key>
+            <PropertyRef Name="IDProducto" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="PrecioVenta" />
+            <PropertyRef Name="IDTipo" />
+          </Key>
+          <Property Name="IDProducto" Type="int" Nullable="false" />
+          <Property Name="IDGimnasio" Type="int" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PrecioVenta" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Dias" Type="int" />
+          <Property Name="IDTipo" Type="int" Nullable="false" />
+          <Property Name="ExistenciaInvFisico" Type="int" />
+          <Property Name="FechaInvFisico" Type="nvarchar" MaxLength="8" />
+          <Property Name="HInvFisico" Type="nvarchar" MaxLength="8" />
+          <Property Name="FUltimaCompra" Type="nvarchar" MaxLength="8" />
+          <Property Name="Existencia" Type="int" />
+          <Property Name="Estatus" Type="int" />
+          <Property Name="FactorIva" Type="int" />
+          <Property Name="CtaContable" Type="varchar" MaxLength="20" />
+          <Property Name="IDProveedor" Type="int" />
+          <Property Name="FechaBaja" Type="nvarchar" MaxLength="50" />
+          <Property Name="SeDescarga" Type="int" />
+          <Property Name="FUltimaVenta" Type="nvarchar" MaxLength="8" />
+          <Property Name="TipoCuota" Type="int" />
+          <Property Name="EnPlazos" Type="int" />
+          <Property Name="IDCategoria" Type="int" />
+          <Property Name="Imagen" Type="image" />
+        </EntityType>
+        <EntityType Name="catProveedores">
+          <Key>
+            <PropertyRef Name="IDProveedor" />
+          </Key>
+          <Property Name="IDProveedor" Type="int" Nullable="false" />
+          <Property Name="RazonSocial" Type="varchar" MaxLength="100" />
+          <Property Name="Direccion" Type="varchar" MaxLength="100" />
+          <Property Name="IDMunicipio" Type="int" />
+          <Property Name="IDColonia" Type="int" />
+          <Property Name="Localidad" Type="varchar" MaxLength="50" />
+          <Property Name="CPostal" Type="nchar" MaxLength="10" />
+          <Property Name="RFC" Type="varchar" MaxLength="15" />
+          <Property Name="Telefono" Type="varchar" MaxLength="15" />
+          <Property Name="WebSite" Type="varchar" MaxLength="100" />
+          <Property Name="Estatus" Type="int" />
+          <Property Name="NombreContacto" Type="varchar" MaxLength="100" />
+          <Property Name="PuestoContacto" Type="varchar" MaxLength="50" />
+          <Property Name="TelefonoContacto" Type="varchar" MaxLength="25" />
+          <Property Name="MovilContacto" Type="varchar" MaxLength="25" />
+          <Property Name="RadioContacto" Type="varchar" MaxLength="25" />
+          <Property Name="ExtContacto" Type="nchar" MaxLength="10" />
+          <Property Name="eMailContacto" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.catUsuarios' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="catUsuarios">
+          <Key>
+            <PropertyRef Name="IDusaurio" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="NombreUsuario" />
+            <PropertyRef Name="Contrasena" />
+            <PropertyRef Name="IDGimnasio" />
+            <PropertyRef Name="IDCausante" />
+            <PropertyRef Name="NivelUsuario" />
+          </Key>
+          <Property Name="IDusaurio" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NombreUsuario" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Contrasena" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IDGimnasio" Type="int" Nullable="false" />
+          <Property Name="IDCausante" Type="int" Nullable="false" />
+          <Property Name="NivelUsuario" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.catZonaGeografica' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="catZonaGeografica">
+          <Key>
+            <PropertyRef Name="IDZona" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="IVA" />
+          </Key>
+          <Property Name="IDZona" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IVA" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblAsistencia">
+          <Key>
+            <PropertyRef Name="IDReg" />
+          </Key>
+          <Property Name="IDGimnasio" Type="int" Nullable="false" />
+          <Property Name="IDGimnasio2" Type="int" Nullable="false" />
+          <Property Name="IDCliente" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="Hora" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="Enviado" Type="int" />
+          <Property Name="IDReg" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDAcceso" Type="int" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.tblAsistencia1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tblAsistencia1">
+          <Key>
+            <PropertyRef Name="IDGimnasio" />
+            <PropertyRef Name="IDGimnasio2" />
+            <PropertyRef Name="IDCliente" />
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="Hora" />
+          </Key>
+          <Property Name="IDGimnasio" Type="int" Nullable="false" />
+          <Property Name="IDGimnasio2" Type="int" Nullable="false" />
+          <Property Name="IDCliente" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="Hora" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="Enviado" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'eimagenn_gym_0001.dbo.tblBitacora' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tblBitacora">
+          <Property Name="IDFolio" Type="int" />
+          <Property Name="Fecha" Type="nvarchar" MaxLength="8" />
+          <Property Name="Hora" Type="nchar" MaxLength="8" />
+          <Property Name="Movimiento" Type="nvarchar(max)" />
+          <Property Name="Comentario" Type="varchar" MaxLength="50" />
+          <Property Name="Observaciones" Type="varchar" MaxLength="250" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'eimagenn_gym_0001.dbo.tblCamposBusqueda' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tblCamposBusqueda">
+          <Property Name="Tabla" Type="nvarchar(max)" />
+          <Property Name="Campo" Type="nvarchar(max)" />
+          <Property Name="Activo" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'eimagenn_gym_0001.dbo.tblCompras' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tblCompras">
+          <Property Name="IDCompra" Type="int" />
+          <Property Name="IDProveedor" Type="int" />
+          <Property Name="IDGimnasio" Type="int" />
+          <Property Name="IDUsuario" Type="int" />
+          <Property Name="Fecha" Type="nvarchar" MaxLength="8" />
+          <Property Name="Factura" Type="nvarchar" MaxLength="20" />
+          <Property Name="Importe" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="FechaFactura" Type="nvarchar" MaxLength="8" />
+          <Property Name="Procesada" Type="int" />
+          <Property Name="TipoCambio" Type="nchar" MaxLength="10" />
+          <Property Name="IVA" Type="nchar" MaxLength="10" />
+          <Property Name="TipoMovimiento" Type="nchar" MaxLength="1" />
+          <Property Name="Enviado" Type="int" />
+          <Property Name="Observaciones" Type="nvarchar(max)" />
+          <Property Name="FecProcesada" Type="nvarchar" MaxLength="8" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'eimagenn_gym_0001.dbo.tblDetalleCompra' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tblDetalleCompra">
+          <Property Name="IDCompra" Type="int" />
+          <Property Name="Factura" Type="nchar" MaxLength="20" />
+          <Property Name="IDproducto" Type="int" />
+          <Property Name="Costo" Type="nchar" MaxLength="10" />
+          <Property Name="Cantidad" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="Fecha" Type="varchar" MaxLength="8" />
+          <Property Name="Enviado" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.tblDetalleventas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tblDetalleventas">
+          <Key>
+            <PropertyRef Name="IDFolio" />
+          </Key>
+          <Property Name="IDFolio" Type="int" Nullable="false" />
+          <Property Name="IDGimnasio" Type="int" />
+          <Property Name="IDGimnasio2" Type="int" />
+          <Property Name="IDCausante" Type="int" />
+          <Property Name="IDCliente" Type="int" />
+          <Property Name="IDProducto" Type="int" />
+          <Property Name="Cantidad" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="Precio" Type="varchar" MaxLength="15" />
+          <Property Name="Fecha" Type="nchar" MaxLength="10" />
+          <Property Name="Hora" Type="nchar" MaxLength="10" />
+          <Property Name="Iva" Type="varchar" MaxLength="15" />
+          <Property Name="Tipo" Type="int" />
+          <Property Name="Nuevo" Type="int" />
+          <Property Name="Enviado" Type="int" />
+          <Property Name="SerieFactura" Type="varchar" MaxLength="10" />
+          <Property Name="TipoCuota" Type="int" />
+          <Property Name="IDCliente2" Type="int" />
+        </EntityType>
+        <EntityType Name="tblEventos">
+          <Key>
+            <PropertyRef Name="IdEvento" />
+          </Key>
+          <Property Name="IdEvento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCliente" Type="int" />
+          <Property Name="IdGimnasio" Type="int" />
+          <Property Name="IdAcceso" Type="int" />
+          <Property Name="IdPuerta" Type="int" />
+          <Property Name="IdTipoEvento" Type="int" />
+          <Property Name="IdEstado" Type="int" />
+          <Property Name="IdFechaEvento" Type="int" />
+          <Property Name="FechaEvento" Type="datetime" />
+          <Property Name="Procesado" Type="int" />
+        </EntityType>
+        <EntityType Name="tblEventosRapidos">
+          <Key>
+            <PropertyRef Name="IdEvento" />
+          </Key>
+          <Property Name="IdEvento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCliente" Type="int" Nullable="false" />
+          <Property Name="IdGimnasio" Type="int" Nullable="false" />
+          <Property Name="IdTipoEvento" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="Atendido" Type="varchar" MaxLength="1" />
+          <Property Name="FechaAtencion" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.tblFoliosVentas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tblFoliosVentas">
+          <Key>
+            <PropertyRef Name="IDFolio" />
+            <PropertyRef Name="IDCausante" />
+          </Key>
+          <Property Name="IDFolio" Type="int" Nullable="false" />
+          <Property Name="IDGimnasio" Type="int" />
+          <Property Name="IDGimnasio2" Type="int" />
+          <Property Name="IDCausante" Type="int" Nullable="false" />
+          <Property Name="IDCliente" Type="int" />
+          <Property Name="Fecha" Type="nchar" MaxLength="10" />
+          <Property Name="Hora" Type="varchar" MaxLength="10" />
+          <Property Name="Importe" Type="varchar" MaxLength="15" />
+          <Property Name="Tipo" Type="int" />
+          <Property Name="Pesos" Type="varchar" MaxLength="15" />
+          <Property Name="Dolares" Type="varchar" MaxLength="15" />
+          <Property Name="Cheque" Type="int" />
+          <Property Name="Tarjeta" Type="int" />
+          <Property Name="Cambio" Type="varchar" MaxLength="50" />
+          <Property Name="TipoCambio" Type="varchar" MaxLength="15" />
+          <Property Name="Nuevo" Type="int" />
+          <Property Name="IDUsuario" Type="int" />
+          <Property Name="Iva" Type="varchar" MaxLength="15" />
+          <Property Name="Estatus" Type="int" />
+          <Property Name="Enviado" Type="int" />
+          <Property Name="SerieFactura" Type="varchar" MaxLength="10" />
+          <Property Name="IDCliente2" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'eimagenn_gym_0001.dbo.tblHorario' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tblHorario">
+          <Property Name="Horario" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'eimagenn_gym_0001.dbo.tblHorarioReporte' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tblHorarioReporte">
+          <Property Name="Hora1" Type="nchar" MaxLength="5" />
+          <Property Name="Hora2" Type="nchar" MaxLength="5" />
+        </EntityType>-->
+        <EntityType Name="tblMovimientoCaja">
+          <Key>
+            <PropertyRef Name="IDmovimiento" />
+          </Key>
+          <Property Name="IDmovimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDUsuario" Type="int" Nullable="false" />
+          <Property Name="Monto_Movimiento" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Tipo_Movimiento" Type="int" Nullable="false" />
+          <Property Name="Corte_Movimiento" Type="int" />
+          <Property Name="Concepto_Movimiento" Type="varchar" MaxLength="50" />
+          <Property Name="Comentario_Movimiento" Type="varchar" MaxLength="150" />
+          <Property Name="Solicito_Movimiento" Type="varchar" MaxLength="25" />
+          <Property Name="Fecha_Movimiento" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="Hora_Movimiento" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="AutorizadoPor_Movimiento" Type="varchar" MaxLength="25" />
+          <Property Name="Recibio_Movimiento" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'eimagenn_gym_0001.dbo.tblParametros' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tblParametros">
+          <Property Name="TipoCambio" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="LPPuntodeVenta" Type="nvarchar" MaxLength="50" />
+          <Property Name="IVA" Type="nchar" MaxLength="10" />
+          <Property Name="ContrasenaGral" Type="nchar" MaxLength="10" />
+          <Property Name="DiasNoPenalizacion" Type="int" />
+          <Property Name="eMaildeSalida" Type="nvarchar" MaxLength="50" />
+          <Property Name="eMailContrasena" Type="nvarchar" MaxLength="50" />
+          <Property Name="CobraIVA" Type="int" />
+          <Property Name="FolderFotos" Type="varchar" MaxLength="100" />
+          <Property Name="IDMunicipio" Type="nchar" MaxLength="10" />
+          <Property Name="DiasAvisoVencimiento" Type="int" />
+          <Property Name="MinActAsist" Type="int" />
+          <Property Name="MinActAdmon" Type="int" />
+          <Property Name="EnviarMailRenovacion" Type="int" />
+          <Property Name="FolderFotosftp" Type="varchar" MaxLength="50" />
+          <Property Name="Actualizarenlinea" Type="int" />
+          <Property Name="ServidorSmtp" Type="varchar" MaxLength="50" />
+          <Property Name="PuertoSmtp" Type="varchar" MaxLength="50" />
+          <Property Name="eMailSupervisor" Type="varchar" MaxLength="50" />
+          <Property Name="VecesReciboVtaMostrador" Type="int" />
+          <Property Name="VecesReciboVtaMembresia" Type="int" />
+          <Property Name="LeyendaRecibo" Type="varchar" MaxLength="50" />
+          <Property Name="ControlHuellas" Type="int" />
+          <Property Name="TorniqueteGimnasios" Type="int" />
+          <Property Name="TorniqueteSalones" Type="int" />
+          <Property Name="CorreoResponsable" Type="varchar" MaxLength="250" />
+          <Property Name="NombreResponsable" Type="varchar" MaxLength="50" />
+          <Property Name="EmailRenovaciones" Type="bit" />
+          <Property Name="EmailCancelacionVenta" Type="bit" />
+          <Property Name="EmailCorteCaja" Type="bit" />
+          <Property Name="ContrasenaEmail" Type="varchar" MaxLength="50" />
+          <Property Name="UsuarioEmail" Type="varchar" MaxLength="150" />
+          <Property Name="ServidorFTPFotos" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.tblProductoPrecio' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tblProductoPrecio">
+          <Key>
+            <PropertyRef Name="IDProducto" />
+            <PropertyRef Name="Precio" />
+            <PropertyRef Name="IDGimnasio" />
+          </Key>
+          <Property Name="IDProducto" Type="int" Nullable="false" />
+          <Property Name="IDZonaGeo" Type="int" />
+          <Property Name="Precio" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="IDGimnasio" Type="int" Nullable="false" />
+          <Property Name="Precio2" Type="decimal" Precision="8" Scale="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'eimagenn_gym_0001.dbo.tblRegistros' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tblRegistros">
+          <Property Name="CantRegistros" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'eimagenn_gym_0001.dbo.tblTipoCambio' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tblTipoCambio">
+          <Property Name="tc_Fecha" Type="nchar" MaxLength="10" />
+          <Property Name="tc_TipoCambio" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.v_Asistencia' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_Asistencia">
+          <Key>
+            <PropertyRef Name="Hora" />
+            <PropertyRef Name="IDCliente" />
+            <PropertyRef Name="IDGimnasio" />
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="IDGimnasio2" />
+          </Key>
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Hora" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="IDCliente" Type="int" Nullable="false" />
+          <Property Name="Sexo" Type="int" />
+          <Property Name="IDGimnasio" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="IDGimnasio2" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.v_AsistenciaCliente' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_AsistenciaCliente">
+          <Key>
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="Hora" />
+            <PropertyRef Name="IDGimnasio" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="IDCliente" />
+          </Key>
+          <Property Name="Fecha" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="Hora" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="IDGimnasio" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDCliente" Type="int" Nullable="false" />
+          <Property Name="NombreSucursal" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.v_AsistenciaHombreMujer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_AsistenciaHombreMujer">
+          <Key>
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="IDGimnasio" />
+          </Key>
+          <Property Name="Hombre" Type="int" />
+          <Property Name="Mujer" Type="int" />
+          <Property Name="Fecha" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="IDGimnasio" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.v_AsistXHora' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_AsistXHora">
+          <Key>
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="IDGimnasio" />
+            <PropertyRef Name="Hora" />
+          </Key>
+          <Property Name="CantSexo" Type="int" />
+          <Property Name="Sexo" Type="int" />
+          <Property Name="Fecha" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="IDGimnasio" Type="int" Nullable="false" />
+          <Property Name="Lunes" Type="int" />
+          <Property Name="Martes" Type="int" />
+          <Property Name="Miercoles" Type="int" />
+          <Property Name="Jueves" Type="int" />
+          <Property Name="Viernes" Type="int" />
+          <Property Name="Sabado" Type="int" />
+          <Property Name="Domingo" Type="int" />
+          <Property Name="Hora" Type="nvarchar" MaxLength="6" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.v_AsisVencidas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_AsisVencidas">
+          <Key>
+            <PropertyRef Name="IDCliente" />
+          </Key>
+          <Property Name="Asistencia" Type="int" />
+          <Property Name="FechaVencimiento" Type="nvarchar" MaxLength="8" />
+          <Property Name="FechaUltimaAsistencia" Type="nvarchar" MaxLength="8" />
+          <Property Name="IDCliente" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Telefono" Type="varchar" MaxLength="16" />
+          <Property Name="FechaAlta" Type="nvarchar" MaxLength="8" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.v_CantProdPorFecha' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_CantProdPorFecha">
+          <Key>
+            <PropertyRef Name="IDFolio" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="IDTipo" />
+          </Key>
+          <Property Name="Fecha" Type="nchar" MaxLength="10" />
+          <Property Name="Hora" Type="varchar" MaxLength="10" />
+          <Property Name="Estatus" Type="int" />
+          <Property Name="IDFolio" Type="int" Nullable="false" />
+          <Property Name="IDProducto" Type="int" />
+          <Property Name="Cant" Type="numeric" Precision="38" Scale="0" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDTipo" Type="int" Nullable="false" />
+          <Property Name="Precio" Type="varchar" MaxLength="15" />
+          <Property Name="Iva" Type="varchar" MaxLength="15" />
+          <Property Name="IDCausante" Type="int" />
+          <Property Name="FactorIva" Type="int" />
+          <Property Name="SerieFactura" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.v_CantProdPorFechaGimnasio' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_CantProdPorFechaGimnasio">
+          <Key>
+            <PropertyRef Name="IDFolio" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="IDTipo" />
+          </Key>
+          <Property Name="Fecha" Type="nchar" MaxLength="10" />
+          <Property Name="Hora" Type="varchar" MaxLength="10" />
+          <Property Name="Estatus" Type="int" />
+          <Property Name="IDFolio" Type="int" Nullable="false" />
+          <Property Name="IDProducto" Type="int" />
+          <Property Name="Cant" Type="numeric" Precision="38" Scale="0" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDTipo" Type="int" Nullable="false" />
+          <Property Name="Precio" Type="varchar" MaxLength="15" />
+          <Property Name="Iva" Type="varchar" MaxLength="15" />
+          <Property Name="IDCausante" Type="int" />
+          <Property Name="FactorIva" Type="int" />
+          <Property Name="IDGimnasio" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.v_CompraProveedor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_CompraProveedor">
+          <Key>
+            <PropertyRef Name="IDCompra" />
+          </Key>
+          <Property Name="IDCompra" Type="int" Nullable="false" />
+          <Property Name="Factura" Type="nvarchar" MaxLength="20" />
+          <Property Name="RazonSocial" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'eimagenn_gym_0001.dbo.v_ComprasxProdHist' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="v_ComprasxProdHist">
+          <Property Name="IDCompra" Type="int" />
+          <Property Name="Fecha" Type="nvarchar" MaxLength="8" />
+          <Property Name="Factura" Type="nvarchar" MaxLength="20" />
+          <Property Name="IDproducto" Type="int" />
+          <Property Name="Cantidad" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="TipoMovimiento" Type="nchar" MaxLength="1" />
+          <Property Name="Procesada" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.v_ComprasXProducto' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_ComprasXProducto">
+          <Key>
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="IDTipo" />
+          </Key>
+          <Property Name="Compras" Type="numeric" Precision="38" Scale="0" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDGimnasio" Type="int" />
+          <Property Name="IDproducto" Type="int" />
+          <Property Name="IDTipo" Type="int" Nullable="false" />
+          <Property Name="FechaInvFisico" Type="nvarchar" MaxLength="8" />
+          <Property Name="Fecha" Type="nvarchar" MaxLength="8" />
+          <Property Name="TipoMovimiento" Type="nchar" MaxLength="1" />
+          <Property Name="Cantidad" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="Procesada" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'eimagenn_gym_0001.dbo.v_CorteCaja' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="v_CorteCaja">
+          <Property Name="Total" Type="float" />
+          <Property Name="Tipo" Type="int" />
+          <Property Name="Tarjeta" Type="int" />
+          <Property Name="Fecha" Type="nchar" MaxLength="10" />
+          <Property Name="Hora" Type="varchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.v_Empleados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_Empleados">
+          <Key>
+            <PropertyRef Name="IDEmpleado" />
+            <PropertyRef Name="NombreCompleto" />
+            <PropertyRef Name="Estatus" />
+            <PropertyRef Name="Direccion" />
+            <PropertyRef Name="FechaNacimiento" />
+            <PropertyRef Name="FechaAlta" />
+            <PropertyRef Name="IDGimnasio" />
+          </Key>
+          <Property Name="IDEmpleado" Type="int" Nullable="false" />
+          <Property Name="NombreCompleto" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Estatus" Type="int" Nullable="false" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="IDColonia" Type="int" />
+          <Property Name="Municipio" Type="nvarchar" MaxLength="20" />
+          <Property Name="Localidad" Type="nvarchar" MaxLength="20" />
+          <Property Name="CPostal" Type="nvarchar" MaxLength="10" />
+          <Property Name="FechaNacimiento" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="FechaAlta" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="25" />
+          <Property Name="Movil" Type="nvarchar" MaxLength="25" />
+          <Property Name="NombreUsuario" Type="nvarchar" MaxLength="20" />
+          <Property Name="Contrasena" Type="nvarchar(max)" />
+          <Property Name="IDGimnasio" Type="int" Nullable="false" />
+          <Property Name="IDCausante" Type="int" />
+          <Property Name="NivelUsaurio" Type="int" />
+          <Property Name="IDMunicipio" Type="int" />
+          <Property Name="DentroSistema" Type="int" />
+          <Property Name="eMail" Type="varchar" MaxLength="50" />
+          <Property Name="Gimnasio" Type="varchar" MaxLength="50" />
+          <Property Name="Minicipio" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.v_EstAsisXCliente' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_EstAsisXCliente">
+          <Key>
+            <PropertyRef Name="IDCliente" />
+            <PropertyRef Name="IDGimnasio" />
+          </Key>
+          <Property Name="Cantidad" Type="int" />
+          <Property Name="IDCliente" Type="int" Nullable="false" />
+          <Property Name="Maxx" Type="nvarchar" MaxLength="6" />
+          <Property Name="Minn" Type="nvarchar" MaxLength="6" />
+          <Property Name="IDGimnasio" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="FechaAlta" Type="nvarchar" MaxLength="8" />
+          <Property Name="Sexo" Type="int" />
+          <Property Name="Ocup" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.v_FolioDesgloce' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_FolioDesgloce">
+          <Key>
+            <PropertyRef Name="IDFolio" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="IDTipo" />
+            <PropertyRef Name="RazonSocial" />
+          </Key>
+          <Property Name="IDFolio" Type="int" Nullable="false" />
+          <Property Name="Importe" Type="varchar" MaxLength="15" />
+          <Property Name="Hora" Type="varchar" MaxLength="10" />
+          <Property Name="Estatus" Type="int" />
+          <Property Name="Fecha" Type="nchar" MaxLength="10" />
+          <Property Name="IDCausante" Type="int" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDTipo" Type="int" Nullable="false" />
+          <Property Name="RazonSocial" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Precio" Type="varchar" MaxLength="15" />
+          <Property Name="Cantidad" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="Tarjeta" Type="int" />
+          <Property Name="SerieFactura" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.v_FolioDesgloceGimnasio' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_FolioDesgloceGimnasio">
+          <Key>
+            <PropertyRef Name="IDFolio" />
+            <PropertyRef Name="RazonSocial" />
+            <PropertyRef Name="IDCausante" />
+            <PropertyRef Name="IDTipo" />
+            <PropertyRef Name="Descripcion" />
+          </Key>
+          <Property Name="IDFolio" Type="int" Nullable="false" />
+          <Property Name="Importe" Type="varchar" MaxLength="15" />
+          <Property Name="Hora" Type="varchar" MaxLength="10" />
+          <Property Name="Estatus" Type="int" />
+          <Property Name="Fecha" Type="nchar" MaxLength="10" />
+          <Property Name="Tarjeta" Type="int" />
+          <Property Name="IDGimnasio" Type="int" />
+          <Property Name="RazonSocial" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="IDCausante" Type="int" Nullable="false" />
+          <Property Name="IDTipo" Type="int" Nullable="false" />
+          <Property Name="Precio" Type="varchar" MaxLength="15" />
+          <Property Name="Cantidad" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SerieFactura" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.v_KardexProductos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_KardexProductos">
+          <Key>
+            <PropertyRef Name="Descripcion" />
+          </Key>
+          <Property Name="ventas" Type="numeric" Precision="38" Scale="0" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDGimnasio" Type="int" />
+          <Property Name="IDProducto" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.v_prueba' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_prueba">
+          <Key>
+            <PropertyRef Name="Descripcion" />
+          </Key>
+          <Property Name="total" Type="numeric" Precision="38" Scale="0" />
+          <Property Name="totalPesos" Type="numeric" Precision="38" Scale="0" />
+          <Property Name="Fecha" Type="nchar" MaxLength="10" />
+          <Property Name="Estatus" Type="int" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Precio" Type="varchar" MaxLength="15" />
+          <Property Name="Iva" Type="varchar" MaxLength="15" />
+          <Property Name="Hora" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.v_Test' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_Test">
+          <Key>
+            <PropertyRef Name="IDCliente" />
+            <PropertyRef Name="IDGimnasio" />
+            <PropertyRef Name="Fecha" />
+          </Key>
+          <Property Name="Cantidad" Type="int" />
+          <Property Name="IDCliente" Type="int" Nullable="false" />
+          <Property Name="Maxx" Type="nvarchar" MaxLength="6" />
+          <Property Name="Minn" Type="nvarchar" MaxLength="6" />
+          <Property Name="IDGimnasio" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="FechaAlta" Type="nvarchar" MaxLength="8" />
+          <Property Name="Sexo" Type="int" />
+          <Property Name="Ocup" Type="nvarchar(max)" />
+          <Property Name="Fecha" Type="nvarchar" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.v_VentasxProdHist' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_VentasxProdHist">
+          <Key>
+            <PropertyRef Name="IDFolio" />
+          </Key>
+          <Property Name="IDFolio" Type="int" Nullable="false" />
+          <Property Name="IDProducto" Type="int" />
+          <Property Name="Cantidad" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="Fecha" Type="nchar" MaxLength="10" />
+          <Property Name="Estatus" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.v_VentasXProducto' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_VentasXProducto">
+          <Key>
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="IDTipo" />
+            <PropertyRef Name="IDFolio" />
+          </Key>
+          <Property Name="ventas" Type="numeric" Precision="38" Scale="0" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDGimnasio" Type="int" />
+          <Property Name="IDProducto" Type="int" />
+          <Property Name="IDTipo" Type="int" Nullable="false" />
+          <Property Name="Cantidad" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="Estatus" Type="int" />
+          <Property Name="IDFolio" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eimagenn_gym_0001.dbo.v_VtasGral' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_VtasGral">
+          <Key>
+            <PropertyRef Name="IDFolio" />
+            <PropertyRef Name="IDCliente" />
+          </Key>
+          <Property Name="IDFolio" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="nchar" MaxLength="10" />
+          <Property Name="Hora" Type="varchar" MaxLength="10" />
+          <Property Name="Importe" Type="varchar" MaxLength="15" />
+          <Property Name="Estatus" Type="int" />
+          <Property Name="IDCliente" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Iva" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityContainer Name="eimagenn_gym_0001ModelStoreContainer">
+          <EntitySet Name="catAspirantes" EntityType="Self.catAspirantes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="catClientes" EntityType="Self.catClientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="catPlantillas" EntityType="Self.catPlantillas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="catProveedores" EntityType="Self.catProveedores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblAsistencia" EntityType="Self.tblAsistencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblEventos" EntityType="Self.tblEventos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblEventosRapidos" EntityType="Self.tblEventosRapidos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblMovimientoCaja" EntityType="Self.tblMovimientoCaja" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="catCategorias" EntityType="Self.catCategorias" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [catCategorias].[IDCategoria] AS [IDCategoria], 
+    [catCategorias].[Descripcion] AS [Descripcion]
+    FROM [dbo].[catCategorias] AS [catCategorias]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="catCausantes" EntityType="Self.catCausantes" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [catCausantes].[IDCausante] AS [IDCausante], 
+    [catCausantes].[IDGimnasio] AS [IDGimnasio], 
+    [catCausantes].[RazonSocial] AS [RazonSocial], 
+    [catCausantes].[Direccion] AS [Direccion], 
+    [catCausantes].[Colonia] AS [Colonia], 
+    [catCausantes].[Localidad] AS [Localidad], 
+    [catCausantes].[Municipio] AS [Municipio], 
+    [catCausantes].[CPostal] AS [CPostal], 
+    [catCausantes].[RFC] AS [RFC], 
+    [catCausantes].[Telefono] AS [Telefono], 
+    [catCausantes].[Tarjeta] AS [Tarjeta], 
+    [catCausantes].[Estatus] AS [Estatus], 
+    [catCausantes].[Iva] AS [Iva], 
+    [catCausantes].[CuentaIva] AS [CuentaIva], 
+    [catCausantes].[IDMunicipio] AS [IDMunicipio], 
+    [catCausantes].[IDColonia] AS [IDColonia], 
+    [catCausantes].[CorreoElectronico] AS [CorreoElectronico], 
+    [catCausantes].[Regimen] AS [Regimen], 
+    [catCausantes].[SerieFactura] AS [SerieFactura]
+    FROM [dbo].[catCausantes] AS [catCausantes]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="catColonias" EntityType="Self.catColonias" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [catColonias].[IDColonia] AS [IDColonia], 
+    [catColonias].[Nombre] AS [Nombre], 
+    [catColonias].[CodigoPostal] AS [CodigoPostal], 
+    [catColonias].[IDMunicipio] AS [IDMunicipio]
+    FROM [dbo].[catColonias] AS [catColonias]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="catEmpleados" EntityType="Self.catEmpleados" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [catEmpleados].[IDEmpleado] AS [IDEmpleado], 
+    [catEmpleados].[NombreCompleto] AS [NombreCompleto], 
+    [catEmpleados].[Estatus] AS [Estatus], 
+    [catEmpleados].[Direccion] AS [Direccion], 
+    [catEmpleados].[IDColonia] AS [IDColonia], 
+    [catEmpleados].[Municipio] AS [Municipio], 
+    [catEmpleados].[Localidad] AS [Localidad], 
+    [catEmpleados].[CPostal] AS [CPostal], 
+    [catEmpleados].[FechaNacimiento] AS [FechaNacimiento], 
+    [catEmpleados].[FechaAlta] AS [FechaAlta], 
+    [catEmpleados].[Telefono] AS [Telefono], 
+    [catEmpleados].[Movil] AS [Movil], 
+    [catEmpleados].[NombreUsuario] AS [NombreUsuario], 
+    [catEmpleados].[Contrasena] AS [Contrasena], 
+    [catEmpleados].[IDGimnasio] AS [IDGimnasio], 
+    [catEmpleados].[IDCausante] AS [IDCausante], 
+    [catEmpleados].[NivelUsaurio] AS [NivelUsaurio], 
+    [catEmpleados].[IDMunicipio] AS [IDMunicipio], 
+    [catEmpleados].[DentroSistema] AS [DentroSistema], 
+    [catEmpleados].[eMail] AS [eMail], 
+    [catEmpleados].[NumeroEmpleado] AS [NumeroEmpleado], 
+    [catEmpleados].[Puesto] AS [Puesto]
+    FROM [dbo].[catEmpleados] AS [catEmpleados]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="catEmpresas" EntityType="Self.catEmpresas" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [catEmpresas].[IDEmpresa] AS [IDEmpresa], 
+    [catEmpresas].[RazonSocial] AS [RazonSocial], 
+    [catEmpresas].[Nombre] AS [Nombre], 
+    [catEmpresas].[Direccion] AS [Direccion], 
+    [catEmpresas].[Colonia] AS [Colonia], 
+    [catEmpresas].[Localidad] AS [Localidad], 
+    [catEmpresas].[Municipio] AS [Municipio], 
+    [catEmpresas].[CPostal] AS [CPostal], 
+    [catEmpresas].[RFC] AS [RFC], 
+    [catEmpresas].[Telefono] AS [Telefono], 
+    [catEmpresas].[NombreContacto] AS [NombreContacto], 
+    [catEmpresas].[eMailContacto] AS [eMailContacto], 
+    [catEmpresas].[WebSite] AS [WebSite], 
+    [catEmpresas].[CelularContacto] AS [CelularContacto], 
+    [catEmpresas].[RadioContacto] AS [RadioContacto], 
+    [catEmpresas].[TelefonoContacto] AS [TelefonoContacto], 
+    [catEmpresas].[Extension] AS [Extension], 
+    [catEmpresas].[Puesto] AS [Puesto], 
+    [catEmpresas].[Estatus] AS [Estatus], 
+    [catEmpresas].[IDMunicipio] AS [IDMunicipio], 
+    [catEmpresas].[IDColonia] AS [IDColonia], 
+    [catEmpresas].[Estado] AS [Estado]
+    FROM [dbo].[catEmpresas] AS [catEmpresas]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="catEstados" EntityType="Self.catEstados" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [catEstados].[IDEstado] AS [IDEstado], 
+    [catEstados].[Nombre] AS [Nombre]
+    FROM [dbo].[catEstados] AS [catEstados]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="catGimnasios" EntityType="Self.catGimnasios" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [catGimnasios].[IDGimnasio] AS [IDGimnasio], 
+    [catGimnasios].[Nombre] AS [Nombre], 
+    [catGimnasios].[Estatus] AS [Estatus], 
+    [catGimnasios].[IDZonaGeografica] AS [IDZonaGeografica], 
+    [catGimnasios].[NombreCorto] AS [NombreCorto], 
+    [catGimnasios].[PrefijoFolio] AS [PrefijoFolio], 
+    [catGimnasios].[NombreSucursal] AS [NombreSucursal], 
+    [catGimnasios].[Compania] AS [Compania], 
+    [catGimnasios].[Direccion] AS [Direccion], 
+    [catGimnasios].[RFC] AS [RFC], 
+    [catGimnasios].[Regimen] AS [Regimen], 
+    [catGimnasios].[RazonSocial] AS [RazonSocial]
+    FROM [dbo].[catGimnasios] AS [catGimnasios]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="catMunicipios" EntityType="Self.catMunicipios" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [catMunicipios].[IDMunicipio] AS [IDMunicipio], 
+    [catMunicipios].[Nombre] AS [Nombre], 
+    [catMunicipios].[IDEstado] AS [IDEstado]
+    FROM [dbo].[catMunicipios] AS [catMunicipios]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="catOcupaciones" EntityType="Self.catOcupaciones" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [catOcupaciones].[IdOcupacion] AS [IdOcupacion], 
+    [catOcupaciones].[Nombre] AS [Nombre]
+    FROM [dbo].[catOcupaciones] AS [catOcupaciones]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="catProductos" EntityType="Self.catProductos" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [catProductos].[IDProducto] AS [IDProducto], 
+    [catProductos].[IDGimnasio] AS [IDGimnasio], 
+    [catProductos].[Descripcion] AS [Descripcion], 
+    [catProductos].[PrecioVenta] AS [PrecioVenta], 
+    [catProductos].[Dias] AS [Dias], 
+    [catProductos].[IDTipo] AS [IDTipo], 
+    [catProductos].[ExistenciaInvFisico] AS [ExistenciaInvFisico], 
+    [catProductos].[FechaInvFisico] AS [FechaInvFisico], 
+    [catProductos].[HInvFisico] AS [HInvFisico], 
+    [catProductos].[FUltimaCompra] AS [FUltimaCompra], 
+    [catProductos].[Existencia] AS [Existencia], 
+    [catProductos].[Estatus] AS [Estatus], 
+    [catProductos].[FactorIva] AS [FactorIva], 
+    [catProductos].[CtaContable] AS [CtaContable], 
+    [catProductos].[IDProveedor] AS [IDProveedor], 
+    [catProductos].[FechaBaja] AS [FechaBaja], 
+    [catProductos].[SeDescarga] AS [SeDescarga], 
+    [catProductos].[FUltimaVenta] AS [FUltimaVenta], 
+    [catProductos].[TipoCuota] AS [TipoCuota], 
+    [catProductos].[EnPlazos] AS [EnPlazos], 
+    [catProductos].[IDCategoria] AS [IDCategoria], 
+    [catProductos].[Imagen] AS [Imagen]
+    FROM [dbo].[catProductos] AS [catProductos]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="catUsuarios" EntityType="Self.catUsuarios" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [catUsuarios].[IDusaurio] AS [IDusaurio], 
+    [catUsuarios].[Nombre] AS [Nombre], 
+    [catUsuarios].[NombreUsuario] AS [NombreUsuario], 
+    [catUsuarios].[Contrasena] AS [Contrasena], 
+    [catUsuarios].[IDGimnasio] AS [IDGimnasio], 
+    [catUsuarios].[IDCausante] AS [IDCausante], 
+    [catUsuarios].[NivelUsuario] AS [NivelUsuario]
+    FROM [dbo].[catUsuarios] AS [catUsuarios]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="catZonaGeografica" EntityType="Self.catZonaGeografica" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [catZonaGeografica].[IDZona] AS [IDZona], 
+    [catZonaGeografica].[Nombre] AS [Nombre], 
+    [catZonaGeografica].[IVA] AS [IVA]
+    FROM [dbo].[catZonaGeografica] AS [catZonaGeografica]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tblAsistencia1" EntityType="Self.tblAsistencia1" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tblAsistencia1].[IDGimnasio] AS [IDGimnasio], 
+    [tblAsistencia1].[IDGimnasio2] AS [IDGimnasio2], 
+    [tblAsistencia1].[IDCliente] AS [IDCliente], 
+    [tblAsistencia1].[Fecha] AS [Fecha], 
+    [tblAsistencia1].[Hora] AS [Hora], 
+    [tblAsistencia1].[Enviado] AS [Enviado]
+    FROM [dbo].[tblAsistencia1] AS [tblAsistencia1]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tblDetalleventas" EntityType="Self.tblDetalleventas" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tblDetalleventas].[IDFolio] AS [IDFolio], 
+    [tblDetalleventas].[IDGimnasio] AS [IDGimnasio], 
+    [tblDetalleventas].[IDGimnasio2] AS [IDGimnasio2], 
+    [tblDetalleventas].[IDCausante] AS [IDCausante], 
+    [tblDetalleventas].[IDCliente] AS [IDCliente], 
+    [tblDetalleventas].[IDProducto] AS [IDProducto], 
+    [tblDetalleventas].[Cantidad] AS [Cantidad], 
+    [tblDetalleventas].[Precio] AS [Precio], 
+    [tblDetalleventas].[Fecha] AS [Fecha], 
+    [tblDetalleventas].[Hora] AS [Hora], 
+    [tblDetalleventas].[Iva] AS [Iva], 
+    [tblDetalleventas].[Tipo] AS [Tipo], 
+    [tblDetalleventas].[Nuevo] AS [Nuevo], 
+    [tblDetalleventas].[Enviado] AS [Enviado], 
+    [tblDetalleventas].[SerieFactura] AS [SerieFactura], 
+    [tblDetalleventas].[TipoCuota] AS [TipoCuota], 
+    [tblDetalleventas].[IDCliente2] AS [IDCliente2]
+    FROM [dbo].[tblDetalleventas] AS [tblDetalleventas]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tblFoliosVentas" EntityType="Self.tblFoliosVentas" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tblFoliosVentas].[IDFolio] AS [IDFolio], 
+    [tblFoliosVentas].[IDGimnasio] AS [IDGimnasio], 
+    [tblFoliosVentas].[IDGimnasio2] AS [IDGimnasio2], 
+    [tblFoliosVentas].[IDCausante] AS [IDCausante], 
+    [tblFoliosVentas].[IDCliente] AS [IDCliente], 
+    [tblFoliosVentas].[Fecha] AS [Fecha], 
+    [tblFoliosVentas].[Hora] AS [Hora], 
+    [tblFoliosVentas].[Importe] AS [Importe], 
+    [tblFoliosVentas].[Tipo] AS [Tipo], 
+    [tblFoliosVentas].[Pesos] AS [Pesos], 
+    [tblFoliosVentas].[Dolares] AS [Dolares], 
+    [tblFoliosVentas].[Cheque] AS [Cheque], 
+    [tblFoliosVentas].[Tarjeta] AS [Tarjeta], 
+    [tblFoliosVentas].[Cambio] AS [Cambio], 
+    [tblFoliosVentas].[TipoCambio] AS [TipoCambio], 
+    [tblFoliosVentas].[Nuevo] AS [Nuevo], 
+    [tblFoliosVentas].[IDUsuario] AS [IDUsuario], 
+    [tblFoliosVentas].[Iva] AS [Iva], 
+    [tblFoliosVentas].[Estatus] AS [Estatus], 
+    [tblFoliosVentas].[Enviado] AS [Enviado], 
+    [tblFoliosVentas].[SerieFactura] AS [SerieFactura], 
+    [tblFoliosVentas].[IDCliente2] AS [IDCliente2]
+    FROM [dbo].[tblFoliosVentas] AS [tblFoliosVentas]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tblProductoPrecio" EntityType="Self.tblProductoPrecio" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tblProductoPrecio].[IDProducto] AS [IDProducto], 
+    [tblProductoPrecio].[IDZonaGeo] AS [IDZonaGeo], 
+    [tblProductoPrecio].[Precio] AS [Precio], 
+    [tblProductoPrecio].[IDGimnasio] AS [IDGimnasio], 
+    [tblProductoPrecio].[Precio2] AS [Precio2]
+    FROM [dbo].[tblProductoPrecio] AS [tblProductoPrecio]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_Asistencia" EntityType="Self.v_Asistencia" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_Asistencia].[Nombre] AS [Nombre], 
+    [v_Asistencia].[Hora] AS [Hora], 
+    [v_Asistencia].[IDCliente] AS [IDCliente], 
+    [v_Asistencia].[Sexo] AS [Sexo], 
+    [v_Asistencia].[IDGimnasio] AS [IDGimnasio], 
+    [v_Asistencia].[Fecha] AS [Fecha], 
+    [v_Asistencia].[IDGimnasio2] AS [IDGimnasio2]
+    FROM [dbo].[v_Asistencia] AS [v_Asistencia]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_AsistenciaCliente" EntityType="Self.v_AsistenciaCliente" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_AsistenciaCliente].[Fecha] AS [Fecha], 
+    [v_AsistenciaCliente].[Hora] AS [Hora], 
+    [v_AsistenciaCliente].[IDGimnasio] AS [IDGimnasio], 
+    [v_AsistenciaCliente].[Nombre] AS [Nombre], 
+    [v_AsistenciaCliente].[IDCliente] AS [IDCliente], 
+    [v_AsistenciaCliente].[NombreSucursal] AS [NombreSucursal]
+    FROM [dbo].[v_AsistenciaCliente] AS [v_AsistenciaCliente]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_AsistenciaHombreMujer" EntityType="Self.v_AsistenciaHombreMujer" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_AsistenciaHombreMujer].[Hombre] AS [Hombre], 
+    [v_AsistenciaHombreMujer].[Mujer] AS [Mujer], 
+    [v_AsistenciaHombreMujer].[Fecha] AS [Fecha], 
+    [v_AsistenciaHombreMujer].[IDGimnasio] AS [IDGimnasio]
+    FROM [dbo].[v_AsistenciaHombreMujer] AS [v_AsistenciaHombreMujer]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_AsistXHora" EntityType="Self.v_AsistXHora" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_AsistXHora].[CantSexo] AS [CantSexo], 
+    [v_AsistXHora].[Sexo] AS [Sexo], 
+    [v_AsistXHora].[Fecha] AS [Fecha], 
+    [v_AsistXHora].[IDGimnasio] AS [IDGimnasio], 
+    [v_AsistXHora].[Lunes] AS [Lunes], 
+    [v_AsistXHora].[Martes] AS [Martes], 
+    [v_AsistXHora].[Miercoles] AS [Miercoles], 
+    [v_AsistXHora].[Jueves] AS [Jueves], 
+    [v_AsistXHora].[Viernes] AS [Viernes], 
+    [v_AsistXHora].[Sabado] AS [Sabado], 
+    [v_AsistXHora].[Domingo] AS [Domingo], 
+    [v_AsistXHora].[Hora] AS [Hora]
+    FROM [dbo].[v_AsistXHora] AS [v_AsistXHora]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_AsisVencidas" EntityType="Self.v_AsisVencidas" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_AsisVencidas].[Asistencia] AS [Asistencia], 
+    [v_AsisVencidas].[FechaVencimiento] AS [FechaVencimiento], 
+    [v_AsisVencidas].[FechaUltimaAsistencia] AS [FechaUltimaAsistencia], 
+    [v_AsisVencidas].[IDCliente] AS [IDCliente], 
+    [v_AsisVencidas].[Nombre] AS [Nombre], 
+    [v_AsisVencidas].[Telefono] AS [Telefono], 
+    [v_AsisVencidas].[FechaAlta] AS [FechaAlta]
+    FROM [dbo].[v_AsisVencidas] AS [v_AsisVencidas]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_CantProdPorFecha" EntityType="Self.v_CantProdPorFecha" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_CantProdPorFecha].[Fecha] AS [Fecha], 
+    [v_CantProdPorFecha].[Hora] AS [Hora], 
+    [v_CantProdPorFecha].[Estatus] AS [Estatus], 
+    [v_CantProdPorFecha].[IDFolio] AS [IDFolio], 
+    [v_CantProdPorFecha].[IDProducto] AS [IDProducto], 
+    [v_CantProdPorFecha].[Cant] AS [Cant], 
+    [v_CantProdPorFecha].[Descripcion] AS [Descripcion], 
+    [v_CantProdPorFecha].[IDTipo] AS [IDTipo], 
+    [v_CantProdPorFecha].[Precio] AS [Precio], 
+    [v_CantProdPorFecha].[Iva] AS [Iva], 
+    [v_CantProdPorFecha].[IDCausante] AS [IDCausante], 
+    [v_CantProdPorFecha].[FactorIva] AS [FactorIva], 
+    [v_CantProdPorFecha].[SerieFactura] AS [SerieFactura]
+    FROM [dbo].[v_CantProdPorFecha] AS [v_CantProdPorFecha]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_CantProdPorFechaGimnasio" EntityType="Self.v_CantProdPorFechaGimnasio" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_CantProdPorFechaGimnasio].[Fecha] AS [Fecha], 
+    [v_CantProdPorFechaGimnasio].[Hora] AS [Hora], 
+    [v_CantProdPorFechaGimnasio].[Estatus] AS [Estatus], 
+    [v_CantProdPorFechaGimnasio].[IDFolio] AS [IDFolio], 
+    [v_CantProdPorFechaGimnasio].[IDProducto] AS [IDProducto], 
+    [v_CantProdPorFechaGimnasio].[Cant] AS [Cant], 
+    [v_CantProdPorFechaGimnasio].[Descripcion] AS [Descripcion], 
+    [v_CantProdPorFechaGimnasio].[IDTipo] AS [IDTipo], 
+    [v_CantProdPorFechaGimnasio].[Precio] AS [Precio], 
+    [v_CantProdPorFechaGimnasio].[Iva] AS [Iva], 
+    [v_CantProdPorFechaGimnasio].[IDCausante] AS [IDCausante], 
+    [v_CantProdPorFechaGimnasio].[FactorIva] AS [FactorIva], 
+    [v_CantProdPorFechaGimnasio].[IDGimnasio] AS [IDGimnasio]
+    FROM [dbo].[v_CantProdPorFechaGimnasio] AS [v_CantProdPorFechaGimnasio]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_CompraProveedor" EntityType="Self.v_CompraProveedor" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_CompraProveedor].[IDCompra] AS [IDCompra], 
+    [v_CompraProveedor].[Factura] AS [Factura], 
+    [v_CompraProveedor].[RazonSocial] AS [RazonSocial]
+    FROM [dbo].[v_CompraProveedor] AS [v_CompraProveedor]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_ComprasXProducto" EntityType="Self.v_ComprasXProducto" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_ComprasXProducto].[Compras] AS [Compras], 
+    [v_ComprasXProducto].[Descripcion] AS [Descripcion], 
+    [v_ComprasXProducto].[IDGimnasio] AS [IDGimnasio], 
+    [v_ComprasXProducto].[IDproducto] AS [IDproducto], 
+    [v_ComprasXProducto].[IDTipo] AS [IDTipo], 
+    [v_ComprasXProducto].[FechaInvFisico] AS [FechaInvFisico], 
+    [v_ComprasXProducto].[Fecha] AS [Fecha], 
+    [v_ComprasXProducto].[TipoMovimiento] AS [TipoMovimiento], 
+    [v_ComprasXProducto].[Cantidad] AS [Cantidad], 
+    [v_ComprasXProducto].[Procesada] AS [Procesada]
+    FROM [dbo].[v_ComprasXProducto] AS [v_ComprasXProducto]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_Empleados" EntityType="Self.v_Empleados" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_Empleados].[IDEmpleado] AS [IDEmpleado], 
+    [v_Empleados].[NombreCompleto] AS [NombreCompleto], 
+    [v_Empleados].[Estatus] AS [Estatus], 
+    [v_Empleados].[Direccion] AS [Direccion], 
+    [v_Empleados].[IDColonia] AS [IDColonia], 
+    [v_Empleados].[Municipio] AS [Municipio], 
+    [v_Empleados].[Localidad] AS [Localidad], 
+    [v_Empleados].[CPostal] AS [CPostal], 
+    [v_Empleados].[FechaNacimiento] AS [FechaNacimiento], 
+    [v_Empleados].[FechaAlta] AS [FechaAlta], 
+    [v_Empleados].[Telefono] AS [Telefono], 
+    [v_Empleados].[Movil] AS [Movil], 
+    [v_Empleados].[NombreUsuario] AS [NombreUsuario], 
+    [v_Empleados].[Contrasena] AS [Contrasena], 
+    [v_Empleados].[IDGimnasio] AS [IDGimnasio], 
+    [v_Empleados].[IDCausante] AS [IDCausante], 
+    [v_Empleados].[NivelUsaurio] AS [NivelUsaurio], 
+    [v_Empleados].[IDMunicipio] AS [IDMunicipio], 
+    [v_Empleados].[DentroSistema] AS [DentroSistema], 
+    [v_Empleados].[eMail] AS [eMail], 
+    [v_Empleados].[Gimnasio] AS [Gimnasio], 
+    [v_Empleados].[Minicipio] AS [Minicipio]
+    FROM [dbo].[v_Empleados] AS [v_Empleados]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_EstAsisXCliente" EntityType="Self.v_EstAsisXCliente" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_EstAsisXCliente].[Cantidad] AS [Cantidad], 
+    [v_EstAsisXCliente].[IDCliente] AS [IDCliente], 
+    [v_EstAsisXCliente].[Maxx] AS [Maxx], 
+    [v_EstAsisXCliente].[Minn] AS [Minn], 
+    [v_EstAsisXCliente].[IDGimnasio] AS [IDGimnasio], 
+    [v_EstAsisXCliente].[Nombre] AS [Nombre], 
+    [v_EstAsisXCliente].[FechaAlta] AS [FechaAlta], 
+    [v_EstAsisXCliente].[Sexo] AS [Sexo], 
+    [v_EstAsisXCliente].[Ocup] AS [Ocup]
+    FROM [dbo].[v_EstAsisXCliente] AS [v_EstAsisXCliente]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_FolioDesgloce" EntityType="Self.v_FolioDesgloce" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_FolioDesgloce].[IDFolio] AS [IDFolio], 
+    [v_FolioDesgloce].[Importe] AS [Importe], 
+    [v_FolioDesgloce].[Hora] AS [Hora], 
+    [v_FolioDesgloce].[Estatus] AS [Estatus], 
+    [v_FolioDesgloce].[Fecha] AS [Fecha], 
+    [v_FolioDesgloce].[IDCausante] AS [IDCausante], 
+    [v_FolioDesgloce].[Descripcion] AS [Descripcion], 
+    [v_FolioDesgloce].[IDTipo] AS [IDTipo], 
+    [v_FolioDesgloce].[RazonSocial] AS [RazonSocial], 
+    [v_FolioDesgloce].[Nombre] AS [Nombre], 
+    [v_FolioDesgloce].[Precio] AS [Precio], 
+    [v_FolioDesgloce].[Cantidad] AS [Cantidad], 
+    [v_FolioDesgloce].[Tarjeta] AS [Tarjeta], 
+    [v_FolioDesgloce].[SerieFactura] AS [SerieFactura]
+    FROM [dbo].[v_FolioDesgloce] AS [v_FolioDesgloce]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_FolioDesgloceGimnasio" EntityType="Self.v_FolioDesgloceGimnasio" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_FolioDesgloceGimnasio].[IDFolio] AS [IDFolio], 
+    [v_FolioDesgloceGimnasio].[Importe] AS [Importe], 
+    [v_FolioDesgloceGimnasio].[Hora] AS [Hora], 
+    [v_FolioDesgloceGimnasio].[Estatus] AS [Estatus], 
+    [v_FolioDesgloceGimnasio].[Fecha] AS [Fecha], 
+    [v_FolioDesgloceGimnasio].[Tarjeta] AS [Tarjeta], 
+    [v_FolioDesgloceGimnasio].[IDGimnasio] AS [IDGimnasio], 
+    [v_FolioDesgloceGimnasio].[RazonSocial] AS [RazonSocial], 
+    [v_FolioDesgloceGimnasio].[Nombre] AS [Nombre], 
+    [v_FolioDesgloceGimnasio].[IDCausante] AS [IDCausante], 
+    [v_FolioDesgloceGimnasio].[IDTipo] AS [IDTipo], 
+    [v_FolioDesgloceGimnasio].[Precio] AS [Precio], 
+    [v_FolioDesgloceGimnasio].[Cantidad] AS [Cantidad], 
+    [v_FolioDesgloceGimnasio].[Descripcion] AS [Descripcion], 
+    [v_FolioDesgloceGimnasio].[SerieFactura] AS [SerieFactura]
+    FROM [dbo].[v_FolioDesgloceGimnasio] AS [v_FolioDesgloceGimnasio]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_KardexProductos" EntityType="Self.v_KardexProductos" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_KardexProductos].[ventas] AS [ventas], 
+    [v_KardexProductos].[Descripcion] AS [Descripcion], 
+    [v_KardexProductos].[IDGimnasio] AS [IDGimnasio], 
+    [v_KardexProductos].[IDProducto] AS [IDProducto]
+    FROM [dbo].[v_KardexProductos] AS [v_KardexProductos]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_prueba" EntityType="Self.v_prueba" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_prueba].[total] AS [total], 
+    [v_prueba].[totalPesos] AS [totalPesos], 
+    [v_prueba].[Fecha] AS [Fecha], 
+    [v_prueba].[Estatus] AS [Estatus], 
+    [v_prueba].[Descripcion] AS [Descripcion], 
+    [v_prueba].[Precio] AS [Precio], 
+    [v_prueba].[Iva] AS [Iva], 
+    [v_prueba].[Hora] AS [Hora]
+    FROM [dbo].[v_prueba] AS [v_prueba]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_Test" EntityType="Self.v_Test" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_Test].[Cantidad] AS [Cantidad], 
+    [v_Test].[IDCliente] AS [IDCliente], 
+    [v_Test].[Maxx] AS [Maxx], 
+    [v_Test].[Minn] AS [Minn], 
+    [v_Test].[IDGimnasio] AS [IDGimnasio], 
+    [v_Test].[Nombre] AS [Nombre], 
+    [v_Test].[FechaAlta] AS [FechaAlta], 
+    [v_Test].[Sexo] AS [Sexo], 
+    [v_Test].[Ocup] AS [Ocup], 
+    [v_Test].[Fecha] AS [Fecha]
+    FROM [dbo].[v_Test] AS [v_Test]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_VentasxProdHist" EntityType="Self.v_VentasxProdHist" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_VentasxProdHist].[IDFolio] AS [IDFolio], 
+    [v_VentasxProdHist].[IDProducto] AS [IDProducto], 
+    [v_VentasxProdHist].[Cantidad] AS [Cantidad], 
+    [v_VentasxProdHist].[Fecha] AS [Fecha], 
+    [v_VentasxProdHist].[Estatus] AS [Estatus]
+    FROM [dbo].[v_VentasxProdHist] AS [v_VentasxProdHist]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_VentasXProducto" EntityType="Self.v_VentasXProducto" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_VentasXProducto].[ventas] AS [ventas], 
+    [v_VentasXProducto].[Descripcion] AS [Descripcion], 
+    [v_VentasXProducto].[IDGimnasio] AS [IDGimnasio], 
+    [v_VentasXProducto].[IDProducto] AS [IDProducto], 
+    [v_VentasXProducto].[IDTipo] AS [IDTipo], 
+    [v_VentasXProducto].[Cantidad] AS [Cantidad], 
+    [v_VentasXProducto].[Estatus] AS [Estatus], 
+    [v_VentasXProducto].[IDFolio] AS [IDFolio], 
+    [v_VentasXProducto].[Fecha] AS [Fecha]
+    FROM [dbo].[v_VentasXProducto] AS [v_VentasXProducto]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_VtasGral" EntityType="Self.v_VtasGral" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_VtasGral].[IDFolio] AS [IDFolio], 
+    [v_VtasGral].[Fecha] AS [Fecha], 
+    [v_VtasGral].[Hora] AS [Hora], 
+    [v_VtasGral].[Importe] AS [Importe], 
+    [v_VtasGral].[Estatus] AS [Estatus], 
+    [v_VtasGral].[IDCliente] AS [IDCliente], 
+    [v_VtasGral].[Nombre] AS [Nombre], 
+    [v_VtasGral].[Iva] AS [Iva]
+    FROM [dbo].[v_VtasGral] AS [v_VtasGral]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="eimagenn_gym_0001Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="catAspirante">
+          <Key>
+            <PropertyRef Name="IdAspirante" />
+          </Key>
+          <Property Name="IdAspirante" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre_Aspirante" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Direccion_Aspirante" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono_Aspirante" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Movil_Aspirante" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="RFC_Aspirante" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="FechaNacimiento_Aspirante" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="eMail_Aspirante" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Sexo_Aspirante" Type="Int32" />
+          <Property Name="IDOcupacion" Type="Int32" />
+          <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ContentType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="catCliente">
+          <Key>
+            <PropertyRef Name="IDCliente" />
+            <PropertyRef Name="IDGimnasio" />
+          </Key>
+          <Property Name="IDCliente" Type="Int32" Nullable="false" />
+          <Property Name="IDGimnasio" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IDColonia" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Localidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDMunicipio" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="CPostal" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="MovilCelular" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="MovilRadio" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="RFC" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="FechaAlta" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="FechaNacimiento" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="FechaUltimoPago" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="FechaVencimiento" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Ocupacion" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="eMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sexo" Type="Int32" />
+          <Property Name="FechaUltimaAsistencia" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="IDEmpresa" Type="Int32" />
+          <Property Name="NombreEmpresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Estatus" Type="Int32" />
+          <Property Name="FechaPenultimoPago" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Enviado" Type="Int32" />
+          <Property Name="IDOcupacion" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="NumEmpleado" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Puesto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Contrasena" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="FechaPenultimoVencimiento" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="IDProducto" Type="Int32" />
+          <Property Name="TipoCuota" Type="Int32" />
+          <Property Name="IDHuella" Type="Int32" />
+          <Property Name="Saldo" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="catPlantilla">
+          <Key>
+            <PropertyRef Name="IDCliente" />
+            <PropertyRef Name="IDGimnasio" />
+            <PropertyRef Name="IDDedo" />
+          </Key>
+          <Property Name="IDCliente" Type="Int32" Nullable="false" />
+          <Property Name="IDGimnasio" Type="Int32" Nullable="false" />
+          <Property Name="IDDedo" Type="Int32" Nullable="false" />
+          <Property Name="Tipo" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="Valida" Type="Int32" />
+          <Property Name="Plantilla" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="FechaCaptura" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="catProveedore">
+          <Key>
+            <PropertyRef Name="IDProveedor" />
+          </Key>
+          <Property Name="IDProveedor" Type="Int32" Nullable="false" />
+          <Property Name="RazonSocial" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IDMunicipio" Type="Int32" />
+          <Property Name="IDColonia" Type="Int32" />
+          <Property Name="Localidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CPostal" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="RFC" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="WebSite" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Estatus" Type="Int32" />
+          <Property Name="NombreContacto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PuestoContacto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TelefonoContacto" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="MovilContacto" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="RadioContacto" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ExtContacto" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="eMailContacto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblAsistencia">
+          <Key>
+            <PropertyRef Name="IDReg" />
+          </Key>
+          <Property Name="IDGimnasio" Type="Int32" Nullable="false" />
+          <Property Name="IDGimnasio2" Type="Int32" Nullable="false" />
+          <Property Name="IDCliente" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Hora" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Enviado" Type="Int32" />
+          <Property Name="IDReg" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDAcceso" Type="Int32" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblEvento">
+          <Key>
+            <PropertyRef Name="IdEvento" />
+          </Key>
+          <Property Name="IdEvento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCliente" Type="Int32" />
+          <Property Name="IdGimnasio" Type="Int32" />
+          <Property Name="IdAcceso" Type="Int32" />
+          <Property Name="IdPuerta" Type="Int32" />
+          <Property Name="IdTipoEvento" Type="Int32" />
+          <Property Name="IdEstado" Type="Int32" />
+          <Property Name="IdFechaEvento" Type="Int32" />
+          <Property Name="FechaEvento" Type="DateTime" Precision="3" />
+          <Property Name="Procesado" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblEventosRapido">
+          <Key>
+            <PropertyRef Name="IdEvento" />
+          </Key>
+          <Property Name="IdEvento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCliente" Type="Int32" Nullable="false" />
+          <Property Name="IdGimnasio" Type="Int32" Nullable="false" />
+          <Property Name="IdTipoEvento" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Atendido" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FechaAtencion" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblMovimientoCaja">
+          <Key>
+            <PropertyRef Name="IDmovimiento" />
+          </Key>
+          <Property Name="IDmovimiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDUsuario" Type="Int32" Nullable="false" />
+          <Property Name="Monto_Movimiento" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tipo_Movimiento" Type="Int32" Nullable="false" />
+          <Property Name="Corte_Movimiento" Type="Int32" />
+          <Property Name="Concepto_Movimiento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Comentario_Movimiento" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Solicito_Movimiento" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha_Movimiento" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Hora_Movimiento" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AutorizadoPor_Movimiento" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Recibio_Movimiento" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="catCategoria">
+          <Key>
+            <PropertyRef Name="IDCategoria" />
+          </Key>
+          <Property Name="IDCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="catCausante">
+          <Key>
+            <PropertyRef Name="IDCausante" />
+            <PropertyRef Name="IDGimnasio" />
+            <PropertyRef Name="RazonSocial" />
+            <PropertyRef Name="Direccion" />
+            <PropertyRef Name="Localidad" />
+            <PropertyRef Name="CPostal" />
+            <PropertyRef Name="RFC" />
+          </Key>
+          <Property Name="IDCausante" Type="Int32" Nullable="false" />
+          <Property Name="IDGimnasio" Type="Int32" Nullable="false" />
+          <Property Name="RazonSocial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Colonia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Localidad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Municipio" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CPostal" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RFC" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="Tarjeta" Type="Int32" />
+          <Property Name="Estatus" Type="Int32" />
+          <Property Name="Iva" Type="Int32" />
+          <Property Name="CuentaIva" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IDMunicipio" Type="Int32" />
+          <Property Name="IDColonia" Type="Int32" />
+          <Property Name="CorreoElectronico" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Regimen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SerieFactura" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="catColonia">
+          <Key>
+            <PropertyRef Name="IDColonia" />
+          </Key>
+          <Property Name="IDColonia" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CodigoPostal" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IDMunicipio" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="catEmpleado">
+          <Key>
+            <PropertyRef Name="IDEmpleado" />
+            <PropertyRef Name="NombreCompleto" />
+            <PropertyRef Name="Estatus" />
+            <PropertyRef Name="Direccion" />
+            <PropertyRef Name="FechaNacimiento" />
+            <PropertyRef Name="FechaAlta" />
+            <PropertyRef Name="IDGimnasio" />
+          </Key>
+          <Property Name="IDEmpleado" Type="Int32" Nullable="false" />
+          <Property Name="NombreCompleto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Estatus" Type="Int32" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDColonia" Type="Int32" />
+          <Property Name="Municipio" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Localidad" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CPostal" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FechaNacimiento" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaAlta" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Movil" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="NombreUsuario" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Contrasena" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IDGimnasio" Type="Int32" Nullable="false" />
+          <Property Name="IDCausante" Type="Int32" />
+          <Property Name="NivelUsaurio" Type="Int32" />
+          <Property Name="IDMunicipio" Type="Int32" />
+          <Property Name="DentroSistema" Type="Int32" />
+          <Property Name="eMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroEmpleado" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Puesto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="catEmpresa">
+          <Key>
+            <PropertyRef Name="IDEmpresa" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Direccion" />
+            <PropertyRef Name="Localidad" />
+            <PropertyRef Name="CPostal" />
+            <PropertyRef Name="RFC" />
+            <PropertyRef Name="NombreContacto" />
+            <PropertyRef Name="eMailContacto" />
+          </Key>
+          <Property Name="IDEmpresa" Type="Int32" Nullable="false" />
+          <Property Name="RazonSocial" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Colonia" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Localidad" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Municipio" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CPostal" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RFC" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="NombreContacto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="eMailContacto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="WebSite" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CelularContacto" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="RadioContacto" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="TelefonoContacto" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Extension" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Puesto" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Estatus" Type="Int32" />
+          <Property Name="IDMunicipio" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IDColonia" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="catEstado">
+          <Key>
+            <PropertyRef Name="IDEstado" />
+          </Key>
+          <Property Name="IDEstado" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="catGimnasio">
+          <Key>
+            <PropertyRef Name="IDGimnasio" />
+            <PropertyRef Name="Nombre" />
+          </Key>
+          <Property Name="IDGimnasio" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estatus" Type="Int32" />
+          <Property Name="IDZonaGeografica" Type="Int32" />
+          <Property Name="NombreCorto" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PrefijoFolio" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="NombreSucursal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Compania" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RFC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Regimen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RazonSocial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="catMunicipio">
+          <Key>
+            <PropertyRef Name="IDMunicipio" />
+          </Key>
+          <Property Name="IDMunicipio" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDEstado" Type="Int32" />
+        </EntityType>
+        <EntityType Name="catOcupacione">
+          <Key>
+            <PropertyRef Name="IdOcupacion" />
+          </Key>
+          <Property Name="IdOcupacion" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="catProducto">
+          <Key>
+            <PropertyRef Name="IDProducto" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="PrecioVenta" />
+            <PropertyRef Name="IDTipo" />
+          </Key>
+          <Property Name="IDProducto" Type="Int32" Nullable="false" />
+          <Property Name="IDGimnasio" Type="Int32" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrecioVenta" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Dias" Type="Int32" />
+          <Property Name="IDTipo" Type="Int32" Nullable="false" />
+          <Property Name="ExistenciaInvFisico" Type="Int32" />
+          <Property Name="FechaInvFisico" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="HInvFisico" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="FUltimaCompra" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Existencia" Type="Int32" />
+          <Property Name="Estatus" Type="Int32" />
+          <Property Name="FactorIva" Type="Int32" />
+          <Property Name="CtaContable" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IDProveedor" Type="Int32" />
+          <Property Name="FechaBaja" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SeDescarga" Type="Int32" />
+          <Property Name="FUltimaVenta" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="TipoCuota" Type="Int32" />
+          <Property Name="EnPlazos" Type="Int32" />
+          <Property Name="IDCategoria" Type="Int32" />
+          <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="catUsuario">
+          <Key>
+            <PropertyRef Name="IDusaurio" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="NombreUsuario" />
+            <PropertyRef Name="Contrasena" />
+            <PropertyRef Name="IDGimnasio" />
+            <PropertyRef Name="IDCausante" />
+            <PropertyRef Name="NivelUsuario" />
+          </Key>
+          <Property Name="IDusaurio" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NombreUsuario" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Contrasena" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDGimnasio" Type="Int32" Nullable="false" />
+          <Property Name="IDCausante" Type="Int32" Nullable="false" />
+          <Property Name="NivelUsuario" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="catZonaGeografica">
+          <Key>
+            <PropertyRef Name="IDZona" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="IVA" />
+          </Key>
+          <Property Name="IDZona" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IVA" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblAsistencia1">
+          <Key>
+            <PropertyRef Name="IDGimnasio" />
+            <PropertyRef Name="IDGimnasio2" />
+            <PropertyRef Name="IDCliente" />
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="Hora" />
+          </Key>
+          <Property Name="IDGimnasio" Type="Int32" Nullable="false" />
+          <Property Name="IDGimnasio2" Type="Int32" Nullable="false" />
+          <Property Name="IDCliente" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Hora" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Enviado" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblDetalleventa">
+          <Key>
+            <PropertyRef Name="IDFolio" />
+          </Key>
+          <Property Name="IDFolio" Type="Int32" Nullable="false" />
+          <Property Name="IDGimnasio" Type="Int32" />
+          <Property Name="IDGimnasio2" Type="Int32" />
+          <Property Name="IDCausante" Type="Int32" />
+          <Property Name="IDCliente" Type="Int32" />
+          <Property Name="IDProducto" Type="Int32" />
+          <Property Name="Cantidad" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="Precio" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Hora" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Iva" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Tipo" Type="Int32" />
+          <Property Name="Nuevo" Type="Int32" />
+          <Property Name="Enviado" Type="Int32" />
+          <Property Name="SerieFactura" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TipoCuota" Type="Int32" />
+          <Property Name="IDCliente2" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblFoliosVenta">
+          <Key>
+            <PropertyRef Name="IDFolio" />
+            <PropertyRef Name="IDCausante" />
+          </Key>
+          <Property Name="IDFolio" Type="Int32" Nullable="false" />
+          <Property Name="IDGimnasio" Type="Int32" />
+          <Property Name="IDGimnasio2" Type="Int32" />
+          <Property Name="IDCausante" Type="Int32" Nullable="false" />
+          <Property Name="IDCliente" Type="Int32" />
+          <Property Name="Fecha" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Hora" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Importe" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Tipo" Type="Int32" />
+          <Property Name="Pesos" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Dolares" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Cheque" Type="Int32" />
+          <Property Name="Tarjeta" Type="Int32" />
+          <Property Name="Cambio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TipoCambio" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Nuevo" Type="Int32" />
+          <Property Name="IDUsuario" Type="Int32" />
+          <Property Name="Iva" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Estatus" Type="Int32" />
+          <Property Name="Enviado" Type="Int32" />
+          <Property Name="SerieFactura" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IDCliente2" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblProductoPrecio">
+          <Key>
+            <PropertyRef Name="IDProducto" />
+            <PropertyRef Name="Precio" />
+            <PropertyRef Name="IDGimnasio" />
+          </Key>
+          <Property Name="IDProducto" Type="Int32" Nullable="false" />
+          <Property Name="IDZonaGeo" Type="Int32" />
+          <Property Name="Precio" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="IDGimnasio" Type="Int32" Nullable="false" />
+          <Property Name="Precio2" Type="Decimal" Precision="8" Scale="2" />
+        </EntityType>
+        <EntityType Name="v_Asistencia">
+          <Key>
+            <PropertyRef Name="Hora" />
+            <PropertyRef Name="IDCliente" />
+            <PropertyRef Name="IDGimnasio" />
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="IDGimnasio2" />
+          </Key>
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Hora" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDCliente" Type="Int32" Nullable="false" />
+          <Property Name="Sexo" Type="Int32" />
+          <Property Name="IDGimnasio" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDGimnasio2" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="v_AsistenciaCliente">
+          <Key>
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="Hora" />
+            <PropertyRef Name="IDGimnasio" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="IDCliente" />
+          </Key>
+          <Property Name="Fecha" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Hora" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDGimnasio" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDCliente" Type="Int32" Nullable="false" />
+          <Property Name="NombreSucursal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="v_AsistenciaHombreMujer">
+          <Key>
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="IDGimnasio" />
+          </Key>
+          <Property Name="Hombre" Type="Int32" />
+          <Property Name="Mujer" Type="Int32" />
+          <Property Name="Fecha" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDGimnasio" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="v_AsistXHora">
+          <Key>
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="IDGimnasio" />
+            <PropertyRef Name="Hora" />
+          </Key>
+          <Property Name="CantSexo" Type="Int32" />
+          <Property Name="Sexo" Type="Int32" />
+          <Property Name="Fecha" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDGimnasio" Type="Int32" Nullable="false" />
+          <Property Name="Lunes" Type="Int32" />
+          <Property Name="Martes" Type="Int32" />
+          <Property Name="Miercoles" Type="Int32" />
+          <Property Name="Jueves" Type="Int32" />
+          <Property Name="Viernes" Type="Int32" />
+          <Property Name="Sabado" Type="Int32" />
+          <Property Name="Domingo" Type="Int32" />
+          <Property Name="Hora" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="v_AsisVencidas">
+          <Key>
+            <PropertyRef Name="IDCliente" />
+          </Key>
+          <Property Name="Asistencia" Type="Int32" />
+          <Property Name="FechaVencimiento" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="FechaUltimaAsistencia" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="IDCliente" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="FechaAlta" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="v_CantProdPorFecha">
+          <Key>
+            <PropertyRef Name="IDFolio" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="IDTipo" />
+          </Key>
+          <Property Name="Fecha" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Hora" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Estatus" Type="Int32" />
+          <Property Name="IDFolio" Type="Int32" Nullable="false" />
+          <Property Name="IDProducto" Type="Int32" />
+          <Property Name="Cant" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDTipo" Type="Int32" Nullable="false" />
+          <Property Name="Precio" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Iva" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="IDCausante" Type="Int32" />
+          <Property Name="FactorIva" Type="Int32" />
+          <Property Name="SerieFactura" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="v_CantProdPorFechaGimnasio">
+          <Key>
+            <PropertyRef Name="IDFolio" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="IDTipo" />
+          </Key>
+          <Property Name="Fecha" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Hora" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Estatus" Type="Int32" />
+          <Property Name="IDFolio" Type="Int32" Nullable="false" />
+          <Property Name="IDProducto" Type="Int32" />
+          <Property Name="Cant" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDTipo" Type="Int32" Nullable="false" />
+          <Property Name="Precio" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Iva" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="IDCausante" Type="Int32" />
+          <Property Name="FactorIva" Type="Int32" />
+          <Property Name="IDGimnasio" Type="Int32" />
+        </EntityType>
+        <EntityType Name="v_CompraProveedor">
+          <Key>
+            <PropertyRef Name="IDCompra" />
+          </Key>
+          <Property Name="IDCompra" Type="Int32" Nullable="false" />
+          <Property Name="Factura" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="RazonSocial" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="v_ComprasXProducto">
+          <Key>
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="IDTipo" />
+          </Key>
+          <Property Name="Compras" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDGimnasio" Type="Int32" />
+          <Property Name="IDproducto" Type="Int32" />
+          <Property Name="IDTipo" Type="Int32" Nullable="false" />
+          <Property Name="FechaInvFisico" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="TipoMovimiento" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="Cantidad" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="Procesada" Type="Int32" />
+        </EntityType>
+        <EntityType Name="v_Empleados">
+          <Key>
+            <PropertyRef Name="IDEmpleado" />
+            <PropertyRef Name="NombreCompleto" />
+            <PropertyRef Name="Estatus" />
+            <PropertyRef Name="Direccion" />
+            <PropertyRef Name="FechaNacimiento" />
+            <PropertyRef Name="FechaAlta" />
+            <PropertyRef Name="IDGimnasio" />
+          </Key>
+          <Property Name="IDEmpleado" Type="Int32" Nullable="false" />
+          <Property Name="NombreCompleto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Estatus" Type="Int32" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDColonia" Type="Int32" />
+          <Property Name="Municipio" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Localidad" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CPostal" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FechaNacimiento" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaAlta" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Movil" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="NombreUsuario" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Contrasena" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IDGimnasio" Type="Int32" Nullable="false" />
+          <Property Name="IDCausante" Type="Int32" />
+          <Property Name="NivelUsaurio" Type="Int32" />
+          <Property Name="IDMunicipio" Type="Int32" />
+          <Property Name="DentroSistema" Type="Int32" />
+          <Property Name="eMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Gimnasio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Minicipio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="v_EstAsisXCliente">
+          <Key>
+            <PropertyRef Name="IDCliente" />
+            <PropertyRef Name="IDGimnasio" />
+          </Key>
+          <Property Name="Cantidad" Type="Int32" />
+          <Property Name="IDCliente" Type="Int32" Nullable="false" />
+          <Property Name="Maxx" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="Minn" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="IDGimnasio" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaAlta" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Sexo" Type="Int32" />
+          <Property Name="Ocup" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="v_FolioDesgloce">
+          <Key>
+            <PropertyRef Name="IDFolio" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="IDTipo" />
+            <PropertyRef Name="RazonSocial" />
+          </Key>
+          <Property Name="IDFolio" Type="Int32" Nullable="false" />
+          <Property Name="Importe" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Hora" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Estatus" Type="Int32" />
+          <Property Name="Fecha" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IDCausante" Type="Int32" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDTipo" Type="Int32" Nullable="false" />
+          <Property Name="RazonSocial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Precio" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Cantidad" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="Tarjeta" Type="Int32" />
+          <Property Name="SerieFactura" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="v_FolioDesgloceGimnasio">
+          <Key>
+            <PropertyRef Name="IDFolio" />
+            <PropertyRef Name="RazonSocial" />
+            <PropertyRef Name="IDCausante" />
+            <PropertyRef Name="IDTipo" />
+            <PropertyRef Name="Descripcion" />
+          </Key>
+          <Property Name="IDFolio" Type="Int32" Nullable="false" />
+          <Property Name="Importe" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Hora" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Estatus" Type="Int32" />
+          <Property Name="Fecha" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Tarjeta" Type="Int32" />
+          <Property Name="IDGimnasio" Type="Int32" />
+          <Property Name="RazonSocial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDCausante" Type="Int32" Nullable="false" />
+          <Property Name="IDTipo" Type="Int32" Nullable="false" />
+          <Property Name="Precio" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Cantidad" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SerieFactura" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="v_KardexProductos">
+          <Key>
+            <PropertyRef Name="Descripcion" />
+          </Key>
+          <Property Name="ventas" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDGimnasio" Type="Int32" />
+          <Property Name="IDProducto" Type="Int32" />
+        </EntityType>
+        <EntityType Name="v_prueba">
+          <Key>
+            <PropertyRef Name="Descripcion" />
+          </Key>
+          <Property Name="total" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="totalPesos" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="Fecha" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Estatus" Type="Int32" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Precio" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Iva" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Hora" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="v_Test">
+          <Key>
+            <PropertyRef Name="IDCliente" />
+            <PropertyRef Name="IDGimnasio" />
+            <PropertyRef Name="Fecha" />
+          </Key>
+          <Property Name="Cantidad" Type="Int32" />
+          <Property Name="IDCliente" Type="Int32" Nullable="false" />
+          <Property Name="Maxx" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="Minn" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="IDGimnasio" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaAlta" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Sexo" Type="Int32" />
+          <Property Name="Ocup" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="v_VentasxProdHist">
+          <Key>
+            <PropertyRef Name="IDFolio" />
+          </Key>
+          <Property Name="IDFolio" Type="Int32" Nullable="false" />
+          <Property Name="IDProducto" Type="Int32" />
+          <Property Name="Cantidad" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="Fecha" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Estatus" Type="Int32" />
+        </EntityType>
+        <EntityType Name="v_VentasXProducto">
+          <Key>
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="IDTipo" />
+            <PropertyRef Name="IDFolio" />
+          </Key>
+          <Property Name="ventas" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDGimnasio" Type="Int32" />
+          <Property Name="IDProducto" Type="Int32" />
+          <Property Name="IDTipo" Type="Int32" Nullable="false" />
+          <Property Name="Cantidad" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="Estatus" Type="Int32" />
+          <Property Name="IDFolio" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="v_VtasGral">
+          <Key>
+            <PropertyRef Name="IDFolio" />
+            <PropertyRef Name="IDCliente" />
+          </Key>
+          <Property Name="IDFolio" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Hora" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Importe" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Estatus" Type="Int32" />
+          <Property Name="IDCliente" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Iva" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="eimagenn_gym_0001" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="catAspirantes" EntityType="Self.catAspirante" />
+          <EntitySet Name="catClientes" EntityType="Self.catCliente" />
+          <EntitySet Name="catPlantillas" EntityType="Self.catPlantilla" />
+          <EntitySet Name="catProveedores" EntityType="Self.catProveedore" />
+          <EntitySet Name="tblAsistencias" EntityType="Self.tblAsistencia" />
+          <EntitySet Name="tblEventos" EntityType="Self.tblEvento" />
+          <EntitySet Name="tblEventosRapidos" EntityType="Self.tblEventosRapido" />
+          <EntitySet Name="tblMovimientoCajas" EntityType="Self.tblMovimientoCaja" />
+          <EntitySet Name="catCategorias" EntityType="Self.catCategoria" />
+          <EntitySet Name="catCausantes" EntityType="Self.catCausante" />
+          <EntitySet Name="catColonias" EntityType="Self.catColonia" />
+          <EntitySet Name="catEmpleados" EntityType="Self.catEmpleado" />
+          <EntitySet Name="catEmpresas" EntityType="Self.catEmpresa" />
+          <EntitySet Name="catEstados" EntityType="Self.catEstado" />
+          <EntitySet Name="catGimnasios" EntityType="Self.catGimnasio" />
+          <EntitySet Name="catMunicipios" EntityType="Self.catMunicipio" />
+          <EntitySet Name="catOcupaciones" EntityType="Self.catOcupacione" />
+          <EntitySet Name="catProductos" EntityType="Self.catProducto" />
+          <EntitySet Name="catUsuarios" EntityType="Self.catUsuario" />
+          <EntitySet Name="catZonaGeograficas" EntityType="Self.catZonaGeografica" />
+          <EntitySet Name="tblAsistencia1" EntityType="Self.tblAsistencia1" />
+          <EntitySet Name="tblDetalleventas" EntityType="Self.tblDetalleventa" />
+          <EntitySet Name="tblFoliosVentas" EntityType="Self.tblFoliosVenta" />
+          <EntitySet Name="tblProductoPrecios" EntityType="Self.tblProductoPrecio" />
+          <EntitySet Name="v_Asistencia" EntityType="Self.v_Asistencia" />
+          <EntitySet Name="v_AsistenciaCliente" EntityType="Self.v_AsistenciaCliente" />
+          <EntitySet Name="v_AsistenciaHombreMujer" EntityType="Self.v_AsistenciaHombreMujer" />
+          <EntitySet Name="v_AsistXHora" EntityType="Self.v_AsistXHora" />
+          <EntitySet Name="v_AsisVencidas" EntityType="Self.v_AsisVencidas" />
+          <EntitySet Name="v_CantProdPorFecha" EntityType="Self.v_CantProdPorFecha" />
+          <EntitySet Name="v_CantProdPorFechaGimnasio" EntityType="Self.v_CantProdPorFechaGimnasio" />
+          <EntitySet Name="v_CompraProveedor" EntityType="Self.v_CompraProveedor" />
+          <EntitySet Name="v_ComprasXProducto" EntityType="Self.v_ComprasXProducto" />
+          <EntitySet Name="v_Empleados" EntityType="Self.v_Empleados" />
+          <EntitySet Name="v_EstAsisXCliente" EntityType="Self.v_EstAsisXCliente" />
+          <EntitySet Name="v_FolioDesgloce" EntityType="Self.v_FolioDesgloce" />
+          <EntitySet Name="v_FolioDesgloceGimnasio" EntityType="Self.v_FolioDesgloceGimnasio" />
+          <EntitySet Name="v_KardexProductos" EntityType="Self.v_KardexProductos" />
+          <EntitySet Name="v_prueba" EntityType="Self.v_prueba" />
+          <EntitySet Name="v_Test" EntityType="Self.v_Test" />
+          <EntitySet Name="v_VentasxProdHist" EntityType="Self.v_VentasxProdHist" />
+          <EntitySet Name="v_VentasXProducto" EntityType="Self.v_VentasXProducto" />
+          <EntitySet Name="v_VtasGral" EntityType="Self.v_VtasGral" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="eimagenn_gym_0001ModelStoreContainer" CdmEntityContainer="eimagenn_gym_0001">
+          <EntitySetMapping Name="catAspirantes">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.catAspirante">
+              <MappingFragment StoreEntitySet="catAspirantes">
+                <ScalarProperty Name="IdAspirante" ColumnName="IdAspirante" />
+                <ScalarProperty Name="Nombre_Aspirante" ColumnName="Nombre_Aspirante" />
+                <ScalarProperty Name="Direccion_Aspirante" ColumnName="Direccion_Aspirante" />
+                <ScalarProperty Name="Telefono_Aspirante" ColumnName="Telefono_Aspirante" />
+                <ScalarProperty Name="Movil_Aspirante" ColumnName="Movil_Aspirante" />
+                <ScalarProperty Name="RFC_Aspirante" ColumnName="RFC_Aspirante" />
+                <ScalarProperty Name="FechaNacimiento_Aspirante" ColumnName="FechaNacimiento_Aspirante" />
+                <ScalarProperty Name="eMail_Aspirante" ColumnName="eMail_Aspirante" />
+                <ScalarProperty Name="Sexo_Aspirante" ColumnName="Sexo_Aspirante" />
+                <ScalarProperty Name="IDOcupacion" ColumnName="IDOcupacion" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="ContentType" ColumnName="ContentType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="catClientes">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.catCliente">
+              <MappingFragment StoreEntitySet="catClientes">
+                <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="IDColonia" ColumnName="IDColonia" />
+                <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+                <ScalarProperty Name="IDMunicipio" ColumnName="IDMunicipio" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="CPostal" ColumnName="CPostal" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="MovilCelular" ColumnName="MovilCelular" />
+                <ScalarProperty Name="MovilRadio" ColumnName="MovilRadio" />
+                <ScalarProperty Name="RFC" ColumnName="RFC" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="FechaUltimoPago" ColumnName="FechaUltimoPago" />
+                <ScalarProperty Name="FechaVencimiento" ColumnName="FechaVencimiento" />
+                <ScalarProperty Name="Ocupacion" ColumnName="Ocupacion" />
+                <ScalarProperty Name="eMail" ColumnName="eMail" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="FechaUltimaAsistencia" ColumnName="FechaUltimaAsistencia" />
+                <ScalarProperty Name="IDEmpresa" ColumnName="IDEmpresa" />
+                <ScalarProperty Name="NombreEmpresa" ColumnName="NombreEmpresa" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="FechaPenultimoPago" ColumnName="FechaPenultimoPago" />
+                <ScalarProperty Name="Enviado" ColumnName="Enviado" />
+                <ScalarProperty Name="IDOcupacion" ColumnName="IDOcupacion" />
+                <ScalarProperty Name="NumEmpleado" ColumnName="NumEmpleado" />
+                <ScalarProperty Name="Puesto" ColumnName="Puesto" />
+                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+                <ScalarProperty Name="FechaPenultimoVencimiento" ColumnName="FechaPenultimoVencimiento" />
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="TipoCuota" ColumnName="TipoCuota" />
+                <ScalarProperty Name="IDHuella" ColumnName="IDHuella" />
+                <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="catPlantillas">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.catPlantilla">
+              <MappingFragment StoreEntitySet="catPlantillas">
+                <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+                <ScalarProperty Name="IDDedo" ColumnName="IDDedo" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Valida" ColumnName="Valida" />
+                <ScalarProperty Name="Plantilla" ColumnName="Plantilla" />
+                <ScalarProperty Name="FechaCaptura" ColumnName="FechaCaptura" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="catProveedores">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.catProveedore">
+              <MappingFragment StoreEntitySet="catProveedores">
+                <ScalarProperty Name="IDProveedor" ColumnName="IDProveedor" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="IDMunicipio" ColumnName="IDMunicipio" />
+                <ScalarProperty Name="IDColonia" ColumnName="IDColonia" />
+                <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+                <ScalarProperty Name="CPostal" ColumnName="CPostal" />
+                <ScalarProperty Name="RFC" ColumnName="RFC" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="NombreContacto" ColumnName="NombreContacto" />
+                <ScalarProperty Name="PuestoContacto" ColumnName="PuestoContacto" />
+                <ScalarProperty Name="TelefonoContacto" ColumnName="TelefonoContacto" />
+                <ScalarProperty Name="MovilContacto" ColumnName="MovilContacto" />
+                <ScalarProperty Name="RadioContacto" ColumnName="RadioContacto" />
+                <ScalarProperty Name="ExtContacto" ColumnName="ExtContacto" />
+                <ScalarProperty Name="eMailContacto" ColumnName="eMailContacto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblAsistencias">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.tblAsistencia">
+              <MappingFragment StoreEntitySet="tblAsistencia">
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+                <ScalarProperty Name="IDGimnasio2" ColumnName="IDGimnasio2" />
+                <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+                <ScalarProperty Name="Enviado" ColumnName="Enviado" />
+                <ScalarProperty Name="IDReg" ColumnName="IDReg" />
+                <ScalarProperty Name="IDAcceso" ColumnName="IDAcceso" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblEventos">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.tblEvento">
+              <MappingFragment StoreEntitySet="tblEventos">
+                <ScalarProperty Name="IdEvento" ColumnName="IdEvento" />
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="IdGimnasio" ColumnName="IdGimnasio" />
+                <ScalarProperty Name="IdAcceso" ColumnName="IdAcceso" />
+                <ScalarProperty Name="IdPuerta" ColumnName="IdPuerta" />
+                <ScalarProperty Name="IdTipoEvento" ColumnName="IdTipoEvento" />
+                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+                <ScalarProperty Name="IdFechaEvento" ColumnName="IdFechaEvento" />
+                <ScalarProperty Name="FechaEvento" ColumnName="FechaEvento" />
+                <ScalarProperty Name="Procesado" ColumnName="Procesado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblEventosRapidos">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.tblEventosRapido">
+              <MappingFragment StoreEntitySet="tblEventosRapidos">
+                <ScalarProperty Name="IdEvento" ColumnName="IdEvento" />
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="IdGimnasio" ColumnName="IdGimnasio" />
+                <ScalarProperty Name="IdTipoEvento" ColumnName="IdTipoEvento" />
+                <ScalarProperty Name="Atendido" ColumnName="Atendido" />
+                <ScalarProperty Name="FechaAtencion" ColumnName="FechaAtencion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMovimientoCajas">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.tblMovimientoCaja">
+              <MappingFragment StoreEntitySet="tblMovimientoCaja">
+                <ScalarProperty Name="IDmovimiento" ColumnName="IDmovimiento" />
+                <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+                <ScalarProperty Name="Monto_Movimiento" ColumnName="Monto_Movimiento" />
+                <ScalarProperty Name="Tipo_Movimiento" ColumnName="Tipo_Movimiento" />
+                <ScalarProperty Name="Corte_Movimiento" ColumnName="Corte_Movimiento" />
+                <ScalarProperty Name="Concepto_Movimiento" ColumnName="Concepto_Movimiento" />
+                <ScalarProperty Name="Comentario_Movimiento" ColumnName="Comentario_Movimiento" />
+                <ScalarProperty Name="Solicito_Movimiento" ColumnName="Solicito_Movimiento" />
+                <ScalarProperty Name="Fecha_Movimiento" ColumnName="Fecha_Movimiento" />
+                <ScalarProperty Name="Hora_Movimiento" ColumnName="Hora_Movimiento" />
+                <ScalarProperty Name="AutorizadoPor_Movimiento" ColumnName="AutorizadoPor_Movimiento" />
+                <ScalarProperty Name="Recibio_Movimiento" ColumnName="Recibio_Movimiento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="catCategorias">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.catCategoria">
+              <MappingFragment StoreEntitySet="catCategorias">
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="catCausantes">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.catCausante">
+              <MappingFragment StoreEntitySet="catCausantes">
+                <ScalarProperty Name="IDCausante" ColumnName="IDCausante" />
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Colonia" ColumnName="Colonia" />
+                <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+                <ScalarProperty Name="Municipio" ColumnName="Municipio" />
+                <ScalarProperty Name="CPostal" ColumnName="CPostal" />
+                <ScalarProperty Name="RFC" ColumnName="RFC" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Tarjeta" ColumnName="Tarjeta" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="Iva" ColumnName="Iva" />
+                <ScalarProperty Name="CuentaIva" ColumnName="CuentaIva" />
+                <ScalarProperty Name="IDMunicipio" ColumnName="IDMunicipio" />
+                <ScalarProperty Name="IDColonia" ColumnName="IDColonia" />
+                <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+                <ScalarProperty Name="Regimen" ColumnName="Regimen" />
+                <ScalarProperty Name="SerieFactura" ColumnName="SerieFactura" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="catColonias">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.catColonia">
+              <MappingFragment StoreEntitySet="catColonias">
+                <ScalarProperty Name="IDColonia" ColumnName="IDColonia" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+                <ScalarProperty Name="IDMunicipio" ColumnName="IDMunicipio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="catEmpleados">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.catEmpleado">
+              <MappingFragment StoreEntitySet="catEmpleados">
+                <ScalarProperty Name="IDEmpleado" ColumnName="IDEmpleado" />
+                <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="IDColonia" ColumnName="IDColonia" />
+                <ScalarProperty Name="Municipio" ColumnName="Municipio" />
+                <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+                <ScalarProperty Name="CPostal" ColumnName="CPostal" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Movil" ColumnName="Movil" />
+                <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+                <ScalarProperty Name="IDCausante" ColumnName="IDCausante" />
+                <ScalarProperty Name="NivelUsaurio" ColumnName="NivelUsaurio" />
+                <ScalarProperty Name="IDMunicipio" ColumnName="IDMunicipio" />
+                <ScalarProperty Name="DentroSistema" ColumnName="DentroSistema" />
+                <ScalarProperty Name="eMail" ColumnName="eMail" />
+                <ScalarProperty Name="NumeroEmpleado" ColumnName="NumeroEmpleado" />
+                <ScalarProperty Name="Puesto" ColumnName="Puesto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="catEmpresas">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.catEmpresa">
+              <MappingFragment StoreEntitySet="catEmpresas">
+                <ScalarProperty Name="IDEmpresa" ColumnName="IDEmpresa" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Colonia" ColumnName="Colonia" />
+                <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+                <ScalarProperty Name="Municipio" ColumnName="Municipio" />
+                <ScalarProperty Name="CPostal" ColumnName="CPostal" />
+                <ScalarProperty Name="RFC" ColumnName="RFC" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="NombreContacto" ColumnName="NombreContacto" />
+                <ScalarProperty Name="eMailContacto" ColumnName="eMailContacto" />
+                <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+                <ScalarProperty Name="CelularContacto" ColumnName="CelularContacto" />
+                <ScalarProperty Name="RadioContacto" ColumnName="RadioContacto" />
+                <ScalarProperty Name="TelefonoContacto" ColumnName="TelefonoContacto" />
+                <ScalarProperty Name="Extension" ColumnName="Extension" />
+                <ScalarProperty Name="Puesto" ColumnName="Puesto" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="IDMunicipio" ColumnName="IDMunicipio" />
+                <ScalarProperty Name="IDColonia" ColumnName="IDColonia" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="catEstados">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.catEstado">
+              <MappingFragment StoreEntitySet="catEstados">
+                <ScalarProperty Name="IDEstado" ColumnName="IDEstado" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="catGimnasios">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.catGimnasio">
+              <MappingFragment StoreEntitySet="catGimnasios">
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="IDZonaGeografica" ColumnName="IDZonaGeografica" />
+                <ScalarProperty Name="NombreCorto" ColumnName="NombreCorto" />
+                <ScalarProperty Name="PrefijoFolio" ColumnName="PrefijoFolio" />
+                <ScalarProperty Name="NombreSucursal" ColumnName="NombreSucursal" />
+                <ScalarProperty Name="Compania" ColumnName="Compania" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="RFC" ColumnName="RFC" />
+                <ScalarProperty Name="Regimen" ColumnName="Regimen" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="catMunicipios">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.catMunicipio">
+              <MappingFragment StoreEntitySet="catMunicipios">
+                <ScalarProperty Name="IDMunicipio" ColumnName="IDMunicipio" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IDEstado" ColumnName="IDEstado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="catOcupaciones">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.catOcupacione">
+              <MappingFragment StoreEntitySet="catOcupaciones">
+                <ScalarProperty Name="IdOcupacion" ColumnName="IdOcupacion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="catProductos">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.catProducto">
+              <MappingFragment StoreEntitySet="catProductos">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="PrecioVenta" ColumnName="PrecioVenta" />
+                <ScalarProperty Name="Dias" ColumnName="Dias" />
+                <ScalarProperty Name="IDTipo" ColumnName="IDTipo" />
+                <ScalarProperty Name="ExistenciaInvFisico" ColumnName="ExistenciaInvFisico" />
+                <ScalarProperty Name="FechaInvFisico" ColumnName="FechaInvFisico" />
+                <ScalarProperty Name="HInvFisico" ColumnName="HInvFisico" />
+                <ScalarProperty Name="FUltimaCompra" ColumnName="FUltimaCompra" />
+                <ScalarProperty Name="Existencia" ColumnName="Existencia" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="FactorIva" ColumnName="FactorIva" />
+                <ScalarProperty Name="CtaContable" ColumnName="CtaContable" />
+                <ScalarProperty Name="IDProveedor" ColumnName="IDProveedor" />
+                <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+                <ScalarProperty Name="SeDescarga" ColumnName="SeDescarga" />
+                <ScalarProperty Name="FUltimaVenta" ColumnName="FUltimaVenta" />
+                <ScalarProperty Name="TipoCuota" ColumnName="TipoCuota" />
+                <ScalarProperty Name="EnPlazos" ColumnName="EnPlazos" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="catUsuarios">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.catUsuario">
+              <MappingFragment StoreEntitySet="catUsuarios">
+                <ScalarProperty Name="IDusaurio" ColumnName="IDusaurio" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+                <ScalarProperty Name="IDCausante" ColumnName="IDCausante" />
+                <ScalarProperty Name="NivelUsuario" ColumnName="NivelUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="catZonaGeograficas">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.catZonaGeografica">
+              <MappingFragment StoreEntitySet="catZonaGeografica">
+                <ScalarProperty Name="IDZona" ColumnName="IDZona" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IVA" ColumnName="IVA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblAsistencia1">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.tblAsistencia1">
+              <MappingFragment StoreEntitySet="tblAsistencia1">
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+                <ScalarProperty Name="IDGimnasio2" ColumnName="IDGimnasio2" />
+                <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+                <ScalarProperty Name="Enviado" ColumnName="Enviado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDetalleventas">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.tblDetalleventa">
+              <MappingFragment StoreEntitySet="tblDetalleventas">
+                <ScalarProperty Name="IDFolio" ColumnName="IDFolio" />
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+                <ScalarProperty Name="IDGimnasio2" ColumnName="IDGimnasio2" />
+                <ScalarProperty Name="IDCausante" ColumnName="IDCausante" />
+                <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+                <ScalarProperty Name="Iva" ColumnName="Iva" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Nuevo" ColumnName="Nuevo" />
+                <ScalarProperty Name="Enviado" ColumnName="Enviado" />
+                <ScalarProperty Name="SerieFactura" ColumnName="SerieFactura" />
+                <ScalarProperty Name="TipoCuota" ColumnName="TipoCuota" />
+                <ScalarProperty Name="IDCliente2" ColumnName="IDCliente2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblFoliosVentas">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.tblFoliosVenta">
+              <MappingFragment StoreEntitySet="tblFoliosVentas">
+                <ScalarProperty Name="IDFolio" ColumnName="IDFolio" />
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+                <ScalarProperty Name="IDGimnasio2" ColumnName="IDGimnasio2" />
+                <ScalarProperty Name="IDCausante" ColumnName="IDCausante" />
+                <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Pesos" ColumnName="Pesos" />
+                <ScalarProperty Name="Dolares" ColumnName="Dolares" />
+                <ScalarProperty Name="Cheque" ColumnName="Cheque" />
+                <ScalarProperty Name="Tarjeta" ColumnName="Tarjeta" />
+                <ScalarProperty Name="Cambio" ColumnName="Cambio" />
+                <ScalarProperty Name="TipoCambio" ColumnName="TipoCambio" />
+                <ScalarProperty Name="Nuevo" ColumnName="Nuevo" />
+                <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+                <ScalarProperty Name="Iva" ColumnName="Iva" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="Enviado" ColumnName="Enviado" />
+                <ScalarProperty Name="SerieFactura" ColumnName="SerieFactura" />
+                <ScalarProperty Name="IDCliente2" ColumnName="IDCliente2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblProductoPrecios">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.tblProductoPrecio">
+              <MappingFragment StoreEntitySet="tblProductoPrecio">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="IDZonaGeo" ColumnName="IDZonaGeo" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+                <ScalarProperty Name="Precio2" ColumnName="Precio2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_Asistencia">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.v_Asistencia">
+              <MappingFragment StoreEntitySet="v_Asistencia">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+                <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IDGimnasio2" ColumnName="IDGimnasio2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_AsistenciaCliente">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.v_AsistenciaCliente">
+              <MappingFragment StoreEntitySet="v_AsistenciaCliente">
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
+                <ScalarProperty Name="NombreSucursal" ColumnName="NombreSucursal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_AsistenciaHombreMujer">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.v_AsistenciaHombreMujer">
+              <MappingFragment StoreEntitySet="v_AsistenciaHombreMujer">
+                <ScalarProperty Name="Hombre" ColumnName="Hombre" />
+                <ScalarProperty Name="Mujer" ColumnName="Mujer" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_AsistXHora">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.v_AsistXHora">
+              <MappingFragment StoreEntitySet="v_AsistXHora">
+                <ScalarProperty Name="CantSexo" ColumnName="CantSexo" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+                <ScalarProperty Name="Lunes" ColumnName="Lunes" />
+                <ScalarProperty Name="Martes" ColumnName="Martes" />
+                <ScalarProperty Name="Miercoles" ColumnName="Miercoles" />
+                <ScalarProperty Name="Jueves" ColumnName="Jueves" />
+                <ScalarProperty Name="Viernes" ColumnName="Viernes" />
+                <ScalarProperty Name="Sabado" ColumnName="Sabado" />
+                <ScalarProperty Name="Domingo" ColumnName="Domingo" />
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_AsisVencidas">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.v_AsisVencidas">
+              <MappingFragment StoreEntitySet="v_AsisVencidas">
+                <ScalarProperty Name="Asistencia" ColumnName="Asistencia" />
+                <ScalarProperty Name="FechaVencimiento" ColumnName="FechaVencimiento" />
+                <ScalarProperty Name="FechaUltimaAsistencia" ColumnName="FechaUltimaAsistencia" />
+                <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_CantProdPorFecha">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.v_CantProdPorFecha">
+              <MappingFragment StoreEntitySet="v_CantProdPorFecha">
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="IDFolio" ColumnName="IDFolio" />
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Cant" ColumnName="Cant" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IDTipo" ColumnName="IDTipo" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Iva" ColumnName="Iva" />
+                <ScalarProperty Name="IDCausante" ColumnName="IDCausante" />
+                <ScalarProperty Name="FactorIva" ColumnName="FactorIva" />
+                <ScalarProperty Name="SerieFactura" ColumnName="SerieFactura" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_CantProdPorFechaGimnasio">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.v_CantProdPorFechaGimnasio">
+              <MappingFragment StoreEntitySet="v_CantProdPorFechaGimnasio">
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="IDFolio" ColumnName="IDFolio" />
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Cant" ColumnName="Cant" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IDTipo" ColumnName="IDTipo" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Iva" ColumnName="Iva" />
+                <ScalarProperty Name="IDCausante" ColumnName="IDCausante" />
+                <ScalarProperty Name="FactorIva" ColumnName="FactorIva" />
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_CompraProveedor">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.v_CompraProveedor">
+              <MappingFragment StoreEntitySet="v_CompraProveedor">
+                <ScalarProperty Name="IDCompra" ColumnName="IDCompra" />
+                <ScalarProperty Name="Factura" ColumnName="Factura" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_ComprasXProducto">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.v_ComprasXProducto">
+              <MappingFragment StoreEntitySet="v_ComprasXProducto">
+                <ScalarProperty Name="Compras" ColumnName="Compras" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+                <ScalarProperty Name="IDproducto" ColumnName="IDproducto" />
+                <ScalarProperty Name="IDTipo" ColumnName="IDTipo" />
+                <ScalarProperty Name="FechaInvFisico" ColumnName="FechaInvFisico" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="TipoMovimiento" ColumnName="TipoMovimiento" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Procesada" ColumnName="Procesada" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_Empleados">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.v_Empleados">
+              <MappingFragment StoreEntitySet="v_Empleados">
+                <ScalarProperty Name="IDEmpleado" ColumnName="IDEmpleado" />
+                <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="IDColonia" ColumnName="IDColonia" />
+                <ScalarProperty Name="Municipio" ColumnName="Municipio" />
+                <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+                <ScalarProperty Name="CPostal" ColumnName="CPostal" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Movil" ColumnName="Movil" />
+                <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+                <ScalarProperty Name="IDCausante" ColumnName="IDCausante" />
+                <ScalarProperty Name="NivelUsaurio" ColumnName="NivelUsaurio" />
+                <ScalarProperty Name="IDMunicipio" ColumnName="IDMunicipio" />
+                <ScalarProperty Name="DentroSistema" ColumnName="DentroSistema" />
+                <ScalarProperty Name="eMail" ColumnName="eMail" />
+                <ScalarProperty Name="Gimnasio" ColumnName="Gimnasio" />
+                <ScalarProperty Name="Minicipio" ColumnName="Minicipio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_EstAsisXCliente">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.v_EstAsisXCliente">
+              <MappingFragment StoreEntitySet="v_EstAsisXCliente">
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
+                <ScalarProperty Name="Maxx" ColumnName="Maxx" />
+                <ScalarProperty Name="Minn" ColumnName="Minn" />
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="Ocup" ColumnName="Ocup" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_FolioDesgloce">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.v_FolioDesgloce">
+              <MappingFragment StoreEntitySet="v_FolioDesgloce">
+                <ScalarProperty Name="IDFolio" ColumnName="IDFolio" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IDCausante" ColumnName="IDCausante" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IDTipo" ColumnName="IDTipo" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Tarjeta" ColumnName="Tarjeta" />
+                <ScalarProperty Name="SerieFactura" ColumnName="SerieFactura" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_FolioDesgloceGimnasio">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.v_FolioDesgloceGimnasio">
+              <MappingFragment StoreEntitySet="v_FolioDesgloceGimnasio">
+                <ScalarProperty Name="IDFolio" ColumnName="IDFolio" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Tarjeta" ColumnName="Tarjeta" />
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IDCausante" ColumnName="IDCausante" />
+                <ScalarProperty Name="IDTipo" ColumnName="IDTipo" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="SerieFactura" ColumnName="SerieFactura" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_KardexProductos">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.v_KardexProductos">
+              <MappingFragment StoreEntitySet="v_KardexProductos">
+                <ScalarProperty Name="ventas" ColumnName="ventas" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_prueba">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.v_prueba">
+              <MappingFragment StoreEntitySet="v_prueba">
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="totalPesos" ColumnName="totalPesos" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Iva" ColumnName="Iva" />
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_Test">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.v_Test">
+              <MappingFragment StoreEntitySet="v_Test">
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
+                <ScalarProperty Name="Maxx" ColumnName="Maxx" />
+                <ScalarProperty Name="Minn" ColumnName="Minn" />
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="Ocup" ColumnName="Ocup" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_VentasxProdHist">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.v_VentasxProdHist">
+              <MappingFragment StoreEntitySet="v_VentasxProdHist">
+                <ScalarProperty Name="IDFolio" ColumnName="IDFolio" />
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_VentasXProducto">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.v_VentasXProducto">
+              <MappingFragment StoreEntitySet="v_VentasXProducto">
+                <ScalarProperty Name="ventas" ColumnName="ventas" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IDGimnasio" ColumnName="IDGimnasio" />
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="IDTipo" ColumnName="IDTipo" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="IDFolio" ColumnName="IDFolio" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_VtasGral">
+            <EntityTypeMapping TypeName="eimagenn_gym_0001Model.v_VtasGral">
+              <MappingFragment StoreEntitySet="v_VtasGral">
+                <ScalarProperty Name="IDFolio" ColumnName="IDFolio" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Iva" ColumnName="Iva" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

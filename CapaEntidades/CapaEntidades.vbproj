@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C967EBE-1694-4358-960C-8CC9D7AD8F6D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CapaEntidades</RootNamespace>
+    <AssemblyName>CapaEntidades</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>CapaEntidades.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>CapaEntidades.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="catAspirante.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="catCategoria.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="catCausante.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="catCliente.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="catColonia.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="catEmpleado.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="catEmpresa.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="catEstado.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="catGimnasio.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="catMunicipio.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="catOcupacione.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="catPlantilla.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="catProducto.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="catProveedore.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="catUsuario.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="catZonaGeografica.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="entGimnasio.vb" />
+    <Compile Include="ModeloEntidadesGym.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloEntidadesGym.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModeloEntidadesGym.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloEntidadesGym.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ModeloEntidadesGym.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="tblAsistencia.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblAsistencia1.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDetalleventa.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblEvento.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblEventosRapido.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblFoliosVenta.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblMovimientoCaja.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProductoPrecio.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_Asistencia.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_AsistenciaCliente.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_AsistenciaHombreMujer.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_AsistXHora.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_AsisVencidas.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_CantProdPorFecha.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_CantProdPorFechaGimnasio.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_CompraProveedor.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_ComprasXProducto.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_Empleados.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_EstAsisXCliente.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_FolioDesgloce.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_FolioDesgloceGimnasio.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_KardexProductos.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_prueba.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_Test.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_VentasxProdHist.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_VentasXProducto.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_VtasGral.vb">
+      <DependentUpon>ModeloEntidadesGym.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ModeloEntidadesGym.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModeloEntidadesGym.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="ModeloEntidadesGym.edmx.diagram">
+      <DependentUpon>ModeloEntidadesGym.edmx</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModeloEntidadesGym.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloEntidadesGym.edmx</DependentUpon>
+      <LastGenOutput>ModeloEntidadesGym.Context.vb</LastGenOutput>
+    </Content>
+    <Content Include="ModeloEntidadesGym.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloEntidadesGym.edmx</DependentUpon>
+      <LastGenOutput>ModeloEntidadesGym.vb</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
