@@ -176,4 +176,101 @@ Public Class clsFunciones
         End Try
 
     End Sub
+
+    Public Function EstadoRed() As Boolean
+
+        Try
+
+            If My.Computer.Network.IsAvailable() Then
+
+                Try
+
+                    If My.Computer.Network.Ping("www.google.es", 1000) Then 'Asignamos la pagina a consultar ejemplo www.google.cl y el tiempo de espera máximo
+                        EstadoRed = True
+                    Else
+                        EstadoRed = False
+                    End If
+
+                Catch ex As PingException
+                    EstadoRed = False
+                End Try
+
+            Else
+                EstadoRed = False
+            End If
+
+        Catch ex As Exception
+            EstadoRed = False
+        End Try
+
+    End Function
+
+    Public Function SeleccionarDatosWeb(ByVal Sentencia As String) As DataTable
+        Try
+            'If conectadoBase() Then
+            If Estadodelared() Then
+                If ConexionArchivoWeb() Then
+
+                    cmd = New SqlCommand(Sentencia)
+
+                    cmd.CommandType = CommandType.Text
+
+                    cmd.Connection = cnnBaseWeb
+
+                    If cmd.ExecuteNonQuery Then
+                        Dim dt As New DataTable
+                        Dim da As New SqlDataAdapter(cmd)
+
+                        da.Fill(dt)
+                        Return dt
+                    Else
+                        Return Nothing
+                    End If
+
+                End If
+
+            
+            Else
+                MsgBox("Ocurrio un error de Conexion, verifica la conexion a Internet", MsgBoxStyle.OkOnly, "Advertencia")
+
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            DesconectadoBaseWeb()
+
+        End Try
+    End Function
+
+    Public Function Estadodelared() As Boolean
+
+        Try
+
+            If My.Computer.Network.IsAvailable() Then
+                Try
+
+                    If My.Computer.Network.Ping("www.google.es", 1000) Then 'Asignamos la pagina a consultar ejemplo www.google.cl y el tiempo de espera máximo
+                        Estadodelared = True
+                    Else
+                        Estadodelared = False
+                    End If
+
+                Catch ex As PingException
+                    Estadodelared = False
+                End Try
+
+            Else
+                Estadodelared = False
+            End If
+
+        Catch ex As Exception
+            Estadodelared = False
+        End Try
+
+    End Function
+
+
 End Class

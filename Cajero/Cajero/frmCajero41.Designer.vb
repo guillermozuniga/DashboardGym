@@ -119,10 +119,10 @@ Partial Class frmCajero41
         '
         'Label1
         '
-        Me.Label1.BackColor = System.Drawing.Color.White
+        Me.Label1.BackColor = System.Drawing.Color.OrangeRed
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label1.Font = New System.Drawing.Font("Calibri", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.OrangeRed
+        Me.Label1.Font = New System.Drawing.Font("Calibri", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(0, 70)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(1094, 64)
@@ -215,6 +215,9 @@ Partial Class frmCajero41
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Version 1.0.0"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Timer1
+        '
         '
         'frmCajero41
         '

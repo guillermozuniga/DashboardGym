@@ -47,6 +47,8 @@ Partial Class frmCajero4
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TextBoxGimnasio = New System.Windows.Forms.TextBox()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -103,7 +105,7 @@ Partial Class frmCajero4
         Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(261, 339)
+        Me.Label1.Location = New System.Drawing.Point(261, 321)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(79, 25)
         Me.Label1.TabIndex = 27
@@ -114,7 +116,7 @@ Partial Class frmCajero4
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(232, 287)
+        Me.Label3.Location = New System.Drawing.Point(232, 277)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(108, 25)
         Me.Label3.TabIndex = 26
@@ -148,7 +150,7 @@ Partial Class frmCajero4
         Me.TextBoxCorreoElectronico.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBoxCorreoElectronico.Enabled = False
         Me.TextBoxCorreoElectronico.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxCorreoElectronico.Location = New System.Drawing.Point(379, 339)
+        Me.TextBoxCorreoElectronico.Location = New System.Drawing.Point(379, 318)
         Me.TextBoxCorreoElectronico.Name = "TextBoxCorreoElectronico"
         Me.TextBoxCorreoElectronico.ReadOnly = True
         Me.TextBoxCorreoElectronico.Size = New System.Drawing.Size(595, 33)
@@ -161,7 +163,7 @@ Partial Class frmCajero4
         Me.TextBoxDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBoxDireccion.Enabled = False
         Me.TextBoxDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxDireccion.Location = New System.Drawing.Point(379, 287)
+        Me.TextBoxDireccion.Location = New System.Drawing.Point(379, 275)
         Me.TextBoxDireccion.Name = "TextBoxDireccion"
         Me.TextBoxDireccion.ReadOnly = True
         Me.TextBoxDireccion.Size = New System.Drawing.Size(595, 33)
@@ -170,10 +172,11 @@ Partial Class frmCajero4
         'TextBoxNombre
         '
         Me.TextBoxNombre.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
-        Me.TextBoxNombre.BackColor = System.Drawing.Color.White
+        Me.TextBoxNombre.BackColor = System.Drawing.Color.Black
         Me.TextBoxNombre.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBoxNombre.Enabled = False
         Me.TextBoxNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxNombre.ForeColor = System.Drawing.Color.White
         Me.TextBoxNombre.Location = New System.Drawing.Point(379, 234)
         Me.TextBoxNombre.Name = "TextBoxNombre"
         Me.TextBoxNombre.ReadOnly = True
@@ -248,7 +251,7 @@ Partial Class frmCajero4
         Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(238, 389)
+        Me.Label7.Location = New System.Drawing.Point(238, 365)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(102, 25)
         Me.Label7.TabIndex = 32
@@ -261,7 +264,7 @@ Partial Class frmCajero4
         Me.TextBoxTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBoxTelefono.Enabled = False
         Me.TextBoxTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxTelefono.Location = New System.Drawing.Point(378, 389)
+        Me.TextBoxTelefono.Location = New System.Drawing.Point(378, 360)
         Me.TextBoxTelefono.Name = "TextBoxTelefono"
         Me.TextBoxTelefono.ReadOnly = True
         Me.TextBoxTelefono.Size = New System.Drawing.Size(595, 33)
@@ -321,6 +324,33 @@ Partial Class frmCajero4
         Me.Label9.Text = "Version 1.0.0"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Timer1
+        '
+        '
+        'Label10
+        '
+        Me.Label10.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(238, 404)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(102, 25)
+        Me.Label10.TabIndex = 36
+        Me.Label10.Text = "Sucursal:"
+        '
+        'TextBoxGimnasio
+        '
+        Me.TextBoxGimnasio.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.TextBoxGimnasio.BackColor = System.Drawing.Color.White
+        Me.TextBoxGimnasio.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxGimnasio.Enabled = False
+        Me.TextBoxGimnasio.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxGimnasio.Location = New System.Drawing.Point(378, 399)
+        Me.TextBoxGimnasio.Name = "TextBoxGimnasio"
+        Me.TextBoxGimnasio.ReadOnly = True
+        Me.TextBoxGimnasio.Size = New System.Drawing.Size(595, 33)
+        Me.TextBoxGimnasio.TabIndex = 35
+        '
         'frmCajero4
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -328,6 +358,8 @@ Partial Class frmCajero4
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1094, 591)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.TextBoxGimnasio)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.TextBoxTelefono)
@@ -390,4 +422,6 @@ Partial Class frmCajero4
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents TextBoxGimnasio As System.Windows.Forms.TextBox
 End Class

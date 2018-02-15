@@ -17,6 +17,7 @@ Public Class frmCajero4
     Private LastControl As Object
     Dim FechaActual As String
     Friend _Cliente, _Gimnasio As Integer
+
     Private Declare Function GetLastInputInfo Lib "user32" (ByRef plii As LASTINPUTINFO) As Boolean
 
     Structure LASTINPUTINFO
@@ -78,11 +79,8 @@ Public Class frmCajero4
                     Me.LabelVencimiento.ForeColor = Color.Yellow
 
                     Me.LabelVencimiento.Text = clsComun.clsFunciones.convertirtextoafecha(dt.Rows(0).Item("FechaVencimiento").ToString)
-
                 Else
-
                     Me.LabelVencimiento.Text = clsComun.clsFunciones.convertirtextoafecha(dt.Rows(0).Item("FechaVencimiento").ToString)
-
                 End If
             End If
             PictureBoxFoto.ImageLocation = Nothing
@@ -110,6 +108,7 @@ Public Class frmCajero4
         System.Windows.Forms.Cursor.Current = Cursors.Default
 
     End Function
+
 #End Region
 
     Private Sub ButtonRegresar_Click(sender As Object, e As EventArgs) Handles ButtonRegresar.Click
@@ -121,9 +120,17 @@ Public Class frmCajero4
 
     Private Sub frmCajero4_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.TextBoxIDSocio.Text = _Cliente
-        If SeleccionarClientes("Select IDCliente, Nombre, IDGimnasio, Email, FechaVencimiento, Imagen, Telefono , Direccion from catClientes where IDCliente = " & CType(_Cliente, Integer) & "") Then
 
+        If _Gimnasio <= 0 Then
+            If SeleccionarClientes("Select IDCliente, Nombre, IDGimnasio, Email, FechaVencimiento, Imagen, Telefono , Direccion from catClientes where IDCliente = " & CType(_Cliente, Integer) & "") Then
+
+            End If
+        Else
+            'SeleccionarClienteWeb("SELECT dbo.catClientes.IDCliente, dbo.catClientes.eMail, dbo.catClientes.Sexo, dbo.catClientes.Estatus, dbo.catClientes.IDGimnasio, dbo.catClientes.Nombre, dbo.catGimnasios.Nombre AS NombreGimnasio, dbo.catClientes.FechaNacimiento, dbo.catClientes.FechaAlta, dbo.catClientes.FechaUltimoPago, dbo.catClientes.FechaVencimiento, dbo.catClientes.TipoCuota, dbo.catClientes.Imagen FROM dbo.catClientes INNER JOIN dbo.catGimnasios ON dbo.catClientes.IDGimnasio = dbo.catGimnasios.IDGimnasio WHERE dbo.catClientes.IDCliente = '" & cliente & "' AND dbo.catClientes.IDGimnasio = " & _Gimnasio & "")
         End If
+       
+
+
 
         INPUT.cbSize = Marshal.SizeOf(INPUT) '¿? PERO ES NECESARIO
         Timer1.Interval = 1000 'MONITORIZAREMOS GetLastInputInfo CADA SEGUNDO

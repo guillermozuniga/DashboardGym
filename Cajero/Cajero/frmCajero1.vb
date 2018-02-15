@@ -49,5 +49,9 @@ Public Class frmCajero1
         INPUT.cbSize = Marshal.SizeOf(INPUT) '¿? PERO ES NECESARIO
         Timer1.Interval = 1000 'MONITORIZAREMOS GetLastInputInfo CADA SEGUNDO
         Timer1.Start()
+        Me.ButtonMembresia.Select()
+        Me.ButtonMembresia.Focus()
+
+
     End Sub
 End Class

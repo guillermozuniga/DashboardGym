@@ -32,9 +32,11 @@ namespace ServicioPagos
                  conexion.Open();
              Commando.ExecuteNonQuery();
             }
-            
-                catch
+
+            catch (Exception ex)
             {
+                //context.Response.Write(ex.Message);
+                throw ex;
                 }
                 finally
             {

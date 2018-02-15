@@ -10,7 +10,7 @@ Public Class frmCajero3
     Dim ConDb As SqlConnection
     Dim ruta As String = My.Application.Info.DirectoryPath & Chr(92)
     Dim texto, cliente As String
-    Dim longitud As String
+    Dim longitud, IDGimnasio2 As String
     Friend PosicionGuion As Integer
     Private LastCharIndex As Integer = 0
     'Guardamos ultimo control que perdio el foco.
@@ -53,11 +53,11 @@ Public Class frmCajero3
         If dt.Rows.Count > 0 Then
             Return True
         Else
-            Me.Label1.Visible = True
-            Me.Label1.Text = "Número de Socio no Encontrado !!!"
-            Me.TextBoxIDSocio.Text = String.Empty
-            Me.TextBoxIDSocio.SelectAll()
-            Me.TextBoxIDSocio.Focus()
+            'Me.Label1.Visible = True
+            'Me.Label1.Text = "Número de Socio no Encontrado !!!"
+            'Me.TextBoxIDSocio.Text = String.Empty
+            'Me.TextBoxIDSocio.SelectAll()
+            'Me.TextBoxIDSocio.Focus()
             Return False
 
         End If
@@ -94,26 +94,84 @@ Public Class frmCajero3
     Private Sub ButtonSiguiente_Click(sender As Object, e As EventArgs) Handles ButtonSiguiente.Click
         If Not String.IsNullOrEmpty(Me.TextBoxIDSocio.Text) Then
             System.Windows.Forms.Cursor.Current = Cursors.WaitCursor
-            If SeleccionarClientes("Select IDCliente from catClientes where IDCliente = " & CType(Me.TextBoxIDSocio.Text, Integer) & "") Then
-                Me.Timer1.Stop()
-                Dim frmK4 As New frmCajero4
-                With frmK4
-                    '.Text = " .:: PUNTO DE VENTA ::."
-                    ._Cliente = Me.TextBoxIDSocio.Text
-                    '    ._NombreCliente = Me.TextBoxNombre.Text
-                    .ShowDialog()
-                    .ShowInTaskbar = False
-                    .Activate()
-                End With
 
-                Me.Close()
+            If InStr(Trim(Me.TextBoxIDSocio.Text), "-") <= 0 Then
+                If SeleccionarClientes("Select IDCliente, IDGimnasio from catClientes where IDCliente = " & CType(Me.TextBoxIDSocio.Text, Integer) & "") Then
+                    Me.Timer1.Stop()
+                    Dim frmK4 As New frmCajero4
+                    With frmK4
+                        '.Text = " .:: PUNTO DE VENTA ::."
+                        ._Cliente = Me.TextBoxIDSocio.Text
+                        ._Gimnasio = 0
+                        .ShowDialog()
+                        .ShowInTaskbar = False
+                        .Activate()
+                    End With
+
+                    Me.Close()
+
+                Else
+                    Me.Label1.Visible = True
+                    Me.Label1.Text = "Número de Socio no Encontrado !!!"
+                    Me.TextBoxIDSocio.Text = String.Empty
+                    Me.TextBoxIDSocio.SelectAll()
+                    Me.TextBoxIDSocio.Focus()
+                End If
+
+            Else
+
+                PosicionGuion = InStr(Trim(Me.TextBoxIDSocio.Text), "-")
+
+                texto = Me.TextBoxIDSocio.Text
+
+                longitud = texto.Length
+
+                cliente = texto.Substring(InStr(Trim(Me.TextBoxIDSocio.Text), "-"), longitud - InStr(Trim(Me.TextBoxIDSocio.Text), "-"))
+
+                IDGimnasio2 = texto.Substring(0, InStr(Trim(Me.TextBoxIDSocio.Text), "-") - 1)
+
+                If funciones.EstadoRed() Then
+
+                    ' Dim dtGimnasio As DataTable
+
+                    'dtGimnasio = funciones.SeleccionarDatosWeb("Select * from catGimnasios where IDGimnasio = " & IDGimnasio2.ToString & "")
+
+                    ' If dtGimnasio.Rows.Count > 0 Then
+                    Me.Timer1.Stop()
+                    Dim frmK4 As New frmCajero4
+                    With frmK4
+                        '.Text = " .:: PUNTO DE VENTA ::."
+                        ._Cliente = Me.cliente
+                        ._Gimnasio = Me.IDGimnasio2
+                        .ShowDialog()
+                        .ShowInTaskbar = False
+                        .Activate()
+                    End With
+
+                    Me.Close()
+                    ' Me.txtxGimnasio.Text = dtGimnasio.Rows(0).Item("NombreSucursal").ToString
+
+                    'Else
+                    '   MessageBox.Show("Verifica la Información, No Existe el Gimnasio !!!", My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    'Me.btnXCancelar_Click(Nothing, Nothing)
+                    '  Exit Sub
+
+                    'End If
+                Else
+
+                    MessageBox.Show("Internet no disponible," & vbNewLine & "No se reflejara esta información hasta que sea reestablecido!!! ", My.Application.Info.Description, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+                End If ' If de consulta de acceso a intenet
+
             End If
         Else
+
             Me.Label1.Text = "Debe ingresar un numero de socio"
             Me.Label1.Visible = True
             Me.TextBoxIDSocio.SelectAll()
             Me.TextBoxIDSocio.Focus()
         End If
+
 
         System.Windows.Forms.Cursor.Current = Cursors.Default
     End Sub
@@ -227,4 +285,6 @@ Public Class frmCajero3
 
         End If
     End Sub
+
+  
 End Class

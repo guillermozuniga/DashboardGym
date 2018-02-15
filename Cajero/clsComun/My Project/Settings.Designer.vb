@@ -54,14 +54,14 @@ Namespace My
             End Get
         End Property
         
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-35M3BC7\SQLEXPRESSR2;Initial Catalog=UltraPaseo2000;Persist S"& _ 
-            "ecurity Info=True;User ID=sa;Password=12Knife")>  _
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(), _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString), _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-35M3BC7\SQLEXPRESSR2;Initial Catalog=Ultragym;Persist S" & _
+            "ecurity Info=True;User ID=sa;Password=12Knife")> _
         Public ReadOnly Property GymConexion() As String
             Get
-                Return CType(Me("GymConexion"),String)
+                Return CType(Me("GymConexion"), String)
             End Get
         End Property
     End Class

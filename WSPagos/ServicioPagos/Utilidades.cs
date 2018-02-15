@@ -12,8 +12,8 @@ namespace ServicioPagos
         public static string ObtenerConexion()
         {
 
-            return ConfigurationManager.AppSettings["CadenaBD"].ToString();
-
+            //return ConfigurationManager.AppSettings["CadenaBD"].ToString();
+            return ConfigurationManager.ConnectionStrings["LocalSQLServer"].ToString();
 
 
 
