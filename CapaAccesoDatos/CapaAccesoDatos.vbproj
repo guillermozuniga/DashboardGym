@@ -63,7 +63,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlumnoDAO.vb" />
+    <Compile Include="BancosDAO.vb" />
+    <Compile Include="CargoDAO.vb" />
     <Compile Include="Conexion.vb" />
+    <Compile Include="EmpleadosDAO.vb" />
+    <Compile Include="EmpresaDAO.vb" />
+    <Compile Include="FamiliasDAO.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

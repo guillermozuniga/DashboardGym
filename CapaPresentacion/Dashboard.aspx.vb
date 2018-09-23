@@ -14,99 +14,99 @@ Public Class Dashboard
 
     <System.Web.Services.WebMethod()> _
     Public Shared Function getChartData() As List(Of String)
-        Dim grantotal As Double = 0.0
+        'Dim grantotal As Double = 0.0
 
-        Dim returnData = New List(Of String)()
+        'Dim returnData = New List(Of String)()
 
-        Dim Con = New SqlConnection(ConfigurationManager.ConnectionStrings("SQLServer").ConnectionString)
-       
-        Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas where Fecha >= '" + Format(Date.Today, "yyyyMM") + "01" & "' and Fecha <= '" & Format(Date.Today, "yyyyMMdd") & "' group by Fecha order By Fecha;", Con)
+        'Dim Con = New SqlConnection(ConfigurationManager.ConnectionStrings("SQLServer").ConnectionString)
 
-        ' Dim sql = New SqlCommand("SELECT Count(IDCliente) as cnt, IDGImnasio from catClientes where IDCliente>2 and FechaVencimiento >= CONVERT(char(10), DATEADD(day,-5,GetDate()),112) group by IDGImnasio order by IDGimnasio", Con)
+        'Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas where Fecha >= '" + Format(Date.Today, "yyyyMM") + "01" & "' and Fecha <= '" & Format(Date.Today, "yyyyMMdd") & "' group by Fecha order By Fecha;", Con)
 
-        Dim dataAdapter = New SqlDataAdapter(sql)
+        '' Dim sql = New SqlCommand("SELECT Count(IDCliente) as cnt, IDGImnasio from catClientes where IDCliente>2 and FechaVencimiento >= CONVERT(char(10), DATEADD(day,-5,GetDate()),112) group by IDGImnasio order by IDGimnasio", Con)
 
-        Dim dataset = New DataSet()
+        'Dim dataAdapter = New SqlDataAdapter(sql)
 
-        dataAdapter.Fill(dataset)
+        'Dim dataset = New DataSet()
 
-        If dataset.Tables(0).Rows.Count > 0 Then
+        'dataAdapter.Fill(dataset)
 
-            Dim chartLabel = New StringBuilder()
-            Dim chartData = New StringBuilder()
-            chartLabel.Append("[")
-            chartData.Append("[")
+        'If dataset.Tables(0).Rows.Count > 0 Then
 
-            For Each row As DataRow In dataset.Tables(0).Rows
+        '    Dim chartLabel = New StringBuilder()
+        '    Dim chartData = New StringBuilder()
+        '    chartLabel.Append("[")
+        '    chartData.Append("[")
 
-                chartLabel.Append(String.Format("'{0}',", row("Fecha").ToString()))
+        '    For Each row As DataRow In dataset.Tables(0).Rows
 
-                chartData.Append(String.Format("{0},", row("Total").ToString()))
+        '        chartLabel.Append(String.Format("'{0}',", row("Fecha").ToString()))
 
-                grantotal = grantotal + CType(row("Total"), Double)
+        '        chartData.Append(String.Format("{0},", row("Total").ToString()))
 
-            Next
-           
-            chartData.Length -= 1
-            'For removing ','  
-            chartData.Append("]")
-            chartLabel.Length -= 1
-            'For removing ',' 
-            chartLabel.Append("]")
+        '        grantotal = grantotal + CType(row("Total"), Double)
 
-            returnData.Add(chartLabel.ToString())
-            returnData.Add(chartData.ToString())
+        '    Next
 
-        End If
+        '    chartData.Length -= 1
+        '    'For removing ','  
+        '    chartData.Append("]")
+        '    chartLabel.Length -= 1
+        '    'For removing ',' 
+        '    chartLabel.Append("]")
 
-        Return returnData
+        '    returnData.Add(chartLabel.ToString())
+        '    returnData.Add(chartData.ToString())
+
+        'End If
+
+        'Return returnData
     End Function
     <System.Web.Services.WebMethod()> _
     Public Shared Function getChartDataSocios() As List(Of String)
-        Dim grantotal As Double = 0.0
+        'Dim grantotal As Double = 0.0
 
-        Dim returnData = New List(Of String)()
+        'Dim returnData = New List(Of String)()
 
-        Dim Con = New SqlConnection(ConfigurationManager.ConnectionStrings("SQLServer").ConnectionString)
+        'Dim Con = New SqlConnection(ConfigurationManager.ConnectionStrings("SQLServer").ConnectionString)
 
-        Dim sql = New SqlCommand("SELECT Count(IDCliente) as cnt, IDGImnasio from catClientes where IDCliente>=2 and FechaVencimiento >= CONVERT(char(10), DATEADD(day,0,GetDate()),112) group by IDGImnasio order by IDGimnasio", Con)
+        'Dim sql = New SqlCommand("SELECT Count(IDCliente) as cnt, IDGImnasio from catClientes where IDCliente>=2 and FechaVencimiento >= CONVERT(char(10), DATEADD(day,0,GetDate()),112) group by IDGImnasio order by IDGimnasio", Con)
 
-        Dim dataAdapter = New SqlDataAdapter(sql)
+        'Dim dataAdapter = New SqlDataAdapter(sql)
 
-        Dim dataset = New DataSet()
+        'Dim dataset = New DataSet()
 
-        dataAdapter.Fill(dataset)
+        'dataAdapter.Fill(dataset)
 
-        If dataset.Tables(0).Rows.Count > 0 Then
+        'If dataset.Tables(0).Rows.Count > 0 Then
 
-            Dim chartLabel = New StringBuilder()
-            Dim chartData = New StringBuilder()
-            chartLabel.Append("[")
-            chartData.Append("[")
+        '    Dim chartLabel = New StringBuilder()
+        '    Dim chartData = New StringBuilder()
+        '    chartLabel.Append("[")
+        '    chartData.Append("[")
 
-            For Each row As DataRow In dataset.Tables(0).Rows
+        '    For Each row As DataRow In dataset.Tables(0).Rows
 
-                chartLabel.Append(String.Format("'{0}',", row("IDGimnasio").ToString()))
+        '        chartLabel.Append(String.Format("'{0}',", row("IDGimnasio").ToString()))
 
-                chartData.Append(String.Format("{0},", row("cnt").ToString()))
+        '        chartData.Append(String.Format("{0},", row("cnt").ToString()))
 
-                grantotal = grantotal + CType(row("cnt"), Double)
+        '        grantotal = grantotal + CType(row("cnt"), Double)
 
-            Next
+        '    Next
 
-            chartData.Length -= 1
-            'For removing ','  
-            chartData.Append("]")
-            chartLabel.Length -= 1
-            'For removing ',' 
-            chartLabel.Append("]")
+        '    chartData.Length -= 1
+        '    'For removing ','  
+        '    chartData.Append("]")
+        '    chartLabel.Length -= 1
+        '    'For removing ',' 
+        '    chartLabel.Append("]")
 
-            returnData.Add(chartLabel.ToString())
-            returnData.Add(chartData.ToString())
+        '    returnData.Add(chartLabel.ToString())
+        '    returnData.Add(chartData.ToString())
 
-        End If
+        'End If
 
-        Return returnData
+        'Return returnData
     End Function
 
 #Region "Rutinas"
@@ -148,9 +148,9 @@ Public Class Dashboard
 
         value = row.Item("Activos")
         If value Is DBNull.Value Then
-            Me.LabelSociosActivos.Text = "0.00"
+            'Me.LabelSociosActivos.Text = "0.00"
         Else
-            Me.LabelSociosActivos.Text = CStr(value)
+            ' Me.LabelSociosActivos.Text = CStr(value)
         End If
 
 
@@ -170,11 +170,11 @@ Public Class Dashboard
 
         If value Is DBNull.Value Then
 
-            Me.LabelSociosNuevos.Text = "0.00"
+            ' Me.LabelSociosNuevos.Text = "0.00"
 
         Else
 
-            Me.LabelSociosNuevos.Text = CStr(value)
+            '  Me.LabelSociosNuevos.Text = CStr(value)
 
         End If
     End Sub
@@ -193,9 +193,9 @@ Public Class Dashboard
         value = row.Item("PorVencer")
 
         If value Is DBNull.Value Then
-            Me.LabelPorVencer.Text = "0.00"
+            ' Me.LabelPorVencer.Text = "0.00"
         Else
-            Me.LabelPorVencer.Text = CStr(value)
+            ' Me.LabelPorVencer.Text = CStr(value)
         End If
     End Sub
 
@@ -212,9 +212,9 @@ Public Class Dashboard
         value = row.Item("Renovados")
 
         If value Is DBNull.Value Then
-            Me.LabelRenovados.Text = "0.00"
+            'Me.LabelRenovados.Text = "0.00"
         Else
-            Me.LabelRenovados.Text = CStr(value)
+            'Me.LabelRenovados.Text = CStr(value)
         End If
     End Sub
 
@@ -232,9 +232,9 @@ Public Class Dashboard
         value = row.Item("NoRenovados")
 
         If value Is DBNull.Value Then
-            Me.LabelNoRenovados.Text = "0.00"
+            'Me.LabelNoRenovados.Text = "0.00"
         Else
-            Me.LabelNoRenovados.Text = CStr(value)
+            ' Me.LabelNoRenovados.Text = CStr(value)
         End If
     End Sub
 
@@ -253,9 +253,9 @@ Public Class Dashboard
         value = row.Item("NoRenovados")
 
         If value Is DBNull.Value Then
-            Me.LabelNoRenovados.Text = "0.00"
+            ' Me.LabelNoRenovados.Text = "0.00"
         Else
-            Me.LabelNoRenovados.Text = CStr(value)
+            ' Me.LabelNoRenovados.Text = CStr(value)
         End If
     End Sub
 
@@ -299,17 +299,17 @@ Public Class Dashboard
         If Not (Page.IsPostBack) Then
             If (HttpContext.Current.User.Identity.IsAuthenticated) Then
 
-                CargarUnidadesNegocio()
-                CargarSociosActivos(0)
-                CargarSociosNuevos(0)
-                CargarSociosPorVencer(0)
-                CargarSociosQueRenovaron(0)
-                CargarSociosQueNoRenovaron()
-                Me.LabelSalesVentas.Text = "Grafica de Ventas Totales"
-                Me.LabelTituloGrafica.Text = "Periodo   Del     " & Format(Date.Today, "yyyy/MM/") + "01 " & "     al     " & Format(Date.Today, "yyyy/MM/dd")
+                'CargarUnidadesNegocio()
+                'CargarSociosActivos(0)
+                'CargarSociosNuevos(0)
+                'CargarSociosPorVencer(0)
+                'CargarSociosQueRenovaron(0)
+                'CargarSociosQueNoRenovaron()
+                'Me.LabelSalesVentas.Text = "Grafica de Ventas Totales"
+                'Me.LabelTituloGrafica.Text = "Periodo   Del     " & Format(Date.Today, "yyyy/MM/") + "01 " & "     al     " & Format(Date.Today, "yyyy/MM/dd")
 
-                Me.LabelUsersGrafic.Text = "Grafica de Usaurios por Unidad de Negocio"
-              
+                'Me.LabelUsersGrafic.Text = "Grafica de Usuarios por Unidad de Negocio"
+
 
             End If
         End If

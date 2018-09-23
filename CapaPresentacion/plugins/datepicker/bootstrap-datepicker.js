@@ -1389,14 +1389,14 @@
 	};
 
 	var defaults = $.fn.datepicker.defaults = {
-		autoclose: true,
+		autoclose: false,
 		beforeShowDay: $.noop,
 		calendarWeeks: false,
 		clearBtn: false,
 		daysOfWeekDisabled: [],
 		endDate: Infinity,
 		forceParse: true,
-		format: 'dd/mm/yyyy',
+		format: 'mm/dd/yyyy',
 		keyboardNavigation: true,
 		language: 'en',
 		minViewMode: 0,
@@ -1406,8 +1406,8 @@
 		rtl: false,
 		startDate: -Infinity,
 		startView: 0,
-		todayBtn: true,
-		todayHighlight: true,
+		todayBtn: false,
+		todayHighlight: false,
 		weekStart: 0
 	};
 	var locale_opts = $.fn.datepicker.locale_opts = [

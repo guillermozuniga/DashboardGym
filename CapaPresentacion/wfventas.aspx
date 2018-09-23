@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterDefault.Master" CodeBehind="wfventas.aspx.vb" Inherits="CapaPresentacion.wfventas" %>
+﻿<%@ Page Title="Ventas" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterDefault.Master" CodeBehind="wfventas.aspx.vb" Inherits="CapaPresentacion.wfventas" %>
 
 <%@ MasterType VirtualPath="~/MasterDefault.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

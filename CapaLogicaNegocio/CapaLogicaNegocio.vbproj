@@ -62,6 +62,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlumnoLN.vb" />
+    <Compile Include="BancosLN.vb" />
+    <Compile Include="CargosLN.vb" />
+    <Compile Include="EmpleadosLN.vb" />
+    <Compile Include="EmpresaLN.vb" />
+    <Compile Include="FamiliasLN.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

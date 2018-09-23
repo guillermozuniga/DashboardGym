@@ -5,229 +5,338 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title><%: Page.Title %> - My Dashboard Gimnasios</title>
+    <title><%: Page.Title %> - Sistema Escolar V2.0</title>
+    
     <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" />
+
     <!-- Ionicons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
-    <!-- Theme style -->
+    <%--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />--%>
 
-    <link rel="stylesheet" href="css/AdminLTE.css" type="text/css" />
-    <link rel="stylesheet" href="css/estilospropios.css" type="text/css" />
-    <link href="plugins/datepicker/datepicker3.css" rel="stylesheet" />
-    <link href="plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" />
-    <link href="plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <link href="css/estilospropios.css" rel="stylesheet" type="text/css" />
+
+    <link href="css/datepicker/datepicker3.css" rel="stylesheet" type="text/css" />
+
+    <link href="css/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+
+
+     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-    <!-- jQuery 2.2.3 -->
-
-    <script src="plugins/jQuery/jquery-2.2.3.min.js" type="text/jscript"></script>
-    <script src="plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
-   <%-- <script src="plugins/chartjs/Chart.js"></script>--%>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js" type="text/jscript"></script>
-
-
-    <!-- Bootstrap 3.3.6 -->
-
-    <script src="Scripts/bootstrap.min.js" type="text/jscript"></script>    
-    <script src="js/plugins/datepicker/bootstrap-datepicker.js"></script>
-   <%-- <script src="plugins/datepicker/bootstrap-datepicker.js" type="text/jscript"></script>--%>
-
-    <!-- SlimScroll -->
-    <script src="plugins/slimScroll/jquery.slimscroll.min.js" type="text/jscript"></script>
-    <!-- ChartJS 1.0.1 -->
-    <script src="plugins/chartjs/Chart.min.js" type="text/jscript"></script>
-    <!-- FastClick -->
-    <script src="plugins/fastclick/fastclick.js" type="text/jscript"></script>
-    <!-- AdminLTE App -->
-    <script src="js/AdminLTE/app.js" type="text/jscript"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="js/AdminLTE/demo.js" type="text/jscript"></script>
-
+              
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
 </head>
+<script type="text/javascript">
+    subinsblogla = 0;
+    setInterval(function () {
+        if (document.readyState !== 'complete') {
+            document.documentElement.style.overflow = "hidden";
+            var subinsblog = document.createElement("div");
+            subinsblog.id = "subinsblogldiv";
+            var polu = 99 * 99 * 99999999 * 999999999;
+            subinsblog.style.zIndex = polu;
+            subinsblog.style.background = "rgba(0, 0, 0, 0.5) url(<%=Page.ResolveUrl("~/")%>img/ajax-loader.gif) 50% 50% no-repeat";
+            subinsblog.style.backgroundPositionX = "50%";
+            subinsblog.style.backgroundPositionY = "50%";
+            subinsblog.style.position = "absolute";
+            subinsblog.style.right = "0px";
+            subinsblog.style.left = "0px";
+            subinsblog.style.top = "0px";
+            subinsblog.style.bottom = "0px";
+            if (subinsblogla === 0) {
+                document.documentElement.appendChild(subinsblog);
+                subinsblogla = 1;
+            }
+        } else if (document.getElementById('subinsblogldiv') !== null) {
+            document.getElementById('subinsblogldiv').style.display = "none";
+            document.documentElement.style.overflow = "auto";
+        }
+    }, 1000);
+</script>
+<body class="skin-blue" onkeydown="return (event.keyCode != 116)">
 
-<body class="skin-blue">
     <header class="header">
-        <a href="#" class="logo">Concentrador Web</a>
-        <nav class="navbar navbar-static-top">
-            <!-- Header Navbar: style can be found in header.less -->
-            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                <!-- Sidebar toggle button-->
+        <!-- BEGIN CABECERA -->
+        <a href="Dashboard.aspx" class="logo">Sistema Escolar V2.0</a>
+
+        <nav class="navbar navbar-static-top" role="navigation">
+            <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
                 <span class="sr-only">Toggle Navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
 
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="Dashboard.aspx"><span class="glyphicon glyphicon-home"></span>
+                        <asp:Label ID="LblNombreCorto" runat="server"></asp:Label></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-calendar"></span>PERÍODO - 2018</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-glass"></span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-cog"></span>Configuración</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>
+                            <asp:Label ID="LblRol" runat="server" Text="Guillermo Zuniga"></asp:Label></a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li><a href="#"><i class="fa fa-user"></i>Mi Perfil</a></li>
+                            <li class="divider"></li>
+                            <%--<li><a href="#"><i class="fa fa-key"></i>Salir</a></li>--%>
+                            <%--<li>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="thumbnail">
+                                                        <div class="caption text-center">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>--%>
+                        </ul>
+                    </li>
+                    <li><a href="CerrarSession.aspx"><span class="glyphicon glyphicon-off"></span>Salir </a></li>
+                </ul>
+            </div>
         </nav>
+        <!-- END CABECERA-->
     </header>
 
-    <div class="wrapper row-offcanvas row-offcanvas-left ">
-        <!-- Left side column. contains the sidebar -->
+    <div class="wrapper row-offcanvas row-offcanvas-left">
         <aside class="left-side sidebar-offcanvas">
-            <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar">
-                <div class="user-panel">
+                <%--<div class="user-panel">
                     <div class="pull-left image">
-                        <img src="img/logo.png" class="img-circle" alt="User Image" />
-
-                        <!-- sidebar menu: : style can be found in sidebar.less -->
-
+                        <img src="img/user2.jpg" class="img-circle" alt="User Image" />
                     </div>
                     <div class="pull-left info">
-                        <p>Bienvenido Sr(a) </p>
+                        <p>
+                            Bienvenido sr(a)<br />
+                            <asp:Label runat="server" ID="LblUser" Text=""></asp:Label>
 
+                        </p>
                     </div>
-                </div>
-                <ul class="sidebar-menu">
-
+                </div>--%>
+                <ul class="sidebar-menu" data-widget="tree">
                     <li class="active">
                         <a href="Dashboard.aspx">
                             <i class="fa fa-dashboard"></i>
-                            <span>Inicio</span>
+                            <span>Panel General</span>
                         </a>
                     </li>
-                    <li class="active">
-                        <a href="DetalleUN.aspx">
-                            <i class="fa fa-list"></i>
-                            <span>Estadistica por Unidad</span>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a href="wfventas.aspx">
-                            <i class="fa fa-list"></i>
-                            <span>Ventas</span>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a href="wfsocios.aspx">
-                            <i class="fa fa-list"></i>
-                            <span>Socios</span>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a href="wfproductos.aspx">
-                            <i class="fa fa-list"></i>
-                            <span>Productos</span>
-                        </a>
-                    </li>
-
-                    <li class="active">
-                        <a href="wfcortecaja.aspx">
-                            <i class="fa fa-list"></i>
-                            <span>Corte de Caja</span>
-                        </a>
-                    </li>
-                    <%--                    <li class="treeview">
+                    <li class="treeview" id="ModuloAdministracion" runat="server">
                         <a href="#">
-                            <i class="fa fa-th"></i><i class="fa fa-angle-left pull-right"></i>
-                            <span>Folios</span>
+                            <i class="fa fa-archive"></i>
+                            <span>Administración</span>
+                            <i class="fa fa-angle-left pull-right"></i>
                         </a>
+                        <ul class="treeview-menu">
+                            <li><a href="ListAlumnos.aspx"><i class="fa fa-angle-double-right"></i>Alumnos</a></li>
+                            <li><a href="ListFamilias.aspx"><i class="fa fa-angle-double-right"></i>Familias</a></li>
+                            <li><a href="ListEscProcedencia.aspx"><i class="fa fa-angle-double-right"></i>Escuelas Procedencia</a></li>
+                            <li><a href="ListBancos.aspx"><i class="fa fa-angle-double-right"></i>Bancos</a></li>
 
+                        </ul>
+                    </li>
+                    <li class="treeview" id="ModuloEscolares" runat="server">
+                        <a href="#">
+                            <i class="fa fa-book"></i>
+                            <span>Escolares</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="ListAlumnos.aspx"><i class="fa fa-angle-double-right"></i>Alumnos</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i>Insidencias</a></li>                            
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i>Calificaciones</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i>Tareas</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview" id="ModuloColegiaturas" runat="server">
+                        <a href="#">
+                            <i class="fa fa-usd"></i>
+                            <span>Colegiaturas</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
                         <ul class="treeview-menu">
                             <li>
-                                <a href="DetalleUN.aspx"><i class="fa fa-angle-double-right"></i>Ventas</a>
+                                <a href="#"><i class="fa fa-angle-double-right"></i>Edo de Cuenta</a>
                             </li>
                             <li>
-                                <a href="DetalleUN.aspx"><i class="fa fa-angle-double-right"></i>Socios</a>
+                                <a href="ListCargos.aspx"><i class="fa fa-angle-double-right"></i>Pagos</a>
                             </li>
                             <li>
-                                <a href="DetalleUN.aspx"><i class="fa fa-angle-double-right"></i>Productos</a>
-                            </li>
-                            <li>
-                                <a href="DetalleUN.aspx"><i class="fa fa-angle-double-right"></i>Asistencias</a>
+                                <a href="ListPagos.aspx"><i class="fa fa-angle-double-right"></i>Facturas</a>
                             </li>
 
                         </ul>
-                    </li>--%>
-
-                    <%-- <li class="treeview">
+                    </li>
+                    <li class="treeview" id="ModuloRH" runat="server">
                         <a href="#">
-                            <i class="fa fa-th"></i><i class="fa fa-angle-left pull-right"></i>
-                            <span>Socios</span>
+                            <i class="fa fa-group"></i>
+                            <span>Recursos Humanos</span>
+                            <i class="fa fa-angle-left pull-right"></i>
                         </a>
-
                         <ul class="treeview-menu">
                             <li>
-                                <a href="#"><i class="fa fa-angle-double-right"></i>Socios Activos</a>
+                                <a href="ListEmpleados.aspx"><i class="fa fa-angle-double-right"></i>Empleados</a>
                             </li>
-                            <li>
-                                <a href="#"><i class="fa fa-angle-double-right"></i>Socios Nuevos</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-angle-double-right"></i>Socios por Vencer</a>
-                            </li>
-                        </ul>
-                    </li>--%>
-                    <%--<li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-th"></i><i class="fa fa-angle-left pull-right"></i>
-                            <span>Productos</span>
-                        </a>
 
+                            <li>
+                                <a href="ListEmpleados.aspx"><i class="fa fa-angle-double-right"></i>Doc Empleados</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-angle-double-right"></i>Categorias Empleados</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-angle-double-right"></i>Departamentos Empleados</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="treeview" id="ModuloConfiguracion" runat="server">
+                        <a href="#">
+                            <i class="fa fa-cog"></i>
+                            <span>Configuración</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+
+                            <li class="treeview">
+                                <a href="#">
+                                    <i class="fa"></i>
+                                    <span>Mi Escuela</span>
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="ListEmpresa.aspx"><i class="fa fa-angle-right"></i>Datos Instituto</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-right"></i>Planteles</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i>Estructura Escolar</a></li>
+
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i>Asignaturas</a></li>
+
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i>Ciclo Escolar</a></li>
+
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i>Secciones</a></li>
+
+                            
+                        </ul>
+                    </li>
+
+                    <li class="treeview" id="ModuloEspeciales" runat="server">
+                        <a href="#">
+                            <i class="fa fa-th"></i>
+                            <span>Procesos Especiales</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
                         <ul class="treeview-menu">
                             <li>
-                                <a href="#"><i class="fa fa-angle-double-right"></i>Socios Activos</a>
+                                <a href="#"><i class="fa fa-angle-double-right"></i>Generar Usuarios</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-angle-double-right"></i>Socios Nuevos</a>
+                                <a href="#"><i class="fa fa-angle-double-right"></i>Generar Ciclo Escolar</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="treeview" id="ModuloSeguridad" runat="server">
+                        <a href="#">
+                            <i class="fa fa-lock"></i>
+                            <span>Seguridad</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="ListUsuarios.aspx"><i class="fa fa-angle-double-right"></i>Usuarios</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-angle-double-right"></i>Socios por Vencer</a>
+                                <a href="ListRoles.aspx"><i class="fa fa-angle-double-right"></i>Roles</a>
+                            </li>
+                            <li>
+                                <a href="listModulos.aspx"><i class="fa fa-angle-double-right"></i>Modulos</a>
+                            </li>
+                            <li>
+                                <a href="listUsuariosRoles.aspx"><i class="fa fa-angle-double-right"></i>Usuarios - Roles</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-angle-double-right"></i>Reglas de Acceso</a>
                             </li>
                         </ul>
-                    </li>--%>
+                    </li>
+
                     <li>
                         <a href="CerrarSession.aspx">
                             <i class="fa fa-share-square-o"></i>
-                            <span>Logout</span>
+                            <span>Salir</span>
                         </a>
                     </li>
                 </ul>
             </section>
-            <!-- /.sidebar -->
         </aside>
 
         <aside class="right-side">
-
-            <%--            <section class="content-header">
-                <h1>&nbsp;</h1>
-                <ol class="breadcrumb">
-                    <li><a href="Dashboard.aspx"><i class="fa fa-home"></i>Home</a></li>
-                </ol>
+            <%--                        <section class="content-header">
+                <h1>
+                    <asp:Label ID="lblOpcionMenu" runat="server" Text="Panel General"></asp:Label>
+                </h1>
             </section>--%>
-
             <section class="content">
-
                 <form id="form1" runat="server">
                     <div>
                         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            <!-- CARGAR EL DISEÑO DE LA PAGINA QUE HEREDA DE MASTER PAGE-->
                         </asp:ContentPlaceHolder>
                     </div>
+                    <asp:ContentPlaceHolder ID="footer" runat="server">
+                        <footer class="main-footer">
+                            <!-- To the right -->
+                            <%--<div class="pull-right hidden-xs">
+                                Thanks use this Software
+   
+                            </div>--%>
+                            <!-- Default to the left -->
+                            <%--<strong>Copyright &copy; 2018 <a href="#">eImagen </a>.</strong> All rights reserved.
+                            --%>
+                        </footer>
+                    </asp:ContentPlaceHolder>
                 </form>
+
             </section>
 
         </aside>
 
     </div>
 
+    <!-- FIN DEL WRAPPER -->
+    
+    <script src="Scripts/jquery-2.2.4.min.js"></script>
+
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    <script src="js/AdminLTE/app.js"></script>
+
+    <script src="js/plugins/datepicker/bootstrap-datepicker.js"></script>
 </body>
-
-
 </html>

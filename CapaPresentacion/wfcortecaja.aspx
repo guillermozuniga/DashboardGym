@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <section class="content-header">
-        <h1 style="text-align: center">Tipos de Donativos</h1>
+        <h1 style="text-align: center">Tipos de productos</h1>
     </section>
     <section class="content">
         <div class="row">

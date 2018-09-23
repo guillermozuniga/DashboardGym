@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class MasterDefault
-
+    
     '''<summary>
     '''head control.
     '''</summary>
@@ -21,7 +21,88 @@ Partial Public Class MasterDefault
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents head As Global.System.Web.UI.WebControls.ContentPlaceHolder
-
+    
+    '''<summary>
+    '''LblNombreCorto control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LblNombreCorto As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''LblRol control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LblRol As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''ModuloAdministracion control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ModuloAdministracion As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''ModuloEscolares control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ModuloEscolares As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''ModuloColegiaturas control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ModuloColegiaturas As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''ModuloRH control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ModuloRH As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''ModuloConfiguracion control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ModuloConfiguracion As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''ModuloEspeciales control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ModuloEspeciales As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''ModuloSeguridad control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ModuloSeguridad As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
     '''<summary>
     '''form1 control.
     '''</summary>
@@ -30,7 +111,7 @@ Partial Public Class MasterDefault
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-
+    
     '''<summary>
     '''ContentPlaceHolder1 control.
     '''</summary>
@@ -39,4 +120,13 @@ Partial Public Class MasterDefault
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ContentPlaceHolder1 As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    
+    '''<summary>
+    '''footer control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents footer As Global.System.Web.UI.WebControls.ContentPlaceHolder
 End Class

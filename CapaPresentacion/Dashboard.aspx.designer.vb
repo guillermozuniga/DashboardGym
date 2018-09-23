@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class Dashboard
-
+    
     '''<summary>
     '''LabelUnidadNegocio control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class Dashboard
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LabelUnidadNegocio As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''LabelVentas control.
     '''</summary>
@@ -30,61 +30,16 @@ Partial Public Class Dashboard
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LabelVentas As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
-    '''LabelSociosActivos control.
+    '''LabelTitulo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LabelSociosActivos As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''LabelSociosNuevos control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LabelSociosNuevos As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''LabelPorVencer control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LabelPorVencer As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''LabelRenovados control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LabelRenovados As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''LabelNoRenovados control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LabelNoRenovados As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
-
+    Protected WithEvents LabelTitulo As Global.System.Web.UI.WebControls.Label
+    
     '''<summary>
     '''LabelTituloGrafica control.
     '''</summary>
@@ -93,22 +48,13 @@ Partial Public Class Dashboard
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LabelTituloGrafica As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
-    '''LabelSalesVentas control.
+    '''Label1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LabelSalesVentas As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''LabelUsersGrafic control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LabelUsersGrafic As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
 End Class

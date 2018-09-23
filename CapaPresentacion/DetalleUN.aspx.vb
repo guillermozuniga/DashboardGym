@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Web.Security
-Imports CapaEntidades
+
 Imports CapaLogicaNegocio
 
 Public Class DetalleUN

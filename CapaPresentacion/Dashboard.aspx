@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterDefault.Master" CodeBehind="Dashboard.aspx.vb" Inherits="CapaPresentacion.Dashboard" %>
+﻿<%@ Page Title="Dashboard" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterDefault.Master" CodeBehind="Dashboard.aspx.vb" Inherits="CapaPresentacion.Dashboard" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script>
@@ -42,17 +42,26 @@
                         datasets: [
                             {
                                 //label: chartLabel,
-                                fillColor: "Orange",
-                                strokeColor: "Blue",
+                                fillColor: "rgba(220,220,220,0.2)",
+                                strokeColor: "rgba(220,220,220,1)",
                                 pointColor: "rgba(220,220,220,1)",
                                 pointStrokeColor: "Green",
                                 pointHighlightFill: "#fff",
                                 pointHighlightStroke: "rgba(220,220,220,1)",
                                 options: {
                                     responsive: true,
-                                },
-                                data: chartData
-                            }
+                                    scales: {
+                                        xAxes: [{
+                                            barPercentage: 0.95,
+                                            stacked: true
+                                        }],
+                                        yAxes: [{
+                                            barPercentage: 0.95,
+                                            stacked: true
+                                        }]
+                                    },
+                                    data: chartData
+                                }
                         ]
                     };
                     var skillsChart = new Chart(ctx).Line(barData);
@@ -80,8 +89,8 @@
                         datasets: [
                             {
                                 //label: chartLabel,
-                                fillColor: "orange",
-                                strokeColor: "Blue",
+                                fillColor: "rgba(220,220,220,0.2)",
+                                strokeColor: "rgba(220,220,220,1)",
                                 pointColor: "rgba(220,220,220,1)",
                                 pointStrokeColor: "Green",
                                 pointHighlightFill: "#fff",
@@ -131,38 +140,38 @@
 
             <!-- fix for small devices only -->
             <div class="clearfix visible-sm-block"></div>
-            <div class="col-lg-6 col-xs-6">
+            <div class="col-lg-6">
                 <!-- small box -->
                 <div class="small-box bg-blue">
                     <div class="inner">
                         <h3>
-                            <asp:Label ID="LabelUnidadNegocio" runat="server" Text=""></asp:Label></h3>
-                        <p>Unidades de Negocio</p>
+                            <asp:Label ID="LabelUnidadNegocio" runat="server" Text=""></asp:Label>1</h3>
+                        <p>Informacion Escuela</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-home"></i>
                     </div>
-                    <a href="DetalleUN.aspx" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="#" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-            <div class="col-lg-6 col-xs-6">
+            <div class="col-lg-6 ">
                 <!-- small box -->
                 <div class="small-box bg-green">
                     <div class="inner">
                         <h3>
                             <asp:Label ID="LabelVentas" runat="server" Text="0.00"></asp:Label><sup style="font-size: 20px">$</sup></h3>
-                        <p>Ventas</p>
+                        <p>Ingresos</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-cash"></i>
                     </div>
-                    <a href="wfventas.aspx" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="#" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
 
         </div>
-        <div class="row">
+        <%--<div class="row">
 
             <div class="col-lg-2 col-xs-6">
                 <!-- small box -->
@@ -254,49 +263,87 @@
                 </div>
             </div>
 
-        </div>
+        </div>--%>
         <!-- /.row -->
 
-        <div class="row">
-            <div class="box">
-                <div class="box-header with-border">
+        <%--        <div class="row">
+            <div class="col-md-6">
+                <div class="box box-info">
                     <div class="box-header with-border">
-                        <i class="fa fa-line-chart"></i>
-                        <h3 class="box-title">Monthly Report</h3>
+                        <div class="box-header with-border">
+                            <i class="fa fa-line-chart"></i>
+                            <h3 class="box-title">Reporte Mensual</h3>
+                        </div>
                     </div>
-                </div>
-                <div class="box-body">
-                    <div class="col-md-6">
+                    <div class="box-body">
                         <p class="text-center">
                             <strong>
                                 <asp:Label ID="LabelTituloGrafica" runat="server" Text=""></asp:Label></strong>
                             <strong>
                                 <asp:Label ID="LabelSalesVentas" runat="server" Text=""></asp:Label></strong>
                         </p>
-
                         <div class="chart">
                             <!-- Sales Chart Canvas -->
-                            <canvas id="salesChart"></canvas>
+                            <canvas id="salesChart" style="height: 300px; width: 520px;" width="520" height="300"></canvas>
                         </div>
                         <!-- /.chart-responsive -->
-
                     </div>
+                </div>
+            </div>
 
-                    <div class="col-md-6">
+            <div class="col-md-6">
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <div class="box-header with-border">
+                            <i class="fa fa-line-chart"></i>
+                            <h3 class="box-title">Reporte Diario</h3>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <p class="text-center">
+                            <strong>
+                                <asp:Label ID="Label1" runat="server" Text=""></asp:Label></strong>
+                            <strong>
+                                <asp:Label ID="Label3" runat="server" Text=""></asp:Label></strong>
+                        </p>
                         <p class="text-center">
                             <strong>
                                 <asp:Label ID="LabelUsersGrafic" runat="server" Text=""></asp:Label></strong>
                         </p>
 
                         <div class="chart">
-                            <canvas id="UsersChart"></canvas>
+                            <canvas id="UsersChart" style="height: 300px; width: 520px;" width="520" height="300"></canvas>
                         </div>
+                        <!-- /.chart-responsive -->
                     </div>
-
                 </div>
             </div>
 
 
+        </div>--%>
+        <div class="row">
+            <!-- fix for small devices only -->
+            <div class="clearfix visible-sm-block"></div>
+            <div class="col-lg-12">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title" style="text-align: center">
+                            <asp:Label ID="LabelTitulo" runat="server" Text="Grafica"></asp:Label></h3>
+                    </div>
+                    <div class="box-body">
+                        <p class="text-center">
+                            <strong>
+                                <asp:Label ID="LabelTituloGrafica" runat="server" Text=""></asp:Label>
+                                <asp:Label ID="Label1" runat="server" Visible="False"></asp:Label>
+
+                            </strong>
+                        </p>
+                        <div class="chart">
+                            <canvas id="salesChart" style="height: 250px; width: 1100px" height="250" width="1100"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
