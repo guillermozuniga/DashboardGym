@@ -40,6 +40,7 @@ Public Class Global_asax
 
     Sub Application_Error(ByVal sender As Object, ByVal e As EventArgs)
         ' Fires when an error occurs
+        Server.Transfer("/error_pages/FileNotFound.aspx")
     End Sub
 
     Sub Session_End(ByVal sender As Object, ByVal e As EventArgs)
@@ -50,33 +51,41 @@ Public Class Global_asax
         ' Fires when the application ends
     End Sub
     Private Sub CreateRolesandUsers()
+
         Dim status As New MembershipCreateStatus
+
         Dim mypass As String = String.Empty
+        Try
+            If Not Roles.RoleExists("Administrador") Then
+                Roles.CreateRole("Administrador")
 
-        If Not Roles.RoleExists("Administrator") Then
-            Roles.CreateRole("Administrator")
+            End If
+            If Not Roles.RoleExists("Manager") Then
+                Roles.CreateRole("Manager")
 
-        End If
-        If Not Roles.RoleExists("Manager") Then
-            Roles.CreateRole("Manager")
+            End If
+            If Not Roles.RoleExists("Docente") Then
+                Roles.CreateRole("Docente")
 
-        End If
-        If Not Roles.RoleExists("Docente") Then
-            Roles.CreateRole("Docente")
+            End If
+            If Not Roles.RoleExists("Tutor") Then
+                Roles.CreateRole("Tutor")
 
-        End If
-        If Not Roles.RoleExists("Tutor") Then
-            Roles.CreateRole("Tutor")
+            End If
+            If Not Roles.RoleExists("AuxAdmin") Then
+                Roles.CreateRole("AuxAdmin")
 
-        End If
-        If Not Roles.RoleExists("AuxAdmin") Then
-            Roles.CreateRole("AuxAdmin")
+            End If
+            If Not Roles.RoleExists("Alumno") Then
+                Roles.CreateRole("Alumno")
 
-        End If
-        If Not Roles.RoleExists("Alumno") Then
-            Roles.CreateRole("Alumno")
+            End If
 
-        End If
+        Catch ex As Exception
+            Throw ex
+
+        End Try
+
 
 
         Dim newUser As MembershipUser = Membership.CreateUser("guillermo_zuniga@eimagen.mx", "12Knife1.", "guillermo_zuniga@eimagen.mx", "1", "1", True, status)
@@ -84,8 +93,8 @@ Public Class Global_asax
         Select Case status
             Case MembershipCreateStatus.Success
                 'lblMessage.Text = "Account Created"
-                If Not Roles.IsUserInRole("guillermo_zuniga@eimagen.mx", "Administrador") Then
-                    Roles.AddUserToRole("guillermo_zuniga@eimagen.mx", "Administrador")
+                If Not Roles.IsUserInRole("guillermo_zuniga@eimagen.mx", "Manager") Then
+                    Roles.AddUserToRole("guillermo_zuniga@eimagen.mx", "Manager")
                 End If
                 Dim message As String = "Account Created,...!!!." & "guillermo_zuniga@eimagen.mx"
 
@@ -104,8 +113,8 @@ Public Class Global_asax
         Select Case status
             Case MembershipCreateStatus.Success
                 'lblMessage.Text = "Account Created"
-                If Not Roles.IsUserInRole("jorge.madrigal@eimagen.mx", "Administrador") Then
-                    Roles.AddUserToRole("jorge.madrigal@eimagen.mx", "Administrador")
+                If Not Roles.IsUserInRole("jorge.madrigal@eimagen.mx", "Manager") Then
+                    Roles.AddUserToRole("jorge.madrigal@eimagen.mx", "Manager")
                 End If
                 Dim message As String = "Account Created,...!!!." & "jorge.madrigal@eimagen.mx"
 

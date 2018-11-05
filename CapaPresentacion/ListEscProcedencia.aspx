@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Lista Esc Procedencia" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterDefault.Master" CodeBehind="ListEscProcedencia.aspx.vb" Inherits="CapaPresentacion.ListEscProcedencia" %>
+﻿<%@ Page Title="Escuelas Procedencia" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterDefault.Master" CodeBehind="ListEscProcedencia.aspx.vb" Inherits="CapaPresentacion.ListEscProcedencia" %>
 <%@ MasterType VirtualPath="~/MasterDefault.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
          
@@ -8,7 +8,7 @@
         <div class="col-lg-12">
             <nav class="btn-toolbar text-left text-orange">
                 <a href="#" data-toggle="sidebar"><span class="glyphicon glyphicon-option-vertical"></span></a>
-                <label><%: Page.Title %></label>
+                <label><%: Page.Title.ToUpper %></label>
             </nav>
         </div>
     </div>
@@ -61,10 +61,23 @@
        <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="btn-group pull-right">
+                        <asp:DropDownList ID="DropDownList1" runat="server" CssClass="btn btn-default btn-xs"></asp:DropDownList>
+
+                    </div>
+
+                    <div class="btn-group pull-right">
+                        <a href="#" class="btn btn-default btn-xs"><span class="fa fa-print fa-xs"></span> Print</a>
+                        <a href="#" class="btn btn-default btn-xs"><span class="fa fa-file-pdf-o fa-xs"></span> PDF</a>
+                        <a href="#" class="btn btn-default btn-xs"><span class="fa fa-file-pdf-o fa-xs"></span> Excel</a>
+                    </div>
+                    <h4 class="panel-title">Información de Escuelas Procedencia</h4>
+                </div>
                 <div class="panel-body">
                 <div class="container-fluid" style="width: 100%">
                      <asp:GridView ID="gvescProcedencia" CssClass="table table-bordered" AutoGenerateColumns="false"
-                        AllowPaging="true" PageSize="50" EmptyDataText="No hay registros para mostrar." runat="server">
+                        AllowPaging="true" PageSize="25" EmptyDataText="No hay registros para mostrar." runat="server">
                          <AlternatingRowStyle BackColor="WhiteSmoke" ForeColor="#284775" />
                         <Columns>
                             <asp:BoundField DataField="Empresa_ID" HeaderText="ID">

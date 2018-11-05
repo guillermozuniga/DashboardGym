@@ -14,13 +14,31 @@ Option Explicit On
 Partial Public Class ListFamilias
     
     '''<summary>
-    '''btn_Nuevo control.
+    '''Btn_Nuevo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_Nuevo As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents Btn_Nuevo As Global.System.Web.UI.HtmlControls.HtmlButton
+    
+    '''<summary>
+    '''Btn_Editar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Btn_Editar As Global.System.Web.UI.HtmlControls.HtmlButton
+    
+    '''<summary>
+    '''Btn_Eliminar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Btn_Eliminar As Global.System.Web.UI.HtmlControls.HtmlButton
     
     '''<summary>
     '''LabelFirstName control.
@@ -95,22 +113,31 @@ Partial Public Class ListFamilias
     Protected WithEvents TextCURP As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''btn_Buscar control.
+    '''Btn_Buscar control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_Buscar As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents Btn_Buscar As Global.System.Web.UI.HtmlControls.HtmlButton
     
     '''<summary>
-    '''btn_Limpiar control.
+    '''Btn_Limpiar control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_Limpiar As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents Btn_Limpiar As Global.System.Web.UI.HtmlControls.HtmlButton
+    
+    '''<summary>
+    '''DropDownList1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
     '''gvFamilias control.

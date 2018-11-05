@@ -23,6 +23,24 @@ Partial Public Class ListBancos
     Protected WithEvents btn_Nuevo As Global.System.Web.UI.HtmlControls.HtmlButton
     
     '''<summary>
+    '''btn_Editar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_Editar As Global.System.Web.UI.HtmlControls.HtmlButton
+    
+    '''<summary>
+    '''btn_Eliminar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_Eliminar As Global.System.Web.UI.HtmlControls.HtmlButton
+    
+    '''<summary>
     '''LabelBanco control.
     '''</summary>
     '''<remarks>
@@ -59,15 +77,6 @@ Partial Public Class ListBancos
     Protected WithEvents TextClave As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Btn_Limpiar control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Btn_Limpiar As Global.System.Web.UI.HtmlControls.HtmlButton
-    
-    '''<summary>
     '''Btn_Buscar control.
     '''</summary>
     '''<remarks>
@@ -77,13 +86,31 @@ Partial Public Class ListBancos
     Protected WithEvents Btn_Buscar As Global.System.Web.UI.HtmlControls.HtmlButton
     
     '''<summary>
-    '''gvBancos control.
+    '''Btn_Limpiar control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents gvBancos As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents Btn_Limpiar As Global.System.Web.UI.HtmlControls.HtmlButton
+    
+    '''<summary>
+    '''DropDownList1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''GVBancos control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents GVBancos As Global.System.Web.UI.WebControls.GridView
     
     '''<summary>
     '''Master property.

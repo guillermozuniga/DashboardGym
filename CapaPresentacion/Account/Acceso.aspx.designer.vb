@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class Acceso
-
+    
     '''<summary>
     '''form1 control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class Acceso
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-
+    
     '''<summary>
     '''TextBoxUsuario control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class Acceso
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TextBoxUsuario As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''TextBoxContrasena control.
     '''</summary>
@@ -39,16 +39,7 @@ Partial Public Class Acceso
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TextBoxContrasena As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''chkRememberMe control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents chkRememberMe As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''lblMessage control.
     '''</summary>
@@ -57,7 +48,7 @@ Partial Public Class Acceso
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblMessage As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''ButtonIngresar control.
     '''</summary>

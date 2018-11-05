@@ -34,30 +34,30 @@ Public Class Acceso
                         If Not user.IsApproved Then
                             'Account Unapproved
 
-                            lblMessage.Text = "Your account is not approved."
+                            lblMessage.Text = "Su Cuanta no a sido Aprovada"
                         ElseIf user.IsLockedOut Then
                             'Account Locked
-                            lblMessage.Text = "Your account is locked."
+                            lblMessage.Text = "Su Cuenta a sido Bloqueada"
                         Else
                             'Invalid username or password
-                            lblMessage.Text = "Invalid username or password."
+                            lblMessage.Text = "Usuario o Contraseña Invalida."
                         End If
                     Else
                         'Invalid username or password
-                        lblMessage.Text = "Invalid username or password."
+                        lblMessage.Text = "Usuario o Contraseña Invalida."
                     End If
 
                 Else
 
-                    If chkRememberMe.Checked Then
-                        Dim authTicket As FormsAuthenticationTicket = New FormsAuthenticationTicket(TextBoxUsuario.Text, True, (12 * 60))
-                        Dim encryptedTicket As String = FormsAuthentication.Encrypt(authTicket)
-                        Dim cookie As HttpCookie = New HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket)
-                        cookie.Expires = authTicket.Expiration
-                        HttpContext.Current.Response.Cookies.Set(cookie)
-                    Else
-                        FormsAuthentication.SetAuthCookie(TextBoxUsuario.Text, False)
-                    End If
+                    'If chkRememberMe.Checked Then
+                    Dim authTicket As FormsAuthenticationTicket = New FormsAuthenticationTicket(TextBoxUsuario.Text, True, (12 * 60))
+                    Dim encryptedTicket As String = FormsAuthentication.Encrypt(authTicket)
+                    Dim cookie As HttpCookie = New HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket)
+                    cookie.Expires = authTicket.Expiration
+                    HttpContext.Current.Response.Cookies.Set(cookie)
+                    'Else
+                    FormsAuthentication.SetAuthCookie(TextBoxUsuario.Text, False)
+                    'End If
                     'valid username or password
                     lblMessage.Text = "The user account was successfully created !!!."
 

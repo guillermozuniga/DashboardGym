@@ -65,11 +65,14 @@
   <ItemGroup>
     <Compile Include="AlumnoDAO.vb" />
     <Compile Include="BancosDAO.vb" />
+    <Compile Include="BoletaDAO.vb" />
     <Compile Include="CargoDAO.vb" />
+    <Compile Include="clsFunciones.vb" />
     <Compile Include="Conexion.vb" />
     <Compile Include="EmpleadosDAO.vb" />
     <Compile Include="EmpresaDAO.vb" />
     <Compile Include="FamiliasDAO.vb" />
+    <Compile Include="MateriaDAO.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -85,6 +88,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SeccionDAO.vb" />
     <Compile Include="SociosDAO.vb" />
     <Compile Include="UNegocioDAO.vb" />
     <Compile Include="VentasDAO.vb" />

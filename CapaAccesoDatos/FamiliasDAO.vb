@@ -35,10 +35,10 @@ Public Class FamiliasDAO
             dr = cmd.ExecuteReader()
             While (dr.Read())
                 objFamilias = New FamiliaEnt With {
-               .Tutores_ID = dr("Tutores_ID"),
-               .NombreMama = dr("NombreMama"),
-               .NombrePapa = dr("NombrePapa"),
-               .Tutores_Tutor = dr("Tutores_Tutor")
+               .Tutores_ID = Convert.ToInt32(dr("Tutores_ID").ToString()),
+               .NombreMama = dr("NombreMama").ToString(),
+               .NombrePapa = dr("NombrePapa").ToString(),
+               .Tutores_Tutor = dr("Tutores_Tutor").ToString()
                 }
                 ListaFamilias.Add(objFamilias)
             End While
@@ -47,8 +47,10 @@ Public Class FamiliasDAO
             objFamilias = Nothing
             Throw ex
         Finally
-            conexion.Close()
-            conexion.Dispose()
+            If cmd.Connection.State = ConnectionState.Open Then
+                cmd.Connection.Close()
+                cmd.Dispose()
+            End If
 
         End Try
 

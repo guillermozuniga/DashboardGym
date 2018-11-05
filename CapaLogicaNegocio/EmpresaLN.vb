@@ -25,8 +25,7 @@ Public Class EmpresaLN
 #Region "Rutinas"
     Public Function ListarEmpresa() As List(Of EmpresaEnt)
         Try
-            Return EmpresaDAO.GetInstance.ListarEmpresa()
-
+            Return EmpresaDAO.GetInstance().ListarEmpresa()
 
         Catch ex As Exception
             Throw ex
@@ -36,8 +35,32 @@ Public Class EmpresaLN
 
     End Function
 
-    Public Function GuardarEmpresa()
+    Public Function RegistrarEmpresa(objEmpresa As EmpresaEnt)
+        Try
+            Return EmpresaDAO.GetInstance().RegistrarEmpresa(objEmpresa)
+        Catch ex As Exception
+            Throw ex
+        End Try
 
+    End Function
+
+    Public Function ModificarEmpresa(objEmpresa As EmpresaEnt)
+        Try
+            Return EmpresaDAO.GetInstance().ModificarEmpresa(objEmpresa)
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+    End Function
+
+    Public Function BuscarEmpresa(ByVal valor As Integer)
+        Try
+            Return EmpresaDAO.GetInstance().BuscarEmpresa(valor)
+        Catch ex As Exception
+
+            Throw ex
+
+        End Try
 
     End Function
 #End Region

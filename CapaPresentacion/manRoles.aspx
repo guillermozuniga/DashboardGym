@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Mant. Roles" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterDefault.Master" CodeBehind="manRoles.aspx.vb" Inherits="CapaPresentacion.manRoles" %>
+
 <%@ MasterType VirtualPath="~/MasterDefault.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -20,8 +21,10 @@
         </div>
     </div>
     <nav class="btn-toolbar text-center well-sm" id="MenuBar">
-        <button id="btn_Nuevo" class="btn btn-primary custom btn-sm-3"><span class="glyphicon glyphicon-floppy-disk"></span>Guardar </button>
-        <button id="btn_Regresar" class="btn btn-primary custom btn-sm-3" <%--style="display:none;"--%>><span class="glyphicon glyphicon-arrow-left"></span>Regresar </button>
+        <button id="Btn_Nuevo" class="btn btn-primary custom btn-sm-3"><span class="glyphicon glyphicon-floppy-disk"></span>Guardar </button>
+        <button id="Btn_Regresar" class="btn btn-primary custom btn-sm-3" <%--style="display:none;"--%>><span class="glyphicon glyphicon-arrow-left"></span>Regresar </button>
+        <asp:LinkButton ID="btnAgregarHorario" runat="server" CssClass="btn btn-primary" href="#imodal" data-toggle="modal">Agregar Horario</asp:LinkButton>
+
     </nav>
 
     <div class="col-md-12">
@@ -50,6 +53,36 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="modal fade" id="imodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Actualizar registro</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>NOMBRES Y APELLIDOS</label>
+                    </div>
+                    <div class="form-group">
+                        <asp:TextBox ID="txtFullName" runat="server" Text="" CssClass="form-control" Enabled="false"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label>DIRECCIÓN</label>
+                    </div>
+                    <div class="form-group">
+                        <asp:TextBox ID="txtModalDireccion" runat="server" Text="" CssClass="form-control"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnactualizar">Actualizar</button>
+                </div>
             </div>
         </div>
     </div>

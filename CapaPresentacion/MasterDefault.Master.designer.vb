@@ -32,6 +32,15 @@ Partial Public Class MasterDefault
     Protected WithEvents LblNombreCorto As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
+    '''Label1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''LblRol control.
     '''</summary>
     '''<remarks>
@@ -77,6 +86,15 @@ Partial Public Class MasterDefault
     Protected WithEvents ModuloRH As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
+    '''ModEvaluaciones control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ModEvaluaciones As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
     '''ModuloConfiguracion control.
     '''</summary>
     '''<remarks>
@@ -120,6 +138,15 @@ Partial Public Class MasterDefault
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ContentPlaceHolder1 As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    
+    '''<summary>
+    '''HiddenFieldCorreoTutor control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents HiddenFieldCorreoTutor As Global.System.Web.UI.WebControls.HiddenField
     
     '''<summary>
     '''footer control.

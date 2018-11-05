@@ -21,13 +21,24 @@ Public Class AlumnoLN
 #End Region
 
 #Region "Rutinas"
-    Public Function ListarAlumnos() As List(Of AlumnoEnt)
+    Public Function ListarAlumnos(ByVal _Sentencia As String) As List(Of AlumnoEnt)
         Try
-            Return AlumnoDAO.GetInstance.ListarAlumnos()
+            Return AlumnoDAO.GetInstance.ListarAlumnos(_Sentencia)
 
         Catch ex As Exception
             Throw ex
         End Try
     End Function
+
+    Public Function ListarAlumnosXTutor(ByVal _sqlSentencia As String) As List(Of AlumnoEnt)
+        Try
+            Return AlumnoDAO.GetInstance.ListarAlumnosxTutor(_sqlSentencia)
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+
 #End Region
 End Class

@@ -32,13 +32,13 @@ Partial Public Class ListUsuarios
     Protected WithEvents LabelUserName As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Text_UserName control.
+    '''TextNombreUsuario control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Text_UserName As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TextNombreUsuario As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''LabelEmail control.
@@ -59,42 +59,6 @@ Partial Public Class ListUsuarios
     Protected WithEvents TextEmail As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Label1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''TextBox1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Label2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''TextBox2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents TextBox2 As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
     '''btn_Limpiar control.
     '''</summary>
     '''<remarks>
@@ -111,6 +75,15 @@ Partial Public Class ListUsuarios
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_Buscar As Global.System.Web.UI.HtmlControls.HtmlButton
+    
+    '''<summary>
+    '''DropDownList1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
     '''gvUsuarios control.

@@ -202,7 +202,35 @@
         End Set
     End Property
 
+    Private _Cargos_Descripcion As String
+    Public Property Cargos_Descripcion() As String
+        Get
+            Return _Cargos_Descripcion
+        End Get
+        Set(ByVal value As String)
+            _Cargos_Descripcion = value
+        End Set
+    End Property
 
+    Private _Cargos_Referencia As String
+    Public Property Cargos_Referencia() As String
+        Get
+            Return _Cargos_Referencia
+        End Get
+        Set(ByVal value As String)
+            _Cargos_Referencia = value
+        End Set
+    End Property
+
+    Private _Cargos_Nombre As String
+    Public Property Cargos_Nombre() As String
+        Get
+            Return _Cargos_Nombre
+        End Get
+        Set(ByVal value As String)
+            _Cargos_Nombre = value
+        End Set
+    End Property
     Public Sub New()
     End Sub
 
@@ -210,7 +238,8 @@
     Public Sub New(ByVal Cargos_ID As Integer, ByVal Cargos_CicloEscolar As String, ByVal Cargos_Nivel As Integer,
                    ByVal Cargos_Clave As Integer, ByVal [Cargos_Matricula] As Integer, ByVal [Cargos_Grado] As Integer, ByVal [Cargos_Grupo] As String, ByVal [Cargos_FechaDeVencimiento] As Date,
                    ByVal [Cargos_FechaDePago] As Date, ByVal [Cargos_Importe] As Decimal, ByVal [Cargos_Saldo] As Decimal, ByVal [Cargos_Recargos] As Decimal, ByVal [Cargos_Descuento] As Decimal,
-                   ByVal [Cargos_ComisionBancaria] As Decimal, ByVal [Cargos_PagoExtra] As Decimal, ByVal [Cargos_Devolucion] As Decimal, ByVal [Cargos_Fijo] As Integer, ByVal [Cargos_Facturado] As Integer, ByVal [Cargos_Actualizado] As Integer, ByVal [Cargos_Control] As Integer)
+                   ByVal [Cargos_ComisionBancaria] As Decimal, ByVal [Cargos_PagoExtra] As Decimal, ByVal [Cargos_Devolucion] As Decimal, ByVal [Cargos_Fijo] As Integer, ByVal [Cargos_Facturado] As Integer,
+                   ByVal [Cargos_Actualizado] As Integer, ByVal [Cargos_Control] As Integer, ByVal [Descripcion] As String, ByVal [Cargos_Referencia] As String, ByVal [Cargos_Nombre] As String)
 
         Me.Cargos_ID = Cargos_ID
         Me.Cargos_Cicloescolar = Cargos_CicloEscolar
@@ -232,6 +261,9 @@
         Me.Cargos_Actualizado = Cargos_Actualizado
         Me.Cargos_Control = Cargos_Control
         Me.Cargos_Facturado = Cargos_Facturado
+        Me.Cargos_Descripcion = Cargos_Descripcion
+        Me.Cargos_Referencia = Cargos_Referencia
+        Me.Cargos_Nombre = Cargos_Nombre
 
     End Sub
 

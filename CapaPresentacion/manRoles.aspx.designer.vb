@@ -32,6 +32,15 @@ Partial Public Class manRoles
     Protected WithEvents Label7 As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
+    '''btnAgregarHorario control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnAgregarHorario As Global.System.Web.UI.WebControls.LinkButton
+    
+    '''<summary>
     '''Label1 control.
     '''</summary>
     '''<remarks>
@@ -84,6 +93,24 @@ Partial Public Class manRoles
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TextBox6 As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''txtFullName control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtFullName As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''txtModalDireccion control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtModalDireccion As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''Master property.

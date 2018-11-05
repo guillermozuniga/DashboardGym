@@ -32,13 +32,13 @@ Partial Public Class listModulos
     Protected WithEvents LabelModulo As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Text_Banco control.
+    '''TextModulo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Text_Banco As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TextModulo As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''btn_Limpiar control.
@@ -59,13 +59,22 @@ Partial Public Class listModulos
     Protected WithEvents btn_Buscar As Global.System.Web.UI.HtmlControls.HtmlButton
     
     '''<summary>
-    '''gvmodulos control.
+    '''DropDownList1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents gvmodulos As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''gvModulos control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gvModulos As Global.System.Web.UI.WebControls.GridView
     
     '''<summary>
     '''Master property.

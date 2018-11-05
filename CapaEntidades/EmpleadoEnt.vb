@@ -272,12 +272,12 @@
     End Property
 
 
-    Private _Empleados_AreaLaboral As Integer
-    Public Property Empleados_AreaLaboral() As Integer
+    Private _Empleados_AreaLaboral As String
+    Public Property Empleados_AreaLaboral() As String
         Get
             Return _Empleados_AreaLaboral
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
             _Empleados_AreaLaboral = value
         End Set
     End Property

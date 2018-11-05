@@ -6,7 +6,6 @@ Imports System.Net
 Imports System.Net.Mail
 Imports System.Configuration
 
-
 Public Class Dashboard
 
     Inherits System.Web.UI.Page
@@ -272,9 +271,9 @@ Public Class Dashboard
 
         value = row.Item("VentaTotal")
         If value Is DBNull.Value Then
-            Me.LabelVentas.Text = "0.00"
+            'Me.LabelVentas.Text = "0.00"
         Else
-            Me.LabelVentas.Text = String.Format("{0:0,0.00}", CStr(value))
+            'Me.LabelVentas.Text = String.Format("{0:0,0.00}", CStr(value))
         End If
     End Sub
 

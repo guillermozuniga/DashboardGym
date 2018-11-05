@@ -14,76 +14,31 @@ Option Explicit On
 Partial Public Class ListRoles
     
     '''<summary>
-    '''LabelFirstName control.
+    '''Btn_Nuevo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LabelFirstName As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Btn_Nuevo As Global.System.Web.UI.HtmlControls.HtmlButton
     
     '''<summary>
-    '''Text_FirstName control.
+    '''LabelNombre control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Text_FirstName As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents LabelNombre As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''LabelLastName control.
+    '''TextNombre control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LabelLastName As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''Tex_LastName control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Tex_LastName As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Label1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''TextBox1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Label2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''TextBox2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents TextBox2 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TextNombre As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''btn_Limpiar control.
@@ -102,6 +57,15 @@ Partial Public Class ListRoles
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_Buscar As Global.System.Web.UI.HtmlControls.HtmlButton
+    
+    '''<summary>
+    '''DropDownList1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
     '''gvRoles control.

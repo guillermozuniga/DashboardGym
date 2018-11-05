@@ -8,6 +8,8 @@
         If Not Me.IsPostBack Then
 
             If (HttpContext.Current.User.Identity.IsAuthenticated) Then
+                LlenarDropRegistros()
+
                 BindRolesToRolesList()
 
             Else
@@ -18,7 +20,15 @@
 
 
     End Sub
-
+    Private Sub LlenarDropRegistros()
+        DropDownList1.Items.Insert(0, "25")
+        DropDownList1.Items.Insert(1, "50")
+        DropDownList1.Items.Insert(2, "100")
+        DropDownList1.Items.Insert(3, "250")
+    End Sub
+    Protected Sub Btn_Nuevo_Click()
+        Response.Redirect("manRoles.aspx")
+    End Sub
     Private Sub BindRolesToRolesList()
 
         ' Get all of the roles

@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Man. Usuarios" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterDefault.Master" CodeBehind="manUsuarios.aspx.vb" Inherits="CapaPresentacion.manUsuarios" %>
+
 <%@ MasterType VirtualPath="~/MasterDefault.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -19,10 +20,10 @@
             </nav>
         </div>
     </div>
-   <nav class="btn-toolbar text-center well-sm" id="MenuBar">
-                    <button id="btn_Nuevo" class="btn btn-primary custom btn-sm-3"><span class="glyphicon glyphicon-floppy-disk"></span>Guardar </button>
-                    <button id="btn_Regresar" class="btn btn-primary custom btn-sm-3" <%--style="display:none;"--%>><span class="glyphicon glyphicon-arrow-left"></span>Regresar </button>
-             </nav>
+    <nav class="btn-toolbar text-center well-sm" id="MenuBar">
+        <button id="btn_Nuevo" class="btn btn-primary custom btn-sm-3"><span class="glyphicon glyphicon-floppy-disk"></span>Guardar </button>
+        <button id="btn_Regresar" class="btn btn-primary custom btn-sm-3" <%--style="display:none;"--%>><span class="glyphicon glyphicon-arrow-left"></span>Regresar </button>
+    </nav>
 
 
     <div class="col-md-12">
@@ -31,7 +32,7 @@
                 <div class="row">
                     <div class="col-md-1">
                         <div class="form-group">
-                            <asp:Label runat="server" ID="LabelTutor" Text="Tutor" CssClass="control-label" ></asp:Label>
+                            <asp:Label runat="server" ID="LabelTutor" Text="Tutor" CssClass="control-label"></asp:Label>
                             <asp:TextBox runat="server" ID="Text_nombre" CssClass="form-control" placeholder="Tutor"></asp:TextBox>
                         </div>
                     </div>
@@ -79,8 +80,8 @@
                     <div class="col-md-2">
                         <div class="form-group">
                             <asp:Label runat="server" ID="Label5" Text="Rol"></asp:Label>
-                            <asp:DropDownList ID="DropDownListRoles" runat="server"  CssClass="form-control"></asp:DropDownList>
-                           
+                            <asp:DropDownList ID="DropDownListRoles" runat="server" CssClass="form-control"></asp:DropDownList>
+
                         </div>
                     </div>
                 </div>

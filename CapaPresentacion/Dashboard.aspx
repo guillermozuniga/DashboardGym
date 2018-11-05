@@ -71,7 +71,7 @@
                     }
 
 
-                    document.getElementById("<%=LabelVentas.ClientID%>").innerHTML = number_format(total, 2)
+                    <%--//document.getElementById("<%=LabelVentas.ClientID%>").innerHTML = number_format(total, 2)--%>
                 }
 
             });
@@ -135,41 +135,55 @@
 
     <section class="content">
         <!-- Info boxes -->
-
+       
         <div class="row">
 
             <!-- fix for small devices only -->
             <div class="clearfix visible-sm-block"></div>
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <!-- small box -->
-                <div class="small-box bg-blue">
+                <div class="small-box bg-light-blue">
                     <div class="inner">
                         <h3>
                             <asp:Label ID="LabelUnidadNegocio" runat="server" Text=""></asp:Label>1</h3>
-                        <p>Informacion Escuela</p>
+                        <p>Alumnos</p>
                     </div>
                     <div class="icon">
-                        <i class="ion ion-home"></i>
+                        <i class="ion ion-person"></i>
                     </div>
                     <a href="#" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-            <div class="col-lg-6 ">
+            <div class="col-lg-4">
                 <!-- small box -->
-                <div class="small-box bg-green">
+                <div class="small-box bg-light-blue">
                     <div class="inner">
                         <h3>
-                            <asp:Label ID="LabelVentas" runat="server" Text="0.00"></asp:Label><sup style="font-size: 20px">$</sup></h3>
-                        <p>Ingresos</p>
+                            <asp:Label ID="Label3" runat="server" Text=""></asp:Label>1</h3>
+                        <p>Maestros</p>
                     </div>
                     <div class="icon">
-                        <i class="ion ion-cash"></i>
+                        <i class="ion ion-man"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <!-- small box -->
+                <div class="small-box bg-light-blue">
+                    <div class="inner">
+                         <h3>
+                            <asp:Label ID="Label2" runat="server" Text=""></asp:Label>1</h3>
+                        <p>Administrativos</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-android-contacts"></i>
                     </div>
                     <a href="#" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
-
+            
         </div>
         <%--<div class="row">
 

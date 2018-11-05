@@ -1,6 +1,18 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterDefault.Master" CodeBehind="manEmpleado.aspx.vb" Inherits="CapaPresentacion.manEmpleado" %>
+﻿<%@ Page Title="Man Empleados" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterDefault.Master" CodeBehind="manEmpleado.aspx.vb" Inherits="CapaPresentacion.manEmpleado" %>
 <%@ MasterType VirtualPath="~/MasterDefault.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        .alert {
+            display: block;           
+            position: fixed;
+            top: 50px;
+            z-index: 100000;         
+            margin-left:150px;
+        }
+    </style>
+    <script type="text/javascript">
+
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
@@ -11,19 +23,21 @@
             <asp:Label runat="server" ID="Label7" Text=""></asp:Label>
         </div>
     </div>
-
+<asp:HiddenField ID="HiddenFieldValor" runat="server" />
     <div class="row">
         <div class="col-lg-12">
             <nav class="btn-toolbar text-left text-orange">
                 <a href="#" data-toggle="sidebar"><span class="glyphicon glyphicon-th-list"></span></a>
                 <label><%: Page.Title %></label>
+                
             </nav>
         </div>
     </div>
 
+    <%--style="display:none;"--%>
     <nav class="btn-toolbar text-center well-sm" id="MenuBar">
-        <button id="Btn_Guardar" onserverclick="Btn_Guardar_Click" class="btn btn-primary custom btn-sm-3"><span class="glyphicon glyphicon-floppy-disk"></span>Guardar </button>
-        <button id="Btn_Regresar" onserverclick="Btn_Regresar_Click" class="btn btn-primary custom btn-sm-3" <%--style="display:none;"--%>><span class="glyphicon glyphicon-arrow-left"></span>Regresar </button>
+        <button id="Btn_Guardar" onserverclick="Btn_Guardar_Click" runat="server" class="btn btn-primary custom btn-sm-3" type="button"><span class="glyphicon glyphicon-floppy-disk"></span>Guardar </button>
+        <button id="Btn_Regresar" onserverclick="Btn_Regresar_Click" runat="server" class="btn btn-primary custom btn-sm-3" type="button"><span class="glyphicon glyphicon-arrow-left"></span>Regresar </button>
     </nav>
 
 
@@ -32,40 +46,41 @@
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#activity" data-toggle="tab">Información</a></li>
 
-                <li><a href="#settings" data-toggle="tab">Representante</a></li>
+                <li><a href="#settings" data-toggle="tab"></a></li>
 
-                <li><a href="#logos" data-toggle="tab">Logos</a></li>
+                <li><a href="#user" data-toggle="tab">Usuario</a></li>
 
             </ul>
             <div class="tab-content">
+
                 <div class="active tab-pane" id="activity">
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label for="inputName" class="col-sm-2 control-label">R.F.C.</label>
-                                        <asp:TextBox runat="server" ID="TextRFC" CssClass="form-control" Enabled="false" placeholder="R.F.C."></asp:TextBox>
+                                        <label for="inputName" class="col-sm-2 control-label">Numero</label>
+                                        <asp:TextBox runat="server" ID="TextNumero" CssClass="form-control" Enabled="false" placeholder="Numero"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-md-9">
                                     <div class="form-group">
-                                        <label for="inputName1" class="col-sm-2 control-label">Razon Social</label>
-                                        <asp:TextBox runat="server" ID="TextRazonSocial" CssClass="form-control" Enabled="false" placeholder="Razon Social"></asp:TextBox>
+                                        <label for="inputName1" class="col-sm-2 control-label">Nombre de Pila</label>
+                                        <asp:TextBox runat="server" ID="TextNombre" CssClass="form-control"  placeholder="Nombre de Pila"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-7">
                                     <div class="form-group">
-                                        <asp:Label runat="server" ID="LabelNombreCom" Text="Nombre Comercial"></asp:Label>
-                                        <asp:TextBox runat="server" ID="TextBoxNombreCom" CssClass="form-control" placeholder="Nombre Comercial"></asp:TextBox>
+                                        <asp:Label runat="server" ID="LabelApellidoPat" Text="Apellido Paterno"></asp:Label>
+                                        <asp:TextBox runat="server" ID="TextApellidoPat" CssClass="form-control" placeholder="Apellido Paterno"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-md-5">
                                     <div class="form-group">
-                                        <asp:Label runat="server" ID="LabelCurp" Text="C.U.R.P."></asp:Label>
-                                        <asp:TextBox runat="server" ID="TextCURP" CssClass="form-control" placeholder="C.U.R.P."></asp:TextBox>
+                                        <asp:Label runat="server" ID="LabelAppellidoMat" Text="Apellido Materno"></asp:Label>
+                                        <asp:TextBox runat="server" ID="TextApellidoMat" CssClass="form-control" placeholder="Apellido Materno"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -174,6 +189,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="tab-pane" id="settings">
                     <div class="panel panel-default">
                         <div class="panel-body">
@@ -212,7 +228,7 @@
                                     <asp:TextBox ID="TextTelefonoRep" runat="server" class="form-control" placeholder="Telefono"></asp:TextBox>
                                 </div>
                             </div>
-                            <div class="form-group">
+                           <%-- <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
                                     <div class="checkbox">
                                         <label>
@@ -221,7 +237,7 @@
                                         </label>
                                     </div>
                                 </div>
-                            </div>
+                            </div>--%>
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
                                     <button type="submit" class="btn btn-danger">Submit</button>
@@ -231,7 +247,7 @@
                     </div>
                 </div>
 
-                <div class="tab-pane" id="logos">
+                <div class="tab-pane" id="user">
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="form-group">
@@ -260,6 +276,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

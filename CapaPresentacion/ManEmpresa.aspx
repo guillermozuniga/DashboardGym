@@ -1,17 +1,24 @@
-﻿<%@ Page Title="Mant. Empresa" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterDefault.Master" CodeBehind="ManEmpresa.aspx.vb" Inherits="CapaPresentacion.ManEmpresa" %>
+﻿<%@ Page Title="Mant. Empresa" Language="vb" EnableEventValidation="false" AutoEventWireup="false" MasterPageFile="~/MasterDefault.Master" CodeBehind="ManEmpresa.aspx.vb" Inherits="CapaPresentacion.ManEmpresa" %>
 
 <%@ MasterType VirtualPath="~/MasterDefault.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        .alert {
+            display: block;           
+            position: fixed;
+            top: 50px;
+            z-index: 100000;         
+            margin-left:150px;
+        }
+    </style>
+    <script type="text/javascript">
+
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
-        <div class="alert alert-success" id="Msg_Success" style="display: none">
-            <asp:Label runat="server" ID="LabelMessage" Text=""></asp:Label>
-        </div>
-        <div class="alert alert-danger" id="MsgDanger" style="display: none">
-            <asp:Label runat="server" ID="Label7" Text=""></asp:Label>
-        </div>
-    </div>
+    <asp:Label ID="lblMsg" runat="server" Visible="false"></asp:Label>
+    <asp:HiddenField ID="HiddenFieldValor" runat="server" />
+
     <div class="row">
         <div class="col-lg-12">
             <nav class="btn-toolbar text-left text-orange">
@@ -20,11 +27,11 @@
             </nav>
         </div>
     </div>
+    <%--style="display:none;"--%>
     <nav class="btn-toolbar text-center well-sm" id="MenuBar">
-        <button id="Btn_Guardar" onserverclick="Btn_Guardar_Click" class="btn btn-primary custom btn-sm-3"><span class="glyphicon glyphicon-floppy-disk"></span>Guardar </button>
-        <button id="Btn_Regresar" onserverclick="Btn_Regresar_Click" class="btn btn-primary custom btn-sm-3" <%--style="display:none;"--%>><span class="glyphicon glyphicon-arrow-left"></span>Regresar </button>
+        <button id="Btn_Guardar" onserverclick="Btn_Guardar_Click" runat="server" class="btn btn-primary custom btn-sm-3" type="button" onclientclick="this.disabled = true;"><span class="glyphicon glyphicon-floppy-disk"></span>Guardar </button>
+        <button id="Btn_Regresar" onserverclick="Btn_Regresar_Click" runat="server" class="btn btn-primary custom btn-sm-3" type="button"><span class="glyphicon glyphicon-arrow-left"></span>Regresar </button>
     </nav>
-
 
     <div class="col-md-12">
         <div class="nav-tabs-custom">
@@ -45,6 +52,9 @@
                                     <div class="form-group">
                                         <label for="inputName" class="col-sm-2 control-label">R.F.C.</label>
                                         <asp:TextBox runat="server" ID="TextRFC" CssClass="form-control" Enabled="false" placeholder="R.F.C."></asp:TextBox>
+                                        <%--                          <asp:RequiredFieldValidator ID="RFCRequired" runat="server" ControlToValidate="TextRfc" ForeColor="Red" ErrorMessage="RFC Requerido" ToolTip="Rfc Requerido.">*</asp:RequiredFieldValidator>
+
+                                        --%>
                                     </div>
                                 </div>
                                 <div class="col-md-9">
@@ -70,10 +80,21 @@
                             </div>
                             <%--  Informacion de Direccion--%>
                             <div class="row">
-                                <div class="col-md-7">
+                                <div class="col-md-5">
                                     <div class="form-group">
                                         <asp:Label runat="server" ID="LabelCalle" Text="Dirección"></asp:Label>
                                         <asp:TextBox runat="server" ID="TextCalle" CssClass="form-control" placeholder="Dirección"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <asp:Label runat="server" ID="LabelCodigop" Text="C.P."></asp:Label>
+                                        <asp:TextBox runat="server" ID="TextCodigoP" CssClass="form-control" placeholder="Codigo"></asp:TextBox>
+                                        <%-- <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
+                                            ControlToValidate="TextCodigoP" ErrorMessage="Ingrese Valores Numericos"
+                                            ForeColor="Red"
+                                            ValidationExpression="^[0-9]*">
+                                        </asp:RegularExpressionValidator>--%>
                                     </div>
                                 </div>
                                 <div class="col-md-1">
@@ -124,24 +145,44 @@
                                     <div class="form-group">
                                         <asp:Label runat="server" ID="LabelTel1" Text="Teléfono"></asp:Label>
                                         <asp:TextBox runat="server" ID="TextTel1" CssClass="form-control" placeholder="Teléfono"></asp:TextBox>
+                                        <%--                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server"
+                                            ControlToValidate="TextTel1" ErrorMessage="Ingrese Valores Numericos"
+                                            ForeColor="Red"
+                                            ValidationExpression="^[0-9]*">
+                                        </asp:RegularExpressionValidator>--%>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <asp:Label runat="server" ID="LabelTelefono2" Text="Teléfono 2"></asp:Label>
                                         <asp:TextBox runat="server" ID="TextTel2" CssClass="form-control" placeholder="Teléfono 2"></asp:TextBox>
+                                        <%--                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server"
+                                            ControlToValidate="TextTel2" ErrorMessage="Ingrese Valores Numericos"
+                                            ForeColor="Red"
+                                            ValidationExpression="^[0-9]*">
+                                        </asp:RegularExpressionValidator>--%>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <asp:Label runat="server" ID="LabelTel3" Text="Teléfono 3"></asp:Label>
                                         <asp:TextBox runat="server" ID="TextTel3" CssClass="form-control" placeholder="Teléfono 3"></asp:TextBox>
+                                        <%--                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server"
+                                            ControlToValidate="TextTel3" ErrorMessage="Ingrese Valores Numericos"
+                                            ForeColor="Red"
+                                            ValidationExpression="^[0-9]*">
+                                        </asp:RegularExpressionValidator>--%>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <asp:Label runat="server" ID="LabelMovil" Text="Movil "></asp:Label>
                                         <asp:TextBox runat="server" ID="TextMovil" CssClass="form-control" placeholder="Movil"></asp:TextBox>
+                                        <%--                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server"
+                                            ControlToValidate="TextMovil" ErrorMessage="Ingrese Valores Numericos"
+                                            ForeColor="Red"
+                                            ValidationExpression="^[0-9]*">
+                                        </asp:RegularExpressionValidator>--%>
                                     </div>
                                 </div>
                             </div>
@@ -154,17 +195,17 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-5">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <asp:Label runat="server" ID="LabelDominio" Text="Dominio"></asp:Label>
                                         <asp:TextBox runat="server" ID="TextDominio" CssClass="form-control" placeholder="Dominio"></asp:TextBox>
                                     </div>
                                 </div>
 
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <asp:Label runat="server" ID="LabelNombreCorto" Text="Nombre Corto"></asp:Label>
-                                        <asp:TextBox runat="server" ID="TexNombreCorto" CssClass="form-control" placeholder="Nombre Corto"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="TextNombreCorto" CssClass="form-control" placeholder="Nombre Corto"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -178,40 +219,35 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 <label for="inputName" class="col-sm-2 control-label">Nombre</label>
-
                                 <div class="col-sm-10">
                                     <asp:TextBox ID="TextNombreRep" runat="server" CssClass="form-control" Placeholder="Nombre"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail" class="col-sm-2 control-label">Correo Electronico</label>
-
                                 <div class="col-sm-10">
                                     <asp:TextBox ID="TextEmailRep" runat="server" class="form-control" placeholder="Correo Electronico"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputName" class="col-sm-2 control-label">RFC</label>
-
                                 <div class="col-sm-10">
                                     <asp:TextBox ID="TextRFCRep" runat="server" class="form-control" placeholder="R.F.C."></asp:TextBox>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputExperience" class="col-sm-2 control-label">CURP</label>
-
                                 <div class="col-sm-10">
                                     <asp:TextBox ID="TextCURPRep" runat="server" class="form-control" placeholder="C.U.R.P."></asp:TextBox>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputSkills" class="col-sm-2 control-label">Telefono</label>
-
                                 <div class="col-sm-10">
                                     <asp:TextBox ID="TextTelefonoRep" runat="server" class="form-control" placeholder="Telefono"></asp:TextBox>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <%--<div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
                                     <div class="checkbox">
                                         <label>
@@ -220,10 +256,10 @@
                                         </label>
                                     </div>
                                 </div>
-                            </div>
+                            </div>--%>
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
-                                    <button type="submit" class="btn btn-danger">Submit</button>
+                                    <button type="submit" class="btn btn-danger" onserverclick="Btn_Submit_Click" runat="server">Guardar</button>
                                 </div>
                             </div>
                         </div>
@@ -253,7 +289,7 @@
                             </div>--%>
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
-                                    <button type="submit" class="btn btn-danger">Aceptar</button>
+                                    <button type="submit" class="btn btn-danger" onserverclick="Btn_Aceptar_Click" runat="server">Aceptar</button>
                                 </div>
                             </div>
                         </div>

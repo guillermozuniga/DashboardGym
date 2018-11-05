@@ -12,7 +12,7 @@
     End Sub
 
     Protected Sub Btn_Regresar_Click()
-        Response.Redirect("~/ListAlumnos.aspx")
+        Response.Redirect("~/Alumnos.aspx")
     End Sub
 
     Protected Sub Btn_Guardar_Click()

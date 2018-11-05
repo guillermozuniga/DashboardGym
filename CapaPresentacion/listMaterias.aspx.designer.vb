@@ -14,6 +14,33 @@ Option Explicit On
 Partial Public Class listMaterias
     
     '''<summary>
+    '''Btn_Nuevo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Btn_Nuevo As Global.System.Web.UI.HtmlControls.HtmlButton
+    
+    '''<summary>
+    '''Btn_Editar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Btn_Editar As Global.System.Web.UI.HtmlControls.HtmlButton
+    
+    '''<summary>
+    '''Btn_Eliminar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Btn_Eliminar As Global.System.Web.UI.HtmlControls.HtmlButton
+    
+    '''<summary>
     '''LabelNombre control.
     '''</summary>
     '''<remarks>
@@ -41,38 +68,59 @@ Partial Public Class listMaterias
     Protected WithEvents LabelClave As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''TextClave control.
+    '''TextNombreCorto control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextClave As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TextNombreCorto As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''btn_Buscar control.
+    '''Btn_Buscar control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_Buscar As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents Btn_Buscar As Global.System.Web.UI.HtmlControls.HtmlButton
     
     '''<summary>
-    '''btn_Limpiar control.
+    '''Btn_Limpiar control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_Limpiar As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents Btn_Limpiar As Global.System.Web.UI.HtmlControls.HtmlButton
     
     '''<summary>
-    '''gvMaterias control.
+    '''DropDownList1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents gvMaterias As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''GvMaterias control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents GvMaterias As Global.System.Web.UI.WebControls.GridView
+    
+    '''<summary>
+    '''Master property.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated property.
+    '''</remarks>
+    Public Shadows ReadOnly Property Master() As CapaPresentacion.MasterDefault
+        Get
+            Return CType(MyBase.Master,CapaPresentacion.MasterDefault)
+        End Get
+    End Property
 End Class

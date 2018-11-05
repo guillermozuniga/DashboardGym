@@ -159,8 +159,16 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
+                 <div class="panel-heading">
+                    <div class="btn-group pull-right">
+                        <a href="#" class="btn btn-default btn-xs"><span class="fa fa-print fa-xs"></span> Print</a>
+                        <a href="#" class="btn btn-default btn-xs"><span class="fa fa-file-pdf-o fa-xs"></span> PDF</a>
+                        <a href="#" class="btn btn-default btn-xs"><span class="fa fa-file-pdf-o fa-xs"></span> Excel</a>
+                    </div>
+                    <h4 class="panel-title">Información de Usuarios - Roles</h4>
+                </div>
                 <div class="panel-body">
-                    <asp:GridView ID="gvUsauriosRoles" CssClass="table table-bordered" AutoGenerateColumns="false"
+                    <asp:GridView ID="gvUsauriosRoles" CssClass="table table-bordered table-hover table-condensed small-top-margin" AutoGenerateColumns="false"
                         AllowPaging="true" PageSize="50" EmptyDataText="No hay registros para mostrar." runat="server">
                         <AlternatingRowStyle BackColor="WhiteSmoke" ForeColor="#284775" />
                         <Columns>

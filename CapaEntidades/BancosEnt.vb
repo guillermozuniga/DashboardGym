@@ -1,5 +1,4 @@
-﻿
-Public Class BancosEnt
+﻿Public Class BancosEnt
 
     Private _Bancos_BancoID As Integer
     Public Property Bancos_BancoID() As Integer

@@ -14,22 +14,40 @@ Option Explicit On
 Partial Public Class ManEmpresa
     
     '''<summary>
-    '''LabelMessage control.
+    '''lblMsg control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LabelMessage As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblMsg As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Label7 control.
+    '''HiddenFieldValor control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label7 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents HiddenFieldValor As Global.System.Web.UI.WebControls.HiddenField
+    
+    '''<summary>
+    '''Btn_Guardar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Btn_Guardar As Global.System.Web.UI.HtmlControls.HtmlButton
+    
+    '''<summary>
+    '''Btn_Regresar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Btn_Regresar As Global.System.Web.UI.HtmlControls.HtmlButton
     
     '''<summary>
     '''TextRFC control.
@@ -102,6 +120,24 @@ Partial Public Class ManEmpresa
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TextCalle As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''LabelCodigop control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LabelCodigop As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''TextCodigoP control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TextCodigoP As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''LabelNumExt control.
@@ -329,13 +365,13 @@ Partial Public Class ManEmpresa
     Protected WithEvents LabelNombreCorto As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''TexNombreCorto control.
+    '''TextNombreCorto control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TexNombreCorto As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TextNombreCorto As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''TextNombreRep control.

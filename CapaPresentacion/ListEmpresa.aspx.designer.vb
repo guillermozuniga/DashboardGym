@@ -14,13 +14,31 @@ Option Explicit On
 Partial Public Class ListEmpresa
     
     '''<summary>
-    '''btn_Nuevo control.
+    '''Btn_Nuevo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_Nuevo As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents Btn_Nuevo As Global.System.Web.UI.HtmlControls.HtmlButton
+    
+    '''<summary>
+    '''Btn_Editar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Btn_Editar As Global.System.Web.UI.HtmlControls.HtmlButton
+    
+    '''<summary>
+    '''Btn_Eliminar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Btn_Eliminar As Global.System.Web.UI.HtmlControls.HtmlButton
     
     '''<summary>
     '''LabelRFC control.
@@ -77,13 +95,22 @@ Partial Public Class ListEmpresa
     Protected WithEvents btn_Buscar As Global.System.Web.UI.HtmlControls.HtmlButton
     
     '''<summary>
-    '''gvEmpresa control.
+    '''DropDownList1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents gvEmpresa As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''GvEmpresa control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents GvEmpresa As Global.System.Web.UI.WebControls.GridView
     
     '''<summary>
     '''Master property.

@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Man. Alumno" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterDefault.Master" CodeBehind="manAlumno.aspx.vb" Inherits="CapaPresentacion.manAlumno" %>
+
 <%@ MasterType VirtualPath="~/MasterDefault.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -20,7 +21,7 @@
             </nav>
         </div>
     </div>
-     <%--style="display:none;"--%>
+    <%--style="display:none;"--%>
     <nav class="btn-toolbar text-center well-sm" id="MenuBar">
         <button id="Btn_Guardar" onserverclick="Btn_Guardar_Click" runat="server" class="btn btn-primary custom btn-sm-3"><span class="glyphicon glyphicon-floppy-disk"></span>Guardar </button>
         <button id="Btn_Regresar" onserverclick="Btn_Regresar_Click" runat="server" class="btn btn-primary custom btn-sm-3"><span class="glyphicon glyphicon-arrow-left"></span>Regresar </button>
@@ -33,6 +34,7 @@
                 <li class="active"><a href="#activity" data-toggle="tab">Información Alumno</a></li>
                 <li><a href="#settings" data-toggle="tab">Familia</a></li>
                 <li><a href="#logos" data-toggle="tab">Foto</a></li>
+                <li><a href="#user" data-toggle="tab">Usuario</a></li>
 
             </ul>
             <div class="tab-content">
@@ -237,6 +239,36 @@
 
                                 <div class="col-sm-10">
                                     <asp:TextBox ID="Text" runat="server" CssClass="form-control" Placeholder="Nombre"></asp:TextBox>
+                                </div>
+                            </div>
+
+                            <%--<div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox">
+                                            I agree to the <a href="#">terms and conditions</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>--%>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-danger">Aceptar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="user">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="inputName" class="col-sm-2 control-label">Nombre Imagen</label>
+
+                                <div class="col-sm-10">
+                                    <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" Placeholder="Nombre"></asp:TextBox>
                                 </div>
                             </div>
 

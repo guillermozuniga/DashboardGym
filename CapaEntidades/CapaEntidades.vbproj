@@ -75,6 +75,7 @@
   <ItemGroup>
     <Compile Include="AlumnoEnt.vb" />
     <Compile Include="BancosEnt.vb" />
+    <Compile Include="BoletaEnt.vb" />
     <Compile Include="ColCargos.vb" />
     <Compile Include="EmpleadoEnt.vb" />
     <Compile Include="EmpresaEnt.vb" />
@@ -97,6 +98,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="PagoEnt.vb" />
+    <Compile Include="PagosEnt.vb" />
+    <Compile Include="SeccionesEnt.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

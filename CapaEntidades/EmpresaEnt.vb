@@ -29,6 +29,16 @@
         End Set
     End Property
 
+    Private _Empresa_NombreCorto As String
+    Public Property Empresa_NombreCorto() As String
+        Get
+            Return _Empresa_NombreCorto
+        End Get
+        Set(ByVal value As String)
+            _Empresa_NombreCorto = value
+        End Set
+    End Property
+
     Private _Empresa_Direccion_Calle As String
     Public Property Empresa_Direccion_Calle() As String
         Get

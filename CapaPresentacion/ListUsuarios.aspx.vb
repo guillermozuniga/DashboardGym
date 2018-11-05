@@ -9,9 +9,9 @@
         If Not IsPostBack Then
 
             If (HttpContext.Current.User.Identity.IsAuthenticated) Then
+                LlenarDropRegistros()
 
                 BindUsersToUserList()
-
             Else
                 Response.Redirect("~/logout.aspx")
             End If
@@ -23,6 +23,12 @@
         Response.Redirect("manUsuarios.aspx")
     End Sub
 
+    Private Sub LlenarDropRegistros()
+        DropDownList1.Items.Insert(0, "25")
+        DropDownList1.Items.Insert(1, "50")
+        DropDownList1.Items.Insert(2, "100")
+        DropDownList1.Items.Insert(3, "250")
+    End Sub
     Private Sub BindUsersToUserList()
         ' Get all of the user accounts
         Dim users As MembershipUserCollection = Membership.GetAllUsers()
@@ -33,13 +39,13 @@
 
     End Sub
 
-    Private Sub gvUsuarios_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles gvUsuarios.RowDataBound
+    Private Sub GvUsuarios_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles gvUsuarios.RowDataBound
         If e.Row.RowType = DataControlRowType.Header Then
             e.Row.TableSection = TableRowSection.TableHeader
         End If
     End Sub
 
-    Protected Sub gvUsuarios_PageIndexChanging(ByVal sender As Object, ByVal e As GridViewPageEventArgs)
+    Protected Sub GvUsuarios_PageIndexChanging(ByVal sender As Object, ByVal e As GridViewPageEventArgs)
         BindUsersToUserList()
         Me.gvUsuarios.PageIndex = e.NewPageIndex
         Me.gvUsuarios.DataBind()

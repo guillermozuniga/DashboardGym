@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Lista Pagos" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterDefault.Master" CodeBehind="ListPagos.aspx.vb" Inherits="CapaPresentacion.ListPagos" %>
+﻿<%@ Page Title="Lista Pagos" Language="vb" EnableEventValidation="false" AutoEventWireup="false" MasterPageFile="~/MasterDefault.Master" CodeBehind="ListPagos.aspx.vb" Inherits="CapaPresentacion.ListPagos" %>
+
 <%@ MasterType VirtualPath="~/MasterDefault.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -13,10 +14,10 @@
     </div>
     <%--runat="server" onserverclick="btnNuevo_Click"--%>
     <nav class="btn-toolbar text-center well-sm" id="MenuBar">
-                    <button id="btn_Nuevo" class="btn btn-primary custom btn-sm-3" style="display:none;"><span class="glyphicon glyphicon-plus"></span>Nuevo </button>
-                    <button id="btn_Editar" class="btn btn-primary custom btn-sm-3 " style="display:none;"><span class="glyphicon glyphicon-edit"></span>Editar</button>
-                    <button id="btn_Eliminar" class="btn btn-primary custom btn-sm-3" style="display:none;"><span class="glyphicon glyphicon-erase"></span>Eliminar</button>
-        </nav>
+        <button id="btn_Nuevo" class="btn btn-primary custom btn-sm-3" style="display: none;"><span class="glyphicon glyphicon-plus"></span>Nuevo </button>
+        <button id="btn_Editar" class="btn btn-primary custom btn-sm-3 " style="display: none;"><span class="glyphicon glyphicon-edit"></span>Editar</button>
+        <button id="btn_Eliminar" class="btn btn-primary custom btn-sm-3" style="display: none;"><span class="glyphicon glyphicon-erase"></span>Eliminar</button>
+    </nav>
     <div class="row">
         <div class="col-xs-12">
             <div class="panel panel-default">
@@ -77,32 +78,44 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
+                                <div class="panel-heading">
+                    <div class="btn-group pull-right">
+                        <asp:DropDownList ID="DropDownList1" runat="server" CssClass="btn btn-default btn-xs"></asp:DropDownList>
+
+                    </div>
+
+                    <div class="btn-group pull-right">
+                        <a href="#" class="btn btn-default btn-xs"><span class="fa fa-print fa-xs"></span> Print</a>
+                        <a href="#" class="btn btn-default btn-xs"><span class="fa fa-file-pdf-o fa-xs"></span> PDF</a>
+                        <a href="#" class="btn btn-default btn-xs"><span class="fa fa-file-pdf-o fa-xs"></span> Excel</a>
+                    </div>
+                    <h4 class="panel-title">Información de Pagos</h4>
+                </div>
                 <div class="panel-body">
                     <div class="container-fluid" style="width: 100%">
                         <asp:GridView ID="gdvPagos" CssClass="table table-bordered" AutoGenerateColumns="false"
-                        AllowPaging="true" PageSize="50" EmptyDataText="No hay registros para mostrar." runat="server">
-                         <AlternatingRowStyle BackColor="WhiteSmoke" ForeColor="#284775" />
+                            AllowPaging="true" PageSize="25" EmptyDataText="No hay registros para mostrar." runat="server">
+                            <AlternatingRowStyle BackColor="WhiteSmoke" ForeColor="#284775" />
                             <Columns>
-                                <asp:BoundField DataField="Cargos_Id" HeaderText="ID" >
+                                <asp:BoundField DataField="Cargos_Id" HeaderText="ID">
                                     <HeaderStyle Font-Names="Arial" Font-Size="12px" ForeColor="white" />
-                                   </asp:BoundField>
+                                </asp:BoundField>
 
-                                <asp:BoundField DataField="Cargos_Matricula" HeaderText="Matricula" >
+                                <asp:BoundField DataField="Cargos_Matricula" HeaderText="Matricula">
                                     <HeaderStyle Font-Names="Arial" Font-Size="12px" ForeColor="white" />
-                                   </asp:BoundField>
+                                </asp:BoundField>
 
-                               <asp:BoundField DataField="Cargos_CicloEscolar" HeaderText="CicloEscolar" >
-                                <HeaderStyle Font-Names="Arial" Font-Size="12px" ForeColor="white" />
-                                   </asp:BoundField>
+                                <asp:BoundField DataField="Cargos_CicloEscolar" HeaderText="CicloEscolar">
+                                    <HeaderStyle Font-Names="Arial" Font-Size="12px" ForeColor="white" />
+                                </asp:BoundField>
 
-                               <%--  <asp:BoundField DataField="Cargos_FechaVencimiento" HeaderText="Fecha Vencimiento" />
+                                <%--  <asp:BoundField DataField="Cargos_FechaVencimiento" HeaderText="Fecha Vencimiento" />
                                 <asp:BoundField DataField="Importe" HeaderText="Importe" DataFormatString="{0:N2}"
                                     ItemStyle-HorizontalAlign="Right" />--%>
-
                             </Columns>
-                             <PagerSettings Mode="NumericFirstLast" PageButtonCount="8" FirstPageText="Primero" LastPageText="Ultimo" />
-                        <PagerStyle CssClass="pagination-ys" HorizontalAlign="Right" />
-                        <HeaderStyle BackColor="#001f3f" />
+                            <PagerSettings Mode="NumericFirstLast" PageButtonCount="8" FirstPageText="Primero" LastPageText="Ultimo" />
+                            <PagerStyle CssClass="pagination-ys" HorizontalAlign="Right" />
+                            <HeaderStyle BackColor="#001f3f" />
                         </asp:GridView>
 
                     </div>

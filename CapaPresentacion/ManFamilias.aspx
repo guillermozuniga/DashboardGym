@@ -15,13 +15,13 @@
         <div class="col-lg-12">
             <nav class="btn-toolbar text-left text-orange">
                 <a href="#" data-toggle="sidebar"><span class="glyphicon glyphicon-th-list"></span></a>
-                <label><%: Page.Title %></label>
+                <label><%: Page.Title.ToUpper %></label>
             </nav>
         </div>
     </div>
     <nav class="btn-toolbar text-center well-sm" id="MenuBar">
                     <button id="btn_Nuevo" class="btn btn-primary custom btn-sm-3"><span class="glyphicon glyphicon-floppy-disk"></span>Guardar </button>
-                    <button id="btn_Regresar" class="btn btn-primary custom btn-sm-3" <%--style="display:none;"--%>><span class="glyphicon glyphicon-arrow-left"></span>Regresar </button>
+                    <button id="Btn_Regresar" onserverclick="Btn_Regresar_Click" runat="server" class="btn btn-primary custom btn-sm-3"><span class="glyphicon glyphicon-arrow-left"></span>Regresar </button>
                 </nav>
 
     <div class="col-md-12">

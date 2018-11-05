@@ -296,4 +296,24 @@
             _Nombre = value
         End Set
     End Property
+
+    Private _Alumnos_GrupoGrado As String
+    Public Property Alumnos_GrupoGrado() As String
+        Get
+            Return _Alumnos_GrupoGrado
+        End Get
+        Set(ByVal value As String)
+            _Alumnos_GrupoGrado = value
+        End Set
+    End Property
+
+    Private _Alumnos_NombreNivel As String
+    Public Property Alumnos_NombreNivel() As String
+        Get
+            Return _Alumnos_NombreNivel
+        End Get
+        Set(ByVal value As String)
+            _Alumnos_NombreNivel = value
+        End Set
+    End Property
 End Class

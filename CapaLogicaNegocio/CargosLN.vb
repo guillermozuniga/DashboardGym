@@ -33,6 +33,15 @@ Public Class CargosLN
         End Try
 
     End Function
+
+    Public Function ListarCargoXAlumnos(ByVal _sQlSentencia As String) As List(Of ColCargos)
+        Try
+            Return CargoDAO.GetInstance.ListarCargoXAlumno(_sQlSentencia)
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+    End Function
 #End Region
 
 End Class

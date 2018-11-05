@@ -1,7 +1,8 @@
-﻿<%@ Page Title="Lista Modulos" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterDefault.Master" CodeBehind="listModulos.aspx.vb" Inherits="CapaPresentacion.listModulos" %>
+﻿<%@ Page Title="Modulos" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterDefault.Master" CodeBehind="listModulos.aspx.vb" Inherits="CapaPresentacion.listModulos" %>
+
 <%@ MasterType VirtualPath="~/MasterDefault.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-            <style type="text/css">
+  <%--  <style type="text/css">
         .highlight {
             background-color: #F7F5CB;
         }
@@ -27,9 +28,9 @@
         a.five:hover {
             text-decoration: underline;
         }
-    </style>
+    </style>--%>
     <script type="text/javascript">
-        $(function () {
+        <%--$(function () {
             $('.collapse').on('shown.bs.collapse', function () {
                 $(this).parent().find(".glyphicon-plus").removeClass("glyphicon-plus").addClass("glyphicon-minus");
             }).on('hidden.bs.collapse', function () {
@@ -55,7 +56,7 @@
                     $(this).removeClass('highlight-td');
                 }
             );
-        });
+        });--%>
 
        <%-- $(document).ready(function () {
             var gvUsers = $("#<%= GvUsuarios.ClientID%>").prepend($("<thead></thead>").append($("#<%= GvUsuarios.ClientID%>").find("tr:first"))).DataTable();
@@ -98,7 +99,7 @@
         <div class="col-lg-12">
             <nav class="btn-toolbar text-left text-orange">
                 <a href="#" data-toggle="sidebar"><span class="glyphicon glyphicon-option-vertical"></span></a>
-                <label><%: Page.Title %></label>
+                <label><%: Page.Title.ToUpper %></label>
             </nav>
         </div>
     </div>
@@ -117,13 +118,13 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="row col-lg-9">
-                        <div class="col-sm-4">
+                        <div class="col-sm-7">
                             <div class="form-group">
                                 <asp:Label runat="server" ID="LabelModulo" Text="Nombre Modulo" CssClass="control-label"></asp:Label>
-                                <asp:TextBox runat="server" ID="Text_Banco" CssClass="form-control" placeholder="Nombre Banco"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="TextModulo" CssClass="form-control" placeholder="Nombre Modulo"></asp:TextBox>
                             </div>
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-sm-5">
                             <div class="form-group">
                                 <%--<asp:Label runat="server" ID="Label" Text="Clave"></asp:Label>
                                 <asp:TextBox runat="server" ID="TextBox7" CssClass="form-control" placeholder="Clave"></asp:TextBox>--%>
@@ -152,18 +153,31 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
+                                 <div class="panel-heading">
+                    <div class="btn-group pull-right">
+                        <asp:DropDownList ID="DropDownList1" runat="server" CssClass="btn btn-default btn-xs"></asp:DropDownList>
+
+                    </div>
+
+                    <div class="btn-group pull-right">
+                        <a href="#" class="btn btn-default btn-xs"><span class="fa fa-print fa-xs"></span>Print</a>
+                        <a href="#" class="btn btn-default btn-xs"><span class="fa fa-file-pdf-o fa-xs"></span>PDF</a>
+                        <a href="#" class="btn btn-default btn-xs"><span class="fa fa-file-pdf-o fa-xs"></span>Excel</a>
+                    </div>
+                    <h4 class="panel-title">Información de Modulos</h4>
+                </div>
                 <div class="container-fluid" style="width: 100%">
-                    <asp:GridView ID="gvmodulos" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered" Style="width: 100%" ShowFooter="true">
+                    <asp:GridView ID="gvModulos" CssClass="table table-bordered" AutoGenerateColumns="false"
+                        AllowPaging="true" PageSize="25" EmptyDataText="No hay registros para mostrar." runat="server">
                         <AlternatingRowStyle BackColor="WhiteSmoke" ForeColor="#284775" />
                         <Columns>
                             <asp:BoundField DataField="Modulo_ID" HeaderText="ID" />
                             <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
 
                         </Columns>
-                        <EmptyDataRowStyle />
-                        <EmptyDataTemplate>
-                            <span>No hay registros para mostrar</span>
-                        </EmptyDataTemplate>
+                        <PagerSettings Mode="NumericFirstLast" PageButtonCount="8" FirstPageText="Primero" LastPageText="Ultimo" />
+                        <PagerStyle CssClass="pagination-ys" HorizontalAlign="Right" />
+                        <HeaderStyle BackColor="#001f3f" />
                     </asp:GridView>
                 </div>
             </div>

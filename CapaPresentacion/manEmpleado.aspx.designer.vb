@@ -32,58 +32,85 @@ Partial Public Class manEmpleado
     Protected WithEvents Label7 As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''TextRFC control.
+    '''HiddenFieldValor control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextRFC As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents HiddenFieldValor As Global.System.Web.UI.WebControls.HiddenField
     
     '''<summary>
-    '''TextRazonSocial control.
+    '''Btn_Guardar control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextRazonSocial As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Btn_Guardar As Global.System.Web.UI.HtmlControls.HtmlButton
     
     '''<summary>
-    '''LabelNombreCom control.
+    '''Btn_Regresar control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LabelNombreCom As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Btn_Regresar As Global.System.Web.UI.HtmlControls.HtmlButton
     
     '''<summary>
-    '''TextBoxNombreCom control.
+    '''TextNumero control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBoxNombreCom As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TextNumero As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''LabelCurp control.
+    '''TextNombre control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LabelCurp As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents TextNombre As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextCURP control.
+    '''LabelApellidoPat control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextCURP As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents LabelApellidoPat As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''TextApellidoPat control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TextApellidoPat As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''LabelAppellidoMat control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LabelAppellidoMat As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''TextApellidoMat control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TextApellidoMat As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''LabelCalle control.

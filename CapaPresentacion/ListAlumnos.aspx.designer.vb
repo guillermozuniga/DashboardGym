@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class ListAlumnos
     
     '''<summary>
+    '''MenuBar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents MenuBar As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
     '''Btn_Nuevo control.
     '''</summary>
     '''<remarks>
@@ -21,6 +30,33 @@ Partial Public Class ListAlumnos
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Btn_Nuevo As Global.System.Web.UI.HtmlControls.HtmlButton
+    
+    '''<summary>
+    '''Btn_Editar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Btn_Editar As Global.System.Web.UI.HtmlControls.HtmlButton
+    
+    '''<summary>
+    '''Btn_Eliminar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Btn_Eliminar As Global.System.Web.UI.HtmlControls.HtmlButton
+    
+    '''<summary>
+    '''MenuSelect control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents MenuSelect As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
     '''LabelMatricula control.
@@ -77,22 +113,22 @@ Partial Public Class ListAlumnos
     Protected WithEvents TextCurp As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''btn_Buscar control.
+    '''Btn_Buscar control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_Buscar As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents Btn_Buscar As Global.System.Web.UI.HtmlControls.HtmlButton
     
     '''<summary>
-    '''btn_Limpiar control.
+    '''Btn_Limpiar control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_Limpiar As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents Btn_Limpiar As Global.System.Web.UI.HtmlControls.HtmlButton
     
     '''<summary>
     '''gvAlumnos control.
@@ -102,6 +138,15 @@ Partial Public Class ListAlumnos
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents gvAlumnos As Global.System.Web.UI.WebControls.GridView
+    
+    '''<summary>
+    '''hdfValorGrid control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents hdfValorGrid As Global.System.Web.UI.WebControls.HiddenField
     
     '''<summary>
     '''Master property.

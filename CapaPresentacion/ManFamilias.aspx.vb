@@ -29,4 +29,8 @@
 
         Next
     End Sub
+
+    Protected Sub Btn_Regresar_Click()
+        Server.Transfer("~/ListFamilias.aspx")
+    End Sub
 End Class

@@ -33,5 +33,34 @@ Public Class EmpleadosLN
         End Try
 
     End Function
+
+    Public Function RegistrarEmpleado(objEmpleado As EmpleadoEnt)
+        Try
+            Return EmpleadosDAO.GetInstance.ListarEmpleados()
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+    End Function
+
+    Public Function ModificarEmpleado(objEmpleado As EmpleadoEnt)
+        Try
+            Return EmpleadosDAO.GetInstance.ListarEmpleados()
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+    End Function
+
+    Public Function BuscarEmpleado(ByVal valor As Integer)
+        Try
+            Return EmpleadosDAO.GetInstance.ListarEmpleados()
+        Catch ex As Exception
+
+            Throw ex
+
+        End Try
+
+    End Function
 #End Region
 End Class
