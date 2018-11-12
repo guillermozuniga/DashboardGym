@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Web
 Imports CapaEntidades
 Public Class AlumnoDAO
 #Region "PATRON SINGLETON"
@@ -40,7 +41,7 @@ Public Class AlumnoDAO
                 .Alumnos_Matricula = dr("Alumnos_Matricula").ToString(),
                 .Alumnos_CURP = dr("Alumnos_CURP").ToString(),
                 .Alumnos_FechaDeNacimiento = dr("Alumnos_FechadeNacimiento").ToString(),
-                .Nombre = dr("Nombre").ToString(),
+                .Nombre = HttpUtility.HtmlDecode(dr("Nombre").ToString()),
                 .Alumnos_ID = dr("Alumnos_Id")
                 }
                 ListaAlumnos.Add(objAlumnos)

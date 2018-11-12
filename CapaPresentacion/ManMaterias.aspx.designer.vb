@@ -86,6 +86,150 @@ Partial Public Class ManMaterias
     Protected WithEvents TextBoxClaveOficial As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''LabelPlanEscolar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LabelPlanEscolar As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''DropDownPlanEscolar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DropDownPlanEscolar As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''LabelCicloEscolar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LabelCicloEscolar As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''DropDownCicloEscolar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DropDownCicloEscolar As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''LabelNivel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LabelNivel As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''DropDownListaSecciones control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DropDownListaSecciones As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''LabelHorasTot control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LabelHorasTot As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''TextBoxHorastot control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TextBoxHorastot As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''LabelHorasSemana control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LabelHorasSemana As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''TextBoxHorasSema control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TextBoxHorasSema As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''LabelFaltasPer control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LabelFaltasPer As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''TextBoxFaltasPer control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TextBoxFaltasPer As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''LabelCreditos control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LabelCreditos As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''TextBoxCreditos control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TextBoxCreditos As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Label1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''TextBoxMateria control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TextBoxMateria As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
     '''Master property.
     '''</summary>
     '''<remarks>

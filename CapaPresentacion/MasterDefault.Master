@@ -1,10 +1,12 @@
-Ôªø<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="MasterDefault.master.vb" Inherits="CapaPresentacion.MasterDefault" %>
+<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="MasterDefault.master.vb" Inherits="CapaPresentacion.MasterDefault" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%--    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />--%>
     <title><%: Page.Title %> - Sistema Escolar V2.0</title>
 
     <!-- Tell the browser to be responsive to screen width -->
@@ -98,12 +100,12 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="Dashboard.aspx"><span class="glyphicon glyphicon-home"></span>
                         <asp:Label ID="LblNombreCorto" runat="server"></asp:Label></a></li>
-                    <%--<li><a href="#"><span class="glyphicon glyphicon-calendar"></span>PER√çODO - 2018</a></li>--%>
+                    <%--<li><a href="#"><span class="glyphicon glyphicon-calendar"></span>PERÕODO - 2018</a></li>--%>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-calendar"></span>
-                            <asp:Label ID="Label1" runat="server" Text="PER√çODO - 2018"></asp:Label></a>
+                            <asp:Label ID="Label1" runat="server" Text="PERÕODO - 2018"></asp:Label></a>
                         <ul id="periodo-dp" class="dropdown-menu">
-                            <li><a href="#"><i class="fa fa-calendar"></i>PER√çODO - 2018</a></li>
+                            <li><a href="#"><i class="fa fa-calendar"></i>PERÕODO - 2018</a></li>
                             <li class="divider"></li>
                             <%--<li><a href="#"><i class="fa fa-key"></i>Salir</a></li>--%>
                             <%--<li>
@@ -127,7 +129,7 @@
                         </ul>
                     </li>
                     <li><a href="#"><span class="glyphicon glyphicon-glass"></span></a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-cog"></span>Configuraci√≥n</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-cog"></span>ConfiguraciÛn</a></li>
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>
@@ -188,7 +190,7 @@
                     <li class="treeview" id="ModuloAdministracion" runat="server" visible="false">
                         <a href="#">
                             <i class="fa fa-archive"></i>
-                            <span>Administraci√≥n</span>
+                            <span>AdministraciÛn</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
@@ -254,7 +256,7 @@
                     <li class="treeview" id="ModuloConfiguracion" runat="server" visible="false">
                         <a href="#">
                             <i class="fa fa-cog"></i>
-                            <span>Configuraci√≥n</span>
+                            <span>ConfiguraciÛn</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
@@ -332,7 +334,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" id="btnModelX" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">√ó</span></button>
+                            <button type="button" id="btnModelX" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">◊</span></button>
                             <h4 class="modal-title" id="myModalMessageTitle">Modal title</h4>
                         </div>
                         <div class="modal-body" id="myModalMessageContent">
@@ -349,7 +351,7 @@
             <section class="container-fluid">
                 <form id="form1" runat="server">
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                        <!-- CARGAR EL DISE√ëO DE LA PAGINA QUE HEREDA DE MASTER PAGE-->
+                        <!-- CARGAR EL DISE—O DE LA PAGINA QUE HEREDA DE MASTER PAGE-->
                     </asp:ContentPlaceHolder>
                     <asp:HiddenField ID="HiddenFieldCorreoTutor" runat="server" Value="" />
                     <asp:ContentPlaceHolder ID="footer" runat="server">
@@ -389,7 +391,7 @@
     </div>
 
     <div id="dialog" style="display: none">
-        <b>Por el momento esta funci√≥n</b> <span id="id"></span>
+        <b>Por el momento esta funciÛn</b> <span id="id"></span>
         <br />
         <b>no se encuentra disponible</b> <span id="name"></span>
         <br />

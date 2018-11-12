@@ -34,7 +34,6 @@ Public Class ManEmpresa
             Else
                 Response.Redirect("~/logout.aspx")
             End If
-
         End If
 
     End Sub
@@ -79,7 +78,7 @@ Public Class ManEmpresa
 
             If respuesta Then
                 'Response.Write("<script>alert(' Insercion Correcta.')</script>")
-                ClsFuniones.BootstrapAlert(lblMsg, "Acualización realizada con exito", ClsFuniones.BootstrapAlertType.Success, True)
+                ClsFuniones.BootstrapAlert(lblMsg, "Actualización realizada con exito", ClsFuniones.BootstrapAlertType.Success, True)
             Else
                 ' Response.Write("<script>alert(' Insercion Incorrecta.')</script>")
                 ClsFuniones.BootstrapAlert(lblMsg, "Upps no se pudo realizar la actualización", ClsFuniones.BootstrapAlertType.Warning, True)
@@ -87,7 +86,6 @@ Public Class ManEmpresa
         Else
             Me.TextRFC.Focus()
         End If
-
 
     End Sub
 
@@ -104,7 +102,9 @@ Public Class ManEmpresa
     End Sub
     Private Function CargarEmpresa(ByVal valor As Integer) As Boolean
         Dim objEmpresa As New EmpresaEnt
+
         objEmpresa = EmpresaLN.getInstance().BuscarEmpresa(valor)
+
         Me.TextRFC.Text = objEmpresa.Empresa_RFC.ToString()
         Me.TextNombreCorto.Text = objEmpresa.Empresa_NombreCorto.ToString()
         Me.TextRazonSocial.Text = objEmpresa.Empresa_RazonSocial.ToString()

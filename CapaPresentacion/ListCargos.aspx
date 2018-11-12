@@ -1,7 +1,8 @@
-﻿<%@ Page Title="Cargos" Language="vb" EnableEventValidation="false" AutoEventWireup="false" MasterPageFile="~/MasterDefault.Master" CodeBehind="ListCargos.aspx.vb" Inherits="CapaPresentacion.ListCargos" Culture="es-MX" UICulture="es-MX" %>
+<%@ Page Title="Cargos" Language="vb" CodePage="1252" EnableEventValidation="false" AutoEventWireup="false" MasterPageFile="~/MasterDefault.Master" CodeBehind="ListCargos.aspx.vb" Inherits="CapaPresentacion.ListCargos" %>
 
 <%@ MasterType VirtualPath="~/MasterDefault.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+   
     <script type="text/javascript">
         function targetMeBlank() {
             document.forms[0].target = "_blank";
@@ -80,7 +81,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading"><strong>Listado </strong>Alumnos </div>
                 <div class="panel-body">
-                    <asp:GridView ID="GvAlum" CssClass="table table-bordered" AutoGenerateColumns="False"
+                    <asp:GridView ID="GvAlum" CssClass="table table-bordered table-hover table-condensed small-top-margin" AutoGenerateColumns="False"
                         AllowPaging="True" PageSize="10" EmptyDataText="No hay registros para mostrar. Selecciona un alumno" runat="server" EnablePersistedSelection="True" DataKeyNames="Alumnos_Matricula">
                         <AlternatingRowStyle BackColor="WhiteSmoke" ForeColor="#284775" />
                         <Columns>
@@ -91,7 +92,7 @@
                                 <HeaderStyle Font-Names="Arial" Font-Size="12px" ForeColor="white" />
                             </asp:BoundField>
 
-                            <asp:BoundField DataField="Nombre" HeaderText="Nombre">
+                            <asp:BoundField DataField="Nombre" HeaderText="Nombre" HtmlEncode="False">
                                 <HeaderStyle Font-Names="Arial" Font-Size="12px" ForeColor="white" />
                             </asp:BoundField>
 
@@ -138,7 +139,7 @@
                         <a href="#" class="btn btn-default btn-xs"><span class="fa fa-file-pdf-o fa-xs"></span> PDF</a>
                         <a href="#" class="btn btn-default btn-xs"><span class="fa fa-file-pdf-o fa-xs"></span> Excel</a>
                     </div>
-                    <h4 class="panel-title">Información de Cargos</h4>
+                    <h4 class="panel-title">Informaci�n de Cargos</h4>
                 </div>
                 <div class="panel-body">
                     <%-- <h2 class="headline text-yellow">Pagos</h2>--%>
@@ -150,7 +151,7 @@
 
                     <div class="scrolling-table-container">
                         <asp:GridView ID="gvCargos" CssClass="table table-bordered table-hover table-condensed small-top-margin" AutoGenerateColumns="false"
-                            AllowPaging="true" PageSize="25" EmptyDataText="No hay registros para mostrar." runat="server" DataKeyNames="Cargos_Id">
+                            AllowPaging="true" PageSize="25" EmptyDataText="No hay registros para mostrar. Selecciona un Alumno" runat="server" DataKeyNames="Cargos_Id">
                             <AlternatingRowStyle BackColor="WhiteSmoke" ForeColor="#284775" />
                             <Columns>
                                 <%--                                <asp:TemplateField HeaderText="Seleccion">

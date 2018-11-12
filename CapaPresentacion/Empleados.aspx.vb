@@ -56,6 +56,8 @@ Public Class Empleados
             Dim valor As String = row.Cells(0).Text
             If Not String.IsNullOrEmpty(valor) Then
                 Server.Transfer("~/manEmpleado.aspx?Valor=" & valor)
+            Else
+
             End If
         End If
     End Sub
@@ -90,7 +92,6 @@ Public Class Empleados
             e.Row.Attributes.Add("onMouseOut", "this.style.backgroundColor=this.originalstyle;")
             e.Row.ToolTip = "Click selecciona renglon"
             e.Row.Attributes("OnClick") = Page.ClientScript.GetPostBackClientHyperlink(sender, "Select$" & e.Row.RowIndex.ToString())
-
             e.Row.Style.Add("cursor", "hand")
         End If
 
@@ -108,7 +109,6 @@ Public Class Empleados
     End Sub
 
     Private Sub GVEmpleados_PageIndexChanging(sender As Object, e As GridViewPageEventArgs) Handles GVEmpleados.PageIndexChanging
-
         BindEmpleadosToList("")
         Me.GVEmpleados.PageIndex = e.NewPageIndex
         Me.GVEmpleados.DataBind()

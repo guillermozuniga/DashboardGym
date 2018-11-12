@@ -99,4 +99,6 @@
     Public Property Nivel_RepresentanteLegal_RFC() As String
     Public Property Nivel_RepresentanteLegal_Curp() As String
     Public Property Nivel_BancoID() As Integer
+    Public Property Nivel_ID() As Integer
+
 End Class

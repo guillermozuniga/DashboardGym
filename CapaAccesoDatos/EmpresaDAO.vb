@@ -118,10 +118,7 @@ Public Class EmpresaDAO
         End Try
 
         Return objEmpresa
-
-
     End Function
-
 
     Public Function RegistrarEmpresa(objEmpresa As EmpresaEnt) As Boolean
 

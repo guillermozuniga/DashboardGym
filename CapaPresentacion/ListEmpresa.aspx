@@ -93,11 +93,11 @@
                                 <HeaderStyle Font-Names="Arial" Font-Size="12px" ForeColor="white" />
                             </asp:BoundField>
 
-                            <asp:BoundField DataField="Empresa_RazonSocial" HeaderText="Razon Social">
+                            <asp:BoundField DataField="Empresa_RazonSocial" HeaderText="Razon Social" HtmlEncode="False">
                                 <HeaderStyle Font-Names="Arial" Font-Size="12px" ForeColor="white" />
                             </asp:BoundField>
 
-                            <asp:BoundField DataField="Empresa_NombreCorto" HeaderText="Nombre Corto">
+                            <asp:BoundField DataField="Empresa_NombreCorto" HeaderText="Nombre Corto" HtmlEncode="False">
                                 <HeaderStyle Font-Names="Arial" Font-Size="12px" ForeColor="white" />
                             </asp:BoundField>
 

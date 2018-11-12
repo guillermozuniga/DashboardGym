@@ -3,12 +3,10 @@ Imports CapaLogicaNegocio
 
 Public Class manEmpleado
     Inherits System.Web.UI.Page
-
     Dim bandnuevo As Boolean = False
     Dim Valor As Integer
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
-
             If (HttpContext.Current.User.Identity.IsAuthenticated) Then
                 Valor = Convert.ToInt32(Request.QueryString("Valor"))
                 If Valor > 0 Then
@@ -21,12 +19,7 @@ Public Class manEmpleado
 
                     End If
                 Else
-                        bandnuevo = True
-
-                    'Me.TextRFC.Enabled = True
-                    'Me.TextRazonSocial.Enabled = True
-                    'Me.TextRFC.Focus()
-
+                    bandnuevo = True
                 End If
 
             Else

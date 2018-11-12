@@ -13,7 +13,8 @@
     Public Property Boleta_Faltas1() As Integer
     Public Property Boleta_Parcial1Numero() As String
     Public Property Boleta_NombreMateria() As String
-
+    Public Property Boleta_Evaluacion2() As String
+    Public Property Boleta_Evaluacion3() As String
     Public Sub New()
     End Sub
 

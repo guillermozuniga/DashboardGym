@@ -127,11 +127,11 @@
                                     <HeaderStyle Font-Names="Arial" Font-Size="12px" ForeColor="white" />
                                 </asp:BoundField>
 
-                                <asp:BoundField DataField="NombreMama" HeaderText="Nombre Mama">
+                                <asp:BoundField DataField="NombreMama" HeaderText="Nombre Mama" HtmlEncode="False">
                                     <HeaderStyle Font-Names="Arial" Font-Size="12px" ForeColor="white" />
                                 </asp:BoundField>
 
-                                <asp:BoundField DataField="NombrePapa" HeaderText="Nombre Papa">
+                                <asp:BoundField DataField="NombrePapa" HeaderText="Nombre Papa" HtmlEncode="False">
                                     <HeaderStyle Font-Names="Arial" Font-Size="12px" ForeColor="white" />
                                 </asp:BoundField>
 

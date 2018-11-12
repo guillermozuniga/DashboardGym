@@ -91,7 +91,7 @@ Public Class CargoDAO
                 'objCargo.Cargos_Grupo = Convert.ToInt32(dr("Cargos_Grupo").ToString)
                 'objCargo.Cargos_FechaVencimiento = dr("Cargos_FechaVencimiento").ToString
 
-                If (DateTime.Compare(Convert.ToDateTime(dr("Cargos_FechaDeVencimiento")), DateTime.Today) > 0) Then
+                If (DateTime.Compare(Convert.ToDateTime(dr("Cargos_FechaDeVencimiento")), DateTime.Today) >= 0) Then
 
                     'ImporteComisiones = Convert.ToDouble(dr("Cargos_Saldo")) * 2.8 / 100
                     ImporteTotal = ImporteComisiones + Convert.ToDouble(dr("Cargos_Saldo"))

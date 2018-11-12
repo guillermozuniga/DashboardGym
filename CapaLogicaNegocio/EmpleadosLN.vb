@@ -54,7 +54,7 @@ Public Class EmpleadosLN
 
     Public Function BuscarEmpleado(ByVal valor As Integer)
         Try
-            Return EmpleadosDAO.GetInstance.ListarEmpleados()
+            Return EmpleadosDAO.GetInstance.BuscarEmpleados(valor)
         Catch ex As Exception
 
             Throw ex

@@ -7,7 +7,7 @@ Public Class ListCargos
     Dim fila As String = Nothing
     Dim sQlSentencia As String = Nothing
     Dim miDataTable, dtable As New DataTable
-    Dim referencia, texto, texto1 As String
+    Dim referencia, texto, texto1, importe, comisiones As String
     Dim longitud As Integer
     Dim mat, grp As String
     Protected widestData As Integer
@@ -15,6 +15,7 @@ Public Class ListCargos
         If Not IsPostBack Then
 
             If (HttpContext.Current.User.Identity.IsAuthenticated) Then
+
                 LlenarDropRegistros()
                 If Roles.IsUserInRole("Tutor") Then
                     Me.MenuBar.Visible = False
@@ -27,6 +28,10 @@ Public Class ListCargos
 
                     'Me.ListarCargos()
                     Me.BindAlumnosToList("Select * from [eimagenn_sge_admin].[v_GetAllTutorAlumnos] Where Tutores_Padre_UsuarioWEB = '" & HttpContext.Current.User.Identity.Name & "'")
+                    Dim dt As DataTable = Nothing
+                    Me.gvCargos.DataSource = dt
+                    Me.gvCargos.DataBind()
+
                 Else
                     Me.gvCargos.Columns(10).Visible = False
                     Me.gvCargos.Columns(9).Visible = False
@@ -40,6 +45,22 @@ Public Class ListCargos
         End If
 
     End Sub
+    Public Function QuitAccents(ByVal inputString As String) As String
+        Dim a As Regex = New Regex("[á|à|ä|â]", RegexOptions.Compiled)
+        Dim e As Regex = New Regex("[é|è|ë|ê]", RegexOptions.Compiled)
+        Dim i As Regex = New Regex("[í|ì|ï|î]", RegexOptions.Compiled)
+        Dim o As Regex = New Regex("[ó|ò|ö|ô]", RegexOptions.Compiled)
+        Dim u As Regex = New Regex("[ú|ù|ü|û]", RegexOptions.Compiled)
+        Dim n As Regex = New Regex("[ñ|Ñ]", RegexOptions.Compiled)
+        inputString = a.Replace(inputString, "a")
+        inputString = e.Replace(inputString, "e")
+        inputString = i.Replace(inputString, "i")
+        inputString = o.Replace(inputString, "o")
+        inputString = u.Replace(inputString, "u")
+        inputString = n.Replace(inputString, "n")
+        Return inputString
+    End Function
+
     Private Sub LlenarDropRegistros()
         DropDownList1.Items.Insert(0, "25")
         DropDownList1.Items.Insert(1, "50")
@@ -175,7 +196,7 @@ Public Class ListCargos
     Private Sub GvAlum_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GvAlum.SelectedIndexChanged
         GvAlum.SelectedRow.BackColor = Color.DarkOrange
         Dim row As GridViewRow = GvAlum.SelectedRow
-        Me.HiddenField1.Value = row.Cells(2).Text
+        HiddenField1.Value = QuitAccents(row.Cells(2).Text)
         For i As Integer = 0 To GvAlum.Rows.Count - 1
             If GvAlum.Rows(i).RowIndex <> GvAlum.SelectedRow.RowIndex Then
                 GvAlum.Rows(i).BackColor = Color.Empty
@@ -195,13 +216,14 @@ Public Class ListCargos
         texto1 = e.CommandArgument
         Dim mp As MasterPage = TryCast(Me.Master, MasterPage)
         longitud = texto1.Length
+
         Select Case e.CommandName
             Case "EnLinea"
                 Dim collections, collections1, collections2 As New NameValueCollection()
                 'Dim remoteUrl As String = "https://www.prosepago.com/tvirtual/tvsv.aspx?ppost=1&t=32159" 'Valle
                 'Dim remoteUrl As String = "https://www.prosepago.com/tvirtual/tvsv.aspx?ppost=1&t=32324" 'salva
-                Dim remoteUrl As String = "https://www.prosepago.com/tvirtual/tvsv.aspx?ppost=1&t=32545" 'Anglo Americano
-                'Dim remoteUrl As String = "https://www.prosepago.com/tvirtual/tvsv.aspx?ppost=1&t=32546" 'MexicoAmericano
+                'Dim remoteUrl As String = "https://www.prosepago.com/tvirtual/tvsv.aspx?ppost=1&t=32545" 'Anglo Americano
+                Dim remoteUrl As String = "https://www.prosepago.com/tvirtual/tvsv.aspx?ppost=1&t=32546" 'MexicoAmericano
 
                 Dim html As String = String.Empty
 
@@ -211,10 +233,13 @@ Public Class ListCargos
 
                 If Not String.IsNullOrEmpty(texto1.TrimEnd) Then
 
-                    collections.Add("nom", HiddenField1.Value.ToString())
+                    collections.Add("nom", Server.HtmlDecode(HiddenField1.Value.ToString()))
                     collections.Add("con", CStr(texto1.Substring(0, InStr(Trim(e.CommandArgument.ToString), "/") - 1)))
                     collections.Add("ref", texto1.Substring(InStr(Trim(e.CommandArgument.ToString), "/"), InStr(Trim(e.CommandArgument.ToString), "@") - InStr(Trim(e.CommandArgument.ToString), "/") - 1))
-                    collections.Add("imp", Convert.ToDouble(texto1.Substring(InStr(Trim(e.CommandArgument.ToString), "@"), longitud - InStr(Trim(e.CommandArgument.ToString), "@"))) + Convert.ToDouble(texto1.Substring(InStr(Trim(e.CommandArgument.ToString), "@"), longitud - InStr(Trim(e.CommandArgument.ToString), "@"))) * 2.8 / 100)
+                    importe = Convert.ToDouble(texto1.Substring(InStr(Trim(e.CommandArgument.ToString), "@"), longitud - InStr(Trim(e.CommandArgument.ToString), "@"))) / 0.96868
+                    'comisiones = Convert.ToDouble(texto1.Substring(InStr(Trim(e.CommandArgument.ToString), "@"), longitud - InStr(Trim(e.CommandArgument.ToString), "@"))) / 0.96868
+                    collections.Add("imp", importe)
+
                     collections.Add("autoBack", 0)
                     collections.Add("datbloq", 1)
 

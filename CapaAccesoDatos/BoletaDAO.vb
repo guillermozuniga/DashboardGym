@@ -38,7 +38,8 @@ Public Class BoletaDAO
                 objBoleta = New BoletaEnt With {
                .Boleta_Matricula = Trim(dr("Alumnos_Matricula").ToString()),
                .Boleta_Evaluacion1 = dr("Boletas_Evaluacion1").ToString,
-               .Boleta_NombreMateria = dr("Boletas_NombreMateria").ToString
+               .Boleta_NombreMateria = dr("Boletas_NombreMateria").ToString,
+               .Boleta_Evaluacion2 = dr("Boletas_Evaluacion2").ToString
                   }
                 ListaBoleta.Add(objBoleta)
             End While

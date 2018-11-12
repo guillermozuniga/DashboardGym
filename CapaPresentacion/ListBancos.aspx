@@ -102,7 +102,7 @@
                                     <HeaderStyle Font-Names="Arial" Font-Size="12px" ForeColor="white" />
                                 </asp:BoundField>
 
-                                <asp:BoundField DataField="Banco_Nombre" HeaderText="Nombre">
+                                <asp:BoundField DataField="Banco_Nombre" HeaderText="Nombre" HtmlEncode="False">
                                     <HeaderStyle Font-Names="Arial" Font-Size="12px" ForeColor="white" />
                                 </asp:BoundField>
 

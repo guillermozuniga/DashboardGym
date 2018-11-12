@@ -34,27 +34,27 @@ Public Class MateriasLN
 
     End Function
 
-    'Public Function RegistrarEmpresa(objEmpresa As EmpresaEnt)
-    '    Try
-    '        Return EmpresaDAO.GetInstance().RegistrarEmpresa(objEmpresa)
-    '    Catch ex As Exception
-    '        Throw ex
-    '    End Try
-
-    'End Function
-
-    'Public Function ModificarEmpresa(objEmpresa As EmpresaEnt)
-    '    Try
-    '        Return EmpresaDAO.GetInstance().ModificarEmpresa(objEmpresa)
-    '    Catch ex As Exception
-    '        Throw ex
-    '    End Try
-
-    'End Function
-
-    Public Function BuscarMateria(ByVal _Sentencia As String)
+    Public Function RegistrarMateria(objMateria As MateriaEnt)
         Try
-            Return MateriaDAO.GetInstance.BuscarMateria(_Sentencia)
+            Return MateriaDAO.GetInstance().RegistrarMateria(objMateria)
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+    End Function
+
+    Public Function ModificarMateria(objMateria As MateriaEnt)
+        Try
+            Return MateriaDAO.GetInstance().ModificarMateria(objMateria)
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+    End Function
+
+    Public Function BuscarMateria(ByVal valor As Integer)
+        Try
+            Return MateriaDAO.GetInstance.BuscarMateria(valor)
         Catch ex As Exception
 
             Throw ex

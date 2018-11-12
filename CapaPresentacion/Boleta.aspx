@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Calificaciones" Language="vb" EnableEventValidation="false" AutoEventWireup="false" MasterPageFile="~/MasterDefault.Master" CodeBehind="Boleta.aspx.vb" Inherits="CapaPresentacion.Boleta" Culture="es-MX" UICulture="es-MX" %>
+<%@ Page Title="Calificaciones" Language="vb" EnableEventValidation="false" AutoEventWireup="false" MasterPageFile="~/MasterDefault.Master" CodeBehind="Boleta.aspx.vb" Inherits="CapaPresentacion.Boleta" Culture="es-MX" UICulture="es-MX" %>
 
 <%@ MasterType VirtualPath="~/MasterDefault.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -14,6 +14,7 @@
             overflow-x: hidden;
         }
     </style>
+   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <%-- style="display: none;"--%>
@@ -73,7 +74,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading"><strong>Listado </strong>Alumnos </div>
                 <div class="panel-body">
-                    <asp:GridView ID="GvAlum" CssClass="table table-bordered" AutoGenerateColumns="False"
+                    <asp:GridView ID="GvAlum" CssClass="table table-bordered table-hover table-condensed small-top-margin" AutoGenerateColumns="False"
                         AllowPaging="True" PageSize="10" EmptyDataText="No hay registros para mostrar. Selecciona un Alumno" runat="server" EnablePersistedSelection="True" DataKeyNames="Alumnos_Matricula">
                         <AlternatingRowStyle BackColor="WhiteSmoke" ForeColor="#284775" />
                         <Columns>
@@ -84,7 +85,7 @@
                                 <HeaderStyle Font-Names="Arial" Font-Size="12px" ForeColor="white" />
                             </asp:BoundField>
 
-                            <asp:BoundField DataField="Nombre" HeaderText="Nombre">
+                            <asp:BoundField DataField="Nombre" HeaderText="Nombre" HtmlEncode="False">
                                 <HeaderStyle Font-Names="Arial" Font-Size="12px" ForeColor="white" />
                             </asp:BoundField>
 
@@ -113,7 +114,7 @@
 
 
     <nav class="btn-toolbar text-center well-sm" id="Nav1" runat="server">
-        <button id="Btn_Imprimir" type="button" runat="server" class="btn btn-primary custom btn-sm-3" onserverclick="Btn_Imprimir_Click"><span class="glyphicon glyphicon-print"></span>Boleta </button>
+        <%--<button id="Btn_Imprimir" type="button" runat="server" class="btn btn-primary custom btn-sm-3" onserverclick="Btn_Imprimir_Click"><span class="glyphicon glyphicon-print"></span>Boleta </button>--%>
     </nav>
 
     <div class="row">
@@ -121,11 +122,12 @@
             <div class="panel panel-default">
                  <div class="panel-heading">
                     <div class="btn-group pull-right">
-                        <a href="#" class="btn btn-default btn-xs"> <span class="fa fa-print fa-xs"></span> Print</a>
-                        <a href="#" class="btn btn-default btn-xs"><span class="fa fa-file-pdf-o fa-xs"></span> PDF</a>
-                        <a href="#" class="btn btn-default btn-xs"><span class="fa fa-file-pdf-o fa-xs"></span> Excel</a>
+                        <button id="Btn_Imprimir" type="button" runat="server" class="btn btn-default btn-xs" onserverclick="Btn_Imprimir_Click"><span class="fa fa-print fa-xs"></span> Boleta </button>
+                       
+                      <%--  <a href="#" class="btn btn-default btn-xs"><span class="fa fa-file-pdf-o fa-xs"></span> PDF</a>
+                        <a href="#" class="btn btn-default btn-xs"><span class="fa fa-file-pdf-o fa-xs"></span> Excel</a>--%>
                     </div>
-                    <h4 class="panel-title">Información de Calificaciones</h4>
+                    <h4 class="panel-title">Informaci�n de Calificaciones</h4>
                 </div>
                 <div class="panel-body">
                     <%-- <h2 class="headline text-yellow">Pagos</h2>--%>
@@ -150,10 +152,10 @@
                                 <asp:BoundField DataField="Boleta_Evaluacion1" HeaderText="SEP">
                                     <HeaderStyle HorizontalAlign="Center" Font-Names="Arial" Font-Size="12px" ForeColor="white" />
                                 </asp:BoundField>
-                                <asp:BoundField HeaderText="OCT">
+                                <asp:BoundField DataField="Boleta_Evaluacion2" HeaderText="OCT">
                                     <HeaderStyle HorizontalAlign="Center" Font-Names="Arial" Font-Size="12px" ForeColor="white" />
                                 </asp:BoundField>
-                                <asp:BoundField HeaderText="NOV">
+                                <asp:BoundField  HeaderText="NOV">
                                     <HeaderStyle HorizontalAlign="Center" Font-Names="Arial" Font-Size="12px" ForeColor="white" />
                                 </asp:BoundField>
                                 <asp:BoundField HeaderText="P1">

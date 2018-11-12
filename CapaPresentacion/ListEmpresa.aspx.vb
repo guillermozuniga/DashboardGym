@@ -31,7 +31,6 @@ Public Class ListEmpresa
 
     Public Sub ListarEmpresas()
         Dim Lista As List(Of EmpresaEnt) = Nothing
-
         Try
             Lista = EmpresaLN.getInstance.ListarEmpresa()
             Me.gvEmpresa.DataSource = Lista

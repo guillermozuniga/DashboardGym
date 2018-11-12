@@ -36,8 +36,8 @@
 
     <%--style="display:none;"--%>
     <nav class="btn-toolbar text-center well-sm" id="MenuBar">
-        <button id="Btn_Guardar" onserverclick="Btn_Guardar_Click" runat="server" class="btn btn-primary custom btn-sm-3" type="button"><span class="glyphicon glyphicon-floppy-disk"></span>Guardar </button>
-        <button id="Btn_Regresar" onserverclick="Btn_Regresar_Click" runat="server" class="btn btn-primary custom btn-sm-3" type="button"><span class="glyphicon glyphicon-arrow-left"></span>Regresar </button>
+        <button id="Btn_Guardar" runat="server" class="btn btn-primary custom btn-sm-3" type="button"><span class="glyphicon glyphicon-floppy-disk"></span>Guardar </button>
+        <button id="Btn_Regresar" runat="server" class="btn btn-primary custom btn-sm-3" type="button"><span class="glyphicon glyphicon-arrow-left"></span>Regresar </button>
     </nav>
 
 
@@ -60,7 +60,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="inputName" class="col-sm-2 control-label">Numero</label>
-                                        <asp:TextBox runat="server" ID="TextNumero" CssClass="form-control" Enabled="false" placeholder="Numero"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="TextNumero" CssClass="form-control" placeholder="Numero"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-md-9">

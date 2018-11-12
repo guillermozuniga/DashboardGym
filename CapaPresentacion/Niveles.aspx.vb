@@ -8,7 +8,7 @@ Public Class Niveles
         Dim Lista As List(Of SeccionesEnt) = Nothing
 
         Try
-            Lista = SeccionLN.getInstance.ListarSeccion()
+            Lista = SeccionLN.getInstance.ListarSeccion(0)
             Me.GvSeccion.DataSource = Lista
             Me.GvSeccion.DataBind()
 
@@ -29,17 +29,13 @@ Public Class Niveles
 #End Region
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
-
             If (HttpContext.Current.User.Identity.IsAuthenticated) Then
-
                 'LlenarGridViewTutores("Select * from SGE_VistaNombreTutor Order By Nombre")
                 LlenarDropRegistros()
-
                 ListarSecciones()
             Else
                 Server.Transfer("~/logout.aspx")
             End If
-
         End If
     End Sub
     Protected Sub Btn_Nuevo_Click()
@@ -58,6 +54,7 @@ Public Class Niveles
     Protected Sub Btn_Eliminar_Click()
 
     End Sub
+
     Private Sub GvSeccion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GvSeccion.SelectedIndexChanged
         GvSeccion.SelectedRow.BackColor = Color.Orange
         For i As Integer = 0 To GvSeccion.Rows.Count - 1

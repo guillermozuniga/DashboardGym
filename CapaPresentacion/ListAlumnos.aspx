@@ -99,7 +99,7 @@
 
                                 </asp:BoundField>
 
-                                <asp:BoundField DataField="Nombre" HeaderText="Nombre">
+                                <asp:BoundField DataField="Nombre" HeaderText="Nombre" HtmlEncode="False">
                                     <HeaderStyle Font-Names="Arial" Font-Size="12px" ForeColor="white" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="Alumnos_FechaDeNacimiento" DataFormatString="{0:d MMMM, yyyy}" HtmlEncode="false" HeaderText="Fecha Nacimiento">

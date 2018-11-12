@@ -76,7 +76,7 @@
                         AllowPaging="true" PageSize="50" EmptyDataText="No hay registros para mostrar." runat="server">
                         <AlternatingRowStyle BackColor="WhiteSmoke" ForeColor="#284775" />
                         <Columns>
-                             <asp:BoundField DataField="Nivel_ID" Visible="false">
+                             <asp:BoundField DataField="Nivel_ID" HeaderText="ID">
                                 <HeaderStyle Font-Names="Arial" Font-Size="12px" ForeColor="white" />
                             </asp:BoundField>
                              <asp:BoundField DataField="Nivel_Descripcion" HeaderText="Descripcion">

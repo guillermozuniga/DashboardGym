@@ -87,16 +87,6 @@ Public Class Boleta
         End If
 
     End Sub
-    Private Sub ListarCargos()
-        Dim Lista As List(Of ColCargos) = Nothing
-        Try
-            Lista = CargosLN.getInstance.ListarCargo()
-            GVBoleta.DataSource = Lista
-            GVBoleta.DataBind()
-        Catch ex As Exception
-            Lista = Nothing
-        End Try
-    End Sub
 
     Private Sub ListarBoletaXAlumno(ByVal _sQlSentencia As String)
 
@@ -122,7 +112,6 @@ Public Class Boleta
     Protected Sub Btn_Limpiar_Click()
         ListarBoletaXAlumno("Select * from [eimagenn_sge_admin].[v_CalifxAlumno]")
         Me.TextMatricula.Text = String.Empty
-
         Me.TextMatricula.Focus()
     End Sub
 
@@ -373,7 +362,7 @@ Public Class Boleta
                     If row.Cells(1).Text <> "PROMEDIOS" Then
                         mainreferencias.AddCell(CreateCell(Server.HtmlDecode(row.Cells(1).Text.ToString()), False, 0, 0, 7, True, 1, False, False))
                         mainreferencias.AddCell(CreateCell(row.Cells(2).Text.ToString(), False, 0, 1, 7, True, 1, False, False))
-                        mainreferencias.AddCell(CreateCell("", False, 0, 1, 7, True, 1, False, False))
+                        mainreferencias.AddCell(CreateCell(row.Cells(3).Text.ToString(), False, 0, 1, 7, True, 1, False, False))
                         mainreferencias.AddCell(CreateCell("", False, 0, 1, 7, True, 1, False, False))
                         mainreferencias.AddCell(CreateCell("", False, 0, 1, 7, True, 1, False, False))
                         mainreferencias.AddCell(CreateCell("", False, 0, 1, 7, True, 1, False, False))
@@ -393,7 +382,7 @@ Public Class Boleta
                     Else
                         mainreferencias.AddCell(CreateCell(row.Cells(1).Text.ToString(), True, 0, 0, 7, True, 1, False, True))
                         mainreferencias.AddCell(CreateCell(row.Cells(2).Text.ToString(), True, 0, 1, 7, True, 1, False, True))
-                        mainreferencias.AddCell(CreateCell("", True, 0, 1, 7, True, 1, False, False))
+                        mainreferencias.AddCell(CreateCell(row.Cells(3).Text.ToString(), True, 0, 1, 7, True, 1, False, True))
                         mainreferencias.AddCell(CreateCell("", True, 0, 1, 7, True, 1, False, False))
                         mainreferencias.AddCell(CreateCell("", True, 0, 1, 7, True, 1, False, False))
                         mainreferencias.AddCell(CreateCell("", True, 0, 1, 7, True, 1, False, False))
@@ -434,17 +423,11 @@ Public Class Boleta
                         mainreferencias.AddCell(CreateCell("", True, 0, 1, 7, False, 1, False, False))
                         mainreferencias.AddCell(CreateCell("", True, 0, 1, 7, False, 1, False, False))
                         mainreferencias.AddCell(CreateCell("", True, 0, 1, 7, False, 1, False, False))
-
                     End If
-
-
-
                 Next
 
                 parrafo.Add(mainreferencias)
-
                 doc1.Add(parrafo)
-
                 parrafo.Clear()
 
                 'If miDataTable.Rows.Count > 0 Then
@@ -469,9 +452,6 @@ Public Class Boleta
 
                 '    Next
                 'End If
-
-
-
                 Dim mainobservaciones As New PdfPTable(1) With {
             .TotalWidth = 570.0F,
             .LockedWidth = True
@@ -484,7 +464,7 @@ Public Class Boleta
                 mainobservaciones.AddCell(CreateCell(Space(5), False, 0, 1, 8, False, 1, False, False))
                 mainobservaciones.AddCell(CreateCell("ALUMNO :" & HiddenField2.Value.ToString(), False, 0, 1, 8, True, 1, False, False))
                 mainobservaciones.AddCell(CreateCell("MATRICULA : " & HiddenField1.Value.ToString() & " GRUPO : " & HiddenField3.Value.ToString(), False, 0, 0, 8, True, 1, False, False))
-                mainobservaciones.AddCell(CreateCell("MES EVALUADO : SEPTIEMBRE", False, 0, 0, 8, True, 1, False, False))
+                mainobservaciones.AddCell(CreateCell("MES EVALUADO : OCTUBRE", False, 0, 0, 8, True, 1, False, False))
                 mainobservaciones.AddCell(CreateCell(Space(5), False, 0, 1, 8, False, 1, False, False))
                 mainobservaciones.AddCell(CreateCell("Firma Padre :____________________________________   Firma Madre :___________________________________", False, 0, 0, 8, False, 1, False, False))
                 parrafo.Add(mainobservaciones)
