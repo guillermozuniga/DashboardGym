@@ -25,9 +25,9 @@
 
             return amount_parts.join('.');
         }
-        var lineChartData = {
-           
-            labels: <% =Me.chartLabel%>,
+
+        var lineChartData = {           
+            labels: <% = Me.chartLabel %>,
             datasets: [
                 {
                     label: "Query Count",
@@ -36,7 +36,7 @@
                     pointColor: "rgba(220,220,220,1)",
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "#fff",
-                    data: <% =Me.chartData%>,
+                    data: <% =Me.chartData %>,
                     pointHighlightStroke: "rgba(220,220,220,1)"
                 }
             ]
@@ -44,7 +44,7 @@
         }
         
         
-        document.getElementById("<%=LabelVentas.ClientID%>").innerHTML = number_format(total, 2)
+        document.getElementById("<%= LabelVentas.ClientID %>").innerHTML = number_format(total, 2)
 
         function DrawChart() {
             var ctx = document.getElementById("salesChart").getContext("2d");

@@ -19,8 +19,8 @@ Public Class Dashboard
         Dim returnData = New List(Of String)()
 
         Dim Con = New SqlConnection(ConfigurationManager.ConnectionStrings("SQLServer").ConnectionString)
-       
-        Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Pesos as DECIMAL(10,2))) 'Total' from tblFoliosVentas where Fecha >= '" + Format(Date.Today, "yyyyMM") + "01" & "' and Fecha <= '" & Format(Date.Today, "yyyyMMdd") & "' group by Fecha order By Fecha;", Con)
+
+        Dim sql = New SqlCommand("select convert(varchar,Fecha,106) 'Fecha',sum(CAST(Importe as DECIMAL(10,2))) 'Total' from tblFoliosVentas where Fecha >= '" + Format(Date.Today, "yyyyMM") + "01" & "' and Fecha <= '" & Format(Date.Today, "yyyyMMdd") & "' group by Fecha order By Fecha;", Con)
 
         ' Dim sql = New SqlCommand("SELECT Count(IDCliente) as cnt, IDGImnasio from catClientes where IDCliente>2 and FechaVencimiento >= CONVERT(char(10), DATEADD(day,-5,GetDate()),112) group by IDGImnasio order by IDGimnasio", Con)
 
@@ -271,6 +271,7 @@ Public Class Dashboard
         Dim value As Object
 
         value = row.Item("VentaTotal")
+
         If value Is DBNull.Value Then
             Me.LabelVentas.Text = "0.00"
         Else
@@ -308,7 +309,7 @@ Public Class Dashboard
                 Me.LabelSalesVentas.Text = "Grafica de Ventas Totales"
                 Me.LabelTituloGrafica.Text = "Periodo   Del     " & Format(Date.Today, "yyyy/MM/") + "01 " & "     al     " & Format(Date.Today, "yyyy/MM/dd")
 
-                Me.LabelUsersGrafic.Text = "Grafica de Usaurios por Unidad de Negocio"
+                Me.LabelUsersGrafic.Text = "Grafica de Usuarios por Unidad de Negocio"
               
 
             End If

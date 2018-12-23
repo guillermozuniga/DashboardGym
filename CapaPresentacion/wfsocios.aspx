@@ -29,7 +29,7 @@
             <div class="col-lg-12">
                 <div class="box box-primary">
                     <div class="box-header">
-                        <h3 class="box-title" style="text-align: center"> <asp:Label ID="LabelTitulo" runat="server" Text="Label"></asp:Label></h3>
+                        <h3 class="box-title" style="text-align: center"> <asp:Label ID="LabelTitulo" runat="server" Text="Socios"></asp:Label></h3>
                     </div>
                     <div class="box-body">                        
                         <div class="box-body table-responsive">

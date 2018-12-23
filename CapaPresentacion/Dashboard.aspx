@@ -42,14 +42,14 @@
                         datasets: [
                             {
                                 //label: chartLabel,
-                                fillColor: "Orange",
-                                strokeColor: "Blue",
+                                fillColor: "rgba(220,220,220,0.2)",
+                                strokeColor: "rgba(220,220,220,1)",
                                 pointColor: "rgba(220,220,220,1)",
                                 pointStrokeColor: "Green",
                                 pointHighlightFill: "#fff",
                                 pointHighlightStroke: "rgba(220,220,220,1)",
                                 options: {
-                                    responsive: true,
+                                    responsive: true
                                 },
                                 data: chartData
                             }
@@ -62,7 +62,7 @@
                     }
 
 
-                    document.getElementById("<%=LabelVentas.ClientID%>").innerHTML = number_format(total, 2)
+                    document.getElementById("<%=LabelVentas.ClientID%>").innerHTML = number_format(total, 2);
                 }
 
             });
@@ -80,8 +80,8 @@
                         datasets: [
                             {
                                 //label: chartLabel,
-                                fillColor: "orange",
-                                strokeColor: "Blue",
+                                fillColor: "rgba(220,220,220,0.2)",
+                                strokeColor: "rgba(220,220,220,1)",
                                 pointColor: "rgba(220,220,220,1)",
                                 pointStrokeColor: "Green",
                                 pointHighlightFill: "#fff",
@@ -258,43 +258,57 @@
         <!-- /.row -->
 
         <div class="row">
-            <div class="box">
-                <div class="box-header with-border">
+            <div class="col-md-6">
+                <div class="box box-info">
                     <div class="box-header with-border">
-                        <i class="fa fa-line-chart"></i>
-                        <h3 class="box-title">Monthly Report</h3>
+                        <div class="box-header with-border">
+                            <i class="fa fa-line-chart"></i>
+                            <h3 class="box-title">Reporte Mensual</h3>
+                        </div>
                     </div>
-                </div>
-                <div class="box-body">
-                    <div class="col-md-6">
+                    <div class="box-body">
                         <p class="text-center">
                             <strong>
                                 <asp:Label ID="LabelTituloGrafica" runat="server" Text=""></asp:Label></strong>
                             <strong>
                                 <asp:Label ID="LabelSalesVentas" runat="server" Text=""></asp:Label></strong>
                         </p>
-
                         <div class="chart">
                             <!-- Sales Chart Canvas -->
-                            <canvas id="salesChart"></canvas>
+                            <canvas id="salesChart" style="height: 300px; width: 520px;" width="520" height="300"></canvas>
                         </div>
                         <!-- /.chart-responsive -->
-
                     </div>
-
-                    <div class="col-md-6">
-                        <p class="text-center">
-                            <strong>
-                                <asp:Label ID="LabelUsersGrafic" runat="server" Text=""></asp:Label></strong>
-                        </p>
-
-                        <div class="chart">
-                            <canvas id="UsersChart"></canvas>
-                        </div>
-                    </div>
-
                 </div>
             </div>
+
+             <div class="col-md-6">
+            <div class="box box-success">
+                <div class="box-header with-border">
+                    <div class="box-header with-border">
+                        <i class="fa fa-line-chart"></i>
+                        <h3 class="box-title">Reporte Diario</h3>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <p class="text-center">
+                        <strong>
+                            <asp:Label ID="Label1" runat="server" Text=""></asp:Label></strong>
+                        <strong>
+                            <asp:Label ID="Label3" runat="server" Text=""></asp:Label></strong>
+                    </p>
+                    <p class="text-center">
+                        <strong>
+                            <asp:Label ID="LabelUsersGrafic" runat="server" Text=""></asp:Label></strong>
+                    </p>
+
+                    <div class="chart">
+                        <canvas id="UsersChart"  style="height: 300px; width: 520px;" width="520" height="300"></canvas>
+                    </div>
+                    <!-- /.chart-responsive -->
+                </div>
+            </div>
+                 </div>
 
 
         </div>

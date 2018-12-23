@@ -91,14 +91,19 @@ Public Class wfventas
                 '            workCol.AllowDBNull = True
                 '            workCol.Unique = False
 
-                Me.gvVentas.DataSource = dtVentas
-                Me.gvVentas.DataBind()
-                ' ClientScript.RegisterStartupScript(Me.GetType(), "Nombre", "SumarColumna(gvVentas, Importe)", True)
-                Dim total As Decimal = dtVentas.AsEnumerable().Sum(Function(row) row.Field(Of Decimal)("Total"))
-                gvVentas.FooterRow.Cells(6).Text = "Total"
-                gvVentas.FooterRow.Cells(6).HorizontalAlign = HorizontalAlign.Right
-                gvVentas.FooterRow.Cells(7).HorizontalAlign = HorizontalAlign.Right
-                gvVentas.FooterRow.Cells(7).Text = total.ToString("N2")
+                If dtVentas.Rows.Count > 0 Then
+                    Me.gvVentas.DataSource = dtVentas
+                    Me.gvVentas.DataBind()
+                    ' ClientScript.RegisterStartupScript(Me.GetType(), "Nombre", "SumarColumna(gvVentas, Importe)", True)
+                    Dim total As Decimal = dtVentas.AsEnumerable().Sum(Function(row) row.Field(Of Decimal)("Total"))
+                    gvVentas.FooterRow.Cells(6).Text = "Total"
+                    gvVentas.FooterRow.Cells(6).HorizontalAlign = HorizontalAlign.Right
+                    gvVentas.FooterRow.Cells(7).HorizontalAlign = HorizontalAlign.Right
+                    gvVentas.FooterRow.Cells(7).Text = total.ToString("N2")
+                Else
+                    Me.gvVentas.DataSource = dtVentas
+                    Me.gvVentas.DataBind()
+                End If
 
             End If
         End If

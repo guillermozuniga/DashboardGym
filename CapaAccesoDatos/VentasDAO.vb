@@ -43,6 +43,7 @@ Public Class VentasDAO
             cmd = New SqlCommand("usp_SumaVentas", conxion)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@Fecha", _Fecha)
+
             ' cmd.Connection.Open()
             da.SelectCommand = cmd
             da.Fill(dt)
